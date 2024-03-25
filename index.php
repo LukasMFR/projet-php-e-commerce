@@ -18,6 +18,7 @@ $produits = [
 <body>
     <h1>Bienvenue chez AutoCar</h1>
     <h2>Nos produits</h2>
+    <h3>Hillel</h3>
     <div class="produits">
         <?php foreach ($produits as $produit): ?>
             <div class="produit">
