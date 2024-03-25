@@ -1,13 +1,13 @@
 <!-- index.php -->
 <html lang="fr">
 <head>
-    <title>PHP Test</title>
+    <title>AutoCar</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <h1>PHP Test</h1>
-    <p>This is a test of PHP code.</p>
+    <h1>AutoCar</h1>
+    <p>Site web de AutoCar</p>
 
     <?php
     echo "Hello, World!";
