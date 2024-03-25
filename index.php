@@ -16,7 +16,7 @@ $produits = [
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Bienvenue chez AutoCar</h1>
+    <h1>Bienvenue chez AutoCar !</h1>
     <h2>Nos produits</h2>
     <div class="produits">
         <?php foreach ($produits as $produit): ?>
