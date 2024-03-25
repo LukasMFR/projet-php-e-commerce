@@ -1,35 +1,30 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
+    font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
     color: #333;
 }
 
-h1 {
-    color: #007BFF;
-    text-align: center;
+.produits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* Style spécifique pour le texte PHP */
-.php-output {
-    margin-top: 20px;
+.produit {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-family: 'Courier New', Courier, monospace;
-    color: #007BFF;
+    width: calc(33.333% - 20px);
 }
 
-/* Ajouter un peu de style à la balise <br> pour mieux espacer les éléments PHP */
-br {
-    margin-bottom: 10px;
+.produit h3 {
+    color: #007bff;
+}
+
+.produit p {
+    color: #666;
 }
