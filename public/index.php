@@ -1,31 +1,37 @@
 <?php
-// Simuler une petite base de données de produits en utilisant des tableaux associatifs
-$produits = [
-    ['id' => 1, 'nom' => 'Voiture Modèle X', 'prix' => '50000', 'categorie' => 'voiture'],
-    ['id' => 2, 'nom' => 'Voiture Modèle Y', 'prix' => '60000', 'categorie' => 'voiture'],
-    ['id' => 3, 'nom' => 'Puff Modèle A', 'prix' => '75', 'categorie' => 'puff'],
-    ['id' => 4, 'nom' => 'Puff Modèle B', 'prix' => '85', 'categorie' => 'puff'],
-];
-?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>AutoCar - Votre magasin de voitures et puffs</title>
-    <link rel="stylesheet" href="public/assets/css/style.css">
-</head>
-<body>
-    <h1>Bienvenue chez AutoCar !</h1>
-    <h2>Nos produits</h2>
-    <div class="produits">
-        <?php foreach ($produits as $produit): ?>
-            <div class="produit">
-                <h3><?php echo $produit['nom']; ?></h3>
-                <p>Prix: <?php echo $produit['prix']; ?> €</p>
-                <p>Catégorie: <?php echo $produit['categorie']; ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</body>
-</html>
+// Chargement du fichier de configuration et des dépendances
+require_once __DIR__ . '/../config/Config.php';
+// Imaginons que Config.php charge aussi un autoloader pour vos classes
+
+// Démarrage de la session
+session_start();
+
+// Une implémentation très basique de routage
+$request = $_SERVER['REQUEST_URI'];
+
+switch ($request) {
+    case '/' :
+        require __DIR__ . '/../src/Controller/MainController.php';
+        $controller = new MainController();
+        $controller->index();
+        break;
+    case '/voitures' :
+        require __DIR__ . '/../src/Controller/CarController.php';
+        $controller = new CarController();
+        $controller->listCars();
+        break;
+    case '/puffs' :
+        require __DIR__ . '/../src/Controller/PuffController.php';
+        $controller = new PuffController();
+        $controller->listPuffs();
+        break;
+    // Ajoutez d'autres cas selon vos besoins
+    default:
+        // Gestion des cas non trouvés : vous pourriez vouloir charger une vue 404 ici
+        header('HTTP/1.0 404 Not Found');
+        require __DIR__ . '/../src/View/404.php';
+        break;
+}
+
+// Note: Ce code suppose que chaque contrôleur a une méthode correspondant à l'action à effectuer.
