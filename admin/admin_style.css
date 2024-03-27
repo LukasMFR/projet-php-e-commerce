@@ -291,16 +291,19 @@ form span{
 }
 /*-----------header---------*/
 /*--------header------------------*/
-header{
-	position: fixed;
-	top: 5%;
-	left: 7%;
-	width: 85vw;
-	padding: 1rem;
-	z-index: 101;
-	transition: .3s;
-	box-shadow: var(--box-shadow);
-	background-image: url('../img/body-bg.jpg');
+header {
+    position: fixed;
+    top: 5%;
+    left: 7%;
+    width: 85vw;
+    padding: 1rem;
+    z-index: 101;
+    transition: .3s;
+    box-shadow: var(--box-shadow);
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
+    -webkit-backdrop-filter: blur(10px) brightness(1.1); /* For WebKit browsers */
+    backdrop-filter: blur(10px) brightness(1.1); /* Standard syntax */
+    border-radius: 15px; /* Rounded corners */
 }
 header.scrolled {
     top: 0;
