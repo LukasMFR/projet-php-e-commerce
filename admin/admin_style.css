@@ -36,11 +36,13 @@ ul{
 }
 .btn{
 	line-height: 2;
-	background-color: #e0ffcd;
+	/* background-color: #e0ffcd; */
+	background-color: #0c1022;
 	padding: 5px 35px;
 	display: inline-block;
 	border-radius: 20px;
-	color: #000;
+	/* color: #000; */
+	color: #fff;
 	text-transform: capitalize;
 	font-family: inherit;
 	font-size: 16px;
