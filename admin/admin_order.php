@@ -21,9 +21,9 @@
 		if ($verify_delete->rowCount() > 0) {
 			$delete_review = $conn->prepare("DELETE FROM `orders` WHERE id = ?");
 			$delete_review->execute([$delete_id]);
-			$success_msg[] = "Order Deleted";
+			$success_msg[] = "Commande supprimée";
 		}else{
-			$warning_msg[] = 'Order Already Deleted';
+			$warning_msg[] = 'Commande déjà supprimée';
 		}
 	}
 
@@ -42,7 +42,7 @@
 
 		$update_pay = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
 		$update_pay->execute([$update_payment, $order_id]);
-		$success_msg[] = 'Order updated';
+		$success_msg[] = 'Commande mise à jour';
 
 	}
 	
@@ -60,20 +60,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--box icon link-->
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin pannel</title>
+	<title>Commandes - AutoCar</title>
 </head>
 <body>
 	
 		<?php include '../components/admin_header.php'; ?>
 		<div class="main">
 			<div class="banner">
-				<h1>total order placed</h1>
+				<h1>Total des commandes passées</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">home </a><span>/ total order</span>
+				<a href="home.php">Accueil </a><span>/ Total des commandes</span>
 			</div>
 		<section class="order-container">
-			<h1 class="heading">total order placed</h1>
+			<h1 class="heading">Total des commandes passées</h1>
 			<div class="box-container">
 				<?php 
 					$select_orders = $conn->prepare("SELECT * FROM `orders` ");
@@ -86,25 +86,25 @@
 				<div class="box">
 					<div class="status" style="color: <?php if($fetch_orders['status'] == 'en cours'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_orders['status'] ?></div>
 					<div class="detail">
-						<p>user name: <span><?= $fetch_orders['name']; ?></span></p>
-						<p>user id: <span><?php echo $fetch_orders['user_id']; ?></span></p>
-						<p>placed on: <span><?= $fetch_orders['date']; ?></span></p>
-						<p>number : <span><?php echo $fetch_orders['number']; ?></span></p>
-						<p>email : <span><?php echo $fetch_orders['email']; ?></span></p>
-						<p>total price : <span><?php echo $fetch_orders['price']; ?></span></p>
-						<p>method : <span><?php echo $fetch_orders['method']; ?></span></p>
-						<p>address : <span><?php echo $fetch_orders['address']; ?></span></p>
+						<p>Nom de l'utilisateur : <span><?= $fetch_orders['name']; ?></span></p>
+						<p>ID de l'utilisateur : <span><?php echo $fetch_orders['user_id']; ?></span></p>
+						<p>Placée le : <span><?= $fetch_orders['date']; ?></span></p>
+						<p>Numéro : <span><?php echo $fetch_orders['number']; ?></span></p>
+						<p>Email : <span><?php echo $fetch_orders['email']; ?></span></p>
+						<p>Prix total : <span><?php echo $fetch_orders['price']; ?></span></p>
+						<p>Méthode : <span><?php echo $fetch_orders['method']; ?></span></p>
+						<p>Adresse : <span><?php echo $fetch_orders['address']; ?></span></p>
 					</div>
 					<form method="post">
 						<input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
 						<select name="update_payment">
 							<option disabled selected><?php echo $fetch_orders['payment_status']; ?></option>
-							<option value="pending">Pending</option>
-							<option value="complete">complete</option>
+							<option value="pending">en attente</option>
+							<option value="complete">completee</option>
 						</select>
 						<div class="flex-btn">
-							<input type="submit" name="update_order" value="update payment" class="btn">
-							<input type="submit" name="delete_order" value="delete order" class="btn" onclick="return confirm('delete this review');">
+							<input type="submit" name="update_order" value="Mettre à jour le paiement" class="btn">
+							<input type="submit" name="delete_order" value="Supprimer la commande" class="btn" onclick="return confirm('Supprimer cette commande ?');">
 						</div>
 					</form>
 					
@@ -114,7 +114,7 @@
 					}else{
 							echo '
 								<div class="empty">
-									<p>no order placed yet!</p>
+									<p>Aucune commande passée pour le moment !</p>
 								</div>
 							';
 					}		
