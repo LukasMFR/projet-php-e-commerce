@@ -8,7 +8,7 @@
 		$name = $_POST['name'];
 		$name = filter_var($name, FILTER_SANITIZE_STRING);
 
-		$pass = sha1($_POST['password']);
+		$pass = sha1($_POST['password']); // encrypt password before saving in database using sha1
 		$pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
 		$select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ? AND password = ?");
