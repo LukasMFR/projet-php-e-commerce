@@ -99,7 +99,7 @@
 			      ?>
 			      <h3><?= $numbers_of_comments; ?></h3>
 			      <p>Messages ajoutés</p>
-			      <a href="admin_message.php" class="btn">oir les messages</a>
+			      <a href="admin_message.php" class="btn">Voir les messages</a>
 				</div>
 			   <div class="box">
 			      <?php
