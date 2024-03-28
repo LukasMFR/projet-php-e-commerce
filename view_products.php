@@ -23,9 +23,9 @@
 		$cart_num->execute([$user_id, $product_id]);
 
 		if ($varify_wishlist->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your wishlist';
+			$warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
 		}else if ($cart_num->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your cart';
+			$warning_msg[] = 'Le produit est déjà dans votre panier';
 		}else{
 			$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 			$select_price->execute([$product_id]);
@@ -33,7 +33,7 @@
 
 			$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
 			$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
-			$success_msg[] = 'product added to wishlist successfully';
+			$success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
 		}
 	}
 	//adding products in cart
@@ -51,9 +51,9 @@
 		$max_cart_items->execute([$user_id]);
 
 		if ($varify_cart->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your cart';
+			$warning_msg[] = 'Le produit est déjà dans votre panier';
 		}else if ($max_cart_items->rowCount() > 20) {
-			$warning_msg[] = 'cart is full';
+			$warning_msg[] = 'Le panier est plein';
 		}else{
 			$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 			$select_price->execute([$product_id]);
@@ -61,7 +61,7 @@
 
 			$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
 			$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-			$success_msg[] = 'product added to cart successfully';
+			$success_msg[] = 'Produit ajouté avec succès au panier';
 		}
 	}
 
@@ -75,16 +75,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - shop page</title>
+	<title>Boutique - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>shop</h1>
+			<h1>Boutique</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ our shop</span>
+			<a href="home.php">Accueil </a><span>/ Notre boutique</span>
 		</div>
 		<section class="products">
 			<div class="box-container">
@@ -106,16 +106,16 @@
 					<h3 class="name"><?=$fetch_products['name']; ?></h3>
 					<input type="hidden" name="product_id" value="<?=$fetch_products['id']; ?>">
 					<div class="flex">
-						<p class="price">price $<?=$fetch_products['price']; ?>/-</p>
+						<p class="price">Prix : <?=$fetch_products['price']; ?> €</p>
 						<input type="number" name="qty" required min="1" value="1" max="99" maxlength="2" class="qty">
 					</div>
-					<a href="checkout.php?get_id=<?=$fetch_products['id']; ?>" class="btn">buy now</a>
+					<a href="checkout.php?get_id=<?=$fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 
 				</form>
 				<?php 
 						}
 					}else{
-						echo '<p class="empty">no products added yet!</p>';
+						echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
 					}
 				?>
 			</div>
