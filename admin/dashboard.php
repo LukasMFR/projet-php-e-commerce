@@ -103,12 +103,12 @@
 				</div>
 			   <div class="box">
 			      <?php
-			         $select_canceled_order = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-			         $select_canceled_order->execute(['canceled']);
-			         $total_canceled_order = $select_canceled_order->rowCount();
+			         $select_annulee_order = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
+			         $select_annulee_order->execute(['annulee']);
+			         $total_annulee_order = $select_annulee_order->rowCount();
 			      ?>
-			      <h3><?= $total_canceled_order; ?></h3>
-			      <p>total canceled order</p>
+			      <h3><?= $total_annulee_order; ?></h3>
+			      <p>total annulee order</p>
 			      <a href="admin_order.php" class="btn">see orders</a>
 			   </div>
 			   <div class="box">

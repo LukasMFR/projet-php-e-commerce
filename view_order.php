@@ -19,7 +19,7 @@
 	}
 	if (isset($_POST['cancle'])) {
 		$update_order = $conn->prepare("UPDATE `orders` SET status = ? WHERE id=?");
-		$update_order->execute(['canceled', $get_id]);
+		$update_order->execute(['annulee', $get_id]);
 		header('location:order.php');
 	}
 
@@ -83,8 +83,8 @@
 							<p class="user"><i class="bi bi-envelope"></i><?= $fetch_order['email']; ?></p>
 							<p class="user"><i class="bi bi-pin-map-fill"></i><?= $fetch_order['address']; ?></p>
 							<p class="title">status</p>
-							<p class="status" style="color:<?php if ($fetch_order['status']=='delevered'){echo 'green';}elseif($fetch_order['status']=='canceled') {echo 'red';}else{echo 'orange';}?>"><?=$fetch_order['status'] ?></p>
-							<?php if ($fetch_order['status']=='canceled') { ?>
+							<p class="status" style="color:<?php if ($fetch_order['status']=='delevered'){echo 'green';}elseif($fetch_order['status']=='annulee') {echo 'red';}else{echo 'orange';}?>"><?=$fetch_order['status'] ?></p>
+							<?php if ($fetch_order['status']=='annulee') { ?>
 								<a href="checkout.php?get_id=<?= $fetch_product['id']; ?>" class="btn">order again</a>
 							<?php }else{ ?>
 								<form method="post">

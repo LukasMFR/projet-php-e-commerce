@@ -61,7 +61,7 @@
 							<div class="row">
 								<h3 class="name"><?= $fetch_product['name']; ?></h3>
 								<p class="price">Prix : <?= $fetch_order['price']; ?> € x <?= $fetch_order['qty']; ?></p>
-								<p class="status" style="color:<?php if($fetch_order['status']=='delivered'){echo 'green';}elseif($fetch_order['status']=='canceled'){echo 'red';}else{echo 'orange';} ?>"><?= $fetch_order['status']; ?></p>
+								<p class="status" style="color:<?php if($fetch_order['status']=='livree'){echo 'green';}elseif($fetch_order['status']=='annulee'){echo 'red';}else{echo 'orange';} ?>"><?= $fetch_order['status']; ?></p>
 							</div>
 						</a>
 						
