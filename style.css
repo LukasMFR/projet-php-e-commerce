@@ -1085,6 +1085,7 @@ footer .bottom-footer{
 	left: 0;
 	padding: .5rem 1.5rem;
 	background: var(--light-green);
+	color: #ffffff;
 	font-size: .6rem;
 	display: inline-block;
 	margin-bottom: 1.5rem;
