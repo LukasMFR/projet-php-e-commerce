@@ -329,7 +329,8 @@ header.scrolled {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	color: #000;
+	/* color: #000; */
+	color: #fff;
 }
 .right-arrow{
 	right: 1rem;
