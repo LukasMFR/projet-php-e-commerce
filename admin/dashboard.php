@@ -18,24 +18,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Tableau de bord admin</title>
 </head>
 <body>
 	<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>dashboard</h1>
+			<h1>Tableau de bord</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ dashboard</span>
+			<a href="home.php">Accueil </a><span>/ Tableau de bord</span>
 		</div>
 		<section class="dashboard">
-			<h1 class="heading">dashboard</h1>
+			<h1 class="heading">Tableau de bord</h1>
 			<div class="box-container">
 				<div class="box">
-					<h3>welcome!</h3>
+					<h3>Bienvenue !</h3>
 					<p><?=$fetch_profile['name']; ?></p>
-					<a href="update_profile.php" class="btn">update profile</a>
+					<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
 				</div>
 				
 				
@@ -46,8 +46,8 @@
 						$number_of_posts = $select_post->rowCount();
 					?>
 					<h3><?= $number_of_posts; ?></h3>
-					<p>products added</p>
-					<a href="add_posts.php" class="btn">add new post</a>
+					<p>Produits ajoutés</p>
+					<a href="add_posts.php" class="btn">Ajouter un nouveau produit</a>
 				</div>
 				<div class="box">
 					<?php 
@@ -56,8 +56,8 @@
 						$number_of_active_post = $select_active_post->rowCount();
 					?>
 					<h3><?= $number_of_active_post; ?></h3>
-					<p>active posts</p>
-					<a href="view_posts.php" class="btn">see posts</a>
+					<p>Produits actifs</p>
+					<a href="view_posts.php" class="btn">Voir les produits</a>
 				</div>
 				
 				<div class="box">
@@ -67,8 +67,8 @@
 						$number_of_deactive_post = $select_deactive_post->rowCount();
 					?>
 					<h3><?= $number_of_deactive_post; ?></h3>
-					<p>deactive posts</p>
-					<a href="view_posts.php" class="btn">see posts</a>
+					<p>Produits désactivés</p>
+					<a href="view_posts.php" class="btn">Voir les produits</a>
 				</div>
 				<div class="box">
 					<?php 
@@ -77,8 +77,8 @@
 						$number_of_users = $select_users->rowCount();
 					?>
 					<h3><?= $number_of_users; ?></h3>
-					<p>users account</p>
-					<a href="user_accounts.php" class="btn">see users</a>
+					<p>Comptes utilisateurs</p>
+					<a href="user_accounts.php" class="btn">Voir les utilisateurs</a>
 				</div>
 				<div class="box">
 					<?php 
@@ -87,8 +87,8 @@
 						$number_of_admins = $select_admins->rowCount();
 					?>
 					<h3><?= $number_of_admins; ?></h3>
-					<p>admins account</p>
-					<a href="admin_accounts.php" class="btn">see admin</a>
+					<p>Comptes admins</p>
+					<a href="admin_accounts.php" class="btn">Voir les admins</a>
 				</div>
 				<div class="box">
 					<?php
@@ -98,8 +98,8 @@
 			         $numbers_of_comments = $select_comments->rowCount();
 			      ?>
 			      <h3><?= $numbers_of_comments; ?></h3>
-			      <p>messages added</p>
-			      <a href="admin_message.php" class="btn">see messages</a>
+			      <p>Messages ajoutés</p>
+			      <a href="admin_message.php" class="btn">oir les messages</a>
 				</div>
 			   <div class="box">
 			      <?php
@@ -108,8 +108,8 @@
 			         $total_annulee_order = $select_annulee_order->rowCount();
 			      ?>
 			      <h3><?= $total_annulee_order; ?></h3>
-			      <p>total annulee order</p>
-			      <a href="admin_order.php" class="btn">see orders</a>
+			      <p>Total commandes annulées</p>
+			      <a href="admin_order.php" class="btn">Voir les commandes</a>
 			   </div>
 			   <div class="box">
 			      <?php
@@ -118,8 +118,8 @@
 			         $total_confirm_order = $select_confirm_order->rowCount();
 			      ?>
 			      <h3><?= $total_confirm_order; ?></h3>
-			      <p>total order en cours</p>
-			      <a href="admin_order.php" class="btn">see orders</a>
+			      <p>Total commandes en cours</p>
+			      <a href="admin_order.php" class="btn">Voir les commandes</a>
 			   </div>
 			   <div class="box">
 			      <?php
@@ -128,8 +128,8 @@
 			         $total_total_order = $select_total_order->rowCount();
 			      ?>
 			      <h3><?= $total_total_order; ?></h3>
-			      <p>total order placed</p>
-			      <a href="admin_order.php" class="btn">see orders</a>
+			      <p>Total commandes passées</p>
+			      <a href="admin_order.php" class="btn">Voir les commandes</a>
 			   </div>
 			</div>
 
