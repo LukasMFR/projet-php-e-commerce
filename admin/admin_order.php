@@ -84,7 +84,7 @@
 
 				?>
 				<div class="box">
-					<div class="status" style="color: <?php if($fetch_orders['status'] == 'in progress'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_orders['status'] ?></div>
+					<div class="status" style="color: <?php if($fetch_orders['status'] == 'en cours'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_orders['status'] ?></div>
 					<div class="detail">
 						<p>user name: <span><?= $fetch_orders['name']; ?></span></p>
 						<p>user id: <span><?php echo $fetch_orders['user_id']; ?></span></p>

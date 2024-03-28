@@ -114,11 +114,11 @@
 			   <div class="box">
 			      <?php
 			         $select_confirm_order = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-			         $select_confirm_order->execute(['in progress']);
+			         $select_confirm_order->execute(['en cours']);
 			         $total_confirm_order = $select_confirm_order->rowCount();
 			      ?>
 			      <h3><?= $total_confirm_order; ?></h3>
-			      <p>total order in progress</p>
+			      <p>total order en cours</p>
 			      <a href="admin_order.php" class="btn">see orders</a>
 			   </div>
 			   <div class="box">
