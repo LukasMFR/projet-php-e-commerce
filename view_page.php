@@ -102,13 +102,7 @@
 				<div class="detail">
 					<div class="price"><?php echo $fetch_products['price']; ?> €</div>
 					<div class="name"><?php echo $fetch_products['name']; ?></div>
-					<!-- <div class="detail">
-						<p>Découvrez les caractéristiques uniques et la qualité exceptionnelle de nos produits. 
-							Chaque article est conçu pour répondre à vos besoins avec excellence et durabilité. 
-							Profitez d'une expérience d'achat personnalisée et trouvez le produit parfait pour vous ou pour offrir.</p>
-
-					</div> -->
-					<div class="detail"><?php echo $fetch_products['product_detail']; ?></div>
+					<div class="detail"><?php echo nl2br($fetch_products['product_detail']); ?></div> <!-- Now with nl2br() for line breaks -->
 					<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
 					<div class="button">
 						<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i class="bx bx-heart"></i></button>
