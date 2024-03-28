@@ -126,9 +126,9 @@
 				</div>
 				<div class="box">
 					<img src="img/download.png">
-					<span>healthy tea</span>
-					<h1>save up to 50% off</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adialiquip cincididunt ut labore et dolore magna</p>
+					<span>AutoCar</span>
+					<h1>Économisez jusqu'à 50 %</h1>
+					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la voiture de vos rêves à moindre coût.</p>
 				</div>
 			</div>
 		</section>
