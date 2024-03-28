@@ -5,7 +5,8 @@
 	box-sizing: border-box;
 }
 :root{
-	--green : #87a243;
+	/* --green : #87a243; */
+	--green : #020062;
 	/* --light-green: #e0ffcd; */
 	--light-green: #0c1022;
 	--box-shadow: 0 0 10px rgb(0 0 0/15%);
