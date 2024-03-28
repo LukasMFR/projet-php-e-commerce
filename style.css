@@ -42,7 +42,7 @@ a{
 	line-height: 2;
 }
 .title p{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .title .logo{
 	width: 80px;
@@ -64,7 +64,7 @@ ul{
 }
 .empty{
 	text-align: center;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	margin: 0 auto;
 	margin-bottom: 2rem;
 	width: 59%;
@@ -109,7 +109,7 @@ ul{
 	width: 100%;
 }
 label{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 input,
 textarea{
@@ -382,7 +382,7 @@ header.scrolled {
 	transform: rotateY(180deg);
 }
 .thumb .box-container .box h3{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--green);
 }
 .box-container .box p{
@@ -411,7 +411,7 @@ header.scrolled {
 	color: var(--green);
 	font-size: 2rem;
 	margin: 1rem 0;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	font-style: italic;
 	font-weight: bold;
 }
@@ -586,7 +586,7 @@ header.scrolled {
 	color: var(--green);
 	font-size: 1.3rem;
 	padding-bottom: .5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .testimonial-container .container .testimonial-item img{
 	padding: 1rem 0;
@@ -763,7 +763,7 @@ footer .inner-footer .card{
 footer .inner-footer .card li{
 	cursor: pointer;
 	line-height: 1.5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	font-size: 16px;
 }
 footer .inner-footer .card li:nth-child(1),
@@ -798,7 +798,7 @@ footer .inner-footer .card .social-links i:hover{
 	color: #fff;
 }
 footer .bottom-footer{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	text-align: center;
 	padding: 3rem 0;
 	color: #fff;
@@ -825,7 +825,7 @@ footer .bottom-footer{
 .products .box-container .box .name{
 	font-size: 1.2rem;
 	color: #555;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .products .box-container .box .button{
 	text-align: center;
@@ -902,7 +902,7 @@ footer .bottom-footer{
 	padding-bottom: 1rem;
 	font-size: 2rem;
 	color: #555;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .products .cart-total p span{
 	color: var(--green);
@@ -928,7 +928,7 @@ footer .bottom-footer{
 }
 .view_page form .name{
 	font-size: 2rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--green);
 }
 .view_page form .price{
@@ -972,7 +972,7 @@ footer .bottom-footer{
 	color: #000;
 	padding-bottom: 1rem;
 	text-align: center;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--green);
 }
 .checkout .row form .input{
@@ -995,7 +995,7 @@ footer .bottom-footer{
 	padding-top: 1rem;
 	font-size: 1.3rem;
 	color: #555;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .checkout .row form p span{
 	color: red;
@@ -1007,7 +1007,7 @@ footer .bottom-footer{
 	font-size: 2.2rem;
 	color: #000;
 	margin-bottom: .5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	padding-bottom: 1.5rem;
 }
 .summary .flex{
@@ -1030,7 +1030,7 @@ footer .bottom-footer{
 .summary .flex .name{
 	font-size: 1.1rem;
 	padding-bottom: .5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: #000;
 }
 .summary .flex .price{
@@ -1047,7 +1047,7 @@ footer .bottom-footer{
 	flex-wrap: wrap;
 	font-size: 2rem;
 	margin-top: 1.5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .summary .grand-total span{
 	color: #555;
@@ -1097,7 +1097,7 @@ footer .bottom-footer{
 }
 .orders .box-container .box .name{
 	font-size: 1rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	text-overflow: ellipsis;
 	overflow-x: hidden;
 	color: #000;
@@ -1109,7 +1109,7 @@ footer .bottom-footer{
 .orders .box-container .box .status{
 	margin-left: .5rem;
 	font-size: 1rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .orders .box-container .box:hover{
 	box-shadow: var(--box-shadow);
@@ -1149,7 +1149,7 @@ footer .bottom-footer{
 	background: var(--light-green);
 	border: 2px solid var(--green);
 	display: inline-block;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .order-detail .box-container .box .col .title i{
 	margin-right: 1rem;
@@ -1187,7 +1187,7 @@ footer .bottom-footer{
 	color: var(--green);
 	border: 1px solid var(--green);
 	border-radius: .5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .order-detail .box-container .box .col .grand-total span{
 	color: orange;
@@ -1195,7 +1195,7 @@ footer .bottom-footer{
 .order-detail .box-container .box .col .status{
 	font-size: 1.4rem;
 	padding: .5rem 0;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 .order-detail .box-container .box .col .btn{
 	width: 100%;

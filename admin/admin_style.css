@@ -45,7 +45,7 @@ ul{
 	border-radius: 20px;
 	/* color: #000; */
 	color: #fff;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	font-family: inherit;
 	font-size: 16px;
 	cursor: pointer;
@@ -84,7 +84,7 @@ ul{
 	text-align: center;
 	font-weight: 100%;
 	font-size: 1.5rem;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	line-height: 2;
 	color: #fff;
 }
@@ -426,7 +426,7 @@ header.scrolled {
 	padding-bottom: .7rem;
 	font-size: 1.5rem;
 	
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--lightgay);
 }
 .profile-detail img{
@@ -493,7 +493,7 @@ header.scrolled {
 	padding: 1rem;
 	font-size: 1.8rem;
 	margin: 1rem 0;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: #555;
 }
 /*-------media screen-------------*/
@@ -630,7 +630,7 @@ header.scrolled {
 }
 
 .accounts{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	line-height: 1.5;
 }
 .accounts h1{
@@ -680,7 +680,7 @@ header.scrolled {
 	line-height: 1.5;
 }
 .message-container .box-container .box .name{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--green);
 }
 /*-------admin order-------------*/
@@ -718,7 +718,7 @@ header.scrolled {
 	margin-top: 3rem;
 	line-height: 1.5;
 	color: var(--lightgay);
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 }
 /*-------media screen-------------*/
 /*------------media screen----------*/

@@ -1,8 +1,8 @@
 <div class="top-footer">
-	<h2><i class="bx bx-envelope"></i>Sign Up For Newslatter</h2>
+	<h2><i class="bx bx-envelope"></i>Inscrivez-vous à la newsletter</h2>
 	<div class="input-field">
-		<input type="text" name="" placeholder="email address...">
-		<button class="btn">subscribe</button>
+		<input type="text" name="" placeholder="Votre adresse e-mail">
+		<button class="btn">S'abonner</button>
 	</div>
 </div>
 <footer>
@@ -13,41 +13,41 @@
 		</div>
 		<div class="inner-footer">
 			<div class="card">
-				<h3>about us</h3>
+				<h3>À propos de nous</h3>
 				<ul>
-					<li>about us</li>
-					<li>our difference</li>
-					<li>community matters</li>
-					<li>press</li>
-					<li>blog</li>
-					<li>bouqs video</li>
+					<li>À propos de nous</li>
+					<li>Notre différence</li>
+					<li>La communauté compte</li>
+					<li>Presse</li>
+					<li>Blog</li>
+					<li>Vidéo Bouqs</li>
 				</ul>
 			</div>
 			<div class="card">
-				<h3>services</h3>
+				<h3>Services</h3>
 				<ul>
-					<li>order</li>
-					<li>help center</li>
-					<li>shipping</li>
-					<li>term of use</li>
-					<li>account detail</li>
-					<li>my account</li>
+					<li>Commande</li>
+					<li>Centre d'aide</li>
+					<li>Livraison</li>
+					<li>Conditions d'utilisation</li>
+					<li>Détails du compte</li>
+					<li>Mon compte</li>
 				</ul>
 			</div>
 			<div class="card">
-				<h3>local</h3>
+				<h3>Local</h3>
 				<ul>
-					<li>allahabad</li>
-					<li>mumbai</li>
-					<li>new delhi</li>
-					<li>old delhi</li>
-					<li>new yourk</li>
-					<li>los angeles</li>
+					<li>Allahabad</li>
+					<li>Mumbai</li>
+					<li>New Delhi</li>
+					<li>Old Delhi</li>
+					<li>New York</li>
+					<li>Los Angeles</li>
 				</ul>
 			</div>
 			<div class="card">
-				<h3>newsletter</h3>
-				<p>Sign Up For Newslatter</p>
+				<h3>Newsletter</h3>
+				<p>Inscrivez-vous à la newsletter</p>
 				<div class="social-links">
 					<i class="bx bxl-instagram"></i>
 					<i class="bx bxl-twitter"></i>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<div class="bottom-footer">
-			<p>all right reserved - code with selena</p>
+			<p>Tous droits réservés - 2024</p>
 		</div>
 	</div>
 </footer>
