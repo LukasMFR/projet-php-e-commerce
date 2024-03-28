@@ -18,7 +18,7 @@
 	 	$delete_post = $conn->prepare("DELETE FROM `products` WHERE id = ?");
 	 	$delete_post->execute([$p_id]);
 
-	 	$message[] = 'post deleted successfully';
+	 	$message[] = 'Produit supprimé avec succès !';
 	 }
 	 
 ?>
@@ -32,17 +32,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Les produits - AutoCar</title>
 </head>
 <body>
 	
 		<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>all products</h1>
+			<h1>Tous les produits</h1>
 		</div>
 		<div class="title2">
-			<a href="dashboard.php">home </a><span>/ all products</span>
+			<a href="dashboard.php">Accueil </a><span>/ Tous les produits</span>
 		</div>
 		<section class="post-editor">
 			<?php 
@@ -58,7 +58,7 @@
 				}
 			?>
 			
-			<h1 class="heading">your post</h1>
+			<h1 class="heading">Vos produits</h1>
 			<div class="show-post">
 				<div class="box-container"> 
 					<?php 
@@ -75,12 +75,12 @@
 							<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
 						<?php } ?>
 						<div class="status" style="color: <?php if($fetch_posts['status'] == 'actif'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_posts['status'] ?></div>
-						<div class="price">$<?= $fetch_posts['price'] ?>/-</div>	
+						<div class="price"><?= $fetch_posts['price'] ?> €</div>	
 						<div class="title"><?= $fetch_posts['name'] ?></div>	
 						<div class="flex-btn">
-							<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">edit</a>
-							<button type="submit" name="delete" class="btn" onclick="return confirm('delete this post?')">delete</button>
-							<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn">view post</a>
+							<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">Modifier</a>
+							<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
+							<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn">Voir le produit</a>
 						</div>
 					</form>
 					<?php 
@@ -89,7 +89,7 @@
 
 							echo '
 								<div class="empty">
-									<p>no post added yet! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">add post</a></p>
+									<p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p>
 								</div>
 							';
 						}
