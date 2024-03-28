@@ -431,7 +431,7 @@ header.scrolled {
 .shop .row .top-footer{
 	margin-top: 2rem;
 	text-align: center!important;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	font-size: 1.5vw;
 	padding: 3rem 1rem;
 }

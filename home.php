@@ -102,7 +102,7 @@
 				<div class="box">
 					<img src="img/thumb0.jpg">
 					<h3>Porsche</h3>
-					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez notre sélection pour trouver votre prochaine voiture de sport.</p>
+					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la sélection pour trouver votre prochaine voiture de sport.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
@@ -135,14 +135,14 @@
 		<section class="shop">
 			<div class="title">
 				<img src="img/download.png">
-				<h1>Trending Products</h1>
+				<h1>Produits tendance</h1>
 			</div>
 			<div class="row">
 				<img src="img/about.jpg">
 				<div class="row-detail">
 					<img src="img/basil.jpg">
 					<div class="top-footer">
-						<h1>a cup of green tea makes you healthy</h1>
+						<h1>Un tour en voiture de sport vivifie l'esprit !</h1>
 					</div>
 				</div>
 			</div>
