@@ -52,7 +52,7 @@
 				<div class="box">
 					<?php 
 						$select_active_post = $conn->prepare("SELECT * FROM `products` WHERE status = ?");
-						$select_active_post->execute(['active']);
+						$select_active_post->execute(['actif']);
 						$number_of_active_post = $select_active_post->rowCount();
 					?>
 					<h3><?= $number_of_active_post; ?></h3>
@@ -63,7 +63,7 @@
 				<div class="box">
 					<?php 
 						$select_deactive_post = $conn->prepare("SELECT * FROM `products` WHERE status = ?");
-						$select_deactive_post->execute(['deactive']);
+						$select_deactive_post->execute(['inactif']);
 						$number_of_deactive_post = $select_deactive_post->rowCount();
 					?>
 					<h3><?= $number_of_deactive_post; ?></h3>

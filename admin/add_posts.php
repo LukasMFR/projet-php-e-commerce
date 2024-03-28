@@ -19,7 +19,7 @@
 	   	$content = $_POST['content'];
 	   	$content = filter_var($content, FILTER_SANITIZE_STRING);
 
-	   	$status = 'active';
+	   	$status = 'actif';
 
 	   	$image = $_FILES['image']['name'];
 	   	$image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -62,7 +62,7 @@
 	   	$content = $_POST['content'];
 	   	$content = filter_var($content, FILTER_SANITIZE_STRING);
 
-	   	$status = 'deactive';
+	   	$status = 'inactif';
 
 	   	$image = $_FILES['image']['name'];
 	   	$image = filter_var($image, FILTER_SANITIZE_STRING);
