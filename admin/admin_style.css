@@ -296,10 +296,13 @@ form span{
 /*-----------header---------*/
 /*--------header------------------*/
 header {
-    position: fixed;
-    top: 5%;
-    left: 7.5%;
-    width: 85vw;
+	position: fixed;
+	/* top: 5%; */
+	top: 40px;
+	/* left: 7.5%; */
+	left: 50px;
+	right: 50px;
+	/* width: 85vw; */
     padding: 1rem;
     z-index: 101;
     transition: .3s;
