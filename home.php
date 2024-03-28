@@ -34,8 +34,8 @@
 				<div class="slider__slider slide1">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Lorem ipsum dolor sit</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
+						<h1>Découvrez la nouvelle ère de la conduite</h1>
+						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance, durabilité et design futuriste réunis.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -45,8 +45,8 @@
 				<div class="slider__slider slide2">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>welcome to my shop</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
+						<h1>Élégance et puissance</h1>
+						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort, de style et de puissance.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -56,8 +56,8 @@
 				<div class="slider__slider slide3">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Lorem ipsum dolor sit</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
+						<h1>Aventure sans limites</h1>
+						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec confiance et confort.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -67,8 +67,8 @@
 				<div class="slider__slider slide4">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Lorem ipsum dolor sit</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
+						<h1>Sportivité et performance</h1>
+						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de conduite exaltante.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -78,8 +78,8 @@
 				<div class="slider__slider slide5">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Lorem ipsum dolor sit</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
+						<h1>Éco-responsabilité au volant</h1>
+						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques. Économie de carburant, réduction des émissions et conduite silencieuse.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
