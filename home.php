@@ -23,7 +23,7 @@
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
-	<title>AutoCar - page d'accueil</title>
+	<title>Page d'accueil - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
