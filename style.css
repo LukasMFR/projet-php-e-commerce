@@ -294,7 +294,7 @@ header.scrolled {
 }
 
 .slider__slider {
-	height: 80vh;
+	height: 65vh;
 	min-width: 100vw;
 	width: 100%;
 	scroll-snap-align: start;
