@@ -490,7 +490,7 @@ header.scrolled {
 }
 
 .shop {
-	background-image: url('img/bg.jpg');
+	/*background-image: url('img/bg.jpg');*/
 	margin: 2rem 0;
 	padding: 2rem 1rem;
 }
