@@ -74,7 +74,7 @@
 						<?php if($fetch_posts['image'] != ''){ ?>
 							<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
 						<?php } ?>
-						<div class="status" style="color: <?php if($fetch_posts['status'] == 'active'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_posts['status'] ?></div>
+						<div class="status" style="color: <?php if($fetch_posts['status'] == 'actif'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_posts['status'] ?></div>
 						<div class="price">$<?= $fetch_posts['price'] ?>/-</div>	
 						<div class="title"><?= $fetch_posts['name'] ?></div>	
 						<div class="flex-btn">

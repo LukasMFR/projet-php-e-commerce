@@ -73,7 +73,7 @@
 				?>
 				<form method="post">
 					<input type="hidden" name="post_id" value="<?= $fetch_posts['id']; ?>">
-					<div class="status" style="background-color: <?php if($fetch_posts['status'] == 'active'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_posts['status'] ?></div>
+					<div class="status" style="background-color: <?php if($fetch_posts['status'] == 'actif'){echo 'limegreen'; }else{echo "coral";} ?>;"><?= $fetch_posts['status'] ?></div>
 					<?php if($fetch_posts['image'] != ''){ ?>
 						<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
 					<?php } ?>
