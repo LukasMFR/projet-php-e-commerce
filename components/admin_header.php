@@ -28,6 +28,7 @@
 				<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
 				<a href="../components/admin_logout.php" onclick="return confirm('Se déconnecter du site ?')" class="btn">Se déconnecter</a>
 			</div>
+			<a href="../index.php" class="btn">Retourner au site visiteur</a>
 			<?php }?>
 		</div>
 	</div>

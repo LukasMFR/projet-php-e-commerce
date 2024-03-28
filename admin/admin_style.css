@@ -442,6 +442,7 @@ header.scrolled {
 .profile-detail .flex-btn{
 	display: flex;
 	justify-content: space-evenly;
+	padding-bottom: 10px;
 }
 .profile-detail .flex-btn .btn{
 	padding: .5rem 1.5rem;
