@@ -627,6 +627,7 @@ header.scrolled {
 .read-post form .flex-btn .btn{
 	width: 33%;
 	text-align: center;
+	margin: 10px;
 }
 
 .accounts{
