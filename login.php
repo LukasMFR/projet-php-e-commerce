@@ -26,7 +26,7 @@
 			$_SESSION['user_email'] = $row['email'];
 			header('location: home.php');
 		}else{
-			$warning_msg[] = 'incorrect username or password';
+			$warning_msg[] = 'Identifiant ou mot de passe incorrect';
 		}
 	}
 
@@ -39,30 +39,28 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>green tea - login now</title>
+	<title>Se connecter - AutoCar</title>
 </head>
 <body>
 	<div class="main-container">
 		<section class="form-container">
 			<div class="title">
 				<img src="img/download.png">
-				<h1>login now</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+				<h1>Connectez-vous</h1>
+				<p>Accédez à votre compte pour une expérience personnalisée. Profitez de nos services exclusifs en vous connectant dès maintenant.</p>
 			</div>
 			<form action="" method="post">
 				<div class="input-field">
-					<p>your email <sup>*</sup></p>
-					<input type="email" name="email" required placeholder="enter your email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+					<p>Votre email <sup>*</sup></p>
+					<input type="email" name="email" required placeholder="Saisissez votre email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
 				<div class="input-field">
-					<p>your passwod <sup>*</sup></p>
-					<input type="password" name="pass" required placeholder="enter your passwod" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+					<p>Votre mot de passe <sup>*</sup></p>
+					<input type="password" name="pass" required placeholder="Saisissez votre mot de passe" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
 				
-				<input type="submit" name="submit" value="login now" class="btn">
-				<p>do not have an account? <a href="register.php">register now</a></p>
+				<input type="submit" name="submit" value="Se connecter" class="btn">
+				<p>Vous n'avez pas de compte ? <a href="register.php">Inscrivez-vous maintenant</a></p>
 			</form>
 		</section>
 	</div>

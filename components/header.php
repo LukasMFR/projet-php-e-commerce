@@ -2,11 +2,11 @@
 	<div class="flex">
 		<a href="home.php" class="logo"><img src="img/logo.jpg"></a>
 		<nav class="navbar">
-			<a href="home.php">accueil</a>
-			<a href="view_products.php">produits</a>
-			<a href="order.php">commandes</a>
-			<a href="about.php">à propos</a>
-			<a href="contact.php">nous contacter</a>
+			<a href="home.php">Accueil</a>
+			<a href="view_products.php">Produits</a>
+			<a href="order.php">Commandes</a>
+			<a href="about.php">À propos</a>
+			<a href="contact.php">Nous contacter</a>
 		</nav>
 		<div class="icons">
 			<i class="bx bxs-user" id="user-btn"></i>
@@ -38,10 +38,10 @@
 			            }else{
 			         ?>
 		         
-			         <h3 style="margin-bottom: 1rem">please login or register</h3>
+			         <h3 style="margin-bottom: 1rem">Se connecter ou s'enregistrer</h3>
 			          <div class="flex-btn">
-			            <a href="login.php" class="btn">login</a>
-			            <a href="register.php" class="btn">register</a>
+			            <a href="login.php" class="btn">Se connecter</a>
+			            <a href="register.php" class="btn">S'enregistrer</a>
 			         </div>
 			         <?php
 			            }
