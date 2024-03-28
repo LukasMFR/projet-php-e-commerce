@@ -28,10 +28,10 @@
 				<?php 
 					if(isset($_SESSION['user_id'])){
 				        ?>  
-				          	<p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+				          	<p>Nom d'utilisateur : <span><?php echo $_SESSION['user_name']; ?></span></p>
 							<p>Email : <span><?php echo $_SESSION['user_email']; ?></span></p>
 							<form method="post">
-								<button type="submit" name="logout" class="logout-btn">log out</button>
+								<button type="submit" name="logout" class="logout-btn">Se déconnecter</button>
 							</form>
 				          
 				    <?php

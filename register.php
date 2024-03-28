@@ -25,10 +25,10 @@
 		$row = $select_user->fetch(PDO::FETCH_ASSOC);
 
 		if ($select_user->rowCount() > 0) {
-			$warning_msg[] = 'email already exist';
+			$warning_msg[] = 'Email déjà existant';
 		}else{
 			if($pass != $cpass){
-				$warning_msg[] = 'confirm your password';
+				$warning_msg[] = 'Confirmez votre mot de passe';
 				
 			}else{
 				$insert_user = $conn->prepare("INSERT INTO `users`(id,name,email,password) VALUES(?,?,?,?)");
@@ -55,37 +55,35 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>green tea - register now</title>
+	<title>S'enregistrer - AutoCar</title>
 </head>
 <body>
 	<div class="main-container">
 		<section class="form-container">
 			<div class="title">
 				<img src="img/download.png">
-				<h1>register now</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+				<h1>Inscrivez-vous</h1>
+				<p>Rejoignez notre communauté dès aujourd'hui et bénéficiez d'avantages exclusifs. Commencez votre expérience unique avec nous.</p>
 			</div>
 			<form action="" method="post">
 				<div class="input-field">
-					<p>your name <sup>*</sup></p>
-					<input type="text" name="name" required placeholder="enter your name" maxlength="50">
+					<p>Votre nom <sup>*</sup></p>
+					<input type="text" name="name" required placeholder="Entrez votre nom" maxlength="50">
 				</div>
 				<div class="input-field">
-					<p>your email <sup>*</sup></p>
-					<input type="email" name="email" required placeholder="enter your email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+					<p>Votre email <sup>*</sup></p>
+					<input type="email" name="email" required placeholder="Entrez votre email" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
 				<div class="input-field">
-					<p>your passwod <sup>*</sup></p>
-					<input type="password" name="pass" required placeholder="enter your passwod" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+					<p>Votre mot de passe <sup>*</sup></p>
+					<input type="password" name="pass" required placeholder="Entrez votre mot de passe" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
 				<div class="input-field">
-					<p>confirm passwod <sup>*</sup></p>
-					<input type="password" name="cpass" required placeholder="enter your passwod" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+					<p>Confirmez le mot de passe <sup>*</sup></p>
+					<input type="password" name="cpass" required placeholder="Entrez votre mot de passe" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
-				<input type="submit" name="submit" value="register now" class="btn">
-				<p>already have an account? <a href="login.php">login now</a></p>
+				<input type="submit" name="submit" value="S'enregistrer" class="btn">
+				<p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous maintenant</a></p>
 			</form>
 		</section>
 	</div>
