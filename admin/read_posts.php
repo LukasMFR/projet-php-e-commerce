@@ -37,17 +37,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Voir le produit - AutoCar</title>
 </head>
 <body>
 	
 		<?php include '../components/admin_header.php'; ?>
 		<div class="main">
 		<div class="banner">
-			<h1>dashboard</h1>
+			<h1>Voir le produit</h1>
 		</div>
 		<div class="title2">
-			<a href="dashboard.php">home </a><span>/ dashboard</span>
+			<a href="dashboard.php">Accueil </a><span>/ Voir le produit</span>
 		</div>
 		<section class="read-container">
 			<?php 
@@ -80,9 +80,9 @@
 					<div class="title"><?= $fetch_posts['name'] ?></div>
 					<div class="content"><?= $fetch_posts['product_detail'] ?></div>
 					<div class="flex-btn">
-						<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">edit</a>
-						<button type="submit" name="delete" class="btn" onclick="return confirm('delete this post?')">delete</button>
-						<a href="view_posts.php?id=<?= $post_id ?>" class="btn">go back</a>
+						<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">Modifier</a>
+						<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
+						<a href="view_posts.php?id=<?= $post_id ?>" class="btn">Retour</a>
 					</div>
 				</form>
 				<?php 
@@ -91,7 +91,7 @@
 
 							echo '
 								<div class="empty">
-									<p>no post added yet! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">add post</a></p>
+									<p>Aucun article ajouté pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">add post</a></p>
 								</div>
 							';
 						}
