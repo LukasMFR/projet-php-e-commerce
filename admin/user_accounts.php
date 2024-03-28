@@ -38,20 +38,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Comptes utilisateurs - AutoCar</title>
 </head>
 <body>
 	
 		<?php include '../components/admin_header.php'; ?>
 		<div class="main">
 			<div class="banner">
-				<h1>registered users</h1>
+				<h1>Utilisateurs enregistrés</h1>
 			</div>
 			<div class="title2">
-				<a href="dashboard.php">home </a><span>/ registered users</span>
+				<a href="dashboard.php">Accueil </a><span>/ Utilisateurs enregistrés</span>
 			</div>
 			<section class="accounts">
-				<h1 class="heading">users account</h1>
+				<h1 class="heading">Utilisateurs enregistrés</h1>
 				<div class="box-container">
 					<?php 
 	 					$select_users = $conn->prepare("SELECT * FROM `users`");
@@ -63,17 +63,17 @@
 	 						
 					?>
 					<div class="box">
-						<p>users id : <span><?= $user_id; ?></span></p>
-						<p>user name : <span><?= $fetch_accounts['name']; ?></span></p>
-						<p>user email : <span><?= $fetch_accounts['email']; ?></span></p>
-						<p>user type : <span><?= $fetch_accounts['user_type']; ?></span></p>
+						<p>Identifiant : <span><?= $user_id; ?></span></p>
+						<p>Nom : <span><?= $fetch_accounts['name']; ?></span></p>
+						<p>Email : <span><?= $fetch_accounts['email']; ?></span></p>
+						<p>Type d'utilisateur : <span><?= $fetch_accounts['user_type']; ?></span></p>
 					</div>
 					<?php 
 							}
 	 					}else{
 	 						echo '
 								<div class="empty">
-									<p>no post found!</p>
+									<p>Aucun utilisateur enregistré !</p>
 								</div>
 							';
 	 					}
