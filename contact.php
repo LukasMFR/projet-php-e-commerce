@@ -27,10 +27,10 @@
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>contact us</h1>
+			<h1>Nous contacter</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ contact us</span>
+			<a href="home.php">Accueil </a><span>/ Nous contacter</span>
 		</div>
 		<section class="services">
 			<div class="box-container">
