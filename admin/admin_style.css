@@ -659,6 +659,7 @@ header.scrolled {
 .accounts .flex-btn .btn{
 	width: 100%;
 	text-align: center;
+	margin: 10px;
 }
 .accounts .profile{
 	text-align: center;
