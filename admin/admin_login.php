@@ -19,7 +19,7 @@
 			$_SESSION['admin_id'] = $fetch_admin_id['id'];
 			header('location:dashboard.php');
 		}else{
-			$message[] = 'incorrect username or password';
+			$message[] = 'Nom d\'utilisateur ou mot de passe incorrect';
 		}
 	}
 ?>
@@ -33,7 +33,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>Admin Login page</title>
+	<title>Page de connexion Admin</title>
 </head>
 <body style="padding-left: 0 !important;">
 	<?php 
@@ -52,7 +52,7 @@
 		<section class="form-container" id="admin_login">
 			<form action="" method="post">
 				<h3>login now</h3>
-				<p style="text-align: center; color: #000;">Default user name : selena ansari and password : 1234</p>
+				<p style="text-align: center; color: #000;">Default user name : admin and password : 1234</p>
 				<div class="input-field">
 					<label>User name <sup>*</sup></label><br>
 					<input type="text" name="name" maxlength="20" required placeholder="Enter your username" oninput="this.value.replace(/\s/g,'')">
