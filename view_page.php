@@ -23,9 +23,9 @@
 		$cart_num->execute([$user_id, $product_id]);
 
 		if ($varify_wishlist->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your wishlist';
+			$warning_msg[] = 'Le produit existe déjà dans votre liste de souhaits';
 		}else if ($cart_num->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your cart';
+			$warning_msg[] = 'Le produit existe déjà dans votre panier';
 		}else{
 			$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 			$select_price->execute([$product_id]);
@@ -33,7 +33,7 @@
 
 			$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
 			$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
-			$success_msg[] = 'product added to wishlist successfully';
+			$success_msg[] = 'Produit ajouté à la liste de souhaits avec succès';
 		}
 	}
 	//adding products in cart
@@ -51,9 +51,9 @@
 		$max_cart_items->execute([$user_id]);
 
 		if ($varify_cart->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your cart';
+			$warning_msg[] = 'Le produit existe déjà dans votre panier';
 		}else if ($max_cart_items->rowCount() > 20) {
-			$warning_msg[] = 'cart is full';
+			$warning_msg[] = 'Le panier est plein';
 		}else{
 			$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 			$select_price->execute([$product_id]);
@@ -61,7 +61,7 @@
 
 			$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
 			$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-			$success_msg[] = 'product added to cart successfully';
+			$success_msg[] = 'Produit ajouté au panier avec succès';
 		}
 	}
 
@@ -75,16 +75,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - product detail page</title>
+	<title>Détail du produit - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>product detail</h1>
+			<h1>Détail du produit</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ product detail</span>
+			<a href="home.php">Accueil </a><span>/ Détail du produit</span>
 		</div>
 		<section class="view_page">
 			<?php 
@@ -100,22 +100,19 @@
 			<form method="post">
 				<img src="image/<?php echo $fetch_products['image']; ?>">
 				<div class="detail">
-					<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+					<div class="price"><?php echo $fetch_products['price']; ?> €</div>
 					<div class="name"><?php echo $fetch_products['name']; ?></div>
 					<div class="detail">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Découvrez les caractéristiques uniques et la qualité exceptionnelle de nos produits. 
+							Chaque article est conçu pour répondre à vos besoins avec excellence et durabilité. 
+							Profitez d'une expérience d'achat personnalisée et trouvez le produit parfait pour vous ou pour offrir.</p>
 
 					</div>
 					<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
 					<div class="button">
-						<button type="submit" name="add_to_wishlist" class="btn">add to wishlist<i class="bx bx-heart"></i></button>
+						<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i class="bx bx-heart"></i></button>
 						<input type="hidden" name="qty" value="1" min="0" class="quantity">
-						<button type="submit" name="add_to_cart" class="btn">add to cart<i class="bx bx-cart"></i></button>
+						<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i class="bx bx-cart"></i></button>
 					</div>
 				</div>
 			</form>
