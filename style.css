@@ -478,7 +478,7 @@ header.scrolled {
 	margin: 3rem 0;
 }
 .services h3{
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	color: var(--green);
 }
 .services img{
