@@ -66,11 +66,14 @@
 		}
 	}
 ?>
-<style type="text/css">
+<!-- <style type="text/css">
 	<?php 
 		include 'style.css';
 
 	?>
+</style> -->
+<style>
+	<?php include 'admin_style.css'; ?>
 </style>
 <!DOCTYPE html>
 <html lang="fr">
