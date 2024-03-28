@@ -7,9 +7,9 @@
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
-DROP DATABASE IF EXISTS coffee;
-CREATE DATABASE coffee ;
-USE coffee ;
+DROP DATABASE IF EXISTS autocar;
+CREATE DATABASE autocar ;
+USE autocar ;
 DROP TABLE IF EXISTS admin ;
 DROP TABLE IF EXISTS cart ;
 DROP TABLE IF EXISTS message ;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `coffee`
+-- Database: `autocar`
 --
 
 -- --------------------------------------------------------
@@ -169,7 +169,7 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `product_detail`, `statu
 ('kun96OpQed6Eww6M1URo', 'Gunpowder Tea', '120', '8lXs7FvkBvchy7RijAzE.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active'),
 ('wrJTrzoHsuEwr7hGi3R6', 'Minty Lemon Iced Tea', '95', 'awmvYZRs2wNZh0yFjoSk.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active'),
 ('eBbtkVNYiJJKT9mCgYbk', 'tea', '200', 'card2.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adip', 'active'),
-('bEvIK2PvwOqY4l8nuPTZ', 'green herbal coffee', '23', 'YsMZ5Bezou9eH1KhTZrZ.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active');
+('bEvIK2PvwOqY4l8nuPTZ', 'green herbal autocar', '23', 'YsMZ5Bezou9eH1KhTZrZ.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active');
 
 -- --------------------------------------------------------
 
