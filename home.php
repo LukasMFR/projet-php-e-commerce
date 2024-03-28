@@ -36,7 +36,7 @@
 					<div class="slide-detail">
 						<h1>Lorem ipsum dolor sit</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -47,7 +47,7 @@
 					<div class="slide-detail">
 						<h1>welcome to my shop</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -58,7 +58,7 @@
 					<div class="slide-detail">
 						<h1>Lorem ipsum dolor sit</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -69,7 +69,7 @@
 					<div class="slide-detail">
 						<h1>Lorem ipsum dolor sit</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -80,7 +80,7 @@
 					<div class="slide-detail">
 						<h1>Lorem ipsum dolor sit</h1>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum? Corrupti placeat ex</p>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -149,27 +149,27 @@
 			<div class="box-container">
 				<div class="box">
 					<img src="img/card.jpg">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/card0.jpg">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/card1.jpg">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/card2.jpg">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/10.jpg">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/6.webp">
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 		</section>
@@ -180,7 +180,7 @@
 					<div class="detail">
 						<span>BIG OFFERS</span>
 						<h1>Extra 15% off</h1>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 				</div>
 				<div class="box">
@@ -188,7 +188,7 @@
 					<div class="detail">
 						<span>new in taste</span>
 						<h1>coffee house</h1>
-						<a href="view_products.php" class="btn">shop now</a>
+						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 				</div>
 			</div>

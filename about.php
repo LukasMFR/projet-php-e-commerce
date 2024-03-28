@@ -38,7 +38,7 @@
 				<div class="detail">
 					<span>coffee</span>
 					<h1>lemon green</h1>
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
@@ -46,7 +46,7 @@
 				<div class="detail">
 					<span>coffee</span>
 					<h1>lemon Teaname</h1>
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
@@ -54,7 +54,7 @@
 				<div class="detail">
 					<span>coffee</span>
 					<h1>lemon Teaname</h1>
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
@@ -62,7 +62,7 @@
 				<div class="detail">
 					<span>coffee</span>
 					<h1>lemon green</h1>
-					<a href="view_products.php" class="btn">shop now</a>
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 		</div>
@@ -117,7 +117,7 @@
                         Whether you are looking for a florist for your perfect wedding, or just want to uplift any room
                         with
                         some one of a kind living decor, Blossom With Love can help.</p>
-                    <a href="view_products.php" class="btn">shop now</a>
+                    <a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 		</div>
