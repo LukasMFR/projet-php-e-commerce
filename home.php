@@ -95,26 +95,26 @@
 			<div class="box-container">
 				<div class="box">
 					<img src="img/thumb2.jpg">
-					<h3>green tea</h3>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+					<h3>Lamborghini</h3>
+					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez l'expérience ultime de conduite sportive.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb0.jpg">
-					<h3>lemon tea</h3>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+					<h3>Porsche</h3>
+					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez notre sélection pour trouver votre prochaine voiture de sport.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb1.jpg">
-					<h3>green coffee</h3>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+					<h3>Ferrari</h3>
+					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures. Choisissez la Ferrari qui fait battre votre cœur.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb.jpg">
-					<h3>green tea</h3>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+					<h3>Alpine</h3>
+					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre gamme pour une expérience de conduite exceptionnelle.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 			</div>
