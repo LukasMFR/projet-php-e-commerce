@@ -51,17 +51,17 @@
 	<div class="main-container">
 		<section class="form-container" id="admin_login">
 			<form action="" method="post">
-				<h3>login now</h3>
-				<p style="text-align: center; color: #000;">Default user name : admin and password : 1234</p>
+				<h3>Se connecter</h3>
+				<p style="text-align: center; color: #000;">Nom d'utilisateur par défaut : admin et mot de passe : 1234</p>
 				<div class="input-field">
-					<label>User name <sup>*</sup></label><br>
-					<input type="text" name="name" maxlength="20" required placeholder="Enter your username" oninput="this.value.replace(/\s/g,'')">
+					<label>Nom d'utilisateur <sup>*</sup></label><br>
+					<input type="text" name="name" maxlength="20" required placeholder="Entrez votre nom d'utilisateur" oninput="this.value.replace(/\s/g,'')">
 				</div>
 				<div class="input-field">
-					<label>password <sup>*</sup></label><br>
-					<input type="password" name="password" maxlength="20" required placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+					<label>Mot de passe <sup>*</sup></label><br>
+					<input type="password" name="password" maxlength="20" required placeholder="Entrez votre mot de passe" oninput="this.value.replace(/\s/g,'')">
 				</div>
-				<input type="submit" name="submit" value="login now" class="btn">
+				<input type="submit" name="submit" value="Se connecter" class="btn">
 			</form>
 		</section>
 	</div>
