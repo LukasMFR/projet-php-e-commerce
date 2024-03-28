@@ -21,15 +21,15 @@
 
 		$select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$product_name'") or die('query failed');
 		if(mysqli_num_rows($select_product_name)>0){
-			$message[] = 'product name already exist';
+			$message[] = 'Le nom du produit existe déjà';
 		}else{
 			$insert_product = mysqli_query($conn, "INSERT INTO `products`(`name`, `price`, `product_detail`, `image`) VALUES ('$product_name','$product_price','$product_detail','$image')") or die('query failed');
 			if ($insert_product) {
 				if ($image_size > 2000000) {
-					$message[] = 'image size is too large';
+					$message[] = 'La taille de l\'image est trop grande';
 				}else{
 					move_uploaded_file($image_tmp_name, $image_folder);
-					$message[] = 'product added successfully';
+					$message[] = 'Produit ajouté avec succès';
 				}
 			}
 		}
@@ -83,7 +83,7 @@
 	<!--box icon link-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	
-	<title>admin pannel</title>
+	<title>Ajouter des produits - AutoCar</title>
 </head>
 <body>
 	<?php include 'admin_header.php'; ?>
@@ -105,22 +105,22 @@
 	<section class="add-products form-container">
 		<form method="POST" action="" enctype="multipart/form-data">
 			<div class="input-field">
-				<label>product name</label>
+				<label>Nom du produit</label>
 				<input type="text" name="name" required>
 			</div>
 			<div class="input-field">
-				<label>product price</label>
+				<label>Prix du produit</label>
 				<input type="text" name="price" required>
 			</div>
 			<div class="input-field">
-				<label>product detail</label>
+				<label>Détail du produit</label>
 				<textarea name="detail" required></textarea>
 			</div>
 			<div class="input-field">
-				<label>product image</label>
+				<label>Image du produit</label>
 				<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp" required>
 			</div>
-			<input type="submit" name="add_product" value="add product" class="btn">
+			<input type="submit" name="add_product" value="Ajouter le produit" class="btn">
 		</form>
 	</section>
 	<div class="line3"></div>
@@ -139,14 +139,14 @@
 				<h4><?php echo $fetch_products['name']; ?></h4>
 				<details><?php echo $fetch_products['product_detail']; ?></details>
 				<a href="admin_product.php?edit=<?php echo $fetch_products['id']; ?>" class="edit">edit</a>
-				<a href="admin_product.php?delete=<?php echo $fetch_products['id']; ?>" class="delete" onclick="return confirm('want to delete this product');">delete</a>
+				<a href="admin_product.php?delete=<?php echo $fetch_products['id']; ?>" class="delete" onclick="return confirm('Voulez-vous supprimer ce produit ?');">delete</a>
 			</div>
 			<?php 
 					}
 				}else{
 						echo '
 							<div class="empty">
-								<p>no products added yet!</p>
+								<p>Aucun produit ajouté !</p>
 							</div>
 						';
 				}
