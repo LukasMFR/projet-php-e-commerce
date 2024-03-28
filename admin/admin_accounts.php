@@ -38,20 +38,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Comptes administrateurs - AutoCar</title>
 </head>
 <body>
 	
 		<?php include '../components/admin_header.php'; ?>
 		<div class="main">
 			<div class="banner">
-				<h1>admin account</h1>
+				<h1>Comptes administrateurs</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">home </a><span>/ admin account</span>
+				<a href="home.php">Accueil </a><span>/ Comptes administrateurs</span>
 			</div>
 			<section class="accounts">
-				<h1 class="heading">admin account</h1>
+				<h1 class="heading">Comptes administrateurs</h1>
 				<div class="box-container">
 					<?php 
 	 					$select_admin = $conn->prepare("SELECT * FROM `admin`");
@@ -66,12 +66,12 @@
 						<div class="profile">
 							<img src="../image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
 						</div>
-						<p>admin id : <span><?= $user_id; ?></span></p>
-						<p>admin name : <span><?= $fetch_accounts['name']; ?></span></p>
-						<p>admin email : <span><?= $fetch_accounts['email']; ?></span></p>
+						<p>ID administrateur : <span><?= $user_id; ?></span></p>
+						<p>Nom de l'administrateur : <span><?= $fetch_accounts['name']; ?></span></p>
+						<p>Email de l'administrateur : <span><?= $fetch_accounts['email']; ?></span></p>
 						<div class="flex-btn">
-							<a href="update_profile.php" class="btn">update profile</a>
-							<a href="components/admin_logout.php" onclick="return confirm('logout from this website')" class="btn">logout</a>
+							<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
+							<a href="components/admin_logout.php" onclick="return confirm('Se déconnecter du site ?')" class="btn">Se déconnecter</a>
 						</div>
 					</div>
 					<?php 
@@ -79,7 +79,7 @@
 	 					}else{
 	 						echo '
 								<div class="empty">
-									<p>no post found!</p>
+									<p>Aucun post trouvé !</p>
 								</div>
 							';
 	 					}
