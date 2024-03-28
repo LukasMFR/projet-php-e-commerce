@@ -100,7 +100,7 @@
 						<select name="update_payment">
 							<option disabled selected><?php echo $fetch_orders['payment_status']; ?></option>
 							<option value="en attente">en attente</option>
-							<option value="completee">completeee</option>
+							<option value="completee">completee</option>
 						</select>
 						<div class="flex-btn">
 							<input type="submit" name="update_order" value="Mettre à jour le paiement" class="btn">
