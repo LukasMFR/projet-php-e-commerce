@@ -24,24 +24,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-	<title>Green Coffee - order page</title>
+	<title>Page des commandes - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>my order</h1>
+			<h1>Mes commandes</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ order</span>
+			<a href="home.php">Accueil </a><span>/ Mes commandes</span>
 		</div>
 		<section class="orders">
 				<div class="title">
 					<img src="img/download.png" class="logo">
-					<h1>my orders</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+					<h1>Mes commandes</h1>
+					<p>Voir mes commandes</p>
 				</div>
 				<div class="box-container">
 					<?php 
@@ -62,7 +60,7 @@
 							<img src="image/<?= $fetch_product['image']; ?>" class="image" >
 							<div class="row">
 								<h3 class="name"><?= $fetch_product['name']; ?></h3>
-								<p class="price">Price : $<?= $fetch_order['price']; ?> x <?= $fetch_order['qty']; ?></p>
+								<p class="price">Prix : <?= $fetch_order['price']; ?> € x <?= $fetch_order['qty']; ?></p>
 								<p class="status" style="color:<?php if($fetch_order['status']=='delivered'){echo 'green';}elseif($fetch_order['status']=='canceled'){echo 'red';}else{echo 'orange';} ?>"><?= $fetch_order['status']; ?></p>
 							</div>
 						</a>
@@ -73,7 +71,7 @@
 								}
 							}
 						}else{
-							echo '<p class="empty">no order takes placed yet!</p>';
+							echo '<p class="empty">Aucune commande passée pour le moment !</p>';
 						}
 					?>
 				</div>
