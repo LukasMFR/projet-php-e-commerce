@@ -70,7 +70,7 @@
 				<h1>Total des commandes passées</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">Accueil </a><span>/ Total des commandes</span>
+				<a href="dashboard.php">Accueil </a><span>/ Total des commandes</span>
 			</div>
 		<section class="order-container">
 			<h1 class="heading">Total des commandes passées</h1>

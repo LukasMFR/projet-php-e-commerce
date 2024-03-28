@@ -27,7 +27,7 @@
 			<h1>Tableau de bord</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">Accueil </a><span>/ Tableau de bord</span>
+			<a href="dashboard.php">Accueil </a><span>/ Tableau de bord</span>
 		</div>
 		<section class="dashboard">
 			<h1 class="heading">Tableau de bord</h1>

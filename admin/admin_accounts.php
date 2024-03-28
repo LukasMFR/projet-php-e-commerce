@@ -48,7 +48,7 @@
 				<h1>Comptes administrateurs</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">Accueil </a><span>/ Comptes administrateurs</span>
+				<a href="dashboard.php">Accueil </a><span>/ Comptes administrateurs</span>
 			</div>
 			<section class="accounts">
 				<h1 class="heading">Comptes administrateurs</h1>

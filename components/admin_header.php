@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="flex">
-		<a href="home.php" class="logo"><img src="../img/logo.jpg"></a>
+		<a href="dashboard.php" class="logo"><img src="../img/logo.jpg"></a>
 		<nav class="navbar">
 			<a href="dashboard.php">Tableau de bord</a>
 			<a href="add_posts.php">Ajouter un produit</a>

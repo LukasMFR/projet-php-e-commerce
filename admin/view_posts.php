@@ -42,7 +42,7 @@
 			<h1>all products</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ all products</span>
+			<a href="dashboard.php">home </a><span>/ all products</span>
 		</div>
 		<section class="post-editor">
 			<?php 

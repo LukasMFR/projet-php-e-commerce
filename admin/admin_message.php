@@ -45,7 +45,7 @@
 				<h1>Messages des utilisateurs</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">Accueil </a><span>/ Messages</span>
+				<a href="dashboard.php">Accueil </a><span>/ Messages</span>
 			</div>
 		<section class="message-container">
 		<div class="heading"><h1>Messages des utilisateurs</h1></div>

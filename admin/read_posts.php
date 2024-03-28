@@ -47,7 +47,7 @@
 			<h1>dashboard</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ dashboard</span>
+			<a href="dashboard.php">home </a><span>/ dashboard</span>
 		</div>
 		<section class="read-container">
 			<?php 

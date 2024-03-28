@@ -48,7 +48,7 @@
 				<h1>registered users</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">home </a><span>/ registered users</span>
+				<a href="dashboard.php">home </a><span>/ registered users</span>
 			</div>
 			<section class="accounts">
 				<h1 class="heading">users account</h1>

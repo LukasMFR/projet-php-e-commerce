@@ -113,7 +113,7 @@
 			<h1>Ajouter des produits</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">Tableau de bord </a><span>/ Ajouter des produits </span>
+			<a href="dashboard.php">Tableau de bord </a><span>/ Ajouter des produits </span>
 		</div>
 			
 			<h1 class="heading">Ajouter un produit</h1>

@@ -109,7 +109,7 @@
 				<h1>Mettre à jour le profil</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">Accueil </a><span>/ Mettre à jour le profil</span>
+				<a href="dashboard.php">Accueil </a><span>/ Mettre à jour le profil</span>
 			</div>
 		<section>
 			<?php 
