@@ -71,88 +71,86 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - checkout page</title>
+	<title>Page de paiement - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>checkout summary</h1>
+			<h1>Résumé de la commande</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ checkout summary</span>
+			<a href="home.php">Accueil </a><span>/ Résumé de la commande</span>
 		</div>
 		<section class="checkout">
 			<div class="title">
 				<img src="img/download.png" class="logo">
-				<h1>checkout summary</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+				<h1>Résumé de la commande</h1>
+				<p>Découvrez la simplicité et la sécurité de finaliser votre commande avec nous. Remplissez simplement vos informations ci-dessous.</p>
             </div>
                 <div class="row">
                 	<form method="post">
-                		<h3>billing details</h3>
+                		<h3>Détails de facturation</h3>
                 		<div class="flex">
                 			<div class="box">
                 				<div class="input-field">
-                					<p>your name <span>*</span></p>
-                					<input type="text" name="name" required maxlength="50" placeholder="Enter Your name" class="input">
+                					<p>Votre nom <span>*</span></p>
+                					<input type="text" name="name" required maxlength="50" placeholder="Saisir votre nom" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>your number <span>*</span></p>
-                					<input type="number" name="number" required maxlength="10" placeholder="Enter Your number" class="input">
+                					<p>Votre numéro <span>*</span></p>
+                					<input type="number" name="number" required maxlength="10" placeholder="Saisir votre numéro" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>your email <span>*</span></p>
-                					<input type="email" name="email" required maxlength="50" placeholder="Enter Your email" class="input">
+                					<p>Votre email <span>*</span></p>
+                					<input type="email" name="email" required maxlength="50" placeholder="Saisir votre email" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>payment method <span>*</span></p>
+                					<p>Méthode de paiement <span>*</span></p>
                 					<select name="method" class="input">
-                						<option value="cash on delivery">cash on delivery</option>
-                						<option value="credit or debit card">credit or debit card</option>
-                						<option value="net banking">net banking</option>
-                						<option value="UPI or RuPay">UPI or RuPay</option>
-                						<option value="paytm">paytm</option>
+                						<option value="cash on delivery">Paiement à la livraison</option>
+                						<option value="credit or debit card">Carte de crédit ou de débit</option>
+                						<option value="net banking">Banque en ligne</option>
+                						<option value="UPI or RuPay">UPI ou RuPay</option>
+                						<option value="paytm">Paytm</option>
                 					</select>
                 				</div>
                 				<div class="input-field">
-                					<p>address type <span>*</span></p>
+                					<p>Type d'adresse <span>*</span></p>
                 					<select name="address_type" class="input">
-                						<option value="home">home</option>
-                						<option value="office">office</option>
+                						<option value="home">Domicile</option>
+                						<option value="office">Bureau</option>
             
                 					</select>
                 				</div>
                 			</div>
                 			<div class="box">
                 				<div class="input-field">
-                					<p>address line 01 <span>*</span></p>
-                					<input type="text" name="flat" required maxlength="50" placeholder="e.g flat & building number" class="input">
+                					<p>Adresse ligne 01 <span>*</span></p>
+                					<input type="text" name="flat" required maxlength="50" placeholder="Ex. : numéro d'appartement et d'immeuble" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>address line 02 <span>*</span></p>
-                					<input type="text" name="street" required maxlength="50" placeholder="e.g street name" class="input">
+                					<p>Adresse ligne 02 <span>*</span></p>
+                					<input type="text" name="street" required maxlength="50" placeholder="Ex. : nom de la rue" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>city name <span>*</span></p>
-                					<input type="text" name="city" required maxlength="50" placeholder="Enter your city name" class="input">
+                					<p>Ville <span>*</span></p>
+                					<input type="text" name="city" required maxlength="50" placeholder="Saisir la ville" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>country name <span>*</span></p>
-                					<input type="text" name="country" required maxlength="50" placeholder="Enter your city name" class="input">
+                					<p>Pays <span>*</span></p>
+                					<input type="text" name="country" required maxlength="50" placeholder="Saisir le pays" class="input">
                 				</div>
                 				<div class="input-field">
-                					<p>pincode <span>*</span></p>
-                					<input type="text" name="pincode" required maxlength="6" placeholder="110022" min="0" max="999999" class="input">
+                					<p>Code postal <span>*</span></p>
+                					<input type="text" name="pincode" required maxlength="6" placeholder="75000" min="0" max="999999" class="input">
                 				</div>
                 			</div>
                 		</div>
-                		<button type="submit" name="place_order" class="btn">place order</button>
+                		<button type="submit" name="place_order" class="btn">Passer la commande</button>
                 	</form>
                 	<div class="summary">
-                		<h3>my bag</h3>
+                		<h3>Mon panier</h3>
                 		<div class="box-container">
                 			<?php 
                 				$grand_total=0;
@@ -168,7 +166,7 @@
                 				<img src="image/<?=$fetch_get['image']; ?>" class="image">
                 				<div>
                 					<h3 class="name"><?=$fetch_get['name']; ?></h3>
-                					<p class="price"><?=$fetch_get['price']; ?>/-</p>
+                					<p class="price"><?=$fetch_get['price']; ?> €</p>
                 				</div>
                 			</div>
                 			<?php 
@@ -195,12 +193,12 @@
                 			<?php 
                 						}
                 					}else{
-                						echo '<p class="empty">your cart is empty</p>';
+                						echo '<p class="empty">Votre panier est vide</p>';
                 					}
                 				}
                 			?>
                 		</div>
-                		<div class="grand-total"><span>total amount payable: </span>$<?= $grand_total ?>/-</div>
+                		<div class="grand-total"><span>Montant total à payer : </span><?= $grand_total ?> €</div>
                 	</div>
 			</div>
 		</section>
