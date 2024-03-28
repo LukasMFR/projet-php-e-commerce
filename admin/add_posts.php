@@ -32,9 +32,9 @@
 
 	   	if (isset($image)) {
 	   		if ($select_image->rowCount() > 0) {
-	   			$message[] = 'image name repeated!';
+	   			$message[] = 'Nom de l\'image déjà utilisé !';
 	   		}elseif($image_size > 2000000){
-	   			$message[] = 'image size too large!';
+	   			$message[] = 'Taille de l\'image trop grande !';
 	   		}else{
 	   			move_uploaded_file($image_tmp_name, $image_folder);
 	   		}
@@ -42,11 +42,11 @@
 	   		$image = '';
 	   	}
 	   	if ($select_image->rowCount() > 0 AND $image != '') {
-	   		$message[] = 'please rename your image';
+	   		$message[] = 'Veuillez renommer votre image';
 	   	}else{
 	   		$insert_post = $conn->prepare("INSERT INTO `products`(id, name, price, image, product_detail, status) VALUES (?,?,?,?,?,?)");
 	   		$insert_post->execute([$id, $title, $price, $image, $content, $status]);
-	   		$message[] = 'post publish';
+	   		$message[] = 'Produit publié';
 	   	}
 	 }
 
@@ -75,9 +75,9 @@
 
 	   	if (isset($image)) {
 	   		if ($select_image->rowCount() > 0) {
-	   			$message[] = 'image name repeated!';
+	   			$message[] = 'Nom de l\'image déjà utilisé !';
 	   		}elseif($image_size > 2000000){
-	   			$message[] = 'image size too large!';
+	   			$message[] = 'Taille de l\'image trop grande !';
 	   		}else{
 	   			move_uploaded_file($image_tmp_name, $image_folder);
 	   		}
@@ -85,11 +85,11 @@
 	   		$image = '';
 	   	}
 	   	if ($select_image->rowCount() > 0 AND $image != '') {
-	   		$message[] = 'please rename your image';
+	   		$message[] = 'Veuillez renommer votre image';
 	   	}else{
 	   		$insert_post = $conn->prepare("INSERT INTO `products`(id, name, price, image, product_detail, status) VALUES (?,?,?,?,?,?)");
 	   		$insert_post->execute([$id, $title, $price, $image, $content, $status]);
-	   		$message[] = 'post publish';
+	   		$message[] = 'Produit publié';
 	   	}
 	 }
 ?>
@@ -103,42 +103,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Ajouter un produit - AutoCar</title>
 </head>
 <body>
 	
 	<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>add products</h1>
+			<h1>Ajouter des produits</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">dashboard </a><span>/ add products </span>
+			<a href="home.php">Tableau de bord </a><span>/ Ajouter des produits </span>
 		</div>
 			
-			<h1 class="heading">add product</h1>
+			<h1 class="heading">Ajouter un produit</h1>
 			<div class="form-container">
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="input-field">
-						<label>product name <sup>*</sup></label>
-						<input type="text" name="title" maxlength="100" required placeholder="add post title">
+						<label>Nom du produit <sup>*</sup></label>
+						<input type="text" name="title" maxlength="100" required placeholder="Ajoutez le nom du produit">
 					</div>
 					<div class="input-field">
-						<label>product price <sup>*</sup></label>
-						<input type="number" name="price" maxlength="100" required placeholder="add post title">
+						<label>Prix du produit <sup>*</sup></label>
+						<input type="number" name="price" maxlength="100" required placeholder="Ajoutez le prix du produit">
 					</div>
 					<div class="input-field">
-						<label>product detail<sup>*</sup></label>
-						<textarea name="content" required maxlength="10000" placeholder="write your content.."></textarea>
+						<label>Détail du produit<sup>*</sup></label>
+						<textarea name="content" required maxlength="10000" placeholder="Ajoutez le détail du produit"></textarea>
 					</div>
 					
 					<div class="input-field">
-						<label>product image <sup>*</sup></label>
+						<label>Image du produit <sup>*</sup></label>
 						<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp" required>
 					</div>
 					<div class="flex-btn">
-						<input type="submit" name="publish" value="publish post" class="btn">
-						<input type="submit" name="draft" value="save draft" class="option-btn">
+						<input type="submit" name="publish" value="Publier le produit" class="btn">
+						<input type="submit" name="draft" value="Enregistrer en brouillon" class="option-btn">
 					</div>
 				</form>
 			</div>
