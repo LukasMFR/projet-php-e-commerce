@@ -178,16 +178,16 @@
 				<div class="box">
 					<img src="img/6.jpg">
 					<div class="detail">
-						<span>BIG OFFERS</span>
-						<h1>Extra 15% off</h1>
+						<span>GROSSES PROMOTIONS</span>
+						<h1>Sur une large sélection de puffs</h1>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/7.jpg">
 					<div class="detail">
-						<span>new in taste</span>
-						<h1>coffee house</h1>
+						<span>Nouveaux goûts</span>
+						<h1>Testez notre puff goût essence !</h1>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 				</div>
