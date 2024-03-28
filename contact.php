@@ -21,7 +21,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - home page</title>
+	<title>Contact - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
@@ -37,29 +37,29 @@
 				<div class="box">
 					<img src="img/icon2.png">
 					<div class="detail">
-						<h3>great savings</h3>
-						<p>save big every order</p>
+						<h3>Grandes économies</h3>
+						<p>Économisez gros sur chaque commande</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon1.png">
 					<div class="detail">
-						<h3>24*7 support</h3>
-						<p>one-on-one support</p>
+						<h3>Support 24/7</h3>
+						<p>Assistance personnelle</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon0.png">
 					<div class="detail">
-						<h3>gift vouchers</h3>
-						<p>vouchers on every festivals</p>
+						<h3>Offres spéciales sur les véhicules</h3>
+						<p>Promotions à l'occasion des fêtes</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon.png">
 					<div class="detail">
-						<h3>worldwide delivery</h3>
-						<p>dropship worldwide</p>
+						<h3>Livraison internationale</h3>
+						<p>Expédition partout dans le monde</p>
 					</div>
 				</div>
 			</div>
@@ -68,54 +68,54 @@
 			 <form method="post">
 			 	<div class="title">
 			 		<img src="img/download.png" class="logo">
-			 		<h1>leave a message</h1>
+			 		<h1>Laissez un message</h1>
 			 	</div>
 			 	<div class="input-field">
-			 		<p>your name <sup>*</sup></p>
+			 		<p>Votre nom <sup>*</sup></p>
 			 		<input type="text" name="name">
 			 	</div>
 			 	<div class="input-field">
-			 		<p>your email <sup>*</sup></p>
+			 		<p>Votre email <sup>*</sup></p>
 			 		<input type="email" name="email">
 			 	</div>
 			 	<div class="input-field">
-			 		<p>your number <sup>*</sup></p>
+			 		<p>Votre numéro <sup>*</sup></p>
 			 		<input type="text" name="number">
 			 	</div>
 			 	<div class="input-field">
-			 		<p>your message <sup>*</sup></p>
+			 		<p>Votre message <sup>*</sup></p>
 			 		<textarea name="message"></textarea>
 			 	</div>
-			 	<button type="submit" name="submit-btn" class="btn">send message</button>
+			 	<button type="submit" name="submit-btn" class="btn">Envoyer le message</button>
 			 </form>
 			 
 		</div>
 		<div class="address">
 			 	<div class="title">
 			 		<img src="img/download.png" class="logo">
-			 		<h1>contact detail</h1>
-			 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,consectetur adipisicing elit </p>
+			 		<h1>Détails de contact</h1>
+			 		<p>Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter par mail, téléphone ou via le formulaire.</p>
 			 	</div>
 			 	<div class="box-container">
 			 		<div class="box">
 			 			<i class="bx bxs-map-pin"></i>
 			 			<div>
-			 				<h4>address</h4>
-			 				<p>1092 Merigold Lane, Coral Way</p>
+			 				<h4>Adresse</h4>
+			 				<p>10 Rue de Rivoli, 75001 Paris</p>
 			 			</div>
 			 		</div>
 			 		<div class="box">
 			 			<i class="bx bxs-phone-call"></i>
 			 			<div>
-			 				<h4>phone number</h4>
-			 				<p>8866889955</p>
+			 				<h4>Numéro de téléphone</h4>
+			 				<p>+33 6 12 34 56 78</p>
 			 			</div>
 			 		</div>
 			 		<div class="box">
 			 			<i class="bx bxs-map-pin"></i>
 			 			<div>
-			 				<h4>email</h4>
-			 				<p>selenaAnsari@gmail.com</p>
+			 				<h4>Email</h4>
+			 				<p>contact@autocar.com</p>
 			 			</div>
 			 		</div>
 			 	</div>
