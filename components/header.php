@@ -2,11 +2,11 @@
 	<div class="flex">
 		<a href="home.php" class="logo"><img src="img/logo.jpg"></a>
 		<nav class="navbar">
-			<a href="home.php">home</a>
-			<a href="view_products.php">products</a>
-			<a href="order.php">orders</a>
-			<a href="about.php">about us</a>
-			<a href="contact.php">contact us</a>
+			<a href="home.php">accueil</a>
+			<a href="view_products.php">produits</a>
+			<a href="order.php">commandes</a>
+			<a href="about.php">à propos</a>
+			<a href="contact.php">nous contacter</a>
 		</nav>
 		<div class="icons">
 			<i class="bx bxs-user" id="user-btn"></i>
