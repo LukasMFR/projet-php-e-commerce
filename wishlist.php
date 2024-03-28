@@ -27,9 +27,9 @@
 		$max_cart_items->execute([$user_id]);
 
 		if ($varify_cart->rowCount() > 0) {
-			$warning_msg[] = 'product already exist in your cart';
+			$warning_msg[] = 'Le produit est déjà dans votre panier';
 		}else if ($max_cart_items->rowCount() > 20) {
-			$warning_msg[] = 'cart is full';
+			$warning_msg[] = 'Le panier est plein';
 		}else{
 			$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 			$select_price->execute([$product_id]);
@@ -37,7 +37,7 @@
 
 			$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
 			$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-			$success_msg[] = 'product added to cart successfully';
+			$success_msg[] = 'Produit ajouté avec succès au panier';
 		}
 	}
 
@@ -52,9 +52,9 @@
 		if ($varify_delete_items->rowCount()>0) {
 			$delete_wishlist_id = $conn->prepare("DELETE FROM `wishlist` WHERE id = ?");
 			$delete_wishlist_id->execute([$wishlist_id]);
-			$success_msg[] = "wishlist item delete successfully";
+			$success_msg[] = "Article supprimé de la liste de souhaits avec succès";
 		}else{
-			$warning_msg[] = 'wishlist item already deleted';
+			$warning_msg[] = 'Article de la liste de souhaits déjà supprimé';
 		}
 	}
 
@@ -68,19 +68,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - wishlist page</title>
+	<title>Liste de souhaits - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>my wishlist</h1>
+			<h1>Ma liste de souhaits</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ wishlist</span>
+			<a href="home.php">Accueil </a><span>/ Ma liste de souhaits</span>
 		</div>
 		<section class="products">
-			<h1 class="title">products added in wishlist</h1>
+			<h1 class="title">Produits dans ma liste de souhaits</h1>
 			<div class="box-container">
 				<?php 
 					$grand_total = 0;
@@ -100,21 +100,21 @@
 					<div class="button">
 						<button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
 						<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bx bxs-show"></a>
-						<button type="submit" name="delete_item" onclick="return confirm('delete this item');"><i class="bx bx-x"></i></button>
+						<button type="submit" name="delete_item" onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i class="bx bx-x"></i></button>
 					</div>
 					<h3 class="name"><?=$fetch_products['name']; ?></h3>
 					<input type="hidden" name="product_id" value="<?=$fetch_products['id']; ?>">
 					<div class="flex">
-						<p class="price">price $<?=$fetch_products['price']; ?>/-</p>
+						<p class="price">Prix : <?=$fetch_products['price']; ?> €</p>
 					</div>
-					<a href="checkout.php?get_id=<?=$fetch_products['id']; ?>" class="btn">buy now</a>
+					<a href="checkout.php?get_id=<?=$fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 				</form>
 				<?php 
 							$grand_total+=$fetch_wishlist['price'];
 							}
 						}
 					}else{
-						echo '<p class="empty">no products added yet!</p>';
+						echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
 					}
 				?>
 			</div>
