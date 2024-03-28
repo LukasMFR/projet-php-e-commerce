@@ -841,7 +841,8 @@ footer .bottom-footer{
 	font-size: 1.3rem;
 	font-weight: bold;
 	margin-right: .5rem;
-	color: #000;
+	/* color: #000; */
+	color: #fff;
 }
 .products .box-container .box .flex{
 	padding-bottom: 1rem;
