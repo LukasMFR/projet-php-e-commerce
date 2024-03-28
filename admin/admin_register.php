@@ -19,15 +19,15 @@
    $select_admin->execute([$name]);
    
    if($select_admin->rowCount() > 0){
-      $message[] = 'username already exists!';
+      $message[] = 'Le nom d\'utilisateur existe déjà !';
    }else{
       if($pass != $cpass){
-         $warning_msg[] = 'confirm passowrd not matched!';
+         $warning_msg[] = 'Le mot de passe de confirmation ne correspond pas !';
       }else{
          $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password,profile) VALUES(?,?,?)");
          $insert_admin->execute([$name, $cpass,$image]);
          move_uploaded_file($image_tmp_name, $image_folder);
-         $success_msg[] = 'new admin registered!';
+         $success_msg[] = 'Nouvel administrateur enregistré !';
       }
    }
 
@@ -44,7 +44,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>Admin Login page</title>
+	<title>Page d'enregistrement admin - AutoCar</title>
 </head>
 <body style="padding-left: 0 !important;">
 
@@ -55,25 +55,25 @@
 			
 			<div class="form-container" id="admin_login">
 				<form action="" method="post" enctype="multipart/form-data">
-					<h3>register now</h3>
+					<h3>S'enregistrer</h3>
 					<div class="input-field">
-						<label>User name <sup>*</sup></label>
-						<input type="text" name="name" maxlength="20" required placeholder="Enter your username" oninput="this.value.replace(/\s/g,'')">
+						<label>Nom d'utilisateur <sup>*</sup></label>
+						<input type="text" name="name" maxlength="20" required placeholder="Saisir votre nom d'utilisateur" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>password <sup>*</sup></label>
-						<input type="password" name="password" maxlength="20" required placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+						<label>Mot de passe <sup>*</sup></label>
+						<input type="password" name="password" maxlength="20" required placeholder="Saisir votre mot de passe" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>confirm password <sup>*</sup></label>
-						<input type="password" name="cpassword" maxlength="20" required placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+						<label>Confirmer le mot de passe <sup>*</sup></label>
+						<input type="password" name="cpassword" maxlength="20" required placeholder="Confirmer votre mot de passe" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>upload profile <sup>*</sup></label>
+						<label>Télécharger la photo de profil <sup>*</sup></label>
 						<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
 					</div>
-					<input type="submit" name="submit" value="register now" class="btn">
-					<p>already have an account ? <a href="admin_login.php">login now</a></p>
+					<input type="submit" name="submit" value="S'inscrire" class="btn">
+					<p>Vous avez déjà un compte ? <a href="admin_login.php">Connectez-vous maintenant</a></p>
 				</form>
 			</div>
 		</section>
