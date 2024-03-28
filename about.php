@@ -27,41 +27,41 @@
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>about us</h1>
+			<h1>À propos de nous</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ about</span>
+			<a href="home.php">accueil </a><span>/ à propos</span>
 		</div>
 		<div class="about-category">
 			<div class="box">
 				<img src="img/3.webp">
 				<div class="detail">
-					<span>coffee</span>
-					<h1>lemon green</h1>
+					<span>Voiture 1</span>
+					<h1>Rapide</h1>
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
 				<img src="img/2.webp">
 				<div class="detail">
-					<span>coffee</span>
-					<h1>lemon Teaname</h1>
+					<span>Voiture 2</span>
+					<h1>Luxueuse</h1>
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
 				<img src="img/about.png">
 				<div class="detail">
-					<span>coffee</span>
-					<h1>lemon Teaname</h1>
+					<span>Voiture 3</span>
+					<h1>Économique</h1>
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="box">
 				<img src="img/1.webp">
 				<div class="detail">
-					<span>coffee</span>
-					<h1>lemon green</h1>
+					<span>Voiture 4</span>
+					<h1>Fiable</h1>
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
@@ -69,38 +69,36 @@
 		<section class="services">
 			<div class="title">
 				<img src="img/download.png" class="logo">
-				<h1>why choose us</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+				<h1>Pourquoi nous choisir</h1>
+				<p>Qualité supérieure, prix compétitifs, service client exceptionnel.</p>
 			</div>
 			<div class="box-container">
 				<div class="box">
 					<img src="img/icon2.png">
 					<div class="detail">
-						<h3>great savings</h3>
-						<p>save big every order</p>
+						<h3>Grandes économies</h3>
+						<p>Économisez gros sur chaque commande</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon1.png">
 					<div class="detail">
-						<h3>24*7 support</h3>
-						<p>one-on-one support</p>
+						<h3>Support 24/7</h3>
+						<p>Assistance personnelle</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon0.png">
 					<div class="detail">
-						<h3>gift vouchers</h3>
-						<p>vouchers on every festivals</p>
+						<h3>Offres spéciales sur les véhicules</h3>
+						<p>Promotions à l'occasion des fêtes</p>
 					</div>
 				</div>
 				<div class="box">
 					<img src="img/icon.png">
 					<div class="detail">
-						<h3>worldwide delivery</h3>
-						<p>dropship worldwide</p>
+						<h3>Livraison internationale</h3>
+						<p>Expédition partout dans le monde</p>
 					</div>
 				</div>
 			</div>
@@ -111,12 +109,12 @@
 					<img src="img/3.png">
 				</div>
 				<div class="detail">
-					<h1>visit our beautiful showroom!</h1>
-					<p>Our showroom is an expression of what we love doing; being creative with floral and plant
-                        arrangements.
-                        Whether you are looking for a florist for your perfect wedding, or just want to uplift any room
-                        with
-                        some one of a kind living decor, Blossom With Love can help.</p>
+					<h1>Visitez notre magnifique showroom !</h1>
+					<p>Notre showroom est la vitrine de notre passion pour l'automobile ; 
+						une créativité déployée dans la présentation de nos voitures. 
+						Que vous recherchiez le véhicule parfait pour un événement spécial, 
+						ou que vous souhaitiez simplement élever votre expérience de conduite avec un véhicule d'exception, 
+						nous sommes là pour vous accompagner.</p>
                     <a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
@@ -124,43 +122,29 @@
 		<div class="testimonial-container">
 			<div class="title">
 				<img src="img/download.png" class="logo">
-				<h1>what people say about us</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+				<h1>Ce que nos clients disent de nous</h1>
+				<p>Leur satisfaction, notre réussite.</p>
             </div>
                 <div class="container">
                 	<div class="testimonial-item active">
                 		<img src="img/01.jpg">
-                		<h1>sara smith</h1>
-                		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                		<h1>Emma Leroux</h1>
+                		<p>Achat d'une Peugeot 308 - une expérience sans faute du début à la fin. Conseils experts et service clientèle au top.</p>
                 	</div>
                 	<div class="testimonial-item">
                 		<img src="img/02.jpg">
-                		<h1>john smith</h1>
-                		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                		<h1>Thomas Girard</h1>
+                		<p>J'ai acheté une Renault Clio récemment, et je suis plus que satisfaite. La voiture est parfaite et le processus d'achat a été fluide et agréable.</p>
                 	</div>
                 	<div class="testimonial-item">
                 		<img src="img/03.jpg">
-                		<h1>selena ansari</h1>
-                		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                		<h1>Chloé Petit</h1>
+                		<p>J'ai opté pour un pack voiture + puffs pour ma nouvelle Citroën C3. Non seulement la voiture est incroyable, mais les puffs ajoutent une touche unique à mon intérieur.</p>
                 	</div>
                 	<div class="testimonial-item">
                 		<img src="img/04.png">
-                		<h1>alweena ansari</h1>
-                		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                		<h1>Marie Dubois</h1>
+                		<p>Incroyable expérience chez vous ! La Tesla Model 3 est un rêve devenu réalité, et les puffs personnalisés la rendent encore plus spéciale. Merci pour tout !</p>
                 	</div>
                 	<div class="left-arrow" onclick="nextSlide()"><i class="bx bxs-left-arrow-alt"></i></div>
                 	<div class="right-arrow" onclick="prevSlide()"><i class="bx bxs-right-arrow-alt"></i></div>
