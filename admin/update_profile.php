@@ -19,7 +19,7 @@
 	   	$select_name->execute([$name]);
 
 	   	if ($select_name->rowCount() > 0) {
-	   		$message[] = 'username already taken!';
+	   		$message[] = 'Nom d\'utilisateur déjà pris !';
 	   	}else{
 	   		$update_name = $conn->prepare("UPDATE `admin` SET name = ? WHERE id=?");
 	   		$update_name->execute([$name, $admin_id]);
@@ -35,7 +35,7 @@
 	   	$select_email->execute([$email]);
 
 	   	if ($select_email->rowCount() > 0) {
-	   		$message[] = 'email already taken!';
+	   		$message[] = 'Email déjà pris !';
 	   	}else{
 	   		$update_email = $conn->prepare("UPDATE `admin` SET email = ? WHERE id=?");
 	   		$update_email->execute([$email, $admin_id]);
@@ -55,7 +55,7 @@
 	   if ($old_image != $image AND $old_image != '') {
 	   	unlink('../image/'.$old_image);
 	   }
-	   $message[] = 'profile updated!';
+	   $message[] = 'Profil mis à jour !';
 
 	   //condition to update password
 	   $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
@@ -73,16 +73,16 @@
 
 	   if ($old_pass != $empty_pass) {
 	   	if ($old_pass != $prev_pass) {
-	   		$message[] = 'old password not matched';
+	   		$message[] = 'L\'ancien mot de passe ne correspond pas';
 	   	}elseif ($new_pass != $confirm_pass) {
-	   		$message[] = 'confirm password not matched';
+	   		$message[] = 'Le mot de passe de confirmation ne correspond pas';
 	   	}else{
 	   		if ($new_pass != $empty_pass) {
 	   			$update_pass = $conn->prepare("UPDATE `admin` SET password = ? WHERE id = ?");
 	   			$update_pass->execute([$confirm_pass, $admin_id]);
-	   			$message[] = 'password updated successfully';
+	   			$message[] = 'Mot de passe mis à jour avec succès';
 	   		}else{
-	   			$message[] = 'please enter a new password';
+	   			$message[] = 'Veuillez entrer un nouveau mot de passe';
 	   		}
 	   	}
 	   }
@@ -99,17 +99,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>Admin Login page</title>
+	<title>Mettre à jour le profil - AutoCar</title>
 </head>
 <body style="padding-left: 0 !important;">
 	
 		<?php include '../components/admin_header.php'; ?>
 		<div class="main">
 			<div class="banner">
-				<h1>update profile</h1>
+				<h1>Mettre à jour le profil</h1>
 			</div>
 			<div class="title2">
-				<a href="home.php">home </a><span>/ update profile</span>
+				<a href="home.php">Accueil </a><span>/ Mettre à jour le profil</span>
 			</div>
 		<section>
 			<?php 
@@ -129,33 +129,33 @@
 					<div class="profile">
 						<img src="../image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
 					</div>
-					<h3>update profile</h3>
+					<h3>Mettre à jour le profil</h3>
 					<input type="hidden" name="old_image" value="<?= $fetch_profile['profile']; ?>">
 					<div class="input-field">
-						<label>User name <sup>*</sup></label>
-						<input type="text" name="name" maxlength="20" placeholder="Enter your username" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['name']; ?>">
+						<label>Nom d'utilisateur <sup>*</sup></label>
+						<input type="text" name="name" maxlength="20" placeholder="Saisissez votre nom d'utilisateur" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['name']; ?>">
 					</div>
 					<div class="input-field">
-						<label>User email <sup>*</sup></label>
-						<input type="email" name="email" maxlength="20" placeholder="Enter your username" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['email']; ?>">
+						<label>Email de l'utilisateur <sup>*</sup></label>
+						<input type="email" name="email" maxlength="20" placeholder="Saisissez votre email" oninput="this.value.replace(/\s/g,'')" value="<?= $fetch_profile['email']; ?>">
 					</div>
 					<div class="input-field">
-						<label>old password <sup>*</sup></label>
-						<input type="password" name="old_pass" maxlength="20" placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+						<label>Ancien mot de passe <sup>*</sup></label>
+						<input type="password" name="old_pass" maxlength="20" placeholder="Saisissez votre mot de passe actuel" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>new password <sup>*</sup></label>
-						<input type="password" name="new_pass" maxlength="20" placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+						<label>Nouveau mot de passe <sup>*</sup></label>
+						<input type="password" name="new_pass" maxlength="20" placeholder="Saisissez votre nouveau mot de passe" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>confirm password <sup>*</sup></label>
-						<input type="password" name="confirm_pass" maxlength="20" placeholder="Enter your password" oninput="this.value.replace(/\s/g,'')">
+						<label>Confirmer le mot de passe <sup>*</sup></label>
+						<input type="password" name="confirm_pass" maxlength="20" placeholder="Confirmez votre nouveau mot de passe" oninput="this.value.replace(/\s/g,'')">
 					</div>
 					<div class="input-field">
-						<label>upload profile <sup>*</sup></label>
+						<label>Télécharger la photo de profil <sup>*</sup></label>
 						<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
 					</div>
-					<input type="submit" name="submit" value="update profile" class="btn">
+					<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 				</form>
 			</div>
 		</section>
