@@ -22,7 +22,7 @@
 		$update_qty = $conn->prepare("UPDATE `cart` SET qty = ? WHERE id = ?");
 		$update_qty->execute([$qty, $cart_id]);
 
-		$success_msg[] = 'cart quantity updated successfully';
+		$success_msg[] = 'Quantité dans le panier mise à jour avec succès';
 	}
 	
 
@@ -37,9 +37,9 @@
 		if ($varify_delete_items->rowCount()>0) {
 			$delete_cart_id = $conn->prepare("DELETE FROM `cart` WHERE id = ?");
 			$delete_cart_id->execute([$cart_id]);
-			$success_msg[] = "cart item delete successfully";
+			$success_msg[] = "Article supprimé du panier";
 		}else{
-			$warning_msg[] = 'cart item already deleted';
+			$warning_msg[] = 'Article déjà supprimé';
 		}
 	}
 
@@ -51,9 +51,9 @@
 		if ($varify_empty_item->rowCount() > 0) {
 			$delete_cart_id = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
 			$delete_cart_id->execute([$user_id]);
-			$success_msg[] = "empty successfully";
+			$success_msg[] = "Panier vidé avec succès";
 		}else{
-			$warning_msg[] = 'cart item already deleted';
+			$warning_msg[] = 'Article déjà supprimé';
 		}
 		
 	}
@@ -67,19 +67,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<title>Green Coffee - wishlist page</title>
+	<title>Mon panier - AutoCar</A></title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>my cart</h1>
+			<h1>Mon panier</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ cart</span>
+			<a href="home.php">Accueil </a><span>/ Panier</span>
 		</div>
 		<section class="products">
-			<h1 class="title">products added in cart</h1>
+			<h1 class="title">Produits ajoutés au panier</h1>
 			<div class="box-container">
 				<?php 
 					$grand_total = 0;
@@ -98,22 +98,22 @@
 					<img src="image/<?=$fetch_products['image']; ?>" class="img">
 					<h3 class="name"><?=$fetch_products['name']; ?></h3>
 					<div class="flex">
-						<p class="price">price $<?=$fetch_products['price']; ?>/-</p>
+						<p class="price">Prix : <?=$fetch_products['price']; ?> €</p>
 						<input type="number" name="qty" required min="1" value="<?=$fetch_cart['qty']; ?>" max="99" maxlength="2" class="qty">
 						<button type="submit" name="update_cart" class="bx bxs-edit fa-edit"></button>
 					</div>
-					<p class="sub-total">sub total : <span>$<?=$sub_total = ($fetch_cart['qty']* $fetch_cart['price']) ?></span></p>
+					<p class="sub-total">Sous-total : <span><?=$sub_total = ($fetch_cart['qty']* $fetch_cart['price']) ?> €</span></p>
 					
-					<button type="submit" name="delete_item" class="btn" onclick="return confirm('delete this item')">delete</button>
+					<button type="submit" name="delete_item" class="btn" onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
 				</form>
 				<?php 
 							$grand_total+=$sub_total;
 							}else{
-								echo '<p class="empty">product was not found</p>';
+								echo '<p class="empty">Produit non trouvé</p>';
 							}
 						}
 					}else{
-						echo '<p class="empty">no products added yet!</p>';
+						echo '<p class="empty">Aucun produit ajouté !</p>';
 					}
 				?>
 			</div>
@@ -122,12 +122,12 @@
 				
 			?>
 			<div class="cart-total">
-				<p>total amount payable : <span>$ <?= $grand_total; ?>/-</span></p>
+				<p>Total à payer : <span><?= $grand_total; ?> €</span></p>
 				<div class="button">
 					<form method="post">
-						<button type="submit" name="empty_cart" class="btn" onclick="return confirm('are you sure to empty your cart')">empty cart</button>
+						<button type="submit" name="empty_cart" class="btn" onclick="return confirm('Voulez-vous vider le panier ?')">Vider le panier</button>
 					</form>
-					<a href="checkout.php" class="btn">proceed to checkout</a>
+					<a href="checkout.php" class="btn">Procéder au paiement</a>
 				</div>
 			</div>
 			<?php } ?>
