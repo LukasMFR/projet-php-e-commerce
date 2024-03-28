@@ -34,24 +34,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-	<title>Green Coffee - order detail page</title>
+	<title>Détail de la commande - AutoCar</title>
 </head>
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>order detail</h1>
+			<h1>Détail de la commande</h1>
 		</div>
 		<div class="title2">
-			<a href="home.php">home </a><span>/ order detail</span>
+			<a href="home.php">Accueil </a><span>/ Détail de la commande</span>
 		</div>
 		<section class="order-detail">
 				<div class="title">
 					<img src="img/download.png" class="logo">
-					<h1>order detail</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dolorum deserunt minus veniam
-                    tenetur
-                </p>
+					<h1>Détail de la commande</h1>
+					<p>Retrouvez ici tous les détails de votre commande, y compris les informations sur le produit, le montant total et le statut de livraison.</p>
 				</div>
 				<div class="box-container">
 					<?php 
@@ -74,21 +72,21 @@
 							<img src="image/<?= $fetch_product['image']; ?>" class="image">
 							<p class="price"><?= $fetch_product['price']; ?> x <?= $fetch_order['qty']; ?></p>
 							<h3 class="name"><?= $fetch_product['name']; ?></h3>
-							<p class="grand-total">Total amount payable : <span>$<?= $grand_total; ?></span></p>
+							<p class="grand-total">Montant total payé :&nbsp;<span><?= $grand_total; ?> €</span></p>
 						</div>
 						<div class="col">
-							<p class="title">billing address</p>
+							<p class="title">Adresse de facturation</p>
 							<p class="user"><i class="bi bi-person-bounding-box"></i><?= $fetch_order['name']; ?></p>
 							<p class="user"><i class="bi bi-phone"></i><?= $fetch_order['number']; ?></p>
 							<p class="user"><i class="bi bi-envelope"></i><?= $fetch_order['email']; ?></p>
 							<p class="user"><i class="bi bi-pin-map-fill"></i><?= $fetch_order['address']; ?></p>
 							<p class="title">status</p>
-							<p class="status" style="color:<?php if ($fetch_order['status']=='delevered'){echo 'green';}elseif($fetch_order['status']=='annulee') {echo 'red';}else{echo 'orange';}?>"><?=$fetch_order['status'] ?></p>
+							<p class="Statut" style="color:<?php if ($fetch_order['status']=='delevered'){echo 'green';}elseif($fetch_order['status']=='annulee') {echo 'red';}else{echo 'orange';}?>"><?=$fetch_order['status'] ?></p>
 							<?php if ($fetch_order['status']=='annulee') { ?>
-								<a href="checkout.php?get_id=<?= $fetch_product['id']; ?>" class="btn">order again</a>
+								<a href="checkout.php?get_id=<?= $fetch_product['id']; ?>" class="btn">Commander à nouveau</a>
 							<?php }else{ ?>
 								<form method="post">
-									<button type="submit" name="cancle" class="btn" onclick="return confirm('do you want to cancel this order')">cancle order</button>
+									<button type="submit" name="cancle" class="btn" onclick="return confirm('Voulez-vous annuler cette commande ?')">Annuler la commande</button>
 								</form>
 							<?php } ?>
 						</div>
@@ -96,12 +94,12 @@
 					<?php 
 								}
 							}else{
-								echo '<p class="empty">product not found</p>';
+								echo '<p class="empty">Produit non trouvé</p>';
 							}
 						}
 
 					}else{
-						echo '<p class="empty">no order found</p>';
+						echo '<p class="empty">Aucune commande trouvée</p>';
 					}
 					?>
 				</div>

@@ -1348,7 +1348,8 @@ footer .bottom-footer {
 	margin-bottom: 1rem;
 	padding: .5rem 2rem;
 	font-size: 1rem;
-	color: var(--green);
+	/* color: var(--green); */
+	color: #fff;
 	background: var(--light-green);
 	border: 2px solid var(--green);
 	display: inline-block;
@@ -1357,7 +1358,7 @@ footer .bottom-footer {
 
 .order-detail .box-container .box .col .title i {
 	margin-right: 1rem;
-	color: #000;
+	color: #fff;
 }
 
 .order-detail .box-container .box .col .price {
@@ -1393,7 +1394,8 @@ footer .bottom-footer {
 	flex-wrap: wrap;
 	background: var(--light-green);
 	font-size: 1.5rem;
-	color: var(--green);
+	/* color: var(--green); */
+	color: #fff;
 	border: 1px solid var(--green);
 	border-radius: .5rem;
 	/* text-transform: capitalize; */
