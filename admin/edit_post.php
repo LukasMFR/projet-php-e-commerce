@@ -23,7 +23,7 @@
 	 	$update_post = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?,status = ? WHERE id = ?");
 	 	$update_post->execute([$title, $price, $content, $status, $post_id]);
 
-	 	$success_msg[] = 'post updated';
+	 	$success_msg[] = 'Produit mis à jour';
 
 	 	$old_image = $_POST['old_image'];
 	 	$image = $_FILES['image']['name'];
@@ -36,9 +36,9 @@
 
 	 	if (!empty($image)) {
 	 		if ($image_size > 2000000) {
-	 			$warning_msg[] = 'image size is too large';
+	 			$warning_msg[] = 'La taille de l\'image est trop grande';
 	 		}elseif($select_image->rowCount() > 0 AND $image != ''){
-	 			$warning_msg[] = 'please rename your image';
+	 			$warning_msg[] = 'Veuillez renommer votre image';
 	 		}else{
 	 			$update_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id = ?");
 	 			$update_image->execute([$image, $post_id]);
@@ -46,7 +46,7 @@
 	 			if ($old_image != $image AND $old_image != '') {
 	 				unlink('../image/'.$old_image);
 	 			}
-	 			$success_msg[] = 'image updated!';
+	 			$success_msg[] = 'Image mise à jour !';
 	 		}
 	 	}
 	 }
@@ -66,7 +66,7 @@
 	   $delete_post->execute([$post_id]);
 	   $delete_comments = $conn->prepare("DELETE FROM `comments` WHERE post_id = ?");
 	   $delete_comments->execute([$post_id]);
-	   $success_msg[] = 'post deleted successfully!';
+	   $success_msg[] = 'Produit supprimé avec succès !';
 
 	}
 	 
@@ -84,7 +84,7 @@
 	 	}
 	 	$unset_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id=?");
 	 	$unset_image->execute([$empty_image, $post_id]);
-	 	$success_msg[] = 'image deleted successfully';
+	 	$success_msg[] = 'Image supprimée avec succès';
 	 }
 ?>
 <style>
@@ -97,22 +97,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>admin dashboard</title>
+	<title>Modifier le produit - AutoCar</title>
 </head>
 <body>
 	
 	<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>edit post</h1>
+			<h1>Modifier le produit</h1>
 		</div>
 		<div class="title2">
-			<a href="dashboard.php">home </a><span>/ edit post</span>
+			<a href="dashboard.php">Accueil </a><span>/ Modifier le produit</span>
 		</div>
 		<section class="post-editor">
 			
 			
-			<h1 class="heading">edit post</h1>
+			<h1 class="heading">Modifier le produit</h1>
 			<?php 
 				$post_id = $_GET['id'];
 				$select_posts = $conn->prepare("SELECT * FROM `products` WHERE id =?");
@@ -127,44 +127,44 @@
 					<input type="hidden" name="old_image" value="<?= $fetch_posts['image']; ?>">
 					<input type="hidden" name="post_id" value="<?= $fetch_posts['id']; ?>">
 					<div class="input-field">
-						<label>post status <sup>*</sup></label>
+						<label>Statut du produit <sup>*</sup></label>
 						<select name="status" required>
 							<option value="<?= $fetch_posts['status']; ?>" selected><?= $fetch_posts['status']; ?></option>
-							<option value="active">active</option>
-							<option value="deactive">deactive</option>
+							<option value="actif">Actif</option>
+							<option value="inactif">Inactif</option>
 						</select>
 					</div>
 					<div class="input-field">
-						<label>product  name<sup>*</sup></label>
+						<label>Nom du produit<sup>*</sup></label>
 						<input type="text" name="title" maxlength="100" required placeholder="add post title" value="<?= $fetch_posts['name']; ?>">
 					</div>
 					<div class="input-field">
-						<label>product price <sup>*</sup></label>
+						<label>Prix du produit <sup>*</sup></label>
 						<input type="number" name="price" value="<?= $fetch_posts['price']; ?>">
 						
 					</div>
 					<div class="input-field">
-						<label>product detail <sup>*</sup></label>
+						<label>Détail du produit <sup>*</sup></label>
 						<textarea name="content" required maxlength="10000" placeholder="write your content.."><?= $fetch_posts['product_detail']; ?></textarea>
 					</div>
 					
 					
 					<div class="input-field">
-						<label>post image <sup>*</sup></label>
+						<label>Image du produit <sup>*</sup></label>
 						<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp" >
 						<?php if($fetch_posts['image'] != ''){ ?>
 							<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
 							<div class="flex-btn">
-								<input type="submit" name="delete_image" class="option-btn" value="delete image">
-								<a href="view_posts.php" class="btn" style="width:49%; text-align: center; height: 3rem; margin-top: .7rem;">go back</a>
+								<input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image">
+								<a href="view_posts.php" class="btn" style="width:49%; text-align: center; height: 3rem; margin-top: .7rem;">Retour</a>
 							</div>
 							
 						<?php } ?>
 					</div>
 					
 					<div class="flex-btn">
-					    <input type="submit" value="save post" name="save" class="btn" >
-					    <input type="submit" value="delete post" class="option-btn" name="delete_post">
+					    <input type="submit" value="Enregistrer le produit" name="save" class="btn" >
+					    <input type="submit" value="Supprimer le produit" class="option-btn" name="delete_post">
 					</div>
 					
 				</form>
@@ -176,14 +176,14 @@
 
 					echo '
 							<div class="empty">
-								<p>no post found!</p>
+								<p>Aucun produit trouvé !</p>
 							</div>
 					';
 				
 			?>
 			<div class="flex-btn">
-				<a href="view_posts.php" class="option-btn">view post</a>
-				<a href="add_posts.php" class="btn">add post</a>
+				<a href="view_posts.php" class="option-btn">Voir le produit</a>
+				<a href="add_posts.php" class="btn">Ajouter un produit</a>
 			</div>
 			<?php } ?>
 		</section>
