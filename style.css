@@ -911,7 +911,11 @@ footer .inner-footer .card li a {
 	line-height: 1.5rem;
 	/* text-transform: capitalize; */
 	font-size: 16px;
-	color: pink;
+	color: #fff;
+}
+
+footer .inner-footer .card li a:hover {
+	text-decoration: underline;
 }
 
 footer .inner-footer .card li:nth-child(1),

@@ -15,7 +15,7 @@
 			<div class="card">
 				<h3>À propos de nous</h3>
 				<ul>
-					<li>À propos de nous</li>
+					<li><a href="about.php">À propos de nous</a></li>
 					<li>Notre différence</li>
 					<li>La communauté compte</li>
 					<li>Presse</li>
@@ -27,20 +27,20 @@
 				<h3>Services</h3>
 				<ul>
 					<li><a href="order.php">Commandes</a></li>
-					<li>Centre d'aide</li>
-					<li>Livraison</li>
-					<li>Conditions d'utilisation</li>
-					<li>Détails du compte</li>
-					<li>Mon compte</li>
+					<li><a href="wishlist.php">Liste de souhaits</a></li>
+					<li><a href="cart.php">Panier</a></li>
+					<li><a href="contact.php">Nous contacter</a></li>
+					<li><a href="view_products.php">Produits</a></li>
+					<li>FAQ</li>
 				</ul>
 			</div>
 			<div class="card">
 				<h3>Local</h3>
 				<ul>
-					<li>Allahabad</li>
-					<li>Mumbai</li>
-					<li>New Delhi</li>
-					<li>Old Delhi</li>
+					<li>Paris</li>
+					<li>Lyon</li>
+					<li>Marseille</li>
+					<li>San Francisco</li>
 					<li>New York</li>
 					<li>Los Angeles</li>
 				</ul>
