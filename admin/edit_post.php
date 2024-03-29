@@ -156,7 +156,7 @@
 							<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
 							<div class="flex-btn">
 								<input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image">
-								<a href="view_posts.php" class="btn" style="width:49%; text-align: center; height: 3rem; margin-top: .7rem;">Retour</a>
+								<a href="view_posts.php" class="btn" style="width:49%; text-align: center; font-size: 1.2rem; margin: .5rem;">Retour</a>
 							</div>
 							
 						<?php } ?>

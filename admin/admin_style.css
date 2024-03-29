@@ -318,6 +318,7 @@ form span {
 	cursor: pointer;
 	margin: .5rem;
 	color: var(--green);
+	font-size: 1.2rem;
 }
 
 .post-editor textarea {
