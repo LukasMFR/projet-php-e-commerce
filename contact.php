@@ -32,7 +32,7 @@
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Nous contacter</span>
 		</div>
-		<section class="services">
+		<!-- <section class="services">
 			<div class="box-container">
 				<div class="box">
 					<img src="img/icon2.png">
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<div class="form-container">
 			 <form method="post">
 			 	<div class="title">
