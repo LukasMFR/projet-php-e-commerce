@@ -221,9 +221,11 @@ header.scrolled {
 
 .navbar a {
 	margin: 0 1rem;
-	font-size: 1rem;
+	font-size: 1.375rem;
 	color: #000;
 	text-transform: uppercase;
+	/* Make text bolder */
+	font-weight: 600;
 }
 
 .navbar a:hover {
