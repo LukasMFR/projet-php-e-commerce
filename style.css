@@ -900,10 +900,18 @@ footer .inner-footer .card {
 }
 
 footer .inner-footer .card li {
-	cursor: pointer;
+	/* cursor: pointer; */
 	line-height: 1.5rem;
 	/* text-transform: capitalize; */
 	font-size: 16px;
+}
+
+footer .inner-footer .card li a {
+	/* cursor: pointer; */
+	line-height: 1.5rem;
+	/* text-transform: capitalize; */
+	font-size: 16px;
+	color: pink;
 }
 
 footer .inner-footer .card li:nth-child(1),

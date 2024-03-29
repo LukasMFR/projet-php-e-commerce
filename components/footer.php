@@ -26,7 +26,7 @@
 			<div class="card">
 				<h3>Services</h3>
 				<ul>
-					<li>Commande</li>
+					<li><a href="order.php">Commandes</a></li>
 					<li>Centre d'aide</li>
 					<li>Livraison</li>
 					<li>Conditions d'utilisation</li>
