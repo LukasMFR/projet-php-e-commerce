@@ -908,6 +908,7 @@ footer {
 	background-image: url('img/0.webp');
 	width: 100%;
 	min-height: 380px;
+	/* min-height: calc(100vh - 18rem); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
