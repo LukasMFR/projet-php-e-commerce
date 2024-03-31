@@ -122,6 +122,7 @@
 		<section class="container">
 			<div class="box-container">
 				<div class="box">
+					<!--chnager limage -->
 					<img src="img/about-us.jpg">
 				</div>
 				<div class="box">
