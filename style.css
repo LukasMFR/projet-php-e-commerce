@@ -195,14 +195,14 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
-	background-color: rgba(255, 255, 255, 0.3);
 	/* Slightly transparent background */
-	-webkit-backdrop-filter: blur(10px) brightness(1.1);
+	background-color: rgba(255, 255, 255, 0.3);
 	/* For WebKit browsers */
-	backdrop-filter: blur(10px) brightness(1.1);
+	-webkit-backdrop-filter: blur(10px) brightness(1.1);
 	/* Standard syntax */
-	border-radius: 15px;
+	backdrop-filter: blur(10px) brightness(1.1);
 	/* Rounded corners */
+	border-radius: 15px;
 }
 
 header.scrolled {
@@ -222,6 +222,7 @@ header.scrolled {
 }
 
 .flex {
+	/* navbar height */
 	height: 70px;
 	display: flex;
 	justify-content: space-between;
@@ -304,6 +305,7 @@ header.scrolled {
 }
 
 /*----------brand-----------------*/
+/* This code is for the brand div that includes the logo and the brand name */
 .brand {
 	display: flex;
 	align-items: center;
