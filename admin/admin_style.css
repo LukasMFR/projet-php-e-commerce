@@ -435,6 +435,32 @@ header.scrolled {
 	transition: .2s linear;
 }
 
+/*----------brand-----------------*/
+/* This code is for the brand div that includes the logo and the brand name */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+	 /* Apply transitions for both states */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.brand .logo img {
+	width: 64px;
+	height: auto;
+}
+
+.brand h1 {
+	margin: 0;
+}
+
+.brand:hover {
+    color: var(--green);
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
 /*---------profile detail-------------*/
 #user-btn {
 	font-size: 2rem;
