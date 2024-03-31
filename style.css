@@ -56,6 +56,11 @@ a {
 	width: 80px;
 }
 
+.logo img {
+    width: 64px;
+    height: 64px;
+}
+
 ul {
 	list-style: none;
 }
