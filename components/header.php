@@ -1,9 +1,9 @@
 <header class="header">
 	<div class="flex">
-		<div class="brand">
-			<a href="home.php" class="logo"><img src="img/favicon-128.png"></a>
-			<h1> AutoCar</h1>
-		</div>
+		<a href="home.php" class="brand">
+			<div class="logo"><img src="img/favicon-128.png" alt="AutoCar Logo"></div>
+			<h1>AutoCar</h1>
+		</a>
 		<nav class="navbar">
 			<a href="home.php">AutoCar</a>
 			<a href="home.php">Accueil</a>
