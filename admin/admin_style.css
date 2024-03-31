@@ -455,7 +455,7 @@ header.scrolled {
 
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
-.brand {
+.brand-navbar {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -465,16 +465,16 @@ header.scrolled {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.brand .logo img {
+.brand-navbar .logo img {
 	width: 64px;
 	height: auto;
 }
 
-.brand h1 {
+.brand-navbar h1 {
 	margin: 0;
 }
 
-.brand:hover {
+.brand-navbar:hover {
     color: var(--green);
     transform: translateY(-2px); /* Lift effect on hover */
 }

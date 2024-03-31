@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="flex">
-		<a href="dashboard.php" class="brand">
+		<a href="dashboard.php" class="brand-navbar">
 			<div class="logo"><img src="../img/favicon-128.png" alt="AutoCar Logo"></div>
 			<h1>AutoCar</h1>
 		</a>
