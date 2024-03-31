@@ -1,22 +1,23 @@
-<?php 
- include 'components/connection.php';
- session_start();
- if (isset($_SESSION['user_id'])) {
-		$user_id = $_SESSION['user_id'];
-	}else{
-		$user_id = '';
-	}
+<?php
+include 'components/connection.php';
+session_start();
+if (isset($_SESSION['user_id'])) {
+	$user_id = $_SESSION['user_id'];
+} else {
+	$user_id = '';
+}
 
-	if (isset($_POST['logout'])) {
-		session_destroy();
-		header("location: login.php");
-	}
+if (isset($_POST['logout'])) {
+	session_destroy();
+	header("location: login.php");
+}
 ?>
 <style type="text/css">
 	<?php include 'style.css'; ?>
 </style>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,17 +26,19 @@
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<title>Page d'accueil - AutoCar</title>
 </head>
+
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-		
+
 		<section class="home-section">
 			<div class="slider">
 				<div class="slider__slider slide1">
 					<div class="overlay"></div>
 					<div class="slide-detail">
 						<h1>Découvrez la nouvelle ère de la conduite</h1>
-						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance, durabilité et design futuriste réunis.</p>
+						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance,
+							durabilité et design futuriste réunis.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -46,7 +49,8 @@
 					<div class="overlay"></div>
 					<div class="slide-detail">
 						<h1>Élégance et puissance</h1>
-						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort, de style et de puissance.</p>
+						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort,
+							de style et de puissance.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -57,7 +61,8 @@
 					<div class="overlay"></div>
 					<div class="slide-detail">
 						<h1>Aventure sans limites</h1>
-						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec confiance et confort.</p>
+						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec
+							confiance et confort.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -68,7 +73,8 @@
 					<div class="overlay"></div>
 					<div class="slide-detail">
 						<h1>Sportivité et performance</h1>
-						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de conduite exaltante.</p>
+						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de
+							conduite exaltante.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -79,7 +85,8 @@
 					<div class="overlay"></div>
 					<div class="slide-detail">
 						<h1>Éco-responsabilité au volant</h1>
-						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques. Économie de carburant, réduction des émissions et conduite silencieuse.</p>
+						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques. Économie de
+							carburant, réduction des émissions et conduite silencieuse.</p>
 						<a href="view_products.php" class="btn">Achetez maintenant</a>
 					</div>
 					<div class="hero-dec-top"></div>
@@ -87,7 +94,7 @@
 				</div>
 				<!-- slide end -->
 				<div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
-                <div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>
+				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>
 			</div>
 		</section>
 		<!-- home slider end -->
@@ -96,25 +103,29 @@
 				<div class="box">
 					<img src="img/thumb2.jpg">
 					<h3>Lamborghini</h3>
-					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez l'expérience ultime de conduite sportive.</p>
+					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
+						l'expérience ultime de conduite sportive.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb0.jpg">
 					<h3>Porsche</h3>
-					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la sélection pour trouver votre prochaine voiture de sport.</p>
+					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
+						sélection pour trouver votre prochaine voiture de sport.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb1.jpg">
 					<h3>Ferrari</h3>
-					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures. Choisissez la Ferrari qui fait battre votre cœur.</p>
+					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
+						Choisissez la Ferrari qui fait battre votre cœur.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
 					<img src="img/thumb.jpg">
 					<h3>Alpine</h3>
-					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre gamme pour une expérience de conduite exceptionnelle.</p>
+					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
+						gamme pour une expérience de conduite exceptionnelle.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 			</div>
@@ -122,14 +133,15 @@
 		<section class="container">
 			<div class="box-container">
 				<div class="box">
-					<!--chnager limage-->
+					<!-- Changer l'image -->
 					<img src="img/about-us.jpg">
 				</div>
 				<div class="box">
 					<img src="img/download.png">
 					<span>AutoCar</span>
 					<h1>Économisez jusqu'à 50 %</h1>
-					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la voiture de vos rêves à moindre coût.</p>
+					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la
+						voiture de vos rêves à moindre coût.</p>
 				</div>
 			</div>
 		</section>
@@ -154,7 +166,7 @@
 			</div>
 			<div class="title">
 				<img src="img/download.png">
-				<h1>Nouvelle arivage</h1>
+				<h1>Nouvel arrivage</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
@@ -169,12 +181,12 @@
 					<img src="img/card1.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
-			
+
 		</section>
 		<section class="shop-category">
-		<div class="title">
+			<div class="title">
 				<img src="img/download.png">
-				<h1>Game de Puff</h1>
+				<h1>Gamme de puffs</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
@@ -252,4 +264,5 @@
 	<script src="script.js"></script>
 	<?php include 'components/alert.php'; ?>
 </body>
+
 </html>
