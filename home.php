@@ -122,7 +122,7 @@
 		<section class="container">
 			<div class="box-container">
 				<div class="box">
-					<!--chnager limage -->
+					<!--chnager limage-->
 					<img src="img/about-us.jpg">
 				</div>
 				<div class="box">
@@ -138,14 +138,23 @@
 				<img src="img/download.png">
 				<h1>Produits tendance</h1>
 			</div>
-			<div class="row">
-				<img src="img/about.jpg">
-				<div class="row-detail">
-					<img src="img/basil.jpg">
-					<div class="top-footer">
-						<h1>Un tour en voiture de sport vivifie l'esprit !</h1>
-					</div>
+			<div class="box-container">
+				<div class="box">
+					<img src="img/card.jpg">
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
+				<div class="box">
+					<img src="img/card0.jpg">
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
+				</div>
+				<div class="box">
+					<img src="img/card1.jpg">
+					<a href="view_products.php" class="btn">Achetez maintenant</a>
+				</div>
+			</div>
+			<div class="title">
+				<img src="img/download.png">
+				<h1>Nouvelle arivage</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
@@ -160,21 +169,13 @@
 					<img src="img/card1.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
-				<div class="box">
-					<img src="img/card2.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
-				</div>
-				<div class="box">
-					<img src="img/10.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
-				</div>
-				<div class="box">
-					<img src="img/6.webp">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
-				</div>
-			</div>
+			
 		</section>
 		<section class="shop-category">
+		<div class="title">
+				<img src="img/download.png">
+				<h1>Game de Puff</h1>
+			</div>
 			<div class="box-container">
 				<div class="box">
 					<img src="img/6.jpg">
