@@ -83,7 +83,7 @@
 	<!--box icon link-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	
-	<title>Ajouter des produits - AutoCar</title>
+	<title>Ajouter un produit - AutoCar</title>
 </head>
 <body>
 	<?php include 'admin_header.php'; ?>

@@ -110,10 +110,10 @@
 	<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>Ajouter des produits</h1>
+			<h1>Ajouter un produit</h1>
 		</div>
 		<div class="title2">
-			<a href="dashboard.php">Tableau de bord </a><span>/ Ajouter des produits </span>
+			<a href="dashboard.php">Tableau de bord </a><span>/ Ajouter un produit </span>
 		</div>
 			
 			<h1 class="heading">Ajouter un produit</h1>
