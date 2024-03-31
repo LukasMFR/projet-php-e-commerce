@@ -344,14 +344,14 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
-	background-color: rgba(255, 255, 255, 0.3);
 	/* Slightly transparent background */
-	-webkit-backdrop-filter: blur(10px) brightness(1.1);
+	background-color: rgba(255, 255, 255, 0.3);
 	/* For WebKit browsers */
-	backdrop-filter: blur(10px) brightness(1.1);
+	-webkit-backdrop-filter: blur(10px) brightness(1.1);
 	/* Standard syntax */
-	border-radius: 15px;
+	backdrop-filter: blur(10px) brightness(1.1);
 	/* Rounded corners */
+	border-radius: 15px;
 }
 
 header.scrolled {
@@ -360,17 +360,33 @@ header.scrolled {
 	backdrop-filter: blur(20px);
 }
 
-.header.scrolled a:hover {
+/* .header.scrolled a:hover {
 	color: var(--green);
+} */
+
+.header .flex {
+	justify-content: space-between;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 .flex {
-	width: 100%;
+	/* navbar height */
+	height: 70px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: relative;
+	padding: 0;
+	width: 100%;
 	margin: 0 auto;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+	margin-left: 2rem;
+	margin-right: 10rem;
 }
 
 .navbar a {
@@ -378,6 +394,7 @@ header.scrolled {
 	font-size: 1.375rem;
 	color: #000;
 	text-transform: uppercase;
+	/* Make text bolder */
 	font-weight: 600;
 }
 
@@ -387,6 +404,7 @@ header.scrolled {
 
 .header .icons {
 	display: flex;
+	justify-content: flex-end;
 }
 
 .header .icons i {
