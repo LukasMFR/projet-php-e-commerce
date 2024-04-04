@@ -139,7 +139,7 @@ if (isset($_POST['logout'])) {
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/ferariesp51.jpg">
+					<img src="img/maserati.jpg">
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
@@ -147,7 +147,7 @@ if (isset($_POST['logout'])) {
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
-					<img src="img/astonmartine.jpg">
+					<img src="img/lambo.jpg">
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
@@ -157,15 +157,15 @@ if (isset($_POST['logout'])) {
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/card.jpg">
+					<img src="img/mercedes.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
-					<img src="img/card0.jpg">
+					<img src="img/astonmartine.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
-					<img src="img/card1.jpg">
+					<img src="img/MC3.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 
