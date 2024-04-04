@@ -575,6 +575,8 @@ header.scrolled {
 
 .shop .box-container img {
 	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
 }
 
 .shop .btn {
