@@ -139,16 +139,16 @@ if (isset($_POST['logout'])) {
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/card.jpg">
+					<img src="img/ferariesp51.jpg">
+					<a href="http://localhost/projet-php-e-commerce/view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
+				</div>
+				<div class="box">
+					<img src="img/bugatienoir.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
-					<img src="img/card0.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
-				</div>
-				<div class="box">
-					<img src="img/card1.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/astonmartine.jpg">
+					<a href="http://localhost/projet-php-e-commerce/view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="title">
