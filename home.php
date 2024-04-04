@@ -140,7 +140,7 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="img/ferariesp51.jpg">
-					<a href="http://localhost/projet-php-e-commerce/view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
 				</div>
 				<div class="box">
 					<img src="img/bugatienoir.jpg">
@@ -148,7 +148,7 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="box">
 					<img src="img/astonmartine.jpg">
-					<a href="http://localhost/projet-php-e-commerce/view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
 				</div>
 			</div>
 			<div class="title">
