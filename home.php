@@ -98,35 +98,22 @@ if (isset($_POST['logout'])) {
 			</div>
 		</section>
 		<!-- home slider end -->
-		<section class="thumb">
+		<section class="brand">
 			<div class="box-container">
 				<div class="box">
-					<img src="img/thumb2.jpg">
-					<h3>Lamborghini</h3>
-					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
-						l'expérience ultime de conduite sportive.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (1).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb0.jpg">
-					<h3>Porsche</h3>
-					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
-						sélection pour trouver votre prochaine voiture de sport.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (2).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb1.jpg">
-					<h3>Ferrari</h3>
-					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
-						Choisissez la Ferrari qui fait battre votre cœur.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (3).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb.jpg">
-					<h3>Alpine</h3>
-					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
-						gamme pour une expérience de conduite exceptionnelle.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (4).jpg">
+				</div>
+				<div class="box">
+					<img src="img/brand (5).jpg">
 				</div>
 			</div>
 		</section>
@@ -207,7 +194,13 @@ if (isset($_POST['logout'])) {
 				</div>
 			</div>
 		</section>
+		
 		<section class="services">
+			<div class="title">
+				<img src="img/download.png" class="logo">
+				<h1>Pourquoi nous choisir</h1>
+				<p>Qualité supérieure, prix compétitifs, service client exceptionnel.</p>
+			</div>
 			<div class="box-container">
 				<div class="box">
 					<img src="img/icon2.png">
@@ -236,25 +229,6 @@ if (isset($_POST['logout'])) {
 						<h3>Livraison internationale</h3>
 						<p>Expédition partout dans le monde</p>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section class="brand">
-			<div class="box-container">
-				<div class="box">
-					<img src="img/brand (1).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (2).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (3).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (4).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (5).jpg">
 				</div>
 			</div>
 		</section>
