@@ -308,13 +308,13 @@ header.scrolled {
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-	 /* Apply transitions for both states */
-    transition: transform 0.3s ease, color 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: inherit;
+	/* Apply transitions for both states */
+	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .brand-navbar .logo img {
@@ -327,8 +327,9 @@ header.scrolled {
 }
 
 .brand-navbar:hover {
-    color: var(--green);
-    transform: translateY(-2px); /* Lift effect on hover */
+	color: var(--green);
+	transform: translateY(-2px);
+	/* Lift effect on hover */
 }
 
 /*----------home slider section-----------------*/
@@ -345,11 +346,13 @@ header.scrolled {
 	overflow-x: hidden;
 	overflow-y: hidden;
 	scroll-snap-type: x mandatory;
+	/*Modif ici*/
+	flex-direction: row-reverse;
 }
 
 .slider__slider {
-	height: 65vh;
-	min-width: 100vw;
+	height: 55vh;
+	/*min-width: 85vw;*/
 	width: 100%;
 	scroll-snap-align: start;
 	background-position: center center;
@@ -360,7 +363,6 @@ header.scrolled {
 .slider__slider .slide-detail {
 	position: absolute;
 	top: 30%;
-	left: 20%;
 	text-align: center;
 }
 
@@ -381,7 +383,7 @@ header.scrolled {
 	left: 20%;
 }
 
-.slider__slider .slide-detail h1::after {
+/*.slider__slider .slide-detail h1::after {
 	content: '';
 	position: absolute;
 	width: 10px;
@@ -390,7 +392,7 @@ header.scrolled {
 	bottom: -50%;
 	left: 50%;
 	background: #f7b90f;
-}
+}*/
 
 .slider__slider .slide-detail p {
 	font-size: 14px;
@@ -398,6 +400,12 @@ header.scrolled {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+
+
+
+
+
+
 
 .slide1 {
 	background-image: url('img/slider.jpg');
@@ -408,7 +416,7 @@ header.scrolled {
 }
 
 .slide3 {
-	background-image: url('img/9.jpg');
+	background-image: url('img/suv.jpeg');
 }
 
 .slide4 {
@@ -416,7 +424,7 @@ header.scrolled {
 }
 
 .slide5 {
-	background-image: url('img/4.jpg');
+	background-image: url('img/electric.jpg');
 }
 
 .left-arrow,
@@ -582,8 +590,26 @@ header.scrolled {
 .shop .btn {
 	position: absolute;
 	left: 30%;
-	bottom: -3%;
+	bottom: 12%;
 }
+
+.box {
+	margin: 0;
+	padding: 15;
+	box-sizing: border-box;
+	border-radius: 5%;
+}
+
+
+.box img {
+	border-radius: 10%;
+}
+
+
+
+
+
+
 
 .shop-category .box {
 	position: relative;

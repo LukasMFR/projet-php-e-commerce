@@ -36,10 +36,10 @@ if (isset($_POST['logout'])) {
 				<div class="slider__slider slide1">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Découvrez la nouvelle ère de la conduite</h1>
+						<h1>Une nouvelle ère de conduite</h1>
 						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance,
 							durabilité et design futuriste réunis.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -51,7 +51,7 @@ if (isset($_POST['logout'])) {
 						<h1>Élégance et puissance</h1>
 						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort,
 							de style et de puissance.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -63,7 +63,7 @@ if (isset($_POST['logout'])) {
 						<h1>Aventure sans limites</h1>
 						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec
 							confiance et confort.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -75,7 +75,7 @@ if (isset($_POST['logout'])) {
 						<h1>Sportivité et performance</h1>
 						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de
 							conduite exaltante.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -84,17 +84,17 @@ if (isset($_POST['logout'])) {
 				<div class="slider__slider slide5">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Éco-responsabilité au volant</h1>
-						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques. Économie de
-							carburant, réduction des émissions et conduite silencieuse.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<h1>Éco-responsabilité</h1>
+						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques avec
+							une conduite silencieuse.</p>
+						
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
 				</div>
-				<!-- slide end -->
-				<div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
-				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>
+				
+				<!-- <div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
+				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>-->
 			</div>
 		</section>
 		<!-- home slider end -->
@@ -119,9 +119,9 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="container">
 			<div class="box-container">
+				
 				<div class="box">
-					<!-- Changer l'image -->
-					<img src="img/about-us.jpg">
+					<img src="img/imagepres.jpg">
 				</div>
 				<div class="box">
 					<img src="img/download.png">
@@ -141,32 +141,39 @@ if (isset($_POST['logout'])) {
 				<div class="box">
 					<img src="img/maserati.jpg">
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
+					<h1>Maserati MC20 Cielo</h1>
 				</div>
 				<div class="box">
 					<img src="img/bugatienoir.jpg">
 					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
 					<img src="img/lambo.jpg">
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
+					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>
 			<div class="title">
 				<img src="img/download.png">
-				<h1>Nouvel arrivage</h1>
+				<h1>Bientôt disponible</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
 					<img src="img/mercedes.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
 					<img src="img/astonmartine.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
+
 					<img src="img/MC3.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>McLaren 720s GT3 X</h1>
 				</div>
 
 		</section>
