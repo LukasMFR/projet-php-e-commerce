@@ -91,7 +91,7 @@
 
 							echo '
 								<div class="empty">
-									<p>Aucun article ajouté pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">add post</a></p>
+									<p>Aucun article ajouté pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un article</a></p>
 								</div>
 							';
 						}
