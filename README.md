@@ -30,7 +30,7 @@ To run this project, you'll need to have XAMPP installed on your computer. This 
 
 2. Navigate to the project directory:
     ```bash
-    cd autocar
+    cd projet-php-e-commerce
     ```
 
 3. Start XAMPP and ensure both Apache and MySQL services are running.
@@ -47,7 +47,7 @@ To run this project, you'll need to have XAMPP installed on your computer. This 
 7. Adjust the project configuration files (if necessary) to connect to your database using the credentials set in phpMyAdmin.
 
 ## Usage
-After installation, you can use XAMPP to serve the website. Simply place the project in the htdocs directory of your XAMPP installation, and then access it via a web browser by navigating to `http://localhost/autocar`.
+After installation, you can use XAMPP to serve the website. Simply place the project in the htdocs directory of your XAMPP installation, and then access it via a web browser by navigating to `http://localhost/projet-php-e-commerce`.
 
 Provide further instructions on how to navigate and use the website's features, including any login credentials for demo accounts if available.
 
