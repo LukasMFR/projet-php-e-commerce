@@ -529,12 +529,26 @@ header.scrolled {
 	cursor: pointer;
 }
 
+.container .box-container {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.container .box img {
+	max-width: 100%;
+	height: auto;
+}
+
 .container .box {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem;
 }
 
 .container .box span {
@@ -549,6 +563,13 @@ header.scrolled {
 .container .box h1 {
 	font-size: 3rem;
 	margin-bottom: 1rem;
+}
+
+.container .box span,
+.container .box h1,
+.container .box p {
+	margin: 0.5rem 0;
+	padding: 0;
 }
 
 .shop {
