@@ -967,6 +967,8 @@ textarea {
 	width: 85%;
 	border-radius: 10px;
 	outline: none;
+	margin: 1rem auto;
+	display: block;
 }
 
 .address {
