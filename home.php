@@ -39,7 +39,7 @@ if (isset($_POST['logout'])) {
 						<h1>Une nouvelle ère de conduite</h1>
 						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance,
 							durabilité et design futuriste réunis.</p>
-						
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -51,7 +51,7 @@ if (isset($_POST['logout'])) {
 						<h1>Élégance et puissance</h1>
 						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort,
 							de style et de puissance.</p>
-						
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -63,7 +63,7 @@ if (isset($_POST['logout'])) {
 						<h1>Aventure sans limites</h1>
 						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec
 							confiance et confort.</p>
-						
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -75,7 +75,7 @@ if (isset($_POST['logout'])) {
 						<h1>Sportivité et performance</h1>
 						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de
 							conduite exaltante.</p>
-						
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -87,12 +87,12 @@ if (isset($_POST['logout'])) {
 						<h1>Éco-responsabilité</h1>
 						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques avec
 							une conduite silencieuse.</p>
-						
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
 				</div>
-				
+
 				<!-- <div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
 				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>-->
 			</div>
@@ -119,7 +119,7 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="container">
 			<div class="box-container">
-				
+
 				<div class="box">
 					<img src="img/imagepres.jpg">
 				</div>
@@ -145,7 +145,7 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="box">
 					<img src="img/bugatienoir.jpg">
-					<a href="http://localhost/projet-php-e-commerce/view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Achetez maintenant</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
@@ -201,7 +201,7 @@ if (isset($_POST['logout'])) {
 				</div>
 			</div>
 		</section>
-		
+
 		<section class="services">
 			<div class="title">
 				<img src="img/download.png" class="logo">
