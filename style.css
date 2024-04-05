@@ -576,30 +576,35 @@ header.scrolled {
 
 .shop .box-container .box {
 	margin: 1rem;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
+	box-shadow: var(--box-shadow);
+	position: relative;
+	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
 }
 
 .shop .box-container .box h1 {
 	padding-top: 1rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	display: block;
 }
 
 .shop .box-container img {
 	width: 100%;
-    height: auto;
+	height: auto;
 	aspect-ratio: 16 / 9;
-    object-fit: cover;
+	object-fit: cover;
 }
 
 .shop .btn {
 	position: absolute;
-    left: 50%;
-    bottom: 70px;
-    transform: translateX(-50%);
-    padding: 8px 16px;
+	left: 50%;
+	bottom: 70px;
+	transform: translateX(-50%);
+	padding: 8px 16px;
 }
 
 .box {
