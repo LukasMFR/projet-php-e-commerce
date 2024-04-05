@@ -6,9 +6,9 @@
 -- Server version: 10.4.25-MariaDB
 
 
-DROP DATABASE IF EXISTS autocar;
-CREATE DATABASE autocar ;
-USE autocar ;
+DROP DATABASE IF EXISTS roadluxury;
+CREATE DATABASE roadluxury ;
+USE roadluxury ;
 DROP TABLE IF EXISTS admin ;
 DROP TABLE IF EXISTS panier ;
 DROP TABLE IF EXISTS message ;
