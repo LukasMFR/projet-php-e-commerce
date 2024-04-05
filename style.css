@@ -259,8 +259,7 @@ header.scrolled {
 	display: flex;
 	justify-content: center;
 	flex-grow: 1;
-	margin-left: 2rem;
-	margin-right: 2rem;
+	flex: 2;
 }
 
 .navbar a {
@@ -279,6 +278,7 @@ header.scrolled {
 
 .header .icons {
 	display: flex;
+	flex: 0.5;
 	justify-content: flex-end;
 }
 
@@ -336,6 +336,8 @@ header.scrolled {
 	gap: 10px;
 	text-decoration: none;
 	color: inherit;
+	flex: 0.5;
+	justify-content: flex-start;
 	/* Apply transitions for both states */
 	transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1627,7 +1629,8 @@ footer .bottom-footer {
 }
 
 /*------------media screen----------*/
-@media (max-width: 991px) {
+/* @media (max-width: 991px) { */
+@media (max-width: 1150px) {
 	#menu-btn {
 		display: block;
 	}
