@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="flex">
 		<a href="home.php" class="brand-navbar">
-			<div class="logo"><img src="img/logoLeg.png" alt="Road Luxury Logo"></div>
+			<div class="logo"><img src="img/zoomed_rounded_logo.png" alt="Road Luxury Logo"></div>
 			<h1>Road Luxury</h1>
 		</a>
 		<nav class="navbar">
