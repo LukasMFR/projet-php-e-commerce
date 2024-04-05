@@ -184,7 +184,7 @@ if (isset($_POST['place_order'])) {
 										</p>
 									</div>
 								</div>
-							<?php
+								<?php
 							}
 						} else {
 							$select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
@@ -210,7 +210,7 @@ if (isset($_POST['place_order'])) {
 											</p>
 										</div>
 									</div>
-								<?php
+									<?php
 								}
 							} else {
 								echo '<p class="empty">Votre panier est vide</p>';

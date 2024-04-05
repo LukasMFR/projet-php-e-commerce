@@ -1441,6 +1441,13 @@ footer .bottom-footer {
 	color: red;
 }
 
+.summary .box-container {
+	gap: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /*------------view products----------*/
 .orders .box-container {
 	padding: 2% 6%;
