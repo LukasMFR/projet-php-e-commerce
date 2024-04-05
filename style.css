@@ -1358,6 +1358,7 @@ footer .bottom-footer {
 	display: flex;
 	column-gap: 1.5rem;
 	flex-wrap: wrap;
+	height: 100%;
 }
 
 .checkout .row form .flex .box {
@@ -1395,6 +1396,7 @@ footer .bottom-footer {
 	justify-content: center;
 	padding: 1rem 0;
 	margin: .4rem;
+	height: 100%;
 }
 
 .summary .flex img {
