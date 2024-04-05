@@ -126,9 +126,9 @@ if (isset($_POST['logout'])) {
 				<div class="box">
 					<img src="img/download.png">
 					<span>Road Luxury</span>
-					<h1>Économisez jusqu'à 50 %</h1>
-					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la
-						voiture de vos rêves à moindre coût.</p>
+					<h1>Luxe et performance</h1>
+					<p>Explorez l'exclusivité avec Road Luxury : où chaque trajet se transforme en un récit de prestige.
+						Découvrez une sélection premium et initiez votre voyage avec grandeur.</p>
 				</div>
 			</div>
 		</section>
