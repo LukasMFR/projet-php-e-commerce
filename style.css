@@ -517,6 +517,10 @@ header.scrolled {
 	margin: .5rem;
 }
 
+.shop .box img {
+    border-radius: 20px;
+}
+
 .thumb .box-container .box i {
 	color: var(--green);
 	font-size: 40px;
@@ -540,6 +544,10 @@ header.scrolled {
 .container .box img {
 	max-width: 100%;
 	height: auto;
+}
+
+.container .box .rounded {
+	border-radius: 20px;
 }
 
 .container .box {
@@ -635,10 +643,6 @@ header.scrolled {
 	border-radius: 20px;
 }
 
-.box img {
-	border-radius: 20px;
-}
-
 /* ----------shop category-----------------*/
 .shop-category .box {
 	position: relative;
@@ -689,6 +693,10 @@ header.scrolled {
 	justify-content: center;
 	flex-wrap: wrap;
 	column-gap: 1rem;
+}
+
+.shop-category .box img {
+	border-radius: 20px;
 }
 
 .services {

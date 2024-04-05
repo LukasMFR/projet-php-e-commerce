@@ -121,7 +121,7 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 
 				<div class="box">
-					<img src="img/imagepres.jpg">
+					<img src="img/imagepres.jpg" class="rounded">
 				</div>
 				<div class="box">
 					<img src="img/download.png">
@@ -170,7 +170,6 @@ if (isset($_POST['logout'])) {
 					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
-
 					<img src="img/MC3.jpg">
 					<a href="view_products.php" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
