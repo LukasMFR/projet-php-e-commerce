@@ -925,7 +925,7 @@ header.scrolled {
 .form-container input,
 textarea {
 	background-color: transparent;
-	width: 85%;
+	width: 100%;
 }
 
 textarea {
@@ -960,7 +960,7 @@ textarea {
 }
 
 .form-container form input {
-	width: 85%;
+	width: 100%;
 }
 
 .form-container form button {
