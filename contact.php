@@ -88,8 +88,8 @@
 			 	</div>
 			 	<button type="submit" name="submit-btn" class="btn">Envoyer le message</button>
 			 </form>
-			 
 		</div>
+		
 		<div class="address">
 			 	<div class="title">
 			 		<img src="img/download.png" class="logo">
