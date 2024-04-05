@@ -546,6 +546,12 @@ header.scrolled {
 	height: auto;
 }
 
+.logo-small {
+	width: 60px; /* Sets the width of the image */
+    height: 60px; /* Sets the height of the image */
+    object-fit: contain;
+}
+
 .container .box .rounded {
 	border-radius: 20px;
 }

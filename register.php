@@ -61,7 +61,7 @@
 	<div class="main-container">
 		<section class="form-container">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo">
 				<h1>Inscrivez-vous</h1>
 				<p>Rejoignez notre communauté dès aujourd'hui et bénéficiez d'avantages exclusifs. Commencez votre expérience unique avec nous.</p>
 			</div>

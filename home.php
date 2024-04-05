@@ -124,7 +124,7 @@ if (isset($_POST['logout'])) {
 					<img src="img/imagepres.jpg" class="rounded">
 				</div>
 				<div class="box">
-					<img src="img/download.png">
+					<img src="img/download.png" class="logo-small">
 					<span>Road Luxury</span>
 					<h1>Luxe et performance</h1>
 					<p>Explorez l'exclusivité avec Road Luxury : où chaque trajet se transforme en un récit de prestige.
@@ -134,7 +134,7 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="shop">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo-small">
 				<h1>Produits tendance</h1>
 			</div>
 			<div class="box-container">
@@ -155,7 +155,7 @@ if (isset($_POST['logout'])) {
 				</div>
 			</div>
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>
 			<div class="box-container">
@@ -178,7 +178,7 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="shop-category">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo-small">
 				<h1>Gamme de puffs</h1>
 			</div>
 			<div class="box-container">
