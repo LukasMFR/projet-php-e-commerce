@@ -55,7 +55,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>S'enregistrer - AutoCar</title>
+	<title>S'enregistrer - Road Luxury</title>
 </head>
 <body>
 	<div class="main-container">

@@ -24,7 +24,7 @@ if (isset($_POST['logout'])) {
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
-	<title>Page d'accueil - AutoCar</title>
+	<title>Page d'accueil - Road Luxury</title>
 </head>
 
 <body>
@@ -125,7 +125,7 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="box">
 					<img src="img/download.png">
-					<span>AutoCar</span>
+					<span>Road Luxury</span>
 					<h1>Économisez jusqu'à 50 %</h1>
 					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la
 						voiture de vos rêves à moindre coût.</p>

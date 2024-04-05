@@ -1,10 +1,10 @@
-# AutoCar E-Commerce Website
+# Road Luxury E-Commerce Website
 
-Welcome to the repository for AutoCar, an e-commerce platform developed as a PHP project for school. AutoCar is designed to revolutionize the way customers shop for cars and puffs, providing a seamless online shopping experience.
+Welcome to the repository for Road Luxury, an e-commerce platform developed as a PHP project for school. Road Luxury is designed to revolutionize the way customers shop for cars and puffs, providing a seamless online shopping experience.
 
 ## About the Project
 
-AutoCar aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience. 
+Road Luxury aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience. 
 
 ### Features
 

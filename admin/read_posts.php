@@ -37,7 +37,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>Voir le produit - AutoCar</title>
+	<title>Voir le produit - Road Luxury</title>
 </head>
 <body>
 	
