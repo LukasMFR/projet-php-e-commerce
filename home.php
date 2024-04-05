@@ -140,17 +140,17 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="img/maserati.jpg">
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter maintenant</a>
 					<h1>Maserati MC20 Cielo</h1>
 				</div>
 				<div class="box">
 					<img src="img/bugatienoir.jpg">
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter maintenant</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
 					<img src="img/lambo.jpg">
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Achetez maintenant</a>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter maintenant</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>
@@ -188,7 +188,7 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>GROSSES PROMOTIONS</span>
 						<h1>Sur une large sélection de puffs</h1>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<a href="view_products.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 				<div class="box">
@@ -196,7 +196,7 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>Nouveaux goûts</span>
 						<h1>Testez notre puff goût essence !</h1>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<a href="view_products.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 			</div>

@@ -82,7 +82,7 @@
 						Que vous recherchiez le véhicule parfait pour un événement spécial, 
 						ou que vous souhaitiez simplement élever votre expérience de conduite avec un véhicule d'exception, 
 						nous sommes là pour vous accompagner.</p>
-                    <a href="view_products.php" class="btn">Achetez maintenant</a>
+                    <a href="view_products.php" class="btn">Acheter maintenant</a>
 				</div>
 			</div>
 		</div>
