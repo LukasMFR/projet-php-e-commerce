@@ -618,12 +618,7 @@ header.scrolled {
 	border-radius: 20px;
 }
 
-
-
-
-
-
-
+/* ----------shop category-----------------*/
 .shop-category .box {
 	position: relative;
 	color: #fff;
@@ -632,18 +627,47 @@ header.scrolled {
 
 .shop-category .detail {
 	position: absolute;
-	top: 20%;
-	left: 5%;
-	line-height: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1.4;
+	background-color: rgba(255, 255, 255, 0.6);
+	-webkit-backdrop-filter: blur(2.5px) brightness(1.1);
+	backdrop-filter: blur(2.5px) brightness(1.1);
+	color: #000;
+	padding: 1rem;
+	border-radius: 10px;
+	width: 70%;
+	max-width: calc(100% - 2rem);
+	box-sizing: border-box;
 	text-align: center;
 }
 
 .shop-category .detail h1 {
 	font-size: 2em;
+	margin-bottom: 0.5rem;
 }
 
 .shop-category .detail span {
 	font-size: 1.3rem;
+}
+
+.shop-category .detail .btn {
+	margin-top: 1rem;
+}
+
+.shop-category .box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.shop-category .box-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 1rem;
 }
 
 .services {
