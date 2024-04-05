@@ -1035,6 +1035,13 @@ footer .overlay {
 	text-align: center;
 }
 
+.footer-content .img-box img {
+	width: 280px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
 footer .inner-footer {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
