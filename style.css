@@ -328,8 +328,8 @@ header.scrolled {
 
 .brand-navbar:hover {
 	color: var(--green);
-	transform: translateY(-2px);
 	/* Lift effect on hover */
+	transform: translateY(-2px);
 }
 
 /*----------home slider section-----------------*/
@@ -581,6 +581,10 @@ header.scrolled {
 	background-color: #fff;
 }
 
+.shop .box-container .box h1 {
+	padding-top: 1rem;
+}
+
 .shop .box-container img {
 	width: 100%;
 	aspect-ratio: 16 / 9;
@@ -589,20 +593,19 @@ header.scrolled {
 
 .shop .btn {
 	position: absolute;
-	left: 30%;
-	bottom: 12%;
+	left: 34%;
+	bottom: 16%;
 }
 
 .box {
 	margin: 0;
-	padding: 15;
+	padding: 17px;
 	box-sizing: border-box;
-	border-radius: 5%;
+	border-radius: 20px;
 }
 
-
 .box img {
-	border-radius: 10%;
+	border-radius: 20px;
 }
 
 
