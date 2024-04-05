@@ -1,7 +1,7 @@
 <header class="header">
 	<div class="flex">
 		<a href="home.php" class="brand-navbar">
-			<div class="logo"><img src="image/logoLeg.png" alt="AutoCar Logo"></div>
+			<div class="logo"><img src="img/logoLeg.png" alt="AutoCar Logo"></div>
 			<h1>Road Luxury</h1>
 		</a>
 		<nav class="navbar">
