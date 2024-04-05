@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 
 INSERT INTO `admin` (`idAdmin`, `nom`, `mail`, `mot de passe`, `profile`) VALUES
-(1, 'admin', 'admin@autocar.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'glitch.jpg');
+(1, 'admin', 'admin@roadluxury.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'glitch.jpg');
 
 
 

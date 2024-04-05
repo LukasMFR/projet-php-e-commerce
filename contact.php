@@ -115,7 +115,7 @@
 			 			<i class="bx bxs-map-pin"></i>
 			 			<div>
 			 				<h4>Email</h4>
-			 				<p>contact@autocar.com</p>
+			 				<p>contact@roadluxury.com</p>
 			 			</div>
 			 		</div>
 			 	</div>
