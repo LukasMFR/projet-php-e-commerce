@@ -118,7 +118,7 @@ if (isset($_POST['add_to_cart'])) {
 							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 
 						</form>
-					<?php
+						<?php
 					}
 				} else {
 					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';

@@ -1179,6 +1179,7 @@ footer .bottom-footer {
 .products .box-container .box .img {
 	width: 80%;
 	height: auto;
+	margin-top: 4rem;
 }
 
 .products .box-container .box .name {
@@ -1206,6 +1207,7 @@ footer .bottom-footer {
 	border-radius: 20px;
 	background: var(--light-green);
 	padding: .5rem 1.5rem;
+	/* padding: 5px 35px; */
 	align-items: center;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
