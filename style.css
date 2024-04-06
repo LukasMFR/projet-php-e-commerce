@@ -220,13 +220,9 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
-	/* Slightly transparent background */
 	background-color: rgba(255, 255, 255, 0.3);
-	/* For WebKit browsers */
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
-	/* Standard syntax */
 	backdrop-filter: blur(10px) brightness(1.1);
-	/* Rounded corners */
 	border-radius: 15px;
 }
 
