@@ -220,6 +220,17 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
+	border-radius: 15px;
+}
+
+header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 	background-color: rgba(255, 255, 255, 0.3);
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
 	backdrop-filter: blur(10px) brightness(1.1);
@@ -229,12 +240,13 @@ header {
 header.scrolled {
 	top: 10px;
 	box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(20px);
 }
 
-/* .header.scrolled a:hover {
-	color: var(--green);
-} */
+header.scrolled::before {
+	content: '';
+	backdrop-filter: blur(20px);
+	border-radius: 15px;
+}
 
 .header .flex {
 	justify-content: space-between;
@@ -1653,12 +1665,22 @@ footer .bottom-footer {
 		left: 0;
 		display: block;
 		right: 0;
-		border-top: 1px solid var(--green);
+		transition: .3s ease;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+	}
+
+	.header .flex .navbar::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.8);
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
-		transition: .3s ease;
-		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		z-index: -1;
 		border-radius: 20px;
 	}
 
