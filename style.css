@@ -1645,9 +1645,12 @@ footer .bottom-footer {
 		display: block;
 		right: 0;
 		border-top: 1px solid var(--green);
-		background: #fff;
+		background-color: rgba(0, 0, 0, 0.8);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 		transition: .3s ease;
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		border-radius: 20px;
 	}
 
 	.header .flex .navbar.active {
@@ -1657,7 +1660,16 @@ footer .bottom-footer {
 	.header .flex .navbar a {
 		display: block;
 		margin: 2rem;
+		color: #fff;
+		transition: color 0.3s;
+		position: relative;
+		transition: 0.5s;
+	}
 
+	.header .flex .navbar a:hover {
+		/* color: var(--green); */
+		padding-right: 24px;
+		padding-left: 8px;
 	}
 
 	.form-container {
