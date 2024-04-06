@@ -1188,6 +1188,21 @@ footer .bottom-footer {
 	border-radius: 20px;
 	background: var(--light-green);
 	padding: .5rem 1.5rem;
+	align-items: center;
+}
+
+.products .box-container .box .special-button {
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	border-radius: 20px;
+	background: var(--light-green);
+	padding: .5rem 1.5rem;
+	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-right: 7rem;
 }
 
 .products .box-container .box .button i,
@@ -1248,10 +1263,6 @@ footer .bottom-footer {
 
 .products .box-container .box .sub-total span {
 	color: red;
-}
-
-.products .box-container .box .button {
-	align-items: center;
 }
 
 .products .cart-total {

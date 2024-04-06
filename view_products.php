@@ -100,7 +100,7 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 						<form action="" method="post" class="box">
 							<img src="image/<?= $fetch_products['image']; ?>" class="img">
-							<div class="button">
+							<div class="button special-button">
 								<button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bx bxs-show"></a>
