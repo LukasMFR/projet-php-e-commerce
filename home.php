@@ -127,7 +127,7 @@ if (isset($_POST['logout'])) {
 					<img src="img/download.png" class="logo-small">
 					<span>Road Luxury</span>
 					<h1>Luxe et performance</h1>
-					<p>Explorez l'exclusivité avec Road Luxury : où chaque trajet se transforme en un récit de prestige.
+					<p>Explorez l'exclusivité avec Road Luxury : chaque trajet se transforme en un récit de prestige.
 						Découvrez une sélection premium et initiez votre voyage avec grandeur.</p>
 				</div>
 			</div>

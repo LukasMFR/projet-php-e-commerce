@@ -596,8 +596,9 @@ header.scrolled {
 	font-size: 2rem;
 	margin: 1rem 0;
 	/* text-transform: capitalize; */
-	font-style: italic;
+	/* font-style: italic; */
 	font-weight: bold;
+	font-family: 'Snell Roundhand', cursive;
 }
 
 .container .box h1 {
