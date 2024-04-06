@@ -98,7 +98,7 @@ if (isset($_POST['add_to_cart'])) {
 
 
 						?>
-						<form action="" method="post" class="box">
+						<form action="" method="post" class="box product-view-form">
 							<img src="image/<?= $fetch_products['image']; ?>" class="img">
 							<div class="button special-button">
 								<button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>

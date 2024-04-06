@@ -1708,7 +1708,7 @@ footer .bottom-footer {
 		width: 100%;
 	}
 
-	form {
+	form:not(.product-view-form) {
 		width: 100%;
 	}
 }
