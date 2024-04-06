@@ -244,7 +244,6 @@ header.scrolled {
 
 header.scrolled::before {
 	content: '';
-	backdrop-filter: blur(20px);
 	border-radius: 15px;
 }
 
