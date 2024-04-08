@@ -39,13 +39,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Se connecter - AutoCar</title>
+	<title>Se connecter - Road Luxury</title>
 </head>
 <body>
 	<div class="main-container">
 		<section class="form-container">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo">
 				<h1>Connectez-vous</h1>
 				<p>Accédez à votre compte pour une expérience personnalisée. Profitez de nos services exclusifs en vous connectant dès maintenant.</p>
 			</div>

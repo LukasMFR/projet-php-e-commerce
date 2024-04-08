@@ -1,3 +1,24 @@
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -344,25 +365,32 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
-	/* Slightly transparent background */
+	border-radius: 15px;
+}
+
+header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 	background-color: rgba(255, 255, 255, 0.3);
-	/* For WebKit browsers */
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
-	/* Standard syntax */
 	backdrop-filter: blur(10px) brightness(1.1);
-	/* Rounded corners */
 	border-radius: 15px;
 }
 
 header.scrolled {
-	top: 0;
+	top: 10px;
 	box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(20px);
 }
 
-/* .header.scrolled a:hover {
-	color: var(--green);
-} */
+header.scrolled::before {
+	content: '';
+	border-radius: 15px;
+}
 
 .header .flex {
 	justify-content: space-between;
@@ -385,8 +413,7 @@ header.scrolled {
 	display: flex;
 	justify-content: center;
 	flex-grow: 1;
-	margin-left: 2rem;
-	margin-right: 2rem;
+	flex: 1;
 }
 
 .navbar a {
@@ -405,6 +432,7 @@ header.scrolled {
 
 .header .icons {
 	display: flex;
+	flex: 0.25;
 	justify-content: flex-end;
 }
 
@@ -457,13 +485,15 @@ header.scrolled {
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-	 /* Apply transitions for both states */
-    transition: transform 0.3s ease, color 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: inherit;
+	flex: 0.25;
+	justify-content: flex-start;
+	/* Apply transitions for both states */
+	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .brand-navbar .logo img {
@@ -473,11 +503,13 @@ header.scrolled {
 
 .brand-navbar h1 {
 	margin: 0;
+	font-family: 'Snell Roundhand', cursive;
 }
 
 .brand-navbar:hover {
-    color: var(--green);
-    transform: translateY(-2px); /* Lift effect on hover */
+	color: var(--green);
+	/* Lift effect on hover */
+	transform: translateY(-2px);
 }
 
 /*---------profile detail-------------*/
@@ -576,6 +608,7 @@ header.scrolled {
 	text-transform: uppercase;
 	color: #fff;
 	margin-left: 3rem;
+	margin-right: 3rem;
 }
 
 .title2 {
@@ -897,10 +930,23 @@ header.scrolled {
 		left: 0;
 		display: block;
 		right: 0;
-		border-top: 1px solid var(--green);
-		background: #fff;
 		transition: .3s ease;
-		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+ 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+ 	}
+
+ 	.header .flex .navbar::before {
+ 		content: '';
+ 		position: absolute;
+ 		top: 0;
+ 		left: 0;
+ 		right: 0;
+ 		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		z-index: -1;
+		border-radius: 20px;
 	}
 
 	.header .flex .navbar.active {
@@ -910,7 +956,16 @@ header.scrolled {
 	.header .flex .navbar a {
 		display: block;
 		margin: 2rem;
+		color: #fff;
+		transition: color 0.3s;
+		position: relative;
+		transition: 0.5s;
+	}
 
+	.header .flex .navbar a:hover {
+		/* color: var(--green); */
+		padding-right: 24px;
+		padding-left: 8px;
 	}
 
 	.form-container {

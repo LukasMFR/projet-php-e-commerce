@@ -1,10 +1,10 @@
-# AutoCar E-Commerce Website
+# Road Luxury E-Commerce Website
 
-Welcome to the repository for AutoCar, an e-commerce platform developed as a PHP project for school. AutoCar is designed to revolutionize the way customers shop for cars and puffs, providing a seamless online shopping experience.
+Welcome to the repository for Road Luxury, an e-commerce platform developed as a PHP project for school. Road Luxury is designed to revolutionize the way customers shop for cars and puffs, providing a seamless online shopping experience.
 
 ## About the Project
 
-AutoCar aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience. 
+Road Luxury aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience. 
 
 ### Features
 
@@ -30,7 +30,7 @@ To run this project, you'll need to have XAMPP installed on your computer. This 
 
 2. Navigate to the project directory:
     ```bash
-    cd autocar
+    cd projet-php-e-commerce
     ```
 
 3. Start XAMPP and ensure both Apache and MySQL services are running.
@@ -47,7 +47,7 @@ To run this project, you'll need to have XAMPP installed on your computer. This 
 7. Adjust the project configuration files (if necessary) to connect to your database using the credentials set in phpMyAdmin.
 
 ## Usage
-After installation, you can use XAMPP to serve the website. Simply place the project in the htdocs directory of your XAMPP installation, and then access it via a web browser by navigating to `http://localhost/autocar`.
+After installation, you can use XAMPP to serve the website. Simply place the project in the htdocs directory of your XAMPP installation, and then access it via a web browser by navigating to `http://localhost/projet-php-e-commerce`.
 
 Provide further instructions on how to navigate and use the website's features, including any login credentials for demo accounts if available.
 

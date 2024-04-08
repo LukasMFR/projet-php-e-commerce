@@ -24,7 +24,7 @@ if (isset($_POST['logout'])) {
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
-	<title>Page d'accueil - AutoCar</title>
+	<title>Page d'accueil - Road Luxury</title>
 </head>
 
 <body>
@@ -36,10 +36,10 @@ if (isset($_POST['logout'])) {
 				<div class="slider__slider slide1">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Découvrez la nouvelle ère de la conduite</h1>
+						<h1>Une nouvelle ère de conduite</h1>
 						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance,
 							durabilité et design futuriste réunis.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -51,7 +51,7 @@ if (isset($_POST['logout'])) {
 						<h1>Élégance et puissance</h1>
 						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort,
 							de style et de puissance.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -63,7 +63,7 @@ if (isset($_POST['logout'])) {
 						<h1>Aventure sans limites</h1>
 						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec
 							confiance et confort.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -75,7 +75,7 @@ if (isset($_POST['logout'])) {
 						<h1>Sportivité et performance</h1>
 						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de
 							conduite exaltante.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
@@ -84,108 +84,101 @@ if (isset($_POST['logout'])) {
 				<div class="slider__slider slide5">
 					<div class="overlay"></div>
 					<div class="slide-detail">
-						<h1>Éco-responsabilité au volant</h1>
-						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques. Économie de
-							carburant, réduction des émissions et conduite silencieuse.</p>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<h1>Éco-responsabilité</h1>
+						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques avec
+							une conduite silencieuse.</p>
+
 					</div>
 					<div class="hero-dec-top"></div>
 					<div class="hero-dec-bottom"></div>
 				</div>
-				<!-- slide end -->
-				<div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
-				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>
+
+				<!-- <div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
+				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>-->
 			</div>
 		</section>
 		<!-- home slider end -->
-		<section class="thumb">
+		<section class="brand">
 			<div class="box-container">
 				<div class="box">
-					<img src="img/thumb2.jpg">
-					<h3>Lamborghini</h3>
-					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
-						l'expérience ultime de conduite sportive.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (1).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb0.jpg">
-					<h3>Porsche</h3>
-					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
-						sélection pour trouver votre prochaine voiture de sport.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (2).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb1.jpg">
-					<h3>Ferrari</h3>
-					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
-						Choisissez la Ferrari qui fait battre votre cœur.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (3).jpg">
 				</div>
 				<div class="box">
-					<img src="img/thumb.jpg">
-					<h3>Alpine</h3>
-					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
-						gamme pour une expérience de conduite exceptionnelle.</p>
-					<i class="bx bx-chevron-right"></i>
+					<img src="img/brand (4).jpg">
+				</div>
+				<div class="box">
+					<img src="img/brand (5).jpg">
 				</div>
 			</div>
 		</section>
 		<section class="container">
 			<div class="box-container">
+
 				<div class="box">
-					<!-- Changer l'image -->
-					<img src="img/about-us.jpg">
+					<img src="img/imagepres.jpg" class="rounded">
 				</div>
 				<div class="box">
-					<img src="img/download.png">
-					<span>AutoCar</span>
-					<h1>Économisez jusqu'à 50 %</h1>
-					<p>Découvrez notre gamme de véhicules à des prix jamais vus. L'occasion parfaite pour acquérir la
-						voiture de vos rêves à moindre coût.</p>
+					<img src="img/download.png" class="logo-small">
+					<span>Road Luxury</span>
+					<h1>Luxe et performance</h1>
+					<p>Explorez l'exclusivité avec Road Luxury : chaque trajet se transforme en un récit de prestige.
+						Découvrez une sélection premium et initiez votre voyage avec grandeur.</p>
 				</div>
 			</div>
 		</section>
 		<section class="shop">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo-small">
 				<h1>Produits tendance</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/card.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/maserati.jpg">
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter maintenant</a>
+					<h1>Maserati MC20 Cielo</h1>
 				</div>
 				<div class="box">
-					<img src="img/card0.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/bugatienoir.jpg">
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter maintenant</a>
+					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
-					<img src="img/card1.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/lambo.jpg">
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter maintenant</a>
+					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>
 			<div class="title">
-				<img src="img/download.png">
-				<h1>Nouvel arrivage</h1>
+				<img src="img/download.png" class="logo-small">
+				<h1>Bientôt disponible</h1>
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/card.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/mercedes.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
-					<img src="img/card0.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/astonmartine.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
-					<img src="img/card1.jpg">
-					<a href="view_products.php" class="btn">Achetez maintenant</a>
+					<img src="img/MC3.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>McLaren 720s GT3 X</h1>
 				</div>
 
 		</section>
 		<section class="shop-category">
 			<div class="title">
-				<img src="img/download.png">
+				<img src="img/download.png" class="logo-small">
 				<h1>Gamme de puffs</h1>
 			</div>
 			<div class="box-container">
@@ -194,7 +187,7 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>GROSSES PROMOTIONS</span>
 						<h1>Sur une large sélection de puffs</h1>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<a href="view_products.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 				<div class="box">
@@ -202,12 +195,18 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>Nouveaux goûts</span>
 						<h1>Testez notre puff goût essence !</h1>
-						<a href="view_products.php" class="btn">Achetez maintenant</a>
+						<a href="view_products.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<section class="services">
+			<div class="title">
+				<img src="img/download.png" class="logo">
+				<h1>Pourquoi nous choisir</h1>
+				<p>Qualité supérieure, prix compétitifs, service client exceptionnel.</p>
+			</div>
 			<div class="box-container">
 				<div class="box">
 					<img src="img/icon2.png">
@@ -236,25 +235,6 @@ if (isset($_POST['logout'])) {
 						<h3>Livraison internationale</h3>
 						<p>Expédition partout dans le monde</p>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section class="brand">
-			<div class="box-container">
-				<div class="box">
-					<img src="img/brand (1).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (2).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (3).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (4).jpg">
-				</div>
-				<div class="box">
-					<img src="img/brand (5).jpg">
 				</div>
 			</div>
 		</section>

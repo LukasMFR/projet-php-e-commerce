@@ -1,8 +1,30 @@
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Snell Roundhand';
+	src: url('/fonts/SnellRoundhand-Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
 /*---------global settings-------------*/
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	/* outline: 1px solid red; */
 }
 
 :root {
@@ -24,6 +46,8 @@ html {
 
 body {
 	background-image: url('img/body-bg.jpg');
+	/* Background color to a dark grey */
+	/* background-color: var(--light-green); */
 	width: 100%;
 }
 
@@ -169,6 +193,7 @@ button {
 	text-transform: uppercase;
 	color: #fff;
 	margin-left: 3rem;
+	margin-right: 3rem;
 }
 
 .title2 {
@@ -195,25 +220,32 @@ header {
 	z-index: 101;
 	transition: .3s;
 	box-shadow: var(--box-shadow);
-	/* Slightly transparent background */
+	border-radius: 15px;
+}
+
+header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 	background-color: rgba(255, 255, 255, 0.3);
-	/* For WebKit browsers */
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
-	/* Standard syntax */
 	backdrop-filter: blur(10px) brightness(1.1);
-	/* Rounded corners */
 	border-radius: 15px;
 }
 
 header.scrolled {
-	top: 0;
+	top: 10px;
 	box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(20px);
 }
 
-/* .header.scrolled a:hover {
-	color: var(--green);
-} */
+header.scrolled::before {
+	content: '';
+	border-radius: 15px;
+}
 
 .header .flex {
 	justify-content: space-between;
@@ -236,8 +268,7 @@ header.scrolled {
 	display: flex;
 	justify-content: center;
 	flex-grow: 1;
-	margin-left: 2rem;
-	margin-right: 2rem;
+	flex: 2;
 }
 
 .navbar a {
@@ -256,6 +287,7 @@ header.scrolled {
 
 .header .icons {
 	display: flex;
+	flex: 0.5;
 	justify-content: flex-end;
 }
 
@@ -308,13 +340,15 @@ header.scrolled {
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-	 /* Apply transitions for both states */
-    transition: transform 0.3s ease, color 0.3s ease;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: inherit;
+	flex: 0.5;
+	justify-content: flex-start;
+	/* Apply transitions for both states */
+	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .brand-navbar .logo img {
@@ -324,11 +358,13 @@ header.scrolled {
 
 .brand-navbar h1 {
 	margin: 0;
+	font-family: 'Snell Roundhand', cursive;
 }
 
 .brand-navbar:hover {
-    color: var(--green);
-    transform: translateY(-2px); /* Lift effect on hover */
+	color: var(--green);
+	/* Lift effect on hover */
+	transform: translateY(-2px);
 }
 
 /*----------home slider section-----------------*/
@@ -345,11 +381,13 @@ header.scrolled {
 	overflow-x: hidden;
 	overflow-y: hidden;
 	scroll-snap-type: x mandatory;
+	/*Modif ici*/
+	flex-direction: row-reverse;
 }
 
 .slider__slider {
-	height: 65vh;
-	min-width: 100vw;
+	height: 55vh;
+	/*min-width: 85vw;*/
 	width: 100%;
 	scroll-snap-align: start;
 	background-position: center center;
@@ -360,7 +398,6 @@ header.scrolled {
 .slider__slider .slide-detail {
 	position: absolute;
 	top: 30%;
-	left: 20%;
 	text-align: center;
 }
 
@@ -381,7 +418,7 @@ header.scrolled {
 	left: 20%;
 }
 
-.slider__slider .slide-detail h1::after {
+/*.slider__slider .slide-detail h1::after {
 	content: '';
 	position: absolute;
 	width: 10px;
@@ -390,7 +427,7 @@ header.scrolled {
 	bottom: -50%;
 	left: 50%;
 	background: #f7b90f;
-}
+}*/
 
 .slider__slider .slide-detail p {
 	font-size: 14px;
@@ -398,6 +435,12 @@ header.scrolled {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+
+
+
+
+
+
 
 .slide1 {
 	background-image: url('img/slider.jpg');
@@ -408,7 +451,7 @@ header.scrolled {
 }
 
 .slide3 {
-	background-image: url('img/9.jpg');
+	background-image: url('img/suv.jpeg');
 }
 
 .slide4 {
@@ -416,7 +459,7 @@ header.scrolled {
 }
 
 .slide5 {
-	background-image: url('img/4.jpg');
+	background-image: url('img/electric.jpg');
 }
 
 .left-arrow,
@@ -509,6 +552,10 @@ header.scrolled {
 	margin: .5rem;
 }
 
+.shop .box img {
+	border-radius: 20px;
+}
+
 .thumb .box-container .box i {
 	color: var(--green);
 	font-size: 40px;
@@ -521,12 +568,36 @@ header.scrolled {
 	cursor: pointer;
 }
 
+.container .box-container {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	gap: 1.5rem;
+	justify-content: center;
+}
+
+.container .box img {
+	max-width: 100%;
+	height: auto;
+}
+
+.logo-small {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+}
+
+.container .box .rounded {
+	border-radius: 20px;
+}
+
 .container .box {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 1rem;
 }
 
 .container .box span {
@@ -534,13 +605,21 @@ header.scrolled {
 	font-size: 2rem;
 	margin: 1rem 0;
 	/* text-transform: capitalize; */
-	font-style: italic;
+	/* font-style: italic; */
 	font-weight: bold;
+	font-family: 'Snell Roundhand', cursive;
 }
 
 .container .box h1 {
 	font-size: 3rem;
 	margin-bottom: 1rem;
+}
+
+.container .box span,
+.container .box h1,
+.container .box p {
+	margin: 0.5rem 0;
+	padding: 0;
 }
 
 .shop {
@@ -571,18 +650,42 @@ header.scrolled {
 	box-shadow: var(--box-shadow);
 	position: relative;
 	background-color: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.shop .box-container .box h1 {
+	padding-top: 1rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	display: block;
 }
 
 .shop .box-container img {
 	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
 }
 
 .shop .btn {
 	position: absolute;
-	left: 30%;
-	bottom: -3%;
+	left: 50%;
+	bottom: 70px;
+	transform: translateX(-50%);
+	padding: 8px 16px;
 }
 
+.box {
+	margin: 0;
+	padding: 17px;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+
+/* ----------shop category-----------------*/
 .shop-category .box {
 	position: relative;
 	color: #fff;
@@ -591,18 +694,51 @@ header.scrolled {
 
 .shop-category .detail {
 	position: absolute;
-	top: 20%;
-	left: 5%;
-	line-height: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1.4;
+	background-color: rgba(255, 255, 255, 0.6);
+	-webkit-backdrop-filter: blur(2.5px) brightness(1.1);
+	backdrop-filter: blur(2.5px) brightness(1.1);
+	color: #000;
+	padding: 1rem;
+	border-radius: 10px;
+	width: 70%;
+	max-width: calc(100% - 2rem);
+	box-sizing: border-box;
 	text-align: center;
 }
 
 .shop-category .detail h1 {
 	font-size: 2em;
+	margin-bottom: 0.5rem;
 }
 
 .shop-category .detail span {
 	font-size: 1.3rem;
+}
+
+.shop-category .detail .btn {
+	margin-top: 1rem;
+}
+
+.shop-category .box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.shop-category .box-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 1rem;
+}
+
+.shop-category .box img {
+	border-radius: 20px;
 }
 
 .services {
@@ -802,7 +938,7 @@ header.scrolled {
 .form-container input,
 textarea {
 	background-color: transparent;
-	width: 85%;
+	width: 100%;
 }
 
 textarea {
@@ -827,7 +963,7 @@ textarea {
 	margin: 1rem auto;
 	background-color: rgb(255 255 255 / 80%);
 	box-shadow: var(--box-shadow);
-	padding: 2rem;
+	padding: 3rem;
 	position: relative;
 	border-radius: 5px;
 }
@@ -837,13 +973,15 @@ textarea {
 }
 
 .form-container form input {
-	width: 85%;
+	width: 100%;
 }
 
 .form-container form button {
 	width: 85%;
 	border-radius: 10px;
 	outline: none;
+	margin: 1rem auto;
+	display: block;
 }
 
 .address {
@@ -933,6 +1071,13 @@ footer .overlay {
 
 .footer-content .img-box {
 	text-align: center;
+}
+
+.footer-content .img-box img {
+	width: 280px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
 
 footer .inner-footer {
@@ -1034,6 +1179,7 @@ footer .bottom-footer {
 .products .box-container .box .img {
 	width: 80%;
 	height: auto;
+	margin-top: 4rem;
 }
 
 .products .box-container .box .name {
@@ -1050,6 +1196,22 @@ footer .bottom-footer {
 	border-radius: 20px;
 	background: var(--light-green);
 	padding: .5rem 1.5rem;
+	align-items: center;
+}
+
+.products .box-container .box .special-button {
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	border-radius: 20px;
+	background: var(--light-green);
+	padding: .5rem 1.5rem;
+	/* padding: 5px 35px; */
+	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-right: 7rem;
 }
 
 .products .box-container .box .button i,
@@ -1110,10 +1272,6 @@ footer .bottom-footer {
 
 .products .box-container .box .sub-total span {
 	color: red;
-}
-
-.products .box-container .box .button {
-	align-items: center;
 }
 
 .products .cart-total {
@@ -1229,6 +1387,7 @@ footer .bottom-footer {
 	display: flex;
 	column-gap: 1.5rem;
 	flex-wrap: wrap;
+	height: 100%;
 }
 
 .checkout .row form .flex .box {
@@ -1266,6 +1425,7 @@ footer .bottom-footer {
 	justify-content: center;
 	padding: 1rem 0;
 	margin: .4rem;
+	height: 100%;
 }
 
 .summary .flex img {
@@ -1308,6 +1468,13 @@ footer .bottom-footer {
 
 .summary .grand-total p {
 	color: red;
+}
+
+.summary .box-container {
+	gap: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /*------------view products----------*/
@@ -1485,7 +1652,8 @@ footer .bottom-footer {
 }
 
 /*------------media screen----------*/
-@media (max-width: 991px) {
+/* @media (max-width: 991px) { */
+@media (max-width: 1150px) {
 	#menu-btn {
 		display: block;
 	}
@@ -1498,10 +1666,23 @@ footer .bottom-footer {
 		left: 0;
 		display: block;
 		right: 0;
-		border-top: 1px solid var(--green);
-		background: #fff;
 		transition: .3s ease;
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+	}
+
+	.header .flex .navbar::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		z-index: -1;
+		border-radius: 20px;
 	}
 
 	.header .flex .navbar.active {
@@ -1511,14 +1692,23 @@ footer .bottom-footer {
 	.header .flex .navbar a {
 		display: block;
 		margin: 2rem;
+		color: #fff;
+		transition: color 0.3s;
+		position: relative;
+		transition: 0.5s;
+	}
 
+	.header .flex .navbar a:hover {
+		/* color: var(--green); */
+		padding-right: 24px;
+		padding-left: 8px;
 	}
 
 	.form-container {
 		width: 100%;
 	}
 
-	form {
+	form:not(.product-view-form) {
 		width: 100%;
 	}
 }

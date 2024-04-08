@@ -18,7 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- font awesome cdn link  -->
    	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-	<title>Tableau de bord admin - AutoCar</title>
+	<title>Tableau de bord admin - Road Luxury</title>
 </head>
 <body>
 	<?php include '../components/admin_header.php'; ?>
