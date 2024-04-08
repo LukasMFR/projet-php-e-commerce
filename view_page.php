@@ -121,7 +121,7 @@ if (isset($_POST['add_to_cart'])) {
 								</div>
 							</div>
 						</form>
-					<?php
+						<?php
 					}
 				}
 			}
