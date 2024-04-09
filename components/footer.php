@@ -44,8 +44,8 @@
 				</ul>
 			</div>
 			<div class="card">
-				<h3>NOs réseaux</h3>
-				<p>Suivez nous sur nos réseaux</p>
+				<h3>Nos réseaux</h3>
+				<p>Suivez-nous sur nos réseaux</p>
 				<div class="social-links">
 					<i class="bx bxl-instagram"></i>
 					<i class="bx bxl-twitter"></i>
