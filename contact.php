@@ -34,38 +34,6 @@ if (isset($_POST['logout'])) {
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Nous contacter</span>
 		</div>
-		<!-- <section class="services">
-			<div class="box-container">
-				<div class="box">
-					<img src="img/icon2.png">
-					<div class="detail">
-						<h3>Grandes économies</h3>
-						<p>Économisez gros sur chaque commande</p>
-					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon1.png">
-					<div class="detail">
-						<h3>Support 24/7</h3>
-						<p>Assistance personnelle</p>
-					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon0.png">
-					<div class="detail">
-						<h3>Offres spéciales sur les véhicules</h3>
-						<p>Promotions à l'occasion des fêtes</p>
-					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon.png">
-					<div class="detail">
-						<h3>Livraison internationale</h3>
-						<p>Expédition partout dans le monde</p>
-					</div>
-				</div>
-			</div>
-		</section> -->
 		<div class="form-container">
 			<form method="post">
 				<div class="title">
