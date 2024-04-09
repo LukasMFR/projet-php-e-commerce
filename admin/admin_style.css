@@ -931,17 +931,17 @@ header.scrolled::before {
 		display: block;
 		right: 0;
 		transition: .3s ease;
- 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
- 	}
+	}
 
- 	.header .flex .navbar::before {
- 		content: '';
- 		position: absolute;
- 		top: 0;
- 		left: 0;
- 		right: 0;
- 		bottom: 0;
+	.header .flex .navbar::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.8);
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);
