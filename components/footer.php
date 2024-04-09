@@ -38,16 +38,14 @@
 				<h3>Local</h3>
 				<ul>
 					<li>Paris</li>
-					<li>Lyon</li>
-					<li>Marseille</li>
 					<li>San Francisco</li>
 					<li>New York</li>
-					<li>Los Angeles</li>
+					<li>Berlin</li>
 				</ul>
 			</div>
 			<div class="card">
-				<h3>Newsletter</h3>
-				<p>Inscrivez-vous à la newsletter</p>
+				<h3>NOs réseaux</h3>
+				<p>Suivez nous sur nos réseaux</p>
 				<div class="social-links">
 					<i class="bx bxl-instagram"></i>
 					<i class="bx bxl-twitter"></i>
