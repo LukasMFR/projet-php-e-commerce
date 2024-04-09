@@ -45,7 +45,8 @@ html {
 }
 
 body {
-	background-color: var(--light-green); 
+	background-image: linear-gradient(to bottom, #add8e6, #dda0dd);
+	background-attachment: fixed;
 	width: 100%;
 }
 
