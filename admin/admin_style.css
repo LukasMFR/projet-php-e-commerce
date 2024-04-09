@@ -1,20 +1,20 @@
 @font-face {
 	font-family: 'Snell Roundhand';
-	src: url('/fonts/SnellRoundhand.ttf') format('truetype');
+	src: url('fonts/SnellRoundhand.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Snell Roundhand';
-	src: url('/fonts/SnellRoundhand-Bold.ttf') format('truetype');
+	src: url('fonts/SnellRoundhand-Bold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Snell Roundhand';
-	src: url('/fonts/SnellRoundhand-Black.ttf') format('truetype');
+	src: url('fonts/SnellRoundhand-Black.ttf') format('truetype');
 	font-weight: 900;
 	font-style: normal;
 }
