@@ -827,6 +827,11 @@ header.scrolled::before {
 	width: 50%;
 }
 
+.about .row .img-box img {
+    max-width: 100%;
+    height: auto;
+}
+
 .about .row .detail h1 {
 	text-align: center;
 	margin: 1rem 0;
