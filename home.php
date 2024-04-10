@@ -27,77 +27,24 @@ if (isset($_POST['logout'])) {
 	<title>Page d'accueil - Road Luxury</title>
 </head>
 
+<section class="home-section">
+			<div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="image/videoPres.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge les vidéos HTML5.
+            </video>
+            <div class="overlay"></div>
+            <div class="video-detail">
+                <h1>Bivenue chez Road</h1>
+                <p>Description qui va avec la vidéo et le thème de votre site.</p>
+            </div>
+        	</div>
+
+		</section>
+
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-
-		<section class="home-section">
-			<div class="slider">
-				<div class="slider__slider slide1">
-					<div class="overlay"></div>
-					<div class="slide-detail">
-						<h1>Une nouvelle ère de conduite</h1>
-						<p>Plongez dans l'innovation avec notre dernière gamme de véhicules électriques. Performance,
-							durabilité et design futuriste réunis.</p>
-
-					</div>
-					<div class="hero-dec-top"></div>
-					<div class="hero-dec-bottom"></div>
-				</div>
-				<!-- slide end -->
-				<div class="slider__slider slide2">
-					<div class="overlay"></div>
-					<div class="slide-detail">
-						<h1>Élégance et puissance</h1>
-						<p>Faites l'expérience du luxe ultime avec nos modèles premium. Un mélange parfait de confort,
-							de style et de puissance.</p>
-
-					</div>
-					<div class="hero-dec-top"></div>
-					<div class="hero-dec-bottom"></div>
-				</div>
-				<!-- slide end -->
-				<div class="slider__slider slide3">
-					<div class="overlay"></div>
-					<div class="slide-detail">
-						<h1>Aventure sans limites</h1>
-						<p>Nos SUVs tout-terrain sont prêts à vous emmener sur tous les chemins. Explorez le monde avec
-							confiance et confort.</p>
-
-					</div>
-					<div class="hero-dec-top"></div>
-					<div class="hero-dec-bottom"></div>
-				</div>
-				<!-- slide end -->
-				<div class="slider__slider slide4">
-					<div class="overlay"></div>
-					<div class="slide-detail">
-						<h1>Sportivité et performance</h1>
-						<p>Design aerodynamique, moteurs puissants et technologies de pointe pour une expérience de
-							conduite exaltante.</p>
-
-					</div>
-					<div class="hero-dec-top"></div>
-					<div class="hero-dec-bottom"></div>
-				</div>
-				<!-- slide end -->
-				<div class="slider__slider slide5">
-					<div class="overlay"></div>
-					<div class="slide-detail">
-						<h1>Éco-responsabilité</h1>
-						<p>Engagez-vous pour un avenir plus vert avec nos véhicules hybrides et électriques avec
-							une conduite silencieuse.</p>
-
-					</div>
-					<div class="hero-dec-top"></div>
-					<div class="hero-dec-bottom"></div>
-				</div>
-
-				<!-- <div class="left-arrow"><i class='bx bxs-left-arrow'></i></div>
-				<div class="right-arrow"><i class='bx bxs-right-arrow'></i></div>-->
-			</div>
-		</section>
-		<!-- home slider end -->
 		<section class="brand">
 			<div class="box-container">
 				<div class="box">

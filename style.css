@@ -374,6 +374,34 @@ header.scrolled::before {
 	margin-bottom: 2rem;
 }
 
+
+.video-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	/* Hauteur de la fenêtre de visualisation */
+	overflow: hidden;
+}
+
+video {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	/* Permet à la vidéo de couvrir entièrement l'espace sans perdre ses proportions */
+}
+
+.video-detail {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	font-family: 'Snell Roundhand';
+}
+
+
+
 .slider {
 	font-family: "Roboto", sans-serif;
 	max-height: 80vh;
@@ -828,8 +856,8 @@ header.scrolled::before {
 }
 
 .about .row .img-box img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .about .row .detail h1 {
