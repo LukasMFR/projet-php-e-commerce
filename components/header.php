@@ -5,9 +5,9 @@
 			<h1>Road Luxury</h1>
 		</a>
 		<nav class="navbar">
-			<a href="home.php">Accueil</a>
-			<a href="view_products.php">Nos Voitures</a>
-			<a href="view_products.php">Nos Puffs</a>
+			<!-- <a href="home.php">Accueil</a> -->
+			<a href="view_products.php">Voitures</a>
+			<a href="view_products.php">Puffs</a>
 			<a href="order.php">Commandes</a>
 			<a href="about.php">À propos</a>
 			<a href="contact.php">Nous contacter</a>
