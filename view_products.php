@@ -91,6 +91,64 @@ if (isset($_POST['add_to_cart'])) {
 			<a href="home.php">Accueil </a><span>/ Notre boutique</span>
 		</div>
 		<section class="products">
+
+			<div class="box-container">
+				<div class="box">
+					<img src="img/maserati.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
+					<h1>Maserati MC20 Cielo</h1>
+				</div>
+				<div class="box">
+					<img src="img/bugatienoir.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
+					<h1>Bugatti La voiture Noire</h1>
+				</div>
+				<div class="box">
+					<img src="img/lambo.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
+					<h1>Lamborghini Revuelto</h1>
+				</div>
+			</div>
+
+			<div class="box-container">
+				<div class="box">
+					<img src="img/maserati.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
+					<h1>Maserati MC20 Cielo</h1>
+				</div>
+				<div class="box">
+					<img src="img/bugatienoir.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
+					<h1>Bugatti La voiture Noire</h1>
+				</div>
+				<div class="box">
+					<img src="img/lambo.jpg">
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+							</div>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
+					<h1>Lamborghini Revuelto</h1>
+				</div>
+			</div>
+			
+
+
+
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products`");

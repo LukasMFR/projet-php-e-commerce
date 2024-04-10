@@ -1237,7 +1237,6 @@ footer .bottom-footer {
 .products .box-container .box .special-button {
 	text-align: center;
 	position: relative;
-	bottom: 0;
 	right: 0;
 	border-radius: 20px;
 	background: var(--light-green);
@@ -1246,7 +1245,9 @@ footer .bottom-footer {
 	align-items: center;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	margin-right: 7rem;
+	margin-right: 27rem;
+	bottom: 267px;
+	left: 11px;
 }
 
 .products .box-container .box .button i,
@@ -1272,7 +1273,8 @@ footer .bottom-footer {
 
 .products .box-container .box .btn {
 	position: absolute;
-	top: 5%;
+	top: 64%;
+	right: 40%;
 }
 
 .products .box-container .box .flex .qty {
