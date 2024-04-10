@@ -1060,7 +1060,7 @@ textarea {
 /*----------footer section-----------------*/
 .top-footer {
 	width: 100%;
-	background: var(--green);
+	background: #000000e0;
 	padding: 1rem;
 	display: flex;
 	flex-wrap: wrap;
@@ -1078,7 +1078,7 @@ textarea {
 }
 
 footer {
-	background-image: url('img/0.webp');
+	background-image: url('img/FondFouter.jpg');
 	width: 100%;
 	min-height: 380px;
 	/* min-height: calc(100vh - 18rem); */

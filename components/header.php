@@ -1,12 +1,13 @@
 <header class="header">
 	<div class="flex">
 		<a href="home.php" class="brand-navbar">
-			<div class="logo"><img src="img/zoomed_rounded_logo.png" alt="Road Luxury Logo"></div>
+			<div class="logo"><img src="img/logoFinal.jpg" alt="Road Luxury Logo"></div>
 			<h1>Road Luxury</h1>
 		</a>
 		<nav class="navbar">
 			<a href="home.php">Accueil</a>
-			<a href="view_products.php">Produits</a>
+			<a href="view_products.php">Nos Voitures</a>
+			<a href="view_products.php">Nos Puffs</a>
 			<a href="order.php">Commandes</a>
 			<a href="about.php">À propos</a>
 			<a href="contact.php">Nous contacter</a>

@@ -31,7 +31,6 @@ if (isset($_POST['logout'])) {
 			<div class="video-container">
             <video autoplay loop muted playsinline>
                 <source src="image/videoPres.mp4" type="video/mp4">
-                Votre navigateur ne prend pas en charge les vidéos HTML5.
             </video>
             <div class="overlay"></div>
             <div class="video-detail">
@@ -51,7 +50,7 @@ if (isset($_POST['logout'])) {
 					<img src="img/brand (1).jpg">
 				</div>
 				<div class="box">
-					<img src="img/brand (2).jpg">
+					<img src="img/FerariLogo.png">
 				</div>
 				<div class="box">
 					<img src="img/brand (3).jpg">
