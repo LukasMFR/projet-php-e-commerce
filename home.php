@@ -34,8 +34,8 @@ if (isset($_POST['logout'])) {
 		</video>
 		<div class="overlay"></div>
 		<div class="video-detail">
-			<h1>Bivenue chez Road</h1>
-			<p>Description qui va avec la vidéo et le thème de votre site.</p>
+			<h1>Bienvenue chez Road Luxury</h1>
+			<p>L'art de l'élégance automobile.</p>
 		</div>
 	</div>
 
