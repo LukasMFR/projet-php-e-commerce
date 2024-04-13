@@ -1207,6 +1207,8 @@ footer .bottom-footer {
 .products .box-container {
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .products .box-container .box {
@@ -1219,9 +1221,8 @@ footer .bottom-footer {
 }
 
 .products .box-container .box .img {
-	width: 80%;
-	height: auto;
-	margin-top: 4rem;
+	border-radius: .10rem; /* Arrondir l'image */
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la boîte */
 }
 
 .products .box-container .box .name {
