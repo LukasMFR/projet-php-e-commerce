@@ -120,7 +120,7 @@ ul {
 .btn {
 	line-height: 2;
 	/* background-color: #e0ffcd; */
-	background-color: #0c1022;
+	background-color: #3f3f3f;
 	padding: 5px 35px;
 	display: inline-block;
 	border-radius: 30px;
@@ -1213,7 +1213,7 @@ footer .bottom-footer {
 .products .box-container .box {
 	box-shadow: var(--box-shadow);
 	border-radius: 1rem;
-	padding: 2rem 7rem;
+	padding: 2rem 1rem;
 	margin: 2rem;
 	position: relative;
 	background-color: #fff;
@@ -1248,13 +1248,13 @@ footer .bottom-footer {
 	position: relative;
 	right: 0;
 	border-radius: 20px;
-	background: #343434;
+	background: #3f3f3f;
 	padding: .5rem 1.5rem;
 	/* padding: 5px 35px; */
 	align-items: center;
 	margin-top: 1rem;
 	margin-bottom: -2rem;
-	margin-right: 35rem;
+	margin-right: 25rem;
 	bottom: 267px;
 	left: 11px;
 }
@@ -1281,8 +1281,8 @@ footer .bottom-footer {
 
 .products .box-container .box .btn {
 	position: absolute;
-	top: 64%;
-	right: 40%;
+	top: 72%;
+	right: 38%;
 }
 
 .products .box-container .box .flex .qty {
