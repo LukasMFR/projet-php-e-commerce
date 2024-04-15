@@ -24,7 +24,7 @@
 	margin: -1px;
 	padding: 0;
 	box-sizing: border-box;
-	border-radius: 1rem;
+
 	/* outline: 1px solid red; */
 }
 
@@ -1207,7 +1207,7 @@ footer .bottom-footer {
 /*------view product section-------*/
 .products .box-container {
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-	justify-content: space-around;
+	justify-content: center;
 	display: flex;
 	flex-wrap: wrap;
 }
