@@ -24,7 +24,6 @@
 	margin: -1px;
 	padding: 0;
 	box-sizing: border-box;
-
 	/* outline: 1px solid red; */
 }
 
@@ -1208,15 +1207,14 @@ footer .bottom-footer {
 .products .box-container {
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	justify-content: center;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
 }
 
 .products .box-container .box {
 	box-shadow: var(--box-shadow);
 	border-radius: 1rem;
-	padding: 2rem 1rem;
-	margin: 1rem;
+	padding: 2rem 7rem;
+	margin: 2rem;
 	position: relative;
 	background-color: #fff;
 }
@@ -1250,13 +1248,13 @@ footer .bottom-footer {
 	position: relative;
 	right: 0;
 	border-radius: 20px;
-	background: var(--light-green);
+	background: #343434;
 	padding: .5rem 1.5rem;
 	/* padding: 5px 35px; */
 	align-items: center;
 	margin-top: 1rem;
-	margin-bottom: 1rem;
-	margin-right: 27rem;
+	margin-bottom: -2rem;
+	margin-right: 35rem;
 	bottom: 267px;
 	left: 11px;
 }
@@ -1265,7 +1263,6 @@ footer .bottom-footer {
 .products .box-container .box .button a {
 	font-size: 1.3rem;
 	font-weight: bold;
-	margin-right: .5rem;
 	/* color: #000; */
 	color: #fff;
 }
