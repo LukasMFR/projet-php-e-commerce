@@ -410,6 +410,7 @@ video {
 
 /*----------slider section-----------------*/
 .slider {
+	position: relative;
 	font-family: "Roboto", sans-serif;
 	max-height: 80vh;
 	width: 100%;
@@ -417,8 +418,21 @@ video {
 	overflow-x: hidden;
 	overflow-y: hidden;
 	scroll-snap-type: x mandatory;
-	/*Modif ici*/
 	flex-direction: row-reverse;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+	opacity: 1;
 }
 
 .slider__slider {
@@ -1341,8 +1355,79 @@ footer .bottom-footer {
 
 /*------------view products----------*/
 .view_page {
-	padding: 5% 8%;
-	background-image: url('img/bg.jpg');
+	padding: 12% 3%;
+}
+
+
+.color-button {
+	border: none;
+	border: 1px solid black;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.button-container {
+	text-align: center;
+	height: 69%;
+}
+
+.color-button[data-color="#FF0000"] {
+	background-color: #FF0000;
+}
+
+.color-button[data-color="#00FF00"] {
+	background-color: #00FF00;
+}
+
+.color-button[data-color="#0000FF"] {
+	background-color: #0000FF;
+}
+
+.slider {
+	position: relative;
+	width: 175%;
+	max-width: 741px;
+	/* La largeur maximale du slider */
+}
+
+.slides img {
+	width: 100%;
+
+	/* Cachez toutes les images par défaut */
+}
+
+.slides img.active {
+	display: block;
+	/* Affichez seulement l'image active */
+}
+
+.slide-button {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 24px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+	/* Curseur de pointeur */
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.prev {
+	left: 32px;
+}
+
+.next {
+	right: -18px;
 }
 
 .view_page form {
@@ -1351,14 +1436,17 @@ footer .bottom-footer {
 	justify-content: center;
 	align-items: center;
 	box-shadow: var(--box-shadow);
-	background: #fff;
-	margin-left: 1rem;
-	padding: 1.5rem;
+	background: #ffffff96;
+	margin: -4rem;
+	padding: 7rem;
 }
 
 .view_page form img {
-	padding: .5rem;
-	box-shadow: var(--box-shadow);
+	padding: 0rem;
+	width: 742px;
+	height: auto;
+	margin-left: -5rem;
+	border-radius: 5%;
 }
 
 .view_page form .name {
@@ -1376,7 +1464,8 @@ footer .bottom-footer {
 	font-size: 16px;
 	color: gray;
 	line-height: 2;
-	margin-bottom: .5rem;
+	margin-bottom: 2.5rem;
+	text-align: right;
 }
 
 .view_page .btn {

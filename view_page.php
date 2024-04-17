@@ -102,7 +102,24 @@ if (isset($_POST['add_to_cart'])) {
 
 						?>
 						<form method="post">
-							<img src="image/<?php echo $fetch_products['image']; ?>">
+							<div class="slider">
+								<div class="slides active">
+							        <img src="image/bugatienoir.jpg" alt="Voiture 1">
+								</div>
+								<div class="slide">
+    								<<img src="img/bugati2.jpg" alt="Voiture 2">>
+ 								</div>
+									<button class="slide-button prev" onclick="changeSlide(-1)">❮</button>
+							    <button class="slide-button next" onclick="changeSlide(1)">❯</button>
+							</div>
+							<div class="button-container">
+  								<button class="color-button" data-color="#FF0000"></button>
+  								<button class="color-button" data-color="#00FF00"></button>
+								<!--les deux du dessus on sen fou on les vois pas -->
+ 								<button class="color-button" data-color="#0000FF"></button>
+								<button class="color-button" data-color="#0000FF"></button>
+								<button class="color-button" data-color="#0000FF"></button>
+							</div>
 							<div class="detail">
 								<div class="price">
 									<?php echo $fetch_products['price']; ?> €

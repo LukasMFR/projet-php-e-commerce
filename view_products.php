@@ -171,12 +171,7 @@ if (isset($_POST['add_to_cart'])) {
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
-			</div>
-			
-
-
-
-			
+			</div>			
 		</section>
 		<?php include 'components/footer.php'; ?>
 	</div>
