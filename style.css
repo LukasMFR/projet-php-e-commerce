@@ -47,7 +47,7 @@ html {
 body {
 	/* Ancienne couleur */
 	/* background-image: linear-gradient(to bottom, #add8e6, #dda0dd); */
-	background-image: linear-gradient(to bottom, #000000, #d3d3d3);
+	background: linear-gradient(to bottom, #000000, #d3d3d3);
 	background-attachment: fixed;
 	width: 100%;
 }
