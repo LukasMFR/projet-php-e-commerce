@@ -51,7 +51,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`, `profile`) VALUES
-(1, 'selena ansari', 'selenaAnsari@gmail.c', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'glitch.jpg');
+(1, 'selena ansari', 'selenaAnsari@gmail.c', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'admin.jpg');
 
 -- --------------------------------------------------------
 
