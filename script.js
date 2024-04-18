@@ -79,34 +79,4 @@ document.querySelectorAll('.color-button').forEach(function (button) {
     });
 });
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slides img");
-
-    function showSlide(index) {
-        // Mettre à jour l'index currentSlide avant de vérifier s'il est hors des limites
-        currentSlide = index;
-
-        // Ajustement de currentSlide s'il est hors des limites
-        if (currentSlide >= slides.length) currentSlide = 0;
-        if (currentSlide < 0) currentSlide = slides.length - 1;
-
-        // Cacher toutes les slides et montrer seulement la slide active
-        slides.forEach(slide => {
-            slide.classList.remove("active");
-        });
-        slides[currentSlide].classList.add("active");
-    }
-
-    function changeSlide(step) {
-        // Appeler showSlide avec le nouvel index
-        showSlide(currentSlide + step);
-    }
-
-    // Initialiser le slider avec la première slide
-    showSlide(currentSlide);
-    document.querySelector('.prev').addEventListener('click', () => changeSlide(-1));
-    document.querySelector('.next').addEventListener('click', () => changeSlide(1));
-});
-
 

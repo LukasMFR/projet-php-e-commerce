@@ -1390,44 +1390,14 @@ footer .bottom-footer {
 	position: relative;
 	width: 175%;
 	max-width: 741px;
-	/* La largeur maximale du slider */
 }
 
 .slides img {
 	width: 100%;
-
-	/* Cachez toutes les images par défaut */
 }
 
 .slides img.active {
 	display: block;
-	/* Affichez seulement l'image active */
-}
-
-.slide-button {
-	border: 2px solid #fff;
-	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	font-size: 24px;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-	/* Curseur de pointeur */
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 10;
-}
-
-.prev {
-	left: 32px;
-}
-
-.next {
-	right: -18px;
 }
 
 .view_page form {
@@ -1451,7 +1421,6 @@ footer .bottom-footer {
 
 .view_page form .name {
 	font-size: 2rem;
-	/* text-transform: capitalize; */
 	color: var(--green);
 }
 

@@ -102,45 +102,28 @@ if (isset($_POST['add_to_cart'])) {
 
 						?>
 						<form method="post">
-							<div class="slider">
-								<div class="slides active">
-							        <img src="image/bugatienoir.jpg" alt="Voiture 1">
-								</div>
-								<div class="slide">
-    								<<img src="img/bugati2.jpg" alt="Voiture 2">>
- 								</div>
-									<button class="slide-button prev" onclick="changeSlide(-1)">❮</button>
-							    <button class="slide-button next" onclick="changeSlide(1)">❯</button>
-							</div>
-							<div class="button-container">
-  								<button class="color-button" data-color="#FF0000"></button>
-  								<button class="color-button" data-color="#00FF00"></button>
-								<!--les deux du dessus on sen fou on les vois pas -->
- 								<button class="color-button" data-color="#0000FF"></button>
-								<button class="color-button" data-color="#0000FF"></button>
-								<button class="color-button" data-color="#0000FF"></button>
-							</div>
-							<div class="detail">
-								<div class="price">
-									<?php echo $fetch_products['price']; ?> €
-								</div>
-								<div class="name">
-									<?php echo $fetch_products['name']; ?>
-								</div>
-								<div class="detail">
-									<?php echo nl2br($fetch_products['product_detail']); ?>
-								</div> <!-- Now with nl2br() for line breaks -->
-								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
-								<div class="button">
-									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
-											class="bx bx-heart"></i></button>
-									<input type="hidden" name="qty" value="1" min="0" class="quantity">
-									<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
-											class="bx bx-cart"></i></button>
-								</div>
-							</div>
-						</form>
-						<?php
+				<img src="image/<?php echo $fetch_products['image']; ?>">
+				<div class="detail">
+					<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+					<div class="name"><?php echo $fetch_products['name']; ?></div>
+					<div class="detail">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					</div>
+					<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+					<div class="button">
+						<button type="submit" name="add_to_wishlist" class="btn">add to wishlist<i class="bx bx-heart"></i></button>
+						<input type="hidden" name="qty" value="1" min="0" class="quantity">
+						<button type="submit" name="add_to_cart" class="btn">add to cart<i class="bx bx-cart"></i></button>
+					</div>
+				</div>
+			</form>
+			<?php 
 					}
 				}
 			}
