@@ -34,7 +34,7 @@ if (isset($_POST['delete'])) {
 	<!-- font awesome cdn link  -->
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="img/favicon-64.png">
+	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Les produits - Road Luxury</title>
 </head>
 

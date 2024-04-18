@@ -62,7 +62,7 @@ if (isset($_POST['update_order'])) {
 	<!--box icon link-->
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="img/favicon-64.png">
+	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Commandes - Road Luxury</title>
 </head>
 
