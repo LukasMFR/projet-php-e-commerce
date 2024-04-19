@@ -94,7 +94,7 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="img/maserati.jpg">
+					<img src="image/Maserati.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -148,7 +148,7 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="img/maserati.jpg">
+					<img src="image/maserati.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
