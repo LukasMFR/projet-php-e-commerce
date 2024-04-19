@@ -125,7 +125,7 @@ if (isset($_POST['add_to_cart'])) {
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
+					<a href="view_page.php?pid=g5DLcNHmtHvq3DtJYsCb" class="btn">Visualiser</a>
 					<h1>Alpine A110 RS</h1>
 				</div>
 				<div class="box">
@@ -133,7 +133,7 @@ if (isset($_POST['add_to_cart'])) {
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
+					<a href="view_page.php?pid=uOarNNg0n3KD9OvPtItP" class="btn">Visualiser</a>
 					<h1>Ferrarie SP51</h1>
 				</div>
 				<div class="box">

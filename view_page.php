@@ -94,8 +94,8 @@ if (isset($_POST['add_to_cart'])) {
 			<?php
 			if (isset($_GET['pid'])) {
 				$pid = $_GET['pid'];
-				$select_products = $conn->prepare("SELECT * FROM `products` WHERE id = 'BLTtlhOgq1cuz7plh4Ia'");
-				$select_products->execute();
+				$select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+				$select_products->execute([$pid]);
 				if ($select_products->rowCount() > 0) {
 					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
 						?>
