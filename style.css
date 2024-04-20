@@ -1359,6 +1359,8 @@ footer .bottom-footer {
 }
 
 
+
+
 .color-button {
 	border: none;
 	border: 1px solid black;
@@ -1400,6 +1402,14 @@ footer .bottom-footer {
 	display: block;
 }
 
+.view_page img {
+	display: block;
+	max-width: 100%;
+	margin-bottom: 20px;
+
+}
+
+
 .view_page form {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
@@ -1427,6 +1437,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
+	margin-top: -416px;
 }
 
 .view_page form .detail {

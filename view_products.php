@@ -94,7 +94,7 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="image/Maserati.jpg">
+					<img src="img/Maserati.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -110,7 +110,7 @@ if (isset($_POST['add_to_cart'])) {
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
-					<img src="img/lambo.jpg">
+					<img src="image/lambo4.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -137,11 +137,11 @@ if (isset($_POST['add_to_cart'])) {
 					<h1>Ferrarie SP51</h1>
 				</div>
 				<div class="box">
-					<img src="img/lambo.jpg">
+					<img src="image/porche.png">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
+					<a href="view_page.php?pid=26lPPTjXh9EkNc7WocS5" class="btn">Visualiser</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>

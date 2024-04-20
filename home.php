@@ -95,7 +95,7 @@ if (isset($_POST['logout'])) {
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
-					<img src="img/lambo.jpg">
+					<img src="image/lambo4.jpg">
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter maintenant</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>

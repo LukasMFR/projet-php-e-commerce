@@ -102,7 +102,10 @@ if (isset($_POST['add_to_cart'])) {
 
 
 			<form method="post">
-					<img src="image/<?php echo $fetch_products['image']; ?>">
+				<div class="image-container">
+					<img src="image/<?php echo $fetch_products['image']; ?>" alt="Image principale">
+					<img src="image/<?php echo $fetch_products['image2']; ?>" alt="Image secondaire">
+				</div>
 					<div class="detail">
 					<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
 					<div class="name"><?php echo $fetch_products['name']; ?></div>
