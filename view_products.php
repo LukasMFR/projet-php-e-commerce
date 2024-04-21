@@ -169,7 +169,7 @@ if (isset($_POST['add_to_cart'])) {
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
 					<a href="view_page.php?pid=eBbtkVNYiJJKT9mCgYbk" class="btn">Visualiser</a>
-					<h1>Lamborghini Revuelto</h1>
+					<h1>Maserati Granturismo</h1>
 				</div>
 			</div>			
 		</section>
