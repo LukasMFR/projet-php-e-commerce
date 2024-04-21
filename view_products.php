@@ -94,15 +94,15 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="img/Maserati.jpg">
+					<img src="image/mc1.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
-					<h1>Maserati MC20 Cielo</h1>
+					<h1>Maclaren 720s</h1>
 				</div>
 				<div class="box">
-					<img src="img/bugatienoir.jpg">
+					<img src="image/bugatienoir.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -121,7 +121,7 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="img/Alpine.jpg">
+					<img src="image/Alpine.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -129,7 +129,7 @@ if (isset($_POST['add_to_cart'])) {
 					<h1>Alpine A110 RS</h1>
 				</div>
 				<div class="box">
-					<img src="img/ferariesp51.png">
+					<img src="image/ferariesp51.png">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
@@ -148,27 +148,27 @@ if (isset($_POST['add_to_cart'])) {
 
 			<div class="box-container">
 				<div class="box">
-					<img src="image/maserati.jpg">
+					<img src="image/urus1.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
-					<h1>Maserati MC20 Cielo</h1>
+					<a href="view_page.php?pid=kun96OpQed6Eww6M1URo" class="btn">Visualiser</a>
+					<h1>Lamborhhini Urus</h1>
 				</div>
 				<div class="box">
-					<img src="img/bugatienoir.jpg">
+					<img src="image/mercedes1.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
-					<h1>Bugatti La voiture Noire</h1>
+					<a href="view_page.php?pid=wrJTrzoHsuEwr7hGi3R6" class="btn">Visualiser</a>
+					<h1>Mercedes AMG GT2</h1>
 				</div>
 				<div class="box">
-					<img src="img/lambo.jpg">
+					<img src="image/maserati1.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 							</div>
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
+					<a href="view_page.php?pid=eBbtkVNYiJJKT9mCgYbk" class="btn">Visualiser</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>			

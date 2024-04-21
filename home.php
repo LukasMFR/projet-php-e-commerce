@@ -85,12 +85,12 @@ if (isset($_POST['logout'])) {
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/maserati.jpg">
+					<img src="image/mc1.jpg">
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter maintenant</a>
-					<h1>Maserati MC20 Cielo</h1>
+					<h1>maclaren 720S</h1>
 				</div>
 				<div class="box">
-					<img src="img/bugatienoir.jpg">
+					<img src="image/bugatienoir.jpg">
 					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter maintenant</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
@@ -106,17 +106,17 @@ if (isset($_POST['logout'])) {
 			</div>
 			<div class="box-container">
 				<div class="box">
-					<img src="img/mercedes.jpg">
+					<img src="image/mercedes.jpg">
 					<a href="view_products.php" class="btn">Précommander</a>
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
-					<img src="img/astonmartine.jpg">
+					<img src="image/astonmartine.jpg">
 					<a href="view_products.php" class="btn">Précommander</a>
 					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
-					<img src="img/MC3.jpg">
+					<img src="image/MC3.jpg">
 					<a href="view_products.php" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
 				</div>
