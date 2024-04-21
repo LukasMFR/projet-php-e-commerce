@@ -151,7 +151,6 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `image2` varchar(255) NOT NULL,
   `product_detail` varchar(500) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -160,8 +159,7 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `image`, 'image2', `product_detail`, `status`) VALUES
-('BLTtlhOgq1cuz7plh4Ia', 'Maserati MC20 Cielo','123', 'Maserati.jpg' ,'Lorem ipsum dolor sit amet, consectetur adipisicin...' ,'actif')
+INSERT INTO `products` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
 ('BLTtlhOgq1cuz7plh4Ia', 'Lemon Green Tea', '123', '8lXs7FvkBvchy7RijAzE.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'deactive'),
 ('jo35YMmBWpvbCMB65UdA', 'Kabusecha Green Tea', '160', 'vKK7WLWKiqhMBVltCovA.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active'),
 ('aSBHDzG26iXurm6cfoNv', 'Gyokuro Green Tea', '50', 'OyP5om4L0iRn9ES2sTPz.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit am', 'active'),
