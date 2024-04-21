@@ -1409,6 +1409,21 @@ footer .bottom-footer {
 
 }
 
+.product-images img {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.product-images .third-image {
+	margin-left: 820px;
+	margin-top: -422px;
+}
+
+.product-details {
+	width: 100%
+}
+
 
 .view_page form {
 	display: grid;
@@ -1437,7 +1452,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: -416px;
+	margin-top: -415px;
 }
 
 .view_page form .detail {
