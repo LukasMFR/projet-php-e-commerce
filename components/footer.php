@@ -47,11 +47,12 @@
 				<h3>Nos réseaux</h3>
 				<p>Suivez-nous sur nos réseaux</p>
 				<div class="social-links">
-					<i class="bx bxl-instagram"></i>
-					<i class="bx bxl-twitter"></i>
-					<i class="bx bxl-behance"></i>
-					<i class="bx bxl-youtube"></i>
-					<i class="bx bxl-whatsapp"></i>
+					<a href="https://www.instagram.com/road_luxury_" target="_blank"><i
+							class="bx bxl-instagram"></i></a>
+					<a href="https://twitter.com/Road_Luxury_" target="_blank"><i class="bx bxl-twitter"></i></a>
+					<!-- <i class="bx bxl-behance"></i> -->
+					<a href="https://www.youtube.com/@RoadLuxury" target="_blank"><i class="bx bxl-youtube"></i></a>
+					<!-- <i class="bx bxl-whatsapp"></i> -->
 				</div>
 			</div>
 		</div>
