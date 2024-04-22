@@ -172,6 +172,27 @@ if (isset($_POST['add_to_cart'])) {
 					<h1>Maserati Granturismo</h1>
 				</div>
 			</div>	
+
+			<div class="title">
+				<img src="img/download.png" class="logo-small">
+				<h1>Bientôt disponible</h1>
+			</div>
+			<div class="box-container">
+				<div class="box">
+					<img src="image/mercedes.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
+				</div>
+				<div class="box">
+					<img src="image/astonmartine.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>Aston Martin Vantage GT3</h1>
+				</div>
+				<div class="box">
+					<img src="image/MC3.jpg">
+					<a href="view_products.php" class="btn">Précommander</a>
+					<h1>McLaren 720s GT3 X</h1>
+				</div>
 			
 		</section>
 		<?php include 'components/footer.php'; ?>
