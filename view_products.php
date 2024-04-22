@@ -173,7 +173,7 @@ if (isset($_POST['add_to_cart'])) {
 				</div>
 			</div>	
 
-			<div class="title">
+			<div class="title-product">
 				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>

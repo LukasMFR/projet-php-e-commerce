@@ -73,6 +73,14 @@ a {
 	line-height: 2;
 }
 
+.title-product { 
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1rem;
+	margin: 0rem 0;
+	line-height: 2;
+}
+
 /* .title p {
 	text-transform: capitalize;
 } */
@@ -617,6 +625,7 @@ video {
 	border: 2px solid var(--green);
 	cursor: pointer;
 }
+
 
 .container .box-container {
 	padding: 1rem;
@@ -1355,7 +1364,7 @@ footer .bottom-footer {
 
 /*------------view products----------*/
 .view_page {
-	padding: 12% 3%;
+	padding: 5% 3%;
 }
 
 
@@ -1416,8 +1425,9 @@ footer .bottom-footer {
 }
 
 .product-images .third-image {
-	margin-left: 820px;
-	margin-top: -422px;
+	
+	display: inline-block;
+	vertical-align: top;
 }
 
 .product-details {
@@ -1452,7 +1462,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: -415px;
+	margin-top: -605px;
 }
 
 .view_page form .detail {
