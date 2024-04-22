@@ -180,17 +180,26 @@ if (isset($_POST['add_to_cart'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="image/mercedes.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
+					<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="btn">Précommander</a>
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
 					<img src="image/astonmartine.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
+					<a href="view_page.php?pid=rfA9q4uWC2JvzLCRmawT" class="btn">Précommander</a>
 					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
 					<img src="image/MC3.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<div class="button special-button">
+								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
+					<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
 				</div>
 			
