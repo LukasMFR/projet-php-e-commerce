@@ -1464,7 +1464,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: -605px;
+	margin-top: -311px;
 }
 
 .view_page form .detail {
@@ -1853,3 +1853,38 @@ footer .bottom-footer {
 		width: 100%;
 	}
 }
+
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.skills h4, .skills p {
+    margin: 0 0 0.3rem 0;
+}
+
+.skills li {
+    background-color: #F5F5F5;
+    border-left: 3px solid rgb(91, 107, 120);
+    padding: .9rem 2rem;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+.grid__item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+

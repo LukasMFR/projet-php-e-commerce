@@ -122,7 +122,9 @@ if (isset($_POST['add_to_cart'])) {
 
 					</div>
 
-					<div class="grid">
+					<section id="skills" class="skills">
+      
+            <div class="grid">
                 <div class="grid__item">
                     <h3>Domaines de compétences</h3>
                     <ul class="list-unstyled">
@@ -149,29 +151,8 @@ if (isset($_POST['add_to_cart'])) {
                         </li>
                     </ul>
                 </div>
-                <div class="grid__item">
-                    <h3>Compétences en développement</h3>
-                    <div class="progressbar">
-                        <div class="bar" data-width="95">HTML</div>
-                    </div>
-                    <div class="progressbar">
-                        <div class="bar" data-width="90">CSS</div>
-                    </div>
-                    <div class="progressbar">
-                        <div class="bar" data-width="85">JAVASCRIPT</div>
-                    </div>
-                    <div class="progressbar">
-                        <div class="bar" data-width="90">Langage C</div>
-                    </div>
-                    <h3>Compétences en conception graphique</h3>
-                    <div class="progressbar">
-                        <div class="bar" data-width="90">ADOBE PHOTOSHOP</div>
-                    </div>
-                    <div class="progressbar">
-                        <div class="bar" data-width="80">GIMP/CANVA</div>
-                    </div>
-                </div>
             </div>
+    </section>
    					 
 					<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
 					<div class="button">
