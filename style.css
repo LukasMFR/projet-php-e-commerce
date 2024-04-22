@@ -1200,6 +1200,8 @@ footer .inner-footer .card .social-links i {
 	cursor: pointer;
 	padding: .6rem;
 	font-size: 1.3rem;
+	margin-right: .5rem;
+	transition: .3s;
 }
 
 footer .inner-footer .card .social-links i:hover {
