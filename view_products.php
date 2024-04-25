@@ -90,8 +90,8 @@ if (isset($_POST['add_to_cart'])) {
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Notre boutique</span>
 		</div>
-		<section class="products">
 
+		<section class="products">
 			<div class="box-container">
 				<div class="box">
 					<img src="image/mc1.jpg">
@@ -202,8 +202,9 @@ if (isset($_POST['add_to_cart'])) {
 					<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
 				</div>
-
+			</div>
 		</section>
+
 		<?php include 'components/footer.php'; ?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
