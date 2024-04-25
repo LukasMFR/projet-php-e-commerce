@@ -133,7 +133,7 @@ CREATE TABLE `vehicule` (
 INSERT INTO `products` (`idvech`, `marque`, `modele`, `anneFab`, `prix`, `image`) VALUES
 ('BLTtlhOgq1cuz7plh4Ia', 'Ferari', 'SP51', '2022', '10000', 'ferariesp51.jpg'),
 ('jo35YMmBWpvbCMB65UdA', 'Bugatti', 'voiture noir', '2021', '10000', 'bugatienoir.webp'),
-('aSBHDzG26iXurm6cfoNv', 'Aston Martin', 'Vantage GT3', '2018/2019', '10000', 'astonmartine.jpg');
+('aSBHDzG26iXurm6cfoNv', 'Aston Martin', 'Vantage GT3', '2018/2019', '10000', 'aston.jpg');
 
 
 

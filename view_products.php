@@ -187,7 +187,7 @@ if (isset($_POST['add_to_cart'])) {
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
-					<img src="image/astonmartine.jpg">
+					<img src="image/aston.jpg">
 					<div class="button special-button">
 								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 					</div>

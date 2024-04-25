@@ -111,7 +111,7 @@ if (isset($_POST['logout'])) {
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
-					<img src="image/astonmartine.jpg">
+					<img src="image/aston.jpg">
 					<a href="view_products.php" class="btn">Précommander</a>
 					<h1>Aston Martin Vantage GT3</h1>
 				</div>
