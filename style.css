@@ -1449,7 +1449,7 @@ footer .bottom-footer {
 	width: 742px;
 	height: auto;
 	margin-left: -5rem;
-	border-radius: 5%;
+	border-radius: 30px;
 }
 
 .view_page form .name {
