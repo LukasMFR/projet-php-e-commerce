@@ -93,86 +93,31 @@ if (isset($_POST['add_to_cart'])) {
 
 		<section class="products">
 			<div class="box-container">
-				<div class="box">
-					<img src="image/mc1.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
-					<h1>Maclaren 720s</h1>
-				</div>
-				<div class="box">
-					<img src="image/bugatienoir.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
-					<h1>Bugatti La voiture Noire</h1>
-				</div>
-				<div class="box">
-					<img src="image/lambo4.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
-					<h1>Lamborghini Revuelto</h1>
-				</div>
+				<?php
+				$select_products = $conn->prepare("SELECT * FROM `products`");
+				$select_products->execute();
+				if ($select_products->rowCount() > 0) {
+					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+						?>
+						<form action="" method="post" class="box product-view-form">
+							<div class="image-container">
+								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
+								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+									class="view-btn">Visualiser</a>
+								<div class="button special-button">
+									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+								</div>
+							</div>
+							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
+							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+						</form>
+						<?php
+					}
+				} else {
+					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+				}
+				?>
 			</div>
-
-			<div class="box-container">
-				<div class="box">
-					<img src="image/Alpine.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=g5DLcNHmtHvq3DtJYsCb" class="btn">Visualiser</a>
-					<h1>Alpine A110 RS</h1>
-				</div>
-				<div class="box">
-					<img src="image/ferariesp51.png">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=uOarNNg0n3KD9OvPtItP" class="btn">Visualiser</a>
-					<h1>Ferrarie SP51</h1>
-				</div>
-				<div class="box">
-					<img src="image/porche.png">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=26lPPTjXh9EkNc7WocS5" class="btn">Visualiser</a>
-					<h1>Lamborghini Revuelto</h1>
-				</div>
-			</div>
-
-			<div class="box-container">
-				<div class="box">
-					<img src="image/urus1.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=kun96OpQed6Eww6M1URo" class="btn">Visualiser</a>
-					<h1>Lamborhhini Urus</h1>
-				</div>
-				<div class="box">
-					<img src="image/mercedes1.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=wrJTrzoHsuEwr7hGi3R6" class="btn">Visualiser</a>
-					<h1>Mercedes AMG GT2</h1>
-				</div>
-				<div class="box">
-					<img src="image/maserati1.jpg">
-					<div class="button special-button">
-						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-					</div>
-					<a href="view_page.php?pid=eBbtkVNYiJJKT9mCgYbk" class="btn">Visualiser</a>
-					<h1>Maserati Granturismo</h1>
-				</div>
-			</div>
-
 			<div class="title-product">
 				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
