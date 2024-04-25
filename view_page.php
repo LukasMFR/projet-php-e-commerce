@@ -100,76 +100,71 @@ if (isset($_POST['add_to_cart'])) {
 					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
 						?>
 
+						<form method="post">
+							<div class="product-images">
+								<img src="image/<?php echo $fetch_products['image']; ?>" alt="Image principale">
+								<div class="image-container">
+									<img src="image/<?php echo $fetch_products['image2']; ?>" alt="Image secondaire">
+									<img src="image/<?php echo $fetch_products['image3']; ?>" alt="Image tertiaire"
+										class="third-image">
+								</div>
+							</div>
+							<div class="detail">
+								<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+								<div class="name"><?php echo $fetch_products['name']; ?></div>
+								<div class="detail">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-			<form method="post">
-				<div class="product-images">
-                        <img src="image/<?php echo $fetch_products['image']; ?>" alt="Image principale">
-                        <div class="image-container">
-                            <img src="image/<?php echo $fetch_products['image2']; ?>" alt="Image secondaire">
-                            <img src="image/<?php echo $fetch_products['image3']; ?>" alt="Image tertiaire" class="third-image">
-                        </div>
-                    </div>
-					<div class="detail">
-					<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
-					<div class="name"><?php echo $fetch_products['name']; ?></div>
-					<div class="detail">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								</div>
 
-					</div>
+								<section id="skills" class="skills">
+									<div class="grid">
+										<div class="grid__item skill-item">
+											<h3>Domaines de compétences</h3>
+											<ul class="list-unstyled skill-list">
+												<li class="skill-list-item">
+													<p class="skill-description">Travailleur</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">Créatif</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">Dynamique</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">À l'écoute</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">Ponctuel</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">Sociable</p>
+												</li>
+												<li class="skill-list-item">
+													<p class="skill-description">Qualité de Management</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</section>
 
-					<section id="skills" class="skills">
-      
-            <div class="grid">
-                <div class="grid__item">
-                    <h3>Domaines de compétences</h3>
-                    <ul class="list-unstyled">
-                        <li>
-                            <p>Travailleur</p>
-                        </li>
-                        <li>
-                            <p>Créatif</p>
-                        </li>
-                        <li>
-                            <p>Dynamique</p>
-                        </li>
-                        <li>
-                            <p>A l'écoute</p>
-                        </li>
-                        <li>
-                            <p>Ponctuel</p>
-                        </li>
-                        <li>
-                            <p>Sociable</p>
-                        </li>
-                        <li>
-                            <p>Qualité de Management</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-    </section>
-   					 
-					<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
-					<div class="button">
-						<button type="submit" name="add_to_wishlist" class="btn">add to wishlist<i class="bx bx-heart"></i></button>
-						<input type="hidden" name="qty" value="1" min="0" class="quantity">
-						<button type="submit" name="add_to_cart" class="btn">add to cart<i class="bx bx-cart"></i></button>
-					</div>
-					</div>
-			</form>
+								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+								<div class="button">
+									<button type="submit" name="add_to_wishlist" class="btn">add to wishlist<i
+											class="bx bx-heart"></i></button>
+									<input type="hidden" name="qty" value="1" min="0" class="quantity">
+									<button type="submit" name="add_to_cart" class="btn">add to cart<i
+											class="bx bx-cart"></i></button>
+								</div>
+							</div>
+						</form>
 
-			
-
-
-			
-
-
-			<?php 
+						<?php
 					}
 				}
 			}

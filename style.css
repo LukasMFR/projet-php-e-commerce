@@ -73,7 +73,7 @@ a {
 	line-height: 2;
 }
 
-.title-product { 
+.title-product {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -1369,9 +1369,6 @@ footer .bottom-footer {
 	padding: 5% 3%;
 }
 
-
-
-
 .color-button {
 	border: none;
 	border: 1px solid black;
@@ -1427,7 +1424,7 @@ footer .bottom-footer {
 }
 
 .product-images .third-image {
-	
+
 	display: inline-block;
 	vertical-align: top;
 }
@@ -1435,7 +1432,6 @@ footer .bottom-footer {
 .product-details {
 	width: 100%
 }
-
 
 .view_page form {
 	display: grid;
@@ -1488,6 +1484,30 @@ footer .bottom-footer {
 
 .cart-total .button .btn {
 	margin: 1;
+}
+
+.skill-description {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	unicode-bidi: isolate;
+	margin: 0 0 0.3rem 0;
+}
+
+.skill-list-item {
+	background-color: #F5F5F5;
+	border-left: 3px solid rgb(91, 107, 120);
+	padding: .9rem 2rem;
+	margin-bottom: 1rem;
+}
+
+.skill-item {
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: 100%;
+	padding: 1rem;
 }
 
 /*------------checkout page----------*/
@@ -1853,38 +1873,3 @@ footer .bottom-footer {
 		width: 100%;
 	}
 }
-
-
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
-
-.skills h4, .skills p {
-    margin: 0 0 0.3rem 0;
-}
-
-.skills li {
-    background-color: #F5F5F5;
-    border-left: 3px solid rgb(91, 107, 120);
-    padding: .9rem 2rem;
-}
-
-li {
-    margin-bottom: 1rem;
-}
-
-.grid__item {
-    flex-grow: 1;
-    flex-shrink: 0;
-    width: 100%;
-    padding: 1rem;
-}
-
-
-
