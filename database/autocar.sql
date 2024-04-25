@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : lun. 22 avr. 2024 à 14:41
--- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.0.30
+-- Hôte : localhost
+-- Généré le : jeu. 25 avr. 2024 à 23:31
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 DROP DATABASE IF EXISTS autocar;
 CREATE DATABASE autocar ;
@@ -87,17 +87,17 @@ CREATE TABLE `message` (
   `email` varchar(100) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `phone` varchar(30) DEFAULT NULL, -- assuming a phone number won't be longer than 30 characters
+  `phone` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `message`
+-- Déchargement des données de la table `message`
 --
 
-INSERT INTO `message` (`user_id`, `name`, `email`, `subject`, `message`, `phone`) VALUES
-('0', 'Paul', 'paul.roux@gmail.com', 'shop', 'good', '+123456789'),
-('UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'maths,science', 'kk', '+987654321');
+INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `subject`, `message`, `phone`) VALUES
+(1, '0', 'Paul', 'paul.roux@gmail.com', 'shop', 'good', '+123456789'),
+(2, 'UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'maths,science', 'kk', '+987654321');
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,16 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160'),
+('hRp1stePswTmUNJzEEJA', '', 'rfA9q4uWC2JvzLCRmawT', '12000'),
+('nfMPXrhz990IUblicjUh', 'UAVjN46f0bvXSKquej8S', '26lPPTjXh9EkNc7WocS5', '70'),
+('Ic38gVYISd0jYZ7aw9JK', 'UAVjN46f0bvXSKquej8S', 'g5DLcNHmtHvq3DtJYsCb', '80'),
+('JJKP1vcMt0hSQh5DxgmK', '', 'kun96OpQed6Eww6M1URo', '120'),
+('VjWglszsdMlS4zimBzos', '', 'bEvIK2PvwOqY4l8nuPTZ', '23'),
+('EWaNmfoQ5X5GjG64vaAJ', 'UAVjN46f0bvXSKquej8S', 'eBbtkVNYiJJKT9mCgYbk', '200'),
+('nVyfmUtNDmca006BtILN', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '123'),
+('41f3sqKn2Om7IU8ju0Eu', 'UAVjN46f0bvXSKquej8S', 'rfA9q4uWC2JvzLCRmawT', '12000');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
