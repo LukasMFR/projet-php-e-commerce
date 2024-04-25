@@ -110,7 +110,7 @@ if (isset($_POST['add_to_cart'])) {
 								</div>
 							</div>
 							<div class="detail">
-								<div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+								<div class="price"><?php echo $fetch_products['price']; ?> €</div>
 								<div class="name"><?php echo $fetch_products['name']; ?></div>
 								<div class="detail">
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -155,10 +155,10 @@ if (isset($_POST['add_to_cart'])) {
 
 								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
 								<div class="button">
-									<button type="submit" name="add_to_wishlist" class="btn">add to wishlist<i
+									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
 											class="bx bx-heart"></i></button>
 									<input type="hidden" name="qty" value="1" min="0" class="quantity">
-									<button type="submit" name="add_to_cart" class="btn">add to cart<i
+									<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
 											class="bx bx-cart"></i></button>
 								</div>
 							</div>
