@@ -96,24 +96,24 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/mc1.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Visualiser</a>
 					<h1>Maclaren 720s</h1>
 				</div>
 				<div class="box">
 					<img src="image/bugatienoir.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Visualiser</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
 					<img src="image/lambo4.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Visualiser</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
@@ -123,24 +123,24 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/Alpine.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=g5DLcNHmtHvq3DtJYsCb" class="btn">Visualiser</a>
 					<h1>Alpine A110 RS</h1>
 				</div>
 				<div class="box">
 					<img src="image/ferariesp51.png">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=uOarNNg0n3KD9OvPtItP" class="btn">Visualiser</a>
 					<h1>Ferrarie SP51</h1>
 				</div>
 				<div class="box">
 					<img src="image/porche.png">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=26lPPTjXh9EkNc7WocS5" class="btn">Visualiser</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
@@ -150,28 +150,28 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/urus1.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=kun96OpQed6Eww6M1URo" class="btn">Visualiser</a>
 					<h1>Lamborhhini Urus</h1>
 				</div>
 				<div class="box">
 					<img src="image/mercedes1.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=wrJTrzoHsuEwr7hGi3R6" class="btn">Visualiser</a>
 					<h1>Mercedes AMG GT2</h1>
 				</div>
 				<div class="box">
 					<img src="image/maserati1.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-							</div>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+					</div>
 					<a href="view_page.php?pid=eBbtkVNYiJJKT9mCgYbk" class="btn">Visualiser</a>
 					<h1>Maserati Granturismo</h1>
 				</div>
-			</div>	
+			</div>
 
 			<div class="title-product">
 				<img src="img/download.png" class="logo-small">
@@ -181,7 +181,7 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/mercedes.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 					</div>
 					<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="btn">Précommander</a>
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
@@ -189,7 +189,7 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/aston.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 					</div>
 					<a href="view_page.php?pid=rfA9q4uWC2JvzLCRmawT" class="btn">Précommander</a>
 					<h1>Aston Martin Vantage GT3</h1>
@@ -197,12 +197,12 @@ if (isset($_POST['add_to_cart'])) {
 				<div class="box">
 					<img src="image/MC3.jpg">
 					<div class="button special-button">
-								<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+						<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 					</div>
 					<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
 				</div>
-			
+
 		</section>
 		<?php include 'components/footer.php'; ?>
 	</div>
