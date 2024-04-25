@@ -31,7 +31,7 @@
 					<li><a href="cart.php">Panier</a></li>
 					<li><a href="contact.php">Nous contacter</a></li>
 					<li><a href="view_products.php">Produits</a></li>
-					<li>FAQ</li>
+					<li><a href="faq.php">FAQ</a></li>
 				</ul>
 			</div>
 			<div class="card">
