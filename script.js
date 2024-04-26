@@ -65,3 +65,11 @@ slider.addEventListener("click", function (ev) {
 });
 
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    var skillItems = document.querySelectorAll('.skill-list-item');
+    skillItems.forEach(function (skillItem, index) {
+        // Ici, tu définirais la largeur en fonction de la valeur de la compétence
+        // par exemple, une compétence de valeur 70/100 donnerait une largeur de 70%
+        skillItem.style.setProperty('--skill-level', '70%');
+    });
+});
