@@ -1277,8 +1277,8 @@ footer .bottom-footer {
 }
 
 .products .box-container .box .img {
-	border-radius: .10rem;
 	width: 100%;
+	aspect-ratio: 16 / 9;
 	border-radius: 10px;
 	height: auto;
 	object-fit: cover;
@@ -1519,6 +1519,8 @@ footer .bottom-footer {
 	padding: 0rem;
 	width: 742px;
 	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
 	margin-left: -5rem;
 	border-radius: 30px;
 }
