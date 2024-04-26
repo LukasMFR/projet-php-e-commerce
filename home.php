@@ -64,8 +64,7 @@ if (isset($_POST['logout'])) {
 			</div>
 		</section>
 		<section class="container">
-			<div class="box-container">
-
+			<div class="welcome">
 				<div class="box">
 					<img src="img/imagepres.jpg" class="rounded">
 				</div>
@@ -86,17 +85,17 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="image/mc1.jpg">
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter maintenant</a>
-					<h1>maclaren 720S</h1>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter</a>
+					<h1>McLaren 720s</h1>
 				</div>
 				<div class="box">
 					<img src="image/bugatienoir.jpg">
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter maintenant</a>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
 					<img src="image/lambo4.jpg">
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter maintenant</a>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>
@@ -107,17 +106,17 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="image/mercedes.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="btn">Précommander</a>
 					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
 				</div>
 				<div class="box">
 					<img src="image/aston.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<a href="view_page.php?pid=rfA9q4uWC2JvzLCRmawT" class="btn">Précommander</a>
 					<h1>Aston Martin Vantage GT3</h1>
 				</div>
 				<div class="box">
 					<img src="image/MC3.jpg">
-					<a href="view_products.php" class="btn">Précommander</a>
+					<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="btn">Précommander</a>
 					<h1>McLaren 720s GT3 X</h1>
 				</div>
 
