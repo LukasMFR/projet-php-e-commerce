@@ -779,12 +779,13 @@ video {
 	border-radius: 10px;
 	width: 70%;
 	max-width: calc(100% - 2rem);
+	max-height: calc(100% - 2rem);
 	box-sizing: border-box;
 	text-align: center;
 }
 
 .shop-category .detail h1 {
-	font-size: 2em;
+	font-size: 1.6em;
 	margin-bottom: 0.5rem;
 }
 
@@ -793,7 +794,9 @@ video {
 }
 
 .shop-category .detail .btn {
+	position: relative;
 	margin-top: 1rem;
+	/* bottom: 1rem; */
 }
 
 .shop-category .box {
@@ -801,6 +804,7 @@ video {
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	padding: 0;
 }
 
 .shop-category .box-container {
