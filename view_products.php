@@ -94,7 +94,7 @@ if (isset($_POST['add_to_cart'])) {
 		<section class="products">
 			<div class="box-container">
 				<?php
-				$select_products = $conn->prepare("SELECT * FROM `products`");
+				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
 				$select_products->execute();
 				if ($select_products->rowCount() > 0) {
 					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
@@ -124,41 +124,32 @@ if (isset($_POST['add_to_cart'])) {
 				<h1>Bientôt disponible</h1>
 			</div>
 				<div class="box-container">
-					<div class="box">
-						<div class="image-container">
-							<img src="image/mercedes.jpg" class="img">
-							<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="view-btn">Précommander</a>
-							<div class="button special-button">
-							<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-						</div>
-					</div>
-						<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-						<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
-			     	</div>
-				<div class="box">
-					<div class="image-container">
-						<img src="image/aston.jpg" class="img">
-						<a href="view_page.php?pid=rfA9q4uWC2JvzLCRmawT" class="view-btn">Précommander</a>
-						<div class="button special-button">
-							<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-						</div>
-					</div>
-					<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-					<h1>Aston Martin Vantage GT3</h1>
-				</div>
-				<div class="box">
-					<div class="image-container">
-						<img src="image/MC3.jpg" class="img">
-						<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="view-btn">Précommander</a>
-						<div class="button special-button">
-							<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-						</div>
-					</div>
-					<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-					<h1>McLaren 720s GT3 X</h1>
-					<!-- </form> -->
-				</div>
+				<?php
+				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'inactif'");
+				$select_products->execute();
+				if ($select_products->rowCount() > 0) {
+					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+						?>
+						<form action="" method="post" class="box product-view-form">
+							<div class="image-container">
+								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
+								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+									class="view-btn">Visualiser</a>
+								<div class="button special-button">
+									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+								</div>
+							</div>
+							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
+							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+						</form>
+						<?php
+					}
+				} else {
+					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+				}
+				?>
 			</div>
+		
 		</section>
 
 		<?php include 'components/footer.php'; ?>
