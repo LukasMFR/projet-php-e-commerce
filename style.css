@@ -785,7 +785,7 @@ video {
 }
 
 .shop-category .detail h1 {
-	font-size: 1.6em;
+	font-size: 2em;
 	margin-bottom: 0.5rem;
 }
 
@@ -1988,5 +1988,10 @@ footer .bottom-footer {
 
 	form:not(.product-view-form) {
 		width: 100%;
+	}
+
+	.shop-category .detail h1 {
+		font-size: 1.6em;
+		margin-bottom: 0.5rem;
 	}
 }
