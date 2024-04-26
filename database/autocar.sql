@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 26 avr. 2024 à 18:20
+-- Généré le : ven. 26 avr. 2024 à 20:01
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
+
 
 DROP DATABASE IF EXISTS autocar;
 CREATE DATABASE autocar ;
@@ -72,9 +73,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
-('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '50', '1'),
-('c7V1vDH8lNaDvktE3Zgm', '', 'g5DLcNHmtHvq3DtJYsCb', '111997', '1'),
-('nzsrCgI5xGa2Sraaj2Rn', '', '26lPPTjXh9EkNc7WocS5', '247996', '1');
+('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '50', '1');
 
 -- --------------------------------------------------------
 
@@ -83,21 +82,22 @@ INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
 --
 
 CREATE TABLE `message` (
-  `id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `subject` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL
+  `message` text NOT NULL,
+  `phone` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `message`
 --
 
-INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `subject`, `message`) VALUES
-('0', '0', 'mahi', 'mahinazir@gmail.com', 'shop', 'good'),
-('Lm7uFQVcX3czwG0yX5p0', 'UAVjN46f0bvXSKquej8S', 'mahi', 'mahinazir@gmail.com', 'maths,science', 'kk');
+INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `subject`, `message`, `phone`) VALUES
+(1, '0', 'Paul', 'paul.roux@gmail.com', 'shop', 'good', '+123456789'),
+(2, 'UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'maths,science', 'kk', '+987654321');
 
 -- --------------------------------------------------------
 
@@ -159,61 +159,30 @@ CREATE TABLE `products` (
   `status` varchar(100) NOT NULL,
   `Modèle` varchar(255) NOT NULL,
   `Année` varchar(255) NOT NULL,
-  `Moteur` varchar(255) NOT NULL,
-  `Kilométrage` varchar(255) NOT NULL,
-  `Equipements` varchar(255) NOT NULL,
-  `Etat` varchar(255) NOT NULL,
-  `Pointsforts` varchar(255) NOT NULL
+  `moteur` varchar(255) NOT NULL,
+  `kilométrage` varchar(255) NOT NULL,
+  `equipements` varchar(255) NOT NULL,
+  `etat` varchar(255) NOT NULL,
+  `pointsforts` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `product_detail`, `status`, `Modèle`, `Année`, `Moteur`, `Kilométrage`, `Equipements`, `Etat`, `Pointsforts`) VALUES
-('jo35YMmBWpvbCMB65UdA', 'Bugatti la voiture noir', '11000000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'La Bugatti La Voiture Noire est une supercar GT de luxe du constructeur automobile français Bugatti, ce modèle unique est basé sur la Chiron, qui rend hommage à la Bugatti Type 57 SC Atlantic produite à quatre exemplaires', 'actif', 'Bugatti la voiture noir', '2021', '16-cylindres en W quadri-turbo de 8 litres', '0 Km', '/', 'Neuf', '0 à 100 km/h en 2,4s'),
-('aSBHDzG26iXurm6cfoNv', 'Lamborghini Revuelto', '699000', 'lambo4.jpg', 'lambo6.jpg', 'lambo5.jpg', 'La première supersportive hybride HPEV (High Performance Electrified Vehicle). Avec la Revuelto, Lamborghini établit une nouvelle référence en matière de performances, de technologie embarquée et de plaisir de conduire. \r\nLa Revuelto honore la tradition Lamborghini et marque l’entrée dans une nouvelle ère, même dans son design extérieur.', 'actif', 'Lamborghini Revuelto', '2023', 'V12 de 6,5 L', '5000 Km', 'ÉQUIPEMENT DE CHARGE, PROTECTION EXTÉRIEURE, FILM DE PROTECTION, PROTECTION INTÉRIEURE', 'Occasion', '0 à 100 km/h en 2,5 s'),
-('g5DLcNHmtHvq3DtJYsCb', 'Alpine A110 R', '111997', 'alpine.jpg', 'alpine3.jpg', 'alpine2.jpg', 'Le moteur gronde. La route est raide et sinueuse ; l’A110 R n’en demandait pas plus pour vous offrir des sensations inédites. Plus basse, plus rapide, plus dynamique avec son châssis acéré. Sa livrée Bleu Racing Mat vous plonge dans l&#39;univers sportif de notre écurie BWT Alpine F1® Team.', 'actif', 'Alpine A110 R', '2020', '4 cylindres en ligne de 1,8 L', '1000 Km', 'KIT AERO MP-R', 'Occasion', '0 à 100 km/h en 3,9 sec pour une vitesse de pointe de 285 km/h'),
-('uOarNNg0n3KD9OvPtItP', 'Ferrari SP51', '10000000', 'ferariesp51.png', 'ferarie3.jpg', 'ferarie2.png', 'Une SP51 unique sera construite sur mesure pour nos clients de Ferrari du monde.\r\nDérivée de l’architecture de la 812 GTS, la SP51 est un spider V12 à moteur avant conçu par le Centre de style Ferrari sous la direction de Flavio Manzoniaffinée.\r\nSur le plan stylistique, on retrouve de tout nouveaux phares, des jantes propres à ce modèle et deux montants arrière, avec des feux arrière encastrés sous le becquet.', 'actif', 'Ferrari SP51', '2022', 'V12', '0 Km', '/', 'Neuf', '0 à 100 km/h en moins de 3 secondes'),
-('26lPPTjXh9EkNc7WocS5', 'Porsche 911 GT3 R', '247996', 'porche.png', 'porche3.jpg', 'porche2.png', 'Les athlètes le savent : les meilleures performances exigent plus que des conditions idéales et de la chance. Il faut vouloir, à tout prix, devenir plus rapide et plus fort à chaque entraînement. Tout remettre en question, surtout soi-même. Et apprendre de chaque erreur. Dans cet esprit, Porsche continue de repousser les limites du possible et améliore encore ses performances sur circuit. Découvrez la nouvelle 911 GT3 RS, au meilleur de sa forme.', 'actif', 'Porsche 911 GT3 R', '2020', 'V8 de 4 L', '9547 Km', 'Série de sièges baquets, Carbone apparent, inserts en carbone, Pack Chrono, Assistant de passage des vitesses', 'Occasion', '0 à 100 km/h en 3,2 s'),
-('kun96OpQed6Eww6M1URo', 'Lamborghini Urus', '214999', 'urus1.jpg', 'urus3.jpg', 'urus2.jpg', 'La Lamborghini Urus est le premier Super Sport Utility Vehicle au monde à associer l’âme d’une supersportive et la praticité d’un SUV, l’Urus est synonyme d’état d’esprit tourné vers les performances alliant plaisir de conduite et potentiel incroyable. Le design, les performances, la dynamique de conduite et les émotions extrêmes se mélangent sans difficulté dans cette réalisation visionnaire à l’ADN Lamborghini authentique qui a révolutionné tout un segment.', 'actif', 'LAMBORGHINI URUS', ' 2023', 'V8 de 4,0 L', '0 Km', 'VOYAGE, PET CARE, ÉCHAPPEMENT EN TITANE, COMPOSANTS EN FIBRE DE CARBONE, ACCESSOIRES D’HIVER', 'Neuve', '0 à 100 km/h en 3,6 s'),
-('wrJTrzoHsuEwr7hGi3R6', 'Mercedes-AMG GT3 Edition 55', '625000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Pour son 55e anniversaire, AMG présente une voiture de course très exclusive, la Mercedes-AMG GT3 EDITION 55. Seules cinq unités de cette série spéciale seront fabriquées à la main dans la manufacture de voitures de course d&#39;Affalterbach.', 'actif', 'Mercedes-AMG GT3 Edition 55', '2022', 'V8 de 6,3 L', '1000 Km', 'Le pack AMG Line', 'Occasion', '0 à 100 km/h en 3,2 s'),
-('eBbtkVNYiJJKT9mCgYbk', 'Maserati Granturismo', '181395', 'maserati1.jpg', 'maserati3.jpg', 'maserati2.jpg', 'De profondes innovations distinguent la nouvelle GranTurismo, mais le principe sur lequel repose cette évolution est le même depuis le premier jour. Parce que les icônes ne naissent pas en un jour.L’équilibre absolu entre la puissance et le luxe, l’alliage parfait entre frissons et relaxation, futur et tradition, conjugué à des innovations issues du monde de la compétition pour des performances sur route inégalées. En bref, tout est là.', 'actif', 'Maserati Granturismo', '2019', 'v6 de 3,0 L', '12 000 Km', 'Entretien et protection, Roues équilibrées, Accessoires d’entretien et de protection,', 'Occasion', '0 à 100 km/h en 3,5 s'),
-('Hs4tKXIJkieL1I0tmN9H', 'Maclaren 720s', '374998', 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Une supercar légère et dynamique, s&#39;inspirant directement des forces de la nature. En harmonie avec les éléments. Prête à affronter tous les défis. Et farouchement rapide. Avec sa conception soignée et ses aspects pratiques, elle est facile à utiliser au quotidien', 'actif', 'maclaren 720s', '2022', 'V8 de 4,0 L', '0 Km', 'Deux airbags, Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Capteurs de pluie et de lumière', 'Neuve', '0 à 100 km/h en 2,9 s'),
-('lxcwdO3YPUcn7jOt6TNy', 'mercedes-benz amg gt3 edition 55 ', '625000', 'mercedes.jpg', '', '', 'Mercedes-AMG continue de décliner sa gamme de modèles dans une édition anniversaire, à l’occasion de ses 55 ans. C’est maintenant au tour de la Mercedes-AMG GT3 d’être commercialisée dans une très exclusive Edition 55. Produite à peu d’exemplaires, la voiture de course est un collector.', 'actif', '', '', '', '', '', '', ''),
-('zuwEDK7j8i427IFgWlgB', 'Aston Martin Vantage GT3', '200000', 'aston.jpg', '', '', 'Avec 665 ch, la nouvelle Aston Martin Vantage se montre 30 % plus puissante que la précédente. Arborant une allure encore plus musclée, elle gagne une présentation intérieure nettement modernisée. ', 'actif', '', '', '', '', '', '', ''),
-('yKysz87uHp0aGhc9CIHS', 'McLaren 720s GT3 X', '489000', 'MC3.jpg', '', '', 'Cette voiture de course, la première GT développée par le département compétition clients de McLaren Automotive, repose sur les bases de la supercar du même nom disponible dans le commerce en conservant son M840T V8 bi-turbo 4l modifiée pour la course.', 'actif', '', '', '', '', '', '', '');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `product_soon`
---
-
-CREATE TABLE `product_soon` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `image1` varchar(255) NOT NULL,
-  `image2` varchar(255) NOT NULL,
-  `image3` varchar(255) NOT NULL,
-  `product_detail` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `Modèle` varchar(255) NOT NULL,
-  `Année` varchar(255) NOT NULL,
-  `Moteur` varchar(255) NOT NULL,
-  `Kilométrage` varchar(255) NOT NULL,
-  `Equipements` varchar(255) NOT NULL,
-  `Etat` varchar(255) NOT NULL,
-  `Pointsforts` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `product_soon`
---
-
-INSERT INTO `product_soon` (`id`, `name`, `image1`, `image2`, `image3`, `product_detail`, `status`, `Modèle`, `Année`, `Moteur`, `Kilométrage`, `Equipements`, `Etat`, `Pointsforts`) VALUES
-('zuwEDK7j8i427IFgWlgB', 'Aston Martin Vantage GT3 ', 'aston.jpg', 'aston2.jpg', 'aston3.jpg', 'Mercedes-AMG continue de décliner sa gamme de modèles dans une édition anniversaire, à l’occasion de ses 55 ans. C’est maintenant au tour de la Mercedes-AMG GT3 d’être commercialisée dans une très exclusive Edition 55. Produite à peu d’exemplaires, la voi', 'Inactif', 'Aston Martin Vantage GT3', ' 2019', ' V8 biturbo de 4,0 L', 'O Km', 'Body-Kit', 'Neuve', '0 à 100 km/h en 4,8 s'),
-('yKysz87uHp0aGhc9CIHS', 'McLaren 720s GT3 X ', 'MC3.jpg', 'MC4.jpg', 'MC5.jpg', 'Cette voiture de course, la première GT développée par le département compétition clients de McLaren Automotive, repose sur les bases de la supercar du même nom disponible dans le commerce en conservant son M840T V8 bi-turbo 4l modifiée pour la course.', 'Inactif', 'McLaren 720s GT3 X', '2022', 'V8 bi-turbo de 4,0 L', 'O Km', 'Kit carrosserie Duke Dynamics', 'Neuve', '0 à 100 km/h en 3,2 s');
+INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `product_detail`, `status`, `Modèle`, `Année`, `moteur`, `kilométrage`, `equipements`, `etat`, `pointsforts`) VALUES
+('BLTtlhOgq1cuz7plh4Ia', 'McLaren 720s', '375 000', 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Véhicule sportif haute performance alliant design aérodynamique et technologie de pointe.', 'actif', 'McLaren 720s', '2022', 'V8 de 4,0 L', '1000 Km', 'Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Bluetooth, Prises USB, Navigateur GPS, Capteurs de pluie et de lumière', 'Neuf', 'Le 0 à 100 km/h est parcouru en seulement 2,8 secondes'),
+('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', '', '', ''),
+('aSBHDzG26iXurm6cfoNv', 'Lamborghini Revuelto', '699 000', 'lambo4.jpg', 'lambo6.jpg', 'lambo5.jpg', 'Un supercar électrifiant qui combine performance extrême et style audacieux.', 'actif', 'Lamborghini Revuelto', '2023', 'V12 hybride', '75 km', 'Système infotainment avec écran tactile, intégration smartphone, régulateur de vitesse adaptatif.', 'Neuf', 'Une accélération de 0 à 100 km/h en seulement 2,8 secondes.'),
+('g5DLcNHmtHvq3DtJYsCb', 'Alpine A110 R', '111 997', 'alpine.jpg', 'alpine3.jpg', 'alpine2.jpg', 'Voiture sportive légère et agile, optimisée pour les performances de piste.', 'actif', 'Alpine A110 R', '2020', '4 cylindres en ligne de 1,8 L', '1000 Km', 'KIT AERO MP-R', 'Occasion', '0 à 100 km/h en 3,9 sec pour une vitesse de pointe de 285 km/h'),
+('uOarNNg0n3KD9OvPtItP', 'Ferrari SP51', '10 000 000', 'ferariesp51.png', 'ferarie3.jpg', 'ferarie2.png', 'Un roadster exclusif au design saisissant et aux performances époustouflantes, basé sur la 812 GTS.', 'actif', 'Ferrari SP51', '2022', 'V12', '0 Km', 'Intérieur luxueux en cuir, système de navigation avancé, caméra de recul.', 'Neuf', '0 à 100 km/h en moins de 3 secondes'),
+('26lPPTjXh9EkNc7WocS5', 'Porsche 911 GT3 R', '253 454', 'porche.png', 'porche3.jpg', 'porche2.png', 'Conçue pour la compétition, cette Porsche offre des performances de pointe sur piste et sur route.', 'actif', 'Porsche 911 GT3 R', '2022', '4,0 L Flat-6', '80 km', 'Système de suspension adaptative, freins haute performance, cockpit orienté course.', 'Neuf', 'Excellente dynamique de conduite, puissance impressionnante.'),
+('kun96OpQed6Eww6M1URo', 'Lamborghini Urus', '220 000', 'urus1.jpg', 'urus3.jpg', 'urus2.jpg', 'Un SUV de luxe qui combine la performance d’une supercar avec la praticité d’un véhicule familial.', 'actif', 'Lamborghini Urus', '2018', 'V8 biturbo de 4,0 L', '50 km', 'Interface multimédia avancée, sièges en cuir avec réglages électriques, caméras de stationnement, système audio premium.', 'Neuf', 'Polyvalence impressionnante, performances hors normes pour un SUV.'),
+('bEvIK2PvwOqY4l8nuPTZ', 'Mercedes-AMG GT3 Edition 55', '625 000', 'mercedes.jpg', 'mercedes5.jpg', 'mercedes4.jpg', 'Une édition spéciale marquant le 55e anniversaire d’AMG, avec des améliorations axées sur la performance et l’exclusivité.', 'inactif', 'Mercedes-AMG GT3 Edition 55', '2022', 'V8 de 4,0 L turbo', '100 km', 'Cockpit de course, système de sécurité intégré, châssis et suspension sport.', 'Neuf', 'Édition limitée, optimisée pour la compétition et la conduite haute performance.'),
+('eBbtkVNYiJJKT9mCgYbk', 'Maserati Granturismo', '180 000', 'maserati1.jpg', 'maserati3.jpg', 'maserati2.jpg', 'Un coupé élégant qui allie confort de luxe à des performances sportives, idéal pour le grand tourisme.', 'actif', 'Maserati Granturismo', '2017', 'V6 de 3,0 L turbo', '85 km', 'Intérieur cuir, système multimédia avec écran tactile, régulateur de vitesse adaptatif, toit ouvrant.', 'Neuf', 'Confort supérieur, design intemporel.'),
+('rfA9q4uWC2JvzLCRmawT', 'Aston Martin Vantage GT3', '400 000', 'aston.jpg', 'aston3.jpg', 'aston2.jpg', 'Une voiture de course homologuée pour la route, offrant des performances extrêmes et un design agressif.', 'inactif', 'Aston Martin Vantage GT3', '2023', 'V8 de 4,0 L turbo', '70 km', 'Système de navigation avancé, sièges sport en cuir, suspension sportive, aérodynamique optimisée.', 'Neuf', 'Capacités de piste exceptionnelles, accélération rapide.'),
+('0I8ZbLUgrxn7qWNMzxPE', 'McLaren 720s GT3 X', '330 000', 'MC3.jpg', 'MC5.jpg', 'MC4.jpg', 'Version extrême du 720s, conçue exclusivement pour une utilisation sur circuit avec des améliorations significatives en termes de performance.', 'inactif', 'McLaren 720s GT3 X', '2021', 'V8 de 4,0 L turbo', '40 km', 'Cockpit de course, système de télémétrie avancé, freins en carbone-céramique.', 'Neuf', 'Performance de circuit dominante, très limitée en production.'),
+('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '300 000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Voiture de sport axée sur la performance avec un design élégant et une ingénierie de précision.', 'actif', 'Mercedes AMG GT2', '2023', 'V8 de 4,0 L turbo', '55 km', 'Sièges sport AMG, système multimédia haut de gamme, aide à la conduite active.', 'Neuf', 'Équilibre parfait entre performance et confort, design agressif.');
 
 -- --------------------------------------------------------
 
@@ -257,9 +226,27 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160'),
-('mHnW43M2blKdFmHmJGw2', '', '26lPPTjXh9EkNc7WocS5', '247996'),
-('7WVXaXAS0PdsskF7shiJ', '', 'g5DLcNHmtHvq3DtJYsCb', '111997');
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

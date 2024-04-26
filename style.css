@@ -1156,6 +1156,7 @@ footer .overlay {
 }
 
 .footer-content .img-box img {
+	margin-left: 694px;
 	width: 280px;
 	height: auto;
 	display: block;
@@ -1168,7 +1169,6 @@ footer .inner-footer {
 	align-items: center;
 	justify-content: center;
 	width: 81vw;
-
 	margin: 0 auto;
 	padding: 3rem 0;
 	color: #fff;
@@ -1176,6 +1176,7 @@ footer .inner-footer {
 
 footer .inner-footer .card {
 	margin: .5rem;
+	margin-left: 167px;
 }
 
 footer .inner-footer .card li {
