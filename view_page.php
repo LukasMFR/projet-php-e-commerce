@@ -118,35 +118,34 @@ if (isset($_POST['add_to_cart'])) {
 										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
 								</div>
-
 								<section id="skills" class="skills">
 									<div class="grid">
 										<div class="grid__item skill-item">
-											<h3>Domaines de compétences</h3>
+											<h3>Caractéristiques du véhicule</h3>
 											<ul class="list-unstyled skill-list">
 												<li class="skill-list-item">
-													<p class="skill-description">Travailleur</p>
+													 <p class="skill-description">Modèle: <?php echo $fetch_products['Modèle']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Créatif</p>
+													<p class="skill-description">Année: <?php echo $fetch_products['Année']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Dynamique</p>
+													<p class="skill-description">Moteur: <?php echo $fetch_products['Moteur']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">À l'écoute</p>
+													<p class="skill-description">Kilométrage: <?php echo $fetch_products['Kilométrage']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Ponctuel</p>
+													<p class="skill-description">Equipements: <?php echo $fetch_products['Equipements']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Sociable</p>
+													<p class="skill-description">Etat: <?php echo $fetch_products['Etat']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Qualité de Management</p>
+													<p class="skill-description">Points forts: <?php echo $fetch_products['Pointsforts']; ?></p>
 												</li>
 											</ul>
 										</div>
@@ -175,6 +174,7 @@ if (isset($_POST['add_to_cart'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
 	<?php include 'components/alert.php'; ?>
+
 </body>
 
 </html>

@@ -65,18 +65,3 @@ slider.addEventListener("click", function (ev) {
 });
 
 
-document.querySelectorAll('.color-button').forEach(function (button) {
-    button.addEventListener('click', function () {
-        var color = this.getAttribute('data-color');
-        var carImage = document.getElementById('car-image');
-
-        // Ici vous changerez la source de l'image de la voiture selon la couleur.
-        // Par exemple, vous aurez différentes images de voitures de différentes couleurs préparées.
-        // carImage.src = 'path-to-your-car-image-' + color + '.png';
-
-        // Ou si vous voulez changer une propriété CSS comme la couleur de fond (pour une div par exemple):
-        // carImage.style.backgroundColor = color;
-    });
-});
-
-
