@@ -131,26 +131,26 @@ if (isset($_POST['add_to_cart'])) {
 												</li>
 												<li class="skill-list-item">
 													<h1>Moteur:</h1>
-													<p class="skill-description"><?php echo $fetch_products['Moteur']; ?>
+													<p class="skill-description"><?php echo $fetch_products['moteur']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
 													<h1>Kilométrage:</h1>
-													<p class="skill-description"><?php echo $fetch_products['Kilométrage']; ?>
+													<p class="skill-description"><?php echo $fetch_products['kilométrage']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
 													<h1>Equipements:</h1>
-													<p class="skill-description"><?php echo $fetch_products['Equipements']; ?>
+													<p class="skill-description"><?php echo $fetch_products['equipements']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
 													<h1>Etat:</h1>
-													<p class="skill-description"><?php echo $fetch_products['Etat']; ?></p>
+													<p class="skill-description"><?php echo $fetch_products['etat']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Points forts:</h1>
-													<p class="skill-description"><?php echo $fetch_products['Pointsforts']; ?></p>
+													<h1>Vitesse de pointe:</h1>
+													<p class="skill-description"><?php echo $fetch_products['pointsforts']; ?></p>
 													</p>
 												</li>
 											</ul>

@@ -16,12 +16,23 @@ if (isset($_POST['save'])) {
 	$price = filter_var($price, FILTER_SANITIZE_STRING);
 	$content = $_POST['content'];
 	$content = filter_var($content, FILTER_SANITIZE_STRING);
-
 	$status = $_POST['status'];
 	$status = filter_var($status, FILTER_SANITIZE_STRING);
+	$annee = $_POST['Année'];
+	$annee = filter_var($annee, FILTER_SANITIZE_STRING);
+	$moteur = $_POST['moteur'];
+	$moteur = filter_var($moteur, FILTER_SANITIZE_STRING);
+	$kilométrage = $_POST['kilométrage'];
+	$kilométrage = filter_var($kilométrage, FILTER_SANITIZE_STRING);
+	$equipements = $_POST['equipements'];
+	$equipements = filter_var($equipements, FILTER_SANITIZE_STRING);
+	$etat = $_POST['etat'];
+	$etat = filter_var($etat, FILTER_SANITIZE_STRING);
+	$pointsforts = $_POST['pointsforts'];
+	$pointsforts = filter_var($pointsforts, FILTER_SANITIZE_STRING);
 
-	$update_post = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?,status = ? WHERE id = ?");
-	$update_post->execute([$title, $price, $content, $status, $post_id]);
+	$update_post = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?,status = ?, Année = ?, moteur = ?, kilométrage = ?, equipements = ?, etat = ?, pointsforts = ? WHERE id = ?");
+	$update_post->execute([$title, $price, $content, $status, $annee, $moteur, $kilométrage, $equipements, $etat, $pointsforts, $post_id]);
 
 	$success_msg[] = 'Produit mis à jour';
 
@@ -30,6 +41,7 @@ if (isset($_POST['save'])) {
 	$image_size = $_FILES['image']['size'];
 	$image_tmp_name = $_FILES['image']['tmp_name'];
 	$image_folder = '../image/' . $image;
+
 
 	$select_image = $conn->prepare("SELECT * FROM `products` WHERE image = ?");
 	$select_image->execute([$image]);
@@ -49,7 +61,64 @@ if (isset($_POST['save'])) {
 			$success_msg[] = 'Image mise à jour !';
 		}
 	}
-}
+
+	$old_image2 = $_POST['old_image2'];
+	$image2 = $_FILES['image2']['name'];
+	$image2_size = $_FILES['image2']['size'];
+	$image2_tmp_name = $_FILES['image2']['tmp_name'];
+	$image2_folder = '../image/' . $image2;
+
+	$select_image = $conn->prepare("SELECT * FROM `products` WHERE image2 = ?");
+	$select_image->execute([$image2]);
+
+	{
+	if (!empty($image2)) 
+    if ($image2_size > 2000000) {
+        $warning_msg[] = 'La taille de l\'image2 est trop grande';
+   	 	} else {
+        $update_image2 = $conn->prepare("UPDATE `products` SET image2 = ? WHERE id = ?");
+        $update_image2->execute([$image2, $post_id]);
+        move_uploaded_file($image2_tmp_name, $image2_folder);
+        if ($old_image2 != $image2 && $old_image2 != '') {
+            unlink('../image/' . $old_image2);
+        }
+        $success_msg[] = 'Image2 mise à jour !';
+    	}
+	}
+
+	$old_image3 = $_POST['old_image3'];
+	$image3 = $_FILES['image3']['name'];
+	$image3_size = $_FILES['image3']['size'];
+	$image3_tmp_name = $_FILES['image3']['tmp_name'];
+	$image3_folder = '../image/' . $image3;
+
+	$select_image = $conn->prepare("SELECT * FROM `products` WHERE image3= ?");
+	$select_image->execute([$image3]);
+
+	{
+	if (!empty($image3)) 
+    if ($image3_size > 2000000) {
+        $warning_msg[] = 'La taille de l\'image3 est trop grande';
+   	 	} else {
+        $update_image3 = $conn->prepare("UPDATE `products` SET image3 = ? WHERE id = ?");
+        $update_image3->execute([$image3, $post_id]);
+        move_uploaded_file($image3_tmp_name, $image3_folder);
+        if ($old_image3 != $image3 && $old_image3 != '') {
+            unlink('../image/' . $old_image3);
+        }
+        $success_msg[] = 'Image3 mise à jour !';
+    	}
+	}
+
+	
+} 
+
+
+	
+
+
+
+
 
 //delete post
 if (isset($_POST['delete_post'])) {
@@ -146,7 +215,7 @@ if (isset($_POST['delete_image'])) {
 							</div>
 							<div class="input-field">
 								<label>Prix du produit <sup>*</sup></label>
-								<input type="number" name="price" value="<?= $fetch_posts['price']; ?>">
+								<input type="text" name="price" value="<?= $fetch_posts['price']; ?>">
 
 							</div>
 							<div class="input-field">
@@ -154,13 +223,64 @@ if (isset($_POST['delete_image'])) {
 								<textarea name="content" required maxlength="10000"
 									placeholder="write your content.."><?= $fetch_posts['product_detail']; ?></textarea>
 							</div>
-
+							
+							<div class="input-field">
+								<label>Année de fabrication<sup>*</sup></label>
+								<input type="text" name="Année" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['Année']; ?>">
+							</div>
 
 							<div class="input-field">
-								<label>Image du produit <sup>*</sup></label>
+								<label>Type de moteur<sup>*</sup></label>
+								<input type="text" name="moteur" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['moteur']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Nombre de kilométre<sup>*</sup></label>
+								<input type="text" name="kilométrage" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['kilométrage']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Equipements/Options<sup>*</sup></label>
+								<input type="text" name="equipements" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['equipements']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Statut du produit <sup>*</sup></label>
+								<select name="etat" required>
+									<option value="<?= $fetch_posts['etat']; ?>" selected><?= $fetch_posts['etat']; ?>
+									</option>
+									<option value="Neuve">Neuve</option>
+									<option value="Occasion">Occasion</option>
+								</select>
+							</div>
+
+							<div class="input-field">
+								<label>Vitesse de pointe<sup>*</sup></label>
+								<input type="text" name="pointsforts" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['pointsforts']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Image 1 du produit <sup>*</sup></label>
 								<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
 								<?php if ($fetch_posts['image'] != '') { ?>
 									<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
+
+							<div class="input-field">
+								<label>Image 2 du produit <sup>*</sup></label>
+								<input type="file" name="image2" accept="image/jpg, image/jpeg, image/png, image/webp">
+								<?php if ($fetch_posts['image2'] != '') { ?>
+									<img src="../image/<?= $fetch_posts['image2']; ?>" class="image">
+
+							<div class="input-field">
+								<label>Image 3 du produit <sup>*</sup></label>
+								<input type="file" name="image3" accept="image/jpg, image/jpeg, image/png, image/webp">
+								<?php if ($fetch_posts['image3'] != '') { ?>
+									<img src="../image/<?= $fetch_posts['image3']; ?>" class="image">
 									<div class="flex-btn">
 										<input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image">
 										<a href="view_posts.php" class="btn"
@@ -180,6 +300,8 @@ if (isset($_POST['delete_image'])) {
 
 					<?php
 				}
+			}
+		}
 			} else {
 
 				echo '
