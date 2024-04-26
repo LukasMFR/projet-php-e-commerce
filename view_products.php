@@ -123,23 +123,19 @@ if (isset($_POST['add_to_cart'])) {
 				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>
-
-			<div class="box-container">
-				<div class="box">
-					<!-- <form action="" method="post" class="box product-view-form"> -->
-					<div class="image-container">
-						<img src="image/mercedes.jpg" class="img">
-						<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="view-btn">Précommander</a>
-						<div class="button special-button">
+				<div class="box-container">
+					<div class="box">
+						<div class="image-container">
+							<img src="image/mercedes.jpg" class="img">
+							<a href="view_page.php?pid=bEvIK2PvwOqY4l8nuPTZ" class="view-btn">Précommander</a>
+							<div class="button special-button">
 							<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 						</div>
 					</div>
-					<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-					<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
-					<!-- </form> -->
-				</div>
+						<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
+						<h1>Mercedes-Benz AMG GT3 Edition 55</h1>
+			     	</div>
 				<div class="box">
-					<!-- <form action="" method="post" class="box product-view-form"> -->
 					<div class="image-container">
 						<img src="image/aston.jpg" class="img">
 						<a href="view_page.php?pid=rfA9q4uWC2JvzLCRmawT" class="view-btn">Précommander</a>
@@ -149,10 +145,8 @@ if (isset($_POST['add_to_cart'])) {
 					</div>
 					<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
 					<h1>Aston Martin Vantage GT3</h1>
-					<!-- </form> -->
 				</div>
 				<div class="box">
-					<!-- <form action="" method="post" class="box product-view-form"> -->
 					<div class="image-container">
 						<img src="image/MC3.jpg" class="img">
 						<a href="view_page.php?pid=0I8ZbLUgrxn7qWNMzxPE" class="view-btn">Précommander</a>

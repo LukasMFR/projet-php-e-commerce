@@ -77,9 +77,9 @@ a {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 1rem;
-	margin: 0rem 0;
+	margin: -1rem 0;
 	line-height: 2;
-	padding-top: 4rem;
+	padding-top: 0rem;
 }
 
 .title-product .logo-small {
@@ -1362,7 +1362,7 @@ footer .bottom-footer {
 	min-width: 2.5rem;
 	padding: 0.5rem 1.5rem;
 	border-radius: 30px;
-	background: #3f3f3f;
+	background: #3f3f3fde;
 	color: #fff;
 	font-size: 1rem;
 	line-height: normal;
@@ -1527,7 +1527,8 @@ footer .bottom-footer {
 
 .view_page form .name {
 	font-size: 2rem;
-	color: var(--green);
+	color: #000000;
+	font-weight: bold;
 }
 
 .view_page form .price {
@@ -1537,15 +1538,15 @@ footer .bottom-footer {
 }
 
 .view_page form .detail {
-	font-size: 16px;
-	color: gray;
+	font-size: 18px;
+	color: #000000;
 	line-height: 2;
 	margin-bottom: 2.5rem;
 	text-align: right;
 }
 
 .view_page .btn {
-	background: #3f3f3f;
+	background: #3f3f3fde;
 	cursor: pointer;
 }
 
@@ -1570,7 +1571,7 @@ footer .bottom-footer {
 }
 
 .skill-list-item {
-	background-color: #F5F5F5;
+	background-color: #3f3f3f1a;
 	border-left: 3px solid rgb(91, 107, 120);
 	padding: .9rem 2rem;
 	margin-bottom: 1rem;
