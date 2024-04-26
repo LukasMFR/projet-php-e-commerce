@@ -804,7 +804,7 @@ video {
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	padding: 0;
+	padding: 1rem;
 }
 
 .shop-category .box-container {
@@ -1993,5 +1993,9 @@ footer .bottom-footer {
 	.shop-category .detail h1 {
 		font-size: 1.6em;
 		margin-bottom: 0.5rem;
+	}
+
+	.shop-category .box {
+		padding: 0;
 	}
 }
