@@ -86,17 +86,17 @@ if (isset($_POST['logout'])) {
 			<div class="box-container">
 				<div class="box">
 					<img src="image/mc1.jpg">
-					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter maintenant</a>
+					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter</a>
 					<h1>maclaren 720S</h1>
 				</div>
 				<div class="box">
 					<img src="image/bugatienoir.jpg">
-					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter maintenant</a>
+					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
 					<img src="image/lambo4.jpg">
-					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter maintenant</a>
+					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
 			</div>
