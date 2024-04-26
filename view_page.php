@@ -118,35 +118,39 @@ if (isset($_POST['add_to_cart'])) {
 								<section id="skills" class="skills">
 									<div class="grid">
 										<div class="grid__item skill-item">
-											<h3>Caractéristiques du véhicule</h3>
+											<h1>Caractéristiques du véhicule</h1>
 											<ul class="list-unstyled skill-list">
 												<li class="skill-list-item">
-													<p class="skill-description">Modèle: <?php echo $fetch_products['Modèle']; ?>
+													<h1>Modèle:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Modèle']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Année: <?php echo $fetch_products['Année']; ?></p>
+													<h1>Année:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Année']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Moteur: <?php echo $fetch_products['Moteur']; ?>
+													<h1>Moteur:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Moteur']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Kilométrage:
-														<?php echo $fetch_products['Kilométrage']; ?>
+													<h1>Kilométrage:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Kilométrage']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Equipements:
-														<?php echo $fetch_products['Equipements']; ?>
+													<h1>Equipements:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Equipements']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Etat: <?php echo $fetch_products['Etat']; ?></p>
+													<h1>Etat:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Etat']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<p class="skill-description">Points forts:
-														<?php echo $fetch_products['Pointsforts']; ?>
+													<h1>Points forts:</h1>
+													<p class="skill-description"><?php echo $fetch_products['Pointsforts']; ?></p>
 													</p>
 												</li>
 											</ul>

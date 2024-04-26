@@ -1533,7 +1533,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: -311px;
+	margin-top: 30px;
 }
 
 .view_page form .detail {
@@ -1545,7 +1545,7 @@ footer .bottom-footer {
 }
 
 .view_page .btn {
-	background: var(--light-green);
+	background: #3f3f3f;
 	cursor: pointer;
 }
 
