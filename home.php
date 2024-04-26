@@ -87,7 +87,7 @@ if (isset($_POST['logout'])) {
 				<div class="box">
 					<img src="image/mc1.jpg">
 					<a href="view_page.php?pid=BLTtlhOgq1cuz7plh4Ia" class="btn">Acheter</a>
-					<h1>maclaren 720S</h1>
+					<h1>McLaren 720s</h1>
 				</div>
 				<div class="box">
 					<img src="image/bugatienoir.jpg">
