@@ -636,7 +636,7 @@ video {
 .container .box-container {
 	padding: 1rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	gap: 1.5rem;
 	justify-content: center;
 }
