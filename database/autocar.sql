@@ -178,11 +178,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `pro
 ('uOarNNg0n3KD9OvPtItP', 'Ferrari SP51', '10000000', 'ferariesp51.png', 'ferarie3.jpg', 'ferarie2.png', 'Lorem ipsum', 'actif', 'Ferrari SP51', '2022', 'V12', '0 Km', '/', 'Neuf', '0 à 100 km/h en moins de 3 secondes'),
 ('26lPPTjXh9EkNc7WocS5', 'Porsche 911 GT3 R', '247996', 'porche.png', 'porche3.jpg', 'porche2.png', 'Lorem ipsum', 'actif', 'Porsche 911 GT3 R', '', '', '', '', '', ''),
 ('kun96OpQed6Eww6M1URo', 'Lamborghini Urus', '214999', 'urus1.jpg', 'urus3.jpg', 'urus2.jpg', 'Lorem ipsum', 'actif', 'Lamborghini Urus', '', '', '', '', '', ''),
-('wrJTrzoHsuEwr7hGi3R6', 'Mercedes-AMG GT3 Edition 55', '625000', 'mercedes.jpg', 'mercedes5.jpg', 'mercedes4.jpg', 'Lorem ipsum', 'actif', 'Mercedes-AMG GT3 Edition 55', '', '', '', '', '', ''),
+('bEvIK2PvwOqY4l8nuPTZ', 'Mercedes-AMG GT3 Edition 55', '625000', 'mercedes.jpg', 'mercedes5.jpg', 'mercedes4.jpg', 'Lorem ipsum', 'actif', 'Mercedes-AMG GT3 Edition 55', '', '', '', '', '', ''),
 ('eBbtkVNYiJJKT9mCgYbk', 'Maserati Granturismo', '181395', 'maserati1.jpg', 'maserati3.jpg', 'maserati2.jpg', 'Lorem ipsum', 'actif', 'Maserati Granturismo', '', '', '', '', '', ''),
 ('rfA9q4uWC2JvzLCRmawT', 'Aston Martin Vantage GT3', '12000', 'aston.jpg', 'aston3.jpg', 'aston2.jpg', 'sdqevsvgzrvrzevbqergberagbaerqgqegsqeg', 'actif', 'Aston Martin Vantage GT3', '', '', '', '', '', ''),
 ('0I8ZbLUgrxn7qWNMzxPE', 'McLaren 720s GT3 X', '12000', 'MC3.jpg', 'MC5.jpg', 'MC4.jpg', 'dazfzeg&#34;azgegzege&#34;gsgzgrez', 'actif', 'McLaren 720s GT3 X', '', '', '', '', '', ''),
-('q38y4Rm62cb4tN7xpLWs', 'Mercedes AMG GT2', '190000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Description à venir', 'actif', 'Mercedes AMG GT2', '', '', '', '', '', '');
+('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '190000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Description à venir', 'actif', 'Mercedes AMG GT2', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
