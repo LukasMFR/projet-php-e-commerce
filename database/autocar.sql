@@ -229,25 +229,6 @@ CREATE TABLE `wishlist` (
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
 ('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
 
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
