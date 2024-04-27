@@ -78,17 +78,17 @@ if (isset($_POST['add_to_cart'])) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon-64.png">
-    <title>Boutique - Road Luxury</title>
+    <title>Puffs - Road Luxury</title>
 </head>
 
 <body>
     <?php include 'components/header.php'; ?>
     <div class="main">
         <div class="banner">
-            <h1>Boutique</h1>
+            <h1>Puffs</h1>
         </div>
         <div class="title2">
-            <a href="home.php">Accueil </a><span>/ Notre boutique</span>
+            <a href="home.php">Accueil </a><span>/ Puffs</span>
         </div>
 
         <section class="products">

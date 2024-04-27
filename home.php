@@ -132,7 +132,7 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>GROSSES PROMOTIONS</span>
 						<h1>Sur une large sélection de puffs</h1>
-						<a href="view_products.php" class="btn">Acheter maintenant</a>
+						<a href="view_puffs.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 				<div class="box">
@@ -140,7 +140,7 @@ if (isset($_POST['logout'])) {
 					<div class="detail">
 						<span>Nouveaux goûts</span>
 						<h1>Testez notre puff goût essence !</h1>
-						<a href="view_products.php" class="btn">Acheter maintenant</a>
+						<a href="view_puffs.php" class="btn">Acheter maintenant</a>
 					</div>
 				</div>
 			</div>
