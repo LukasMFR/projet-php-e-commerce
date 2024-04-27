@@ -616,11 +616,12 @@ video {
 	width: 150px;
 	height: 150px;
 	object-fit: contain;
-	transition: all 800ms ease-in-out;
+	transition: transform 500ms ease-in-out;
 }
 
 .thumb .box-container .box:hover img {
-	transform: rotateY(180deg);
+	/* transform: rotateY(180deg); */
+	transform: translateY(-10px);
 }
 
 .thumb .box-container .box h3 {
