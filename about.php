@@ -94,28 +94,28 @@ if (isset($_POST['logout'])) {
 		<section class="thumb">
 			<div class="box-container">
 				<div class="box">
-					<img src="img/thumb2.jpg">
+					<img src="img/logo-lamborghini.png">
 					<h3>Lamborghini</h3>
 					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
 						l'expérience ultime de conduite sportive.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
-					<img src="img/thumb0.jpg">
+					<img src="img/logo-porsche.png">
 					<h3>Porsche</h3>
 					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
 						sélection pour trouver votre prochaine voiture de sport.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
-					<img src="img/thumb1.jpg">
+					<img src="img/logo-ferrari-bw.png">
 					<h3>Ferrari</h3>
 					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
 						Choisissez la Ferrari qui fait battre votre cœur.</p>
 					<i class="bx bx-chevron-right"></i>
 				</div>
 				<div class="box">
-					<img src="img/thumb.jpg">
+					<img src="img/logo-alpine.png">
 					<h3>Alpine</h3>
 					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
 						gamme pour une expérience de conduite exceptionnelle.</p>

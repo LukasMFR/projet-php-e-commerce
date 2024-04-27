@@ -599,6 +599,7 @@ video {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	align-items: flex-start;
+	/* gap: 2rem; */
 }
 
 .thumb .box-container .box {
@@ -608,9 +609,13 @@ video {
 	background: #fff;
 	padding-bottom: 1rem;
 	color: gray;
+	/* position: relative; */
 }
 
 .thumb .box-container .box img {
+	width: 150px;
+	height: 150px;
+	object-fit: contain;
 	transition: all 800ms ease-in-out;
 }
 
