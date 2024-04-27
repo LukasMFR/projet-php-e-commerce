@@ -849,7 +849,8 @@ video {
 .services {
 	padding: 3rem 0;
 	text-align: center;
-	background-image: url('img/bg.jpg');
+	/* background-image: url('img/bg.jpg'); */
+	background-image: linear-gradient(to bottom right, #BAC1C9, #FFFFFF);
 	line-height: 2;
 	margin: 3rem 0;
 }
@@ -949,7 +950,8 @@ video {
 
 .testimonial-container {
 	padding: 6% 0;
-	background-image: url('img/bg.jpg');
+	/* background-image: url('img/bg.jpg'); */
+	background-image: linear-gradient(to bottom right, #BAC1C9, #FFFFFF);
 }
 
 .testimonial-container .container {
@@ -1100,7 +1102,8 @@ textarea {
 }
 
 .address {
-	background-image: url('img/bg.jpg');
+	/* background-image: url('img/bg.jpg'); */
+	background-image: linear-gradient(to bottom right, #BAC1C9, #FFFFFF);
 	padding: 4rem 0;
 	min-height: 50vh;
 }
