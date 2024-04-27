@@ -123,7 +123,7 @@ if (isset($_POST['add_to_cart'])) {
 				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>
-				<div class="box-container">
+			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'inactif'");
 				$select_products->execute();
@@ -149,7 +149,7 @@ if (isset($_POST['add_to_cart'])) {
 				}
 				?>
 			</div>
-		
+
 		</section>
 
 		<?php include 'components/footer.php'; ?>
