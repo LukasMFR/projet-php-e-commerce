@@ -2012,3 +2012,8 @@ footer .bottom-footer {
 		padding: 0;
 	}
 }
+@media (max-width: 413px) {
+	.products .box-container {
+		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	}
+}
