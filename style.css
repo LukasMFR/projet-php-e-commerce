@@ -843,8 +843,8 @@ video {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	max-width: 570px;
-	max-height: 290px;
+	width: 570px;
+	height: 290px;
 }
 
 .services {
@@ -2095,6 +2095,10 @@ footer .bottom-footer {
 
 	.header .flex .navbar a:hover {
 		transform: translateX(10px);
+	}
+
+	.navbar a {
+		padding: 0;
 	}
 
 	.form-container {
