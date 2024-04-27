@@ -771,6 +771,17 @@ video {
 	border-radius: 20px;
 }
 
+/* ----------Top brands logos--------------*/
+.top-brands img {
+	/* box-sizing: border-box; */
+	margin: 0;
+	padding: 17px;
+	box-sizing: border-box;
+	max-width: 200px;
+	max-height: 200px;
+	object-fit: cover;
+}
+
 /* ----------shop category-----------------*/
 .shop-category .box {
 	position: relative;

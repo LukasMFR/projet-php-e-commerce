@@ -46,19 +46,19 @@ if (isset($_POST['logout'])) {
 	<div class="main">
 		<section class="brand">
 			<div class="box-container">
-				<div class="box">
-					<img src="img/brand (1).jpg">
+				<div class="top-brands">
+					<img src="img/logo-mercedes.png">
 				</div>
-				<div class="box">
-					<img src="img/FerariLogo.png">
+				<div class="top-brands">
+					<img src="img/logo-ferrari.png">
 				</div>
-				<div class="box">
+				<div class="top-brands">
 					<img src="img/brand (3).jpg">
 				</div>
-				<div class="box">
+				<div class="top-brands">
 					<img src="img/brand (4).jpg">
 				</div>
-				<div class="box">
+				<div class="top-brands">
 					<img src="img/brand (5).jpg">
 				</div>
 			</div>
