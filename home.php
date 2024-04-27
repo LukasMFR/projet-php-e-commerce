@@ -27,22 +27,22 @@ if (isset($_POST['logout'])) {
 	<title>Page d'accueil - Road Luxury</title>
 </head>
 
-<section class="home-section">
-	<div class="video-container">
-		<video autoplay loop muted playsinline>
-			<source src="image/videoPres.mp4" type="video/mp4">
-		</video>
-		<div class="overlay"></div>
-		<div class="video-detail">
-			<h1>Bienvenue chez Road Luxury</h1>
-			<p>L'art de l'élégance automobile.</p>
-		</div>
-	</div>
-
-</section>
-
 <body>
 	<?php include 'components/header.php'; ?>
+
+	<section class="home-section">
+		<div class="video-container">
+			<video autoplay loop muted playsinline>
+				<source src="image/videoPres.mp4" type="video/mp4">
+			</video>
+			<div class="overlay"></div>
+			<div class="video-detail">
+				<h1>Bienvenue chez Road Luxury</h1>
+				<p>L'art de l'élégance automobile.</p>
+			</div>
+		</div>
+	</section>
+
 	<div class="main">
 		<section class="brand">
 			<div class="box-container">
