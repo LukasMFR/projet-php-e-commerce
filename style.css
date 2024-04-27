@@ -869,6 +869,11 @@ video {
 	text-align: center;
 }
 
+.brand .box-container {
+	/* justify-content: center; */
+	align-items: center;
+}
+
 /*----------about section-----------------*/
 .about-category {
 	max-width: 1200px;

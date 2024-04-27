@@ -53,13 +53,13 @@ if (isset($_POST['logout'])) {
 					<img src="img/logo-ferrari.png">
 				</div>
 				<div class="top-brands">
-					<img src="img/brand (3).jpg">
+					<img src="img/logo-aston-martin.png">
 				</div>
 				<div class="top-brands">
-					<img src="img/brand (4).jpg">
+					<img src="img/logo-bugatti.png">
 				</div>
 				<div class="top-brands">
-					<img src="img/brand (5).jpg">
+					<img src="img/logo-maserati.png">
 				</div>
 			</div>
 		</section>
