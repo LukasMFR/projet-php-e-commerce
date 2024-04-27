@@ -226,6 +226,7 @@ button {
 	padding: 1rem 2rem;
 	text-transform: uppercase;
 	box-shadow: var(--box-shadow);
+	background-color: #f4f4f4;
 }
 
 .title2 a {
