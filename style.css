@@ -2056,7 +2056,7 @@ footer .bottom-footer {
 	.header .flex .navbar {
 		position: absolute;
 		width: 100%;
-		padding: 0 2rem;
+		padding: 0 1rem;
 		top: 130%;
 		left: 0;
 		display: block;
