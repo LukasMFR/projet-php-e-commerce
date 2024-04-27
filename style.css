@@ -829,6 +829,11 @@ video {
 
 .shop-category .box img {
 	border-radius: 20px;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	max-width: 570px;
+	max-height: 290px;
 }
 
 .services {
