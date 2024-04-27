@@ -773,9 +773,8 @@ video {
 
 /* ----------Top brands logos--------------*/
 .top-brands img {
-	/* box-sizing: border-box; */
 	margin: 0;
-	padding: 17px;
+	padding: 1rem;
 	box-sizing: border-box;
 	max-width: 200px;
 	max-height: 200px;
@@ -2104,6 +2103,10 @@ footer .bottom-footer {
 
 	.navbar a {
 		padding: 0;
+	}
+
+	.top-brands img {
+		margin: 1rem;
 	}
 
 	.form-container {
