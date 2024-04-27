@@ -1126,6 +1126,7 @@ textarea {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	text-align: center;
 	color: #fff;
 }
 
@@ -1133,19 +1134,21 @@ textarea {
 	margin-right: .5rem;
 }
 
-.top-footer input {
-	width: 40vw;
+.top-footer input,
+.top-footer .btn {
+	width: 100%;
+	margin: 0.5rem 0;
 }
 
 footer {
 	background-image: url('img/FondFouter.jpg');
 	width: 100%;
 	min-height: 380px;
-	/* min-height: calc(100vh - 18rem); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	position: relative;
+	color: #fff;
 }
 
 footer .overlay {
@@ -1159,8 +1162,9 @@ footer .overlay {
 }
 
 .footer-content {
-	position: absolute;
-	top: 10%;
+	position: relative;
+	padding: 3rem 1rem;
+	text-align: center;
 }
 
 .footer-content .img-box {
@@ -1168,11 +1172,53 @@ footer .overlay {
 }
 
 .footer-content .img-box img {
-	margin-left: 694px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 280px;
 	height: auto;
 	display: block;
 	margin: 0 auto;
+}
+
+.footer-content .inner-footer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: 1rem;
+	justify-items: center;
+	width: 100%;
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+
+.footer-content .inner-footer .card {
+	margin: 0;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-content .inner-footer .card h3 {
+	margin-bottom: 0.5rem;
+}
+
+.footer-content .inner-footer .card ul {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.footer-content .inner-footer .card .social-links {
+	justify-content: center;
+	display: flex;
+	padding: 0;
+}
+
+.footer-content .bottom-footer {
+	position: absolute;
+	bottom: -3rem;
+	left: 0;
+	right: 0;
+	background: #000;
+	width: 100%;
 }
 
 footer .inner-footer {
@@ -1181,6 +1227,7 @@ footer .inner-footer {
 	align-items: center;
 	justify-content: center;
 	width: 81vw;
+	gap: 1rem;
 	margin: 0 auto;
 	padding: 3rem 0;
 	color: #fff;
@@ -1240,8 +1287,9 @@ footer .inner-footer .card .social-links i {
 	cursor: pointer;
 	padding: .6rem;
 	font-size: 1.3rem;
-	margin-right: .5rem;
+	margin: 0.5rem 0.5rem 0 0;
 	transition: .3s;
+	display: inline-block;
 }
 
 footer .inner-footer .card .social-links i:hover {
@@ -1250,13 +1298,18 @@ footer .inner-footer .card .social-links i:hover {
 }
 
 footer .bottom-footer {
-	/* text-transform: capitalize; */
+	background: transparent;
 	text-align: center;
-	padding: 3rem 0;
+	padding: 1rem 0;
 	color: #fff;
 	padding-bottom: 1rem;
 	border-top: 1px solid #fff;
 	margin: auto;
+	width: 100%;
+	position: absolute;
+	bottom: -3rem;
+	left: 0;
+	right: 0;
 }
 
 /*------view product section-------*/
@@ -1561,6 +1614,13 @@ footer .bottom-footer {
 .view_page .btn {
 	background: #3f3f3fde;
 	cursor: pointer;
+}
+
+.view_page .btn:hover {
+	background: #fff;
+	color: var(--light-green);
+	/* transform: translateY(-3px) translateX(-50%); */
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
 .cart-total .button {
@@ -2017,5 +2077,67 @@ footer .bottom-footer {
 @media (max-width: 413px) {
 	.products .box-container {
 		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	}
+}
+
+/* Ce @media est utilisé pour la version plus petite que 768px pour le footer. */
+@media (max-width: 768px) {
+	.footer-content {
+		padding: 1rem;
+	}
+
+	.footer-content .bottom-footer {
+		position: static;
+		background: #000;
+		padding: 1rem 0;
+		text-align: center;
+	}
+
+	.footer-content .img-box,
+	.footer-content .inner-footer .card,
+	.footer-content .bottom-footer {
+		text-align: center;
+	}
+
+	.footer-content .inner-footer {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-content .inner-footer .card {
+		margin: 0 auto;
+		margin-bottom: 1rem;
+	}
+
+	.footer-content .img-box,
+	.footer-content .inner-footer .card {
+		text-align: center;
+	}
+
+	.footer-content .img-box img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	footer .inner-footer {
+		grid-template-columns: 1fr;
+	}
+
+	footer .inner-footer .card {
+		margin-left: 0;
+	}
+
+	.top-footer input,
+	.top-footer .btn {
+		width: auto;
+		margin: 0.5rem 0;
+	}
+}
+
+/* Ce @media est utilisé pour la version plus petite que 480px pour le footer. */
+@media (max-width: 480px) {
+
+	.top-footer input,
+	.top-footer .btn {
+		width: 100%;
 	}
 }
