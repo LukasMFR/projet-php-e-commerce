@@ -206,6 +206,7 @@ if (isset($_POST['delete_image'])) {
 									</option>
 									<option value="actif">Actif</option>
 									<option value="inactif">Inactif</option>
+									<option value="Occasion">Puff</option>
 								</select>
 							</div>
 							<div class="input-field">
