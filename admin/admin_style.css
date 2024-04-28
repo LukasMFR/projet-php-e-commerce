@@ -917,7 +917,8 @@ header.scrolled::before {
 
 /*-------media screen-------------*/
 /*------------media screen----------*/
-@media (max-width: 991px) {
+/* @media (max-width: 991px) { */
+@media (max-width: 1136px) {
 	#menu-btn {
 		display: block;
 	}

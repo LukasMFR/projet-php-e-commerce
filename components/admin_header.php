@@ -6,10 +6,10 @@
 		</a>
 		<nav class="navbar">
 			<a href="dashboard.php">Tableau de bord</a>
-			<a href="add_posts.php">Ajouter une voiture</a>
-			<a href="add_posts_puff.php">Ajouter une Puffs</a>
-			<a href="view_posts.php">Voir les voitures</a>
-			<a href="view_posts_puff.php">Voir les puffs</a>
+			<a href="add_posts.php">Ajouter voiture</a>
+			<a href="add_posts_puff.php">Ajouter Puff</a>
+			<a href="view_posts.php">Voir voitures</a>
+			<a href="view_posts_puff.php">Voir puffs</a>
 			<a href="user_accounts.php">Comptes</a>
 
 		</nav>
