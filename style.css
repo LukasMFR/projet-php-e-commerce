@@ -226,23 +226,22 @@ button {
 	align-items: center;
 }
 
-.banner.voiture {
-	background-image: url(./img/banner-bg2.jpg);
-	opacity: 0.8;
+.banner h1 {
+	text-transform: uppercase;
+	color: #fff;
+	margin-left: 3rem;
+	margin-right: 3rem;
 }
 
-.banner h1 {
+.banner.voiture {
+	background-image: url(./img/banner-bg2-80.webp);
+}
+
+.banner.voiture h1 {
 	text-transform: uppercase;
 	color: #000000;
 	margin-left: 3rem;
 	margin-right: 3rem;
-	font-weight: bold;
-	position: absolute;
-	top: 205px;
-	left: 908px;
-	transform: translateX(-50%);
-	font-size: 32px;
-
 }
 
 .title2 {
