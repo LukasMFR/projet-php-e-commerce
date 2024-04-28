@@ -424,10 +424,12 @@ header.scrolled::before {
 	text-transform: uppercase;
 	/* Make text bolder */
 	font-weight: 600;
+	transition: color 0.3s ease, padding-bottom 0.2s, transform 0.2s;
 }
 
 .navbar a:hover {
-	color: var(--green);
+	color: rgb(3, 15, 35);
+	transform: translateY(-3px);
 }
 
 .header .icons {
@@ -964,9 +966,7 @@ header.scrolled::before {
 	}
 
 	.header .flex .navbar a:hover {
-		/* color: var(--green); */
-		padding-right: 24px;
-		padding-left: 8px;
+		transform: translateX(10px);
 	}
 
 	.form-container {
