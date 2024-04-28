@@ -2229,6 +2229,13 @@ footer .bottom-footer {
 	.products .box-container {
 		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 	}
+
+}
+
+@media (max-width: 450px) {
+	.products .box-container.wishlist-box-container {
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	}
 }
 
 /* Ce @media est utilisé pour la version plus petite que 768px pour le footer. */
