@@ -100,13 +100,17 @@ if (isset($_POST['delete_item'])) {
 								?>
 							<form method="post" action="" class="box product-view-form">
 								<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
-								<img src="image/<?= $fetch_products['image']; ?>" class="img">
-								<div class="button">
-									<button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
-									<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bx bxs-show"></a>
-									<button type="submit" name="delete_item"
-										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
-											class="bx bx-x"></i></button>
+								<div class="image-overlay">
+									<img src="image/<?= $fetch_products['image']; ?>" class="img">
+									<div class="button-group">
+										<button type="submit" name="add_to_cart" class="icon-button"><i
+												class="bx bx-cart"></i></button>
+										<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="icon-button"><i
+												class="bx bxs-show"></i></a>
+										<button type="submit" name="delete_item" class="icon-button"
+											onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
+												class="bx bx-x"></i></button>
+									</div>
 								</div>
 								<h3 class="name">
 									<?= $fetch_products['name']; ?>

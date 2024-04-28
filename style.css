@@ -1575,6 +1575,40 @@ footer .bottom-footer {
 	color: var(--green);
 }
 
+.image-overlay {
+	position: relative;
+}
+
+.image-overlay .button-group {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	display: flex;
+	background: #3f3f3f;
+	border-radius: 20px;
+	padding: .2rem .5rem;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-overlay .icon-button {
+	border: none;
+	background: transparent;
+	color: white;
+	padding: .5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+}
+
+.image-overlay .icon-button i {
+	font-size: 1.5rem;
+}
+
+.image-overlay .icon-button:hover {
+	transform: translateY(-5px);
+}
+
 /*------------view products----------*/
 .view_page {
 	padding: 5% 3%;
