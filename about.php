@@ -37,92 +37,61 @@ if (isset($_POST['logout'])) {
 			<a href="home.php">accueil </a><span>/ à propos</span>
 		</div>
 
-		<section class="services">
-			<div class="title">
-				<img src="img/download.png" class="logo">
-				<h1>Pourquoi nous choisir</h1>
-				<p>Qualité supérieure, prix compétitifs, service client exceptionnel.</p>
-			</div>
-			<div class="box-container">
-				<div class="box">
-					<img src="img/icon2.png">
-					<div class="detail">
-						<h3>Grandes économies</h3>
-						<p>Économisez gros sur chaque commande</p>
+		
+		<section class="thumb">
+					<div class="box-container">
+						<div class="box">
+							<img src="img/logo-lamborghini.png">
+							<h3>Lamborghini</h3>
+							<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
+								l'expérience ultime de conduite sportive.</p>
+							<i class="bx bx-chevron-right"></i>
+						</div>
+						<div class="box">
+							<img src="img/logo-porsche.png">
+							<h3>Porsche</h3>
+							<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
+								sélection pour trouver votre prochaine voiture de sport.</p>
+							<i class="bx bx-chevron-right"></i>
+						</div>
+						<div class="box">
+							<img src="img/logo-ferrari-bw.png">
+							<h3>Ferrari</h3>
+							<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
+								Choisissez la Ferrari qui fait battre votre cœur.</p>
+							<i class="bx bx-chevron-right"></i>
+						</div>
+						<div class="box">
+							<img src="img/logo-alpine.png">
+							<h3>Alpine</h3>
+							<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
+								gamme pour une expérience de conduite exceptionnelle.</p>
+							<i class="bx bx-chevron-right"></i>
+						</div>
+						
+						
 					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon1.png">
-					<div class="detail">
-						<h3>Support 24/7</h3>
-						<p>Assistance personnelle</p>
-					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon0.png">
-					<div class="detail">
-						<h3>Offres spéciales sur les véhicules</h3>
-						<p>Promotions à l'occasion des fêtes</p>
-					</div>
-				</div>
-				<div class="box">
-					<img src="img/icon.png">
-					<div class="detail">
-						<h3>Livraison internationale</h3>
-						<p>Expédition partout dans le monde</p>
-					</div>
-				</div>
-			</div>
-		</section>
+				</section>
+
+
 		<div class="about">
 			<div class="row">
 				<div class="img-box">
 					<img src="img/3.png">
 				</div>
 				<div class="detail">
-					<h1>Visitez notre magnifique showroom !</h1>
-					<p>Notre showroom est la vitrine de notre passion pour l'automobile ;
-						une créativité déployée dans la présentation de nos voitures.
-						Que vous recherchiez le véhicule parfait pour un événement spécial,
-						ou que vous souhaitiez simplement élever votre expérience de conduite avec un véhicule
-						d'exception,
-						nous sommes là pour vous accompagner.</p>
+					<h1>Notre mission</h1>
+					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de services, 
+						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle. 
+						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de location de 
+						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est de fournir un 
+						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que si le client 
+						est satisfait. Louez votre voiture de luxe chez nous pour être sur la bonne voie !</p>
 					<a href="view_products.php" class="btn">Acheter maintenant</a>
 				</div>
 			</div>
 		</div>
-		<section class="thumb">
-			<div class="box-container">
-				<div class="box">
-					<img src="img/logo-lamborghini.png">
-					<h3>Lamborghini</h3>
-					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
-						l'expérience ultime de conduite sportive.</p>
-					<i class="bx bx-chevron-right"></i>
-				</div>
-				<div class="box">
-					<img src="img/logo-porsche.png">
-					<h3>Porsche</h3>
-					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
-						sélection pour trouver votre prochaine voiture de sport.</p>
-					<i class="bx bx-chevron-right"></i>
-				</div>
-				<div class="box">
-					<img src="img/logo-ferrari-bw.png">
-					<h3>Ferrari</h3>
-					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
-						Choisissez la Ferrari qui fait battre votre cœur.</p>
-					<i class="bx bx-chevron-right"></i>
-				</div>
-				<div class="box">
-					<img src="img/logo-alpine.png">
-					<h3>Alpine</h3>
-					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
-						gamme pour une expérience de conduite exceptionnelle.</p>
-					<i class="bx bx-chevron-right"></i>
-				</div>
-			</div>
-		</section>
+		
 
 		<div class="testimonial-container">
 			<div class="title">

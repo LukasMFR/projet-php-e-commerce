@@ -227,14 +227,22 @@ button {
 }
 
 .banner.voiture {
-	background-image: url(./img/banner-bg.jpg);
+	background-image: url(./img/banner-bg2.jpg);
+	opacity: 0.8;
 }
 
 .banner h1 {
 	text-transform: uppercase;
-	color: #fff;
+	color: #000000;
 	margin-left: 3rem;
 	margin-right: 3rem;
+	font-weight: bold;
+	position: absolute;
+	top: 205px;
+	left: 908px;
+	transform: translateX(-50%);
+	font-size: 32px;
+
 }
 
 .title2 {
@@ -1017,7 +1025,7 @@ video {
 }
 
 .testimonial-container .container .testimonial-item h1 {
-	color: var(--green);
+	color: #3f3f3f;
 	font-size: 1.3rem;
 	padding-bottom: .5rem;
 	/* text-transform: capitalize; */
@@ -1039,7 +1047,7 @@ video {
 	border-radius: 50%;
 	color: #fff;
 	box-shadow: var(--box-shadow);
-	background: var(--green);
+	background: #3f3f3f;
 	z-index: 2;
 	cursor: pointer;
 	display: flex;
@@ -1085,7 +1093,7 @@ textarea {
 }
 
 .form-container p {
-	color: var(--green);
+	color: #3f3f3f;
 }
 
 .form-container sup {
@@ -1147,7 +1155,8 @@ textarea {
 
 .address .box-container .box h4 {
 	text-transform: uppercase;
-	color: var(--green);
+	color: #3f3f3f;
+	font-weight: bold;
 }
 
 .address .box-container .box i {
@@ -1159,7 +1168,7 @@ textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--green);
+	background: #3f3f3f;
 	color: #fff;
 }
 
