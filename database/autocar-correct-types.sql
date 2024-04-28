@@ -148,21 +148,22 @@ INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `address`, `ad
 --
 
 CREATE TABLE `products` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `image3` varchar(255) NOT NULL,
-  `image2` varchar(255) NOT NULL,
-  `product_detail` varchar(500) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `Modèle` varchar(255) NOT NULL,
-  `Année` varchar(255) NOT NULL,
-  `moteur` varchar(255) NOT NULL,
-  `kilométrage` varchar(255) NOT NULL,
-  `equipements` varchar(255) NOT NULL,
-  `etat` varchar(255) NOT NULL,
-  `pointsforts` varchar(255) NOT NULL
+  `id` CHAR(36) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL,
+  `image` VARCHAR(255) NOT NULL,
+  `image3` VARCHAR(255) NOT NULL,
+  `image2` VARCHAR(255) NOT NULL,
+  `product_detail` TEXT NOT NULL,
+  `status` VARCHAR(100) NOT NULL,
+  `Modèle` VARCHAR(255) NOT NULL,
+  `Année` INT NOT NULL,
+  `moteur` VARCHAR(255) NOT NULL,
+  `kilométrage` INT NOT NULL,
+  `equipements` TEXT NOT NULL,
+  `etat` VARCHAR(255) NOT NULL,
+  `pointsforts` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -170,7 +171,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `product_detail`, `status`, `Modèle`, `Année`, `moteur`, `kilométrage`, `equipements`, `etat`, `pointsforts`) VALUES
-('BLTtlhOgq1cuz7plh4Ia', 'McLaren 720s', '375 000', 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Véhicule sportif haute performance alliant design aérodynamique et technologie de pointe.', 'actif', 'McLaren 720s', '2022', 'V8 de 4,0 L', '1000 Km', 'Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Bluetooth, Prises USB, Navigateur GPS, Capteurs de pluie et de lumière', 'Neuf', 'Le 0 à 100 km/h est parcouru en seulement 2,8 secondes'),
+('BLTtlhOgq1cuz7plh4Ia', 'McLaren 720s', 375000.00, 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Véhicule sportif haute performance alliant design aérodynamique et technologie de pointe.', 'actif', 'McLaren 720s', 2022, 'V8 de 4,0 L', 1000, 'Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Bluetooth, Prises USB, Navigateur GPS, Capteurs de pluie et de lumière', 'Neuf', 'Le 0 à 100 km/h est parcouru en seulement 2,8 secondes'),
 ('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', 'Climatisation automatique bizone, système multimédia avancé, sièges en cuir premium, capteurs de stationnement.', 'Neuf', '0 à 100 km/h en 2,4s'),
 ('aSBHDzG26iXurm6cfoNv', 'Lamborghini Revuelto', '699 000', 'lambo4.jpg', 'lambo6.jpg', 'lambo5.jpg', 'Un supercar électrifiant qui combine performance extrême et style audacieux.', 'actif', 'Lamborghini Revuelto', '2023', 'V12 hybride', '75 km', 'Système infotainment avec écran tactile, intégration smartphone, régulateur de vitesse adaptatif.', 'Neuf', 'Une accélération de 0 à 100 km/h en seulement 2,8 secondes.'),
 ('g5DLcNHmtHvq3DtJYsCb', 'Alpine A110 R', '111 997', 'alpine.jpg', 'alpine3.jpg', 'alpine2.jpg', 'Voiture sportive légère et agile, optimisée pour les performances de piste.', 'actif', 'Alpine A110 R', '2020', '4 cylindres en ligne de 1,8 L', '1000 Km', 'KIT AERO MP-R', 'Occasion', '0 à 100 km/h en 3,9 sec pour une vitesse de pointe de 285 km/h'),
