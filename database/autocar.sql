@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 28 avr. 2024 à 15:52
+-- Généré le : dim. 28 avr. 2024 à 16:14
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -55,13 +55,6 @@ CREATE TABLE `cart` (
   `price` varchar(10) NOT NULL,
   `qty` varchar(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `cart`
---
-
-INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
-('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '50', '1');
 
 -- --------------------------------------------------------
 
@@ -187,7 +180,7 @@ CREATE TABLE `puff` (
   `status` varchar(100) NOT NULL,
   `goût` varchar(255) NOT NULL,
   `taffe` varchar(255) NOT NULL,
-  `nicotine` int(255) NOT NULL
+  `nicotine` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -195,12 +188,12 @@ CREATE TABLE `puff` (
 --
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`, `goût`, `taffe`, `nicotine`) VALUES
-('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', '300 ', 'puff6.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gaz Naturelle', '1000', 0),
-('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Gazole by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gazole', '1000', 0),
-('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Sans Plomb 95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Sans Plomb 95', '1000', 0),
-('0lKHBlsFPaTpTFlnHUXf', 'Puff Superéthanol E85', '12', 'puff3.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Superéthanol E85 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Superéthanol E85', '1000', 0),
-('Wd3or2BwCtKebztba6aV', 'Puff Supercarburants SP95', '12', 'puff4.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Supercarburants SP95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Supercarburants SP95', '1000', 0),
-('ugVkMKuH66eqSJFRyhAU', 'Puff électrique', '12', 'puff5.jpg', 'A la recherche d’une saveur sucrée et originale pour votre vapotage ? Découvrez la TurboVape Carburant Electrique by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Electrique', '1000', 0);
+('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', '300 ', 'puff6.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? \r\nDécouvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gaz Naturelle', '1000', '0%'),
+('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Gazole by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gazole', '1000', '5%'),
+('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Sans Plomb 95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Sans Plomb 95', '1000', '5%'),
+('0lKHBlsFPaTpTFlnHUXf', 'Puff Superéthanol E85', '12', 'puff3.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Superéthanol E85 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Superéthanol E85', '1000', '7,5%'),
+('Wd3or2BwCtKebztba6aV', 'Puff Supercarburants SP95', '12', 'puff4.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Supercarburants SP95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Supercarburants SP95', '1000', '10%'),
+('ugVkMKuH66eqSJFRyhAU', 'Puff électrique', '12', 'puff5.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Carburant Electrique by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Electrique', '1000', '1%');
 
 -- --------------------------------------------------------
 
@@ -238,13 +231,6 @@ CREATE TABLE `wishlist` (
   `product_id` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `wishlist`
---
-
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
 
 --
 -- Index pour les tables déchargées

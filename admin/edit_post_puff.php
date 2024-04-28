@@ -63,11 +63,6 @@ if (isset($_POST['save'])) {
 
 
 	
-
-
-
-
-
 //delete post
 if (isset($_POST['delete_post'])) {
 
@@ -182,14 +177,14 @@ if (isset($_POST['delete_image'])) {
 							</div>
 
 							<div class="input-field">
-								<label>Nombre de taffe du produit <sup>*</sup></label>
-								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
+								<label>Taux de nicotine <sup>*</sup></label>
+								<input type="text" name="nicotine" value="<?= $fetch_posts['nicotine']; ?>">
 
 							</div>
 
 							<div class="input-field">
-								<label>Taux de nicotine <sup>*</sup></label>
-								<input type="text" name="nicotine" value="<?= $fetch_posts['nicotine']; ?>">
+								<label>Nombre de taffe du produit<sup>*</sup></label>
+								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
 
 							</div>
 
