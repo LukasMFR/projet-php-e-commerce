@@ -1420,6 +1420,10 @@ footer .bottom-footer {
 	object-fit: cover;
 }
 
+.products .box-container .box .img.puff {
+	aspect-ratio: 1 / 1;
+}
+
 .products .box-container .box .name {
 	font-size: 1.2rem;
 	color: #555;
@@ -1656,6 +1660,17 @@ footer .bottom-footer {
 	width: 742px;
 	height: auto;
 	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	margin-left: -5rem;
+	border-radius: 30px;
+}
+
+/* Pour l'image de puff sur la page voir la page produit */
+.view_page form .puff {
+	padding: 0rem;
+	width: 742px;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	margin-left: -5rem;
 	border-radius: 30px;

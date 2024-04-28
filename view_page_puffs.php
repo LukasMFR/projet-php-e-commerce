@@ -102,7 +102,7 @@ if (isset($_POST['add_to_cart'])) {
 
 						<form method="post">
 							<div class="product-images">
-								<img src="image/<?php echo $fetch_puff['image']; ?>" alt="Image principale">
+								<img src="image/<?php echo $fetch_puff['image']; ?>" alt="Image principale" class="puff">
 								<div class="image-container">
 							</div>
 							</div>
