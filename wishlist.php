@@ -90,6 +90,8 @@ if (isset($_POST['delete_item'])) {
 			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
 			$select_wishlist->execute([$user_id]);
 			if ($select_wishlist->rowCount() > 0) {
+				echo '<div class="box-container wishlist-box-container">';
+
 				while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
 					$select_products = $conn->prepare("SELECT * FROM `products` WHERE id= ?");
 					$select_products->execute([$fetch_wishlist['product_id']]);
@@ -97,42 +99,40 @@ if (isset($_POST['delete_item'])) {
 						$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)
 
 							?>
-						<div class="box-container wishlist-box-container">
-							<form method="post" action="" class="box product-view-form">
-								<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
-								<div class="image-overlay">
-									<img src="image/<?= $fetch_products['image']; ?>" class="img">
-									<div class="button-group">
-										<button type="submit" name="add_to_cart" class="icon-button"><i
-												class="bx bx-cart"></i></button>
-										<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="icon-button"><i
-												class="bx bxs-show"></i></a>
-										<button type="submit" name="delete_item" class="icon-button"
-											onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
-												class="bx bx-x"></i></button>
-									</div>
+
+						<form method="post" action="" class="box product-view-form">
+							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
+							<div class="image-overlay">
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<div class="button-group">
+									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
+									<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="icon-button"><i
+											class="bx bxs-show"></i></a>
+									<button type="submit" name="delete_item" class="icon-button"
+										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
+											class="bx bx-x"></i></button>
 								</div>
-								<div class="wishlist-info">
-									<h3 class="name wishlist-name">
-										<?= $fetch_products['name']; ?>
-									</h3>
-									<p class="price wishlist-price">Prix :
-										<?= $fetch_products['price']; ?> €
-									</p>
-								</div>
-								<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-								<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
-							</form>
-						</div>
+							</div>
+							<div class="wishlist-info">
+								<h3 class="name wishlist-name">
+									<?= $fetch_products['name']; ?>
+								</h3>
+								<p class="price wishlist-price">Prix :
+									<?= $fetch_products['price']; ?> €
+								</p>
+							</div>
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
+						</form>
 						<?php
 						$grand_total += $fetch_wishlist['price'];
 					}
 				}
+				echo '</div>';
 			} else {
 				echo '<div class="box-container"><p class="empty">Aucun produit ajouté pour le moment !</p></div>';
 			}
 			?>
-
 		</section>
 		<?php include 'components/footer.php'; ?>
 	</div>

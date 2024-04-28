@@ -1466,20 +1466,6 @@ footer .bottom-footer {
 	/* padding-left: 1rem; */
 }
 
-.wishlist-box-container .wishlist-info {
-	width: 100%;
-	text-align: center;
-}
-
-.wishlist-box-container .name.wishlist-name {
-	margin-bottom: 0.5rem;
-}
-
-.wishlist-box-container .price.wishlist-price {
-	color: var(--green);
-	margin: .5rem 0;
-}
-
 .products .box-container .box .button {
 	text-align: center;
 	position: absolute;
@@ -1660,6 +1646,25 @@ footer .bottom-footer {
 
 .image-overlay .icon-button:hover {
 	transform: translateY(-5px);
+}
+
+.wishlist-box-container .wishlist-info {
+	width: 100%;
+	text-align: center;
+}
+
+.wishlist-box-container .name.wishlist-name {
+	margin-bottom: 0.5rem;
+}
+
+.products .box-container.wishlist-box-container .box .price.wishlist-price {
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: .5rem 0;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
 }
 
 /*------------view products----------*/
