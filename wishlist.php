@@ -112,15 +112,15 @@ if (isset($_POST['delete_item'])) {
 												class="bx bx-x"></i></button>
 									</div>
 								</div>
-								<h3 class="name">
-									<?= $fetch_products['name']; ?>
-								</h3>
-								<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-								<div class="flex">
-									<p class="price">Prix :
+								<div class="wishlist-info">
+									<h3 class="name wishlist-name">
+										<?= $fetch_products['name']; ?>
+									</h3>
+									<p class="price wishlist-price">Prix :
 										<?= $fetch_products['price']; ?> €
 									</p>
 								</div>
+								<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
 								<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 							</form>
 							<?php

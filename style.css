@@ -1457,8 +1457,27 @@ footer .bottom-footer {
 }
 
 .products .box-container .box .name {
-	font-size: 1.2rem;
+	/* padding-top: 1.5rem; */
+	margin-top: 1.5rem;
+	text-align: left;
+	width: 100%;
 	color: #555;
+	font-size: 1.5rem;
+	/* padding-left: 1rem; */
+}
+
+.wishlist-box-container .wishlist-info {
+	width: 100%;
+	text-align: center;
+}
+
+.wishlist-box-container .name.wishlist-name {
+	margin-bottom: 0.5rem;
+}
+
+.wishlist-box-container .price.wishlist-price {
+	color: var(--green);
+	margin: .5rem 0;
 }
 
 .products .box-container .box .button {
@@ -1516,6 +1535,8 @@ footer .bottom-footer {
 
 .products .box-container .box .price {
 	font-size: 1.1rem;
+	text-align: left;
+	width: 100%;
 	color: var(--green);
 	margin-right: auto;
 }
