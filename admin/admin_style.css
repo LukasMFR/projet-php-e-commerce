@@ -67,7 +67,7 @@ ul {
 .btn {
 	line-height: 2;
 	/* background-color: #e0ffcd; */
-	background-color: #0c1022;
+	background-color: #3f3f3f;
 	padding: 5px 35px;
 	display: inline-block;
 	border-radius: 20px;
@@ -82,10 +82,12 @@ ul {
 	overflow: hidden;
 	vertical-align: middle;
 	transition: color 0.3s ease;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease;
 	z-index: 2;
 }
 
-.btn::before {
+/* .btn::before {
 	position: absolute;
 	content: '';
 	left: 0;
@@ -101,10 +103,13 @@ ul {
 .btn:hover::before {
 	width: 100%;
 
-}
+} */
 
 .btn:hover {
-	color: #fff;
+	background: #fff;
+	color: var(--light-green);
+	/* transform: translateY(-3px) translateX(-50%); */
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
 .empty,
