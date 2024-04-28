@@ -11,41 +11,41 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header("location: login.php");
 }
-//adding products in wishlist
+//adding pu in wishlist
 if (isset($_POST['add_to_wishlist'])) {
     $id = unique_id();
-    $product_id = $_POST['product_id'];
+    $product_id = $_POST['puff_id'];
 
     $varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-    $varify_wishlist->execute([$user_id, $product_id]);
+    $varify_wishlist->execute([$user_id, $puff_id]);
 
     $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-    $cart_num->execute([$user_id, $product_id]);
+    $cart_num->execute([$user_id, $pufff_id]);
 
     if ($varify_wishlist->rowCount() > 0) {
         $warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
     } else if ($cart_num->rowCount() > 0) {
         $warning_msg[] = 'Le produit est déjà dans votre panier';
     } else {
-        $select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-        $select_price->execute([$product_id]);
+        $select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+        $select_price->execute([$puff_id]);
         $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-        $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
-        $insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
+        $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,puff_id,price) VALUES(?,?,?,?)");
+        $insert_wishlist->execute([$id, $user_id, $puff_id, $fetch_price['price']]);
         $success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
     }
 }
-//adding products in cart
+//adding pu in cart
 if (isset($_POST['add_to_cart'])) {
     $id = unique_id();
-    $product_id = $_POST['product_id'];
+    $product_id = $_POST['puff_id'];
 
     $qty = $_POST['qty'];
     $qty = filter_var($qty, FILTER_SANITIZE_STRING);
 
     $varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-    $varify_cart->execute([$user_id, $product_id]);
+    $varify_cart->execute([$user_id, $puff_id]);
 
     $max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
     $max_cart_items->execute([$user_id]);
@@ -55,12 +55,12 @@ if (isset($_POST['add_to_cart'])) {
     } else if ($max_cart_items->rowCount() > 20) {
         $warning_msg[] = 'Le panier est plein';
     } else {
-        $select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-        $select_price->execute([$product_id]);
+        $select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+        $select_price->execute([$puff_id]);
         $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-        $insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
-        $insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
+        $insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,puff_id,price,qty) VALUES(?,?,?,?,?)");
+        $insert_cart->execute([$id, $user_id, $puff_id, $fetch_price['price'], $qty]);
         $success_msg[] = 'Produit ajouté avec succès au panier';
     }
 }
@@ -94,22 +94,22 @@ if (isset($_POST['add_to_cart'])) {
         <section class="products">
             <div class="box-container">
                 <?php
-                $select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
-                $select_products->execute();
-                if ($select_products->rowCount() > 0) {
-                    while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+                $select_puff= $conn->prepare("SELECT * FROM `puff` WHERE `status` = 'actif'");
+                $select_puff->execute();
+                if ($select_puff->rowCount() > 0) {
+                    while ($fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <form action="" method="post" class="box product-view-form">
                             <div class="image-container">
-                                <img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-                                <a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+                                <img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
+                                <a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>"
                                     class="view-btn">Visualiser</a>
                                 <div class="button special-button">
                                     <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
                                 </div>
                             </div>
-                            <input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-                            <h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+                            <input type="hidden" name="puff_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
+                            <h1><?= htmlspecialchars($fetch_puff['name']); ?></h1>
                         </form>
                         <?php
                     }
@@ -125,22 +125,22 @@ if (isset($_POST['add_to_cart'])) {
             </div>
             <div class="box-container">
                 <?php
-                $select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'inactif'");
-                $select_products->execute();
-                if ($select_products->rowCount() > 0) {
-                    while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+                $select_puff= $conn->prepare("SELECT * FROM `puff ` WHERE `status` = 'inactif'");
+                $select_puff->execute();
+                if ($select_puff->rowCount() > 0) {
+                    while ($fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <form action="" method="post" class="box product-view-form">
                             <div class="image-container">
-                                <img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-                                <a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+                                <img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
+                                <a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>"
                                     class="view-btn">Visualiser</a>
                                 <div class="button special-button">
                                     <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
                                 </div>
                             </div>
-                            <input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-                            <h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+                            <input type="hidden" name="puff_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
+                            <h1><?= htmlspecialchars($fetch_puff['name']); ?></h1>
                         </form>
                         <?php
                     }

@@ -16,6 +16,7 @@ DROP TABLE IF EXISTS cart ;
 DROP TABLE IF EXISTS message ;
 DROP TABLE IF EXISTS orders ;
 DROP TABLE IF EXISTS products ;
+DROP TABLE IF EXISTS puff ;
 DROP TABLE IF EXISTS users ;
 DROP TABLE IF EXISTS wishlist ;
 
@@ -185,7 +186,32 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `pro
 ('0I8ZbLUgrxn7qWNMzxPE', 'McLaren 720s GT3 X', '330 000', 'MC3.jpg', 'MC5.jpg', 'MC4.jpg', 'Version extrême du 720s, conçue exclusivement pour une utilisation sur circuit avec des améliorations significatives en termes de performance.', 'inactif', 'McLaren 720s GT3 X', '2021', 'V8 de 4,0 L turbo', '40 km', 'Cockpit de course, système de télémétrie avancé, freins en carbone-céramique.', 'Neuf', 'Performance de circuit dominante, très limitée en production.'),
 ('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '300 000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Voiture de sport axée sur la performance avec un design élégant et une ingénierie de précision.', 'actif', 'Mercedes AMG GT2', '2023', 'V8 de 4,0 L turbo', '55 km', 'Sièges sport AMG, système multimédia haut de gamme, aide à la conduite active.', 'Neuf', 'Équilibre parfait entre performance et confort, design agressif.');
 
--- --------------------------------------------------------
+
+
+
+-- Structure de la table `puff`
+
+
+CREATE TABLE `puff` (
+  `id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `product_detail` varchar(500) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- Déchargement des données de la table `puff`
+
+
+INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
+('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '300 000', 'mercedes1.jpg', 'Voiture de sport axée sur la performance avec un design élégant et une ingénierie de précision.', 'actif');
+
+
+
+
+
 
 --
 -- Structure de la table `users`

@@ -6,9 +6,12 @@
 		</a>
 		<nav class="navbar">
 			<a href="dashboard.php">Tableau de bord</a>
-			<a href="add_posts.php">Ajouter un produit</a>
-			<a href="view_posts.php">Voir les produits</a>
+			<a href="add_posts.php">Ajouter une voiture</a>
+			<a href="add_posts_puff.php">Ajouter une Puffs</a>
+			<a href="view_posts.php">Voir les voitures</a>
+			<a href="view_posts_puff.php">Voir les puffs</a>
 			<a href="user_accounts.php">Comptes</a>
+
 		</nav>
 		<div class="icons">
 			<i class="bx bxs-user" id="user-btn"></i>
