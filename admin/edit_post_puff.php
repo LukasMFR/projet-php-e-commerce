@@ -27,8 +27,8 @@ if (isset($_POST['save'])) {
 
 
 
-	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ?, goût = ?, taffe = ? WHERE id = ?");
-	$update_post->execute([$title, $price, $content, $status, $goût, $taffe, $post_id]);
+	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ?, goût = ?, taffe = ?, nicotine = ? WHERE id = ?");
+	$update_post->execute([$title, $price, $content, $status, $goût, $taffe, $nicotine, $post_id]);
 
 	$success_msg[] = 'Produit mis à jour';
 
@@ -188,8 +188,8 @@ if (isset($_POST['delete_image'])) {
 							</div>
 
 							<div class="input-field">
-								<label>Nombre de taffe du produit <sup>*</sup></label>
-								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
+								<label>Taux de nicotine <sup>*</sup></label>
+								<input type="text" name="nicotine" value="<?= $fetch_posts['nicotine']; ?>">
 
 							</div>
 
