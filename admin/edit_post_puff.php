@@ -18,10 +18,14 @@ if (isset($_POST['save'])) {
 	$content = filter_var($content, FILTER_SANITIZE_STRING);
 	$status = $_POST['status'];
 	$status = filter_var($status, FILTER_SANITIZE_STRING);
+	$goût = $_POST['goût'];
+	$goût = filter_var($goût, FILTER_SANITIZE_STRING);
+	$taffe = $_POST['taffe'];
+	$taffe = filter_var($taffe, FILTER_SANITIZE_STRING);
 
 
-	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ? WHERE id = ?");
-	$update_post->execute([$title, $price, $content, $status, $post_id]);
+	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ?, goût = ?, taffe = ? WHERE id = ?");
+	$update_post->execute([$title, $price, $content, $status, $goût, $taffe, $post_id]);
 
 	$success_msg[] = 'Produit mis à jour';
 
@@ -166,6 +170,18 @@ if (isset($_POST['delete_image'])) {
 								<label>Détail du produit <sup>*</sup></label>
 								<textarea name="content" required maxlength="10000"
 									placeholder="write your content.."><?= $fetch_posts['product_detail']; ?></textarea>
+							</div>
+
+							<div class="input-field">
+								<label>Saveur du prduit<sup>*</sup></label>
+								<input type="text" name="goût" maxlength="100" required placeholder="add post title"
+									value="<?= $fetch_posts['goût']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Nombre de taffe du produit <sup>*</sup></label>
+								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
+
 							</div>
 
 							<div class="input-field">
