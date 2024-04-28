@@ -74,6 +74,9 @@ CREATE TABLE `cart` (
 -- Déchargement des données de la table `cart`
 --
 
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
+('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '50', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -260,7 +263,8 @@ CREATE TABLE `wishlist` (
 -- Déchargement des données de la table `wishlist`
 --
 
-
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
 
 COMMIT;
 
