@@ -7,6 +7,19 @@
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
+
+DROP DATABASE IF EXISTS autocar;
+CREATE DATABASE autocar ;
+USE autocar ;
+DROP TABLE IF EXISTS admin ;
+DROP TABLE IF EXISTS cart ;
+DROP TABLE IF EXISTS message ;
+DROP TABLE IF EXISTS orders ;
+DROP TABLE IF EXISTS products ;
+DROP TABLE IF EXISTS puff ;
+DROP TABLE IF EXISTS users ;
+DROP TABLE IF EXISTS wishlist ;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -63,13 +76,14 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `message` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `phone` varchar(30) DEFAULT NULL
+  `phone` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -153,7 +167,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `product_detail`, `status`, `Modèle`, `Année`, `moteur`, `kilométrage`, `equipements`, `etat`, `pointsforts`) VALUES
 ('BLTtlhOgq1cuz7plh4Ia', 'McLaren 720s', '375 000', 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Véhicule sportif haute performance alliant design aérodynamique et technologie de pointe.', 'actif', 'McLaren 720s', '2022', 'V8 de 4,0 L', '1000 Km', 'Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Bluetooth, Prises USB, Navigateur GPS, Capteurs de pluie et de lumière', 'Neuf', 'Le 0 à 100 km/h est parcouru en seulement 2,8 secondes'),
-('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', '', '', ''),
+('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', 'Climatisation automatique bizone, système multimédia avancé, sièges en cuir premium, capteurs de stationnement.', 'Neuf', '0 à 100 km/h en 2,4s'),
 ('aSBHDzG26iXurm6cfoNv', 'Lamborghini Revuelto', '699 000', 'lambo4.jpg', 'lambo6.jpg', 'lambo5.jpg', 'Un supercar électrifiant qui combine performance extrême et style audacieux.', 'actif', 'Lamborghini Revuelto', '2023', 'V12 hybride', '75 km', 'Système infotainment avec écran tactile, intégration smartphone, régulateur de vitesse adaptatif.', 'Neuf', 'Une accélération de 0 à 100 km/h en seulement 2,8 secondes.'),
 ('g5DLcNHmtHvq3DtJYsCb', 'Alpine A110 R', '111 997', 'alpine.jpg', 'alpine3.jpg', 'alpine2.jpg', 'Voiture sportive légère et agile, optimisée pour les performances de piste.', 'actif', 'Alpine A110 R', '2020', '4 cylindres en ligne de 1,8 L', '1000 Km', 'KIT AERO MP-R', 'Occasion', '0 à 100 km/h en 3,9 sec pour une vitesse de pointe de 285 km/h'),
 ('uOarNNg0n3KD9OvPtItP', 'Ferrari SP51', '10 000 000', 'ferariesp51.png', 'ferarie3.jpg', 'ferarie2.png', 'Un roadster exclusif au design saisissant et aux performances époustouflantes, basé sur la 812 GTS.', 'actif', 'Ferrari SP51', '2022', 'V12', '0 Km', 'Intérieur luxueux en cuir, système de navigation avancé, caméra de recul.', 'Neuf', '0 à 100 km/h en moins de 3 secondes'),
@@ -233,6 +247,7 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+<<<<<<< HEAD
 -- Index pour les tables déchargées
 --
 
@@ -251,6 +266,14 @@ ALTER TABLE `message`
 --
 ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+-- Déchargement des données de la table `wishlist`
+--
+
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
+
+>>>>>>> 862bd5125044ee02e722a3d007872bbf35e18f75
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
