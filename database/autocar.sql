@@ -197,7 +197,9 @@ CREATE TABLE `puff` (
   `price` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `product_detail` varchar(500) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `goût` varchar(255) NOT NULL,
+  `taffe` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -205,7 +207,7 @@ CREATE TABLE `puff` (
 --
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
-('x4T8md3lGxX7DkkXWoAN', 'Puff naturel', '300 ', 'puff6.jpg', 'cscscs', 'actif'),
+('x4T8md3lGxX7DkkXWoAN', 'Puff naturel', '300', 'puff6.jpg', 'cscscs', 'actif'),
 ('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'deded', 'actif'),
 ('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'sdsd', 'actif'),
 ('0lKHBlsFPaTpTFlnHUXf', 'Puff superéthanol E85', '12', 'puff3.jpg', 'sdsc', 'actif'),
