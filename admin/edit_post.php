@@ -213,11 +213,13 @@ if (isset($_POST['delete_image'])) {
 								<input type="text" name="title" maxlength="100" required placeholder="add post title"
 									value="<?= $fetch_posts['name']; ?>">
 							</div>
+
 							<div class="input-field">
 								<label>Prix du produit <sup>*</sup></label>
 								<input type="text" name="price" value="<?= $fetch_posts['price']; ?>">
 
 							</div>
+
 							<div class="input-field">
 								<label>Détail du produit <sup>*</sup></label>
 								<textarea name="content" required maxlength="10000"
@@ -244,8 +246,8 @@ if (isset($_POST['delete_image'])) {
 
 							<div class="input-field">
 								<label>Equipements/Options<sup>*</sup></label>
-								<input type="text" name="equipements" maxlength="100" required placeholder="add post title"
-									value="<?= $fetch_posts['equipements']; ?>">
+								<textarea name="equipements" required maxlength="10000"
+									placeholder="write your content.."><?= $fetch_posts['equipements']; ?></textarea>
 							</div>
 
 							<div class="input-field">
