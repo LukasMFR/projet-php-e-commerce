@@ -206,13 +206,13 @@ CREATE TABLE `puff` (
 -- Déchargement des données de la table `puff`
 --
 
-INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
-('x4T8md3lGxX7DkkXWoAN', 'Puff naturel', '300', 'puff6.jpg', 'cscscs', 'actif'),
-('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'deded', 'actif'),
-('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'sdsd', 'actif'),
-('0lKHBlsFPaTpTFlnHUXf', 'Puff superéthanol E85', '12', 'puff3.jpg', 'sdsc', 'actif'),
-('Wd3or2BwCtKebztba6aV', 'Puff supercarburants SP95', '12', 'puff4.jpg', 'devdv', 'actif'),
-('ugVkMKuH66eqSJFRyhAU', 'Puff electrique', '12', 'puff5.jpg', 'dzdz', 'actif');
+INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`, `goût`, `taffe`) VALUES
+('x4T8md3lGxX7DkkXWoAN', 'Puff naturel', '300', 'puff6.jpg', 'cscscs', 'actif', 'Naturel', '150'),
+('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'deded', 'actif', 'Gazole', '100'),
+('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'sdsd', 'actif', 'Sans Plomb', '120'),
+('0lKHBlsFPaTpTFlnHUXf', 'Puff superéthanol E85', '12', 'puff3.jpg', 'sdsc', 'actif', 'Superéthanol', '110'),
+('Wd3or2BwCtKebztba6aV', 'Puff supercarburants SP95', '12', 'puff4.jpg', 'devdv', 'actif', 'Supercarburants', '130'),
+('ugVkMKuH66eqSJFRyhAU', 'Puff electrique', '12', 'puff5.jpg', 'dzdz', 'actif', 'Electrique', '140');
 
 -- --------------------------------------------------------
 
