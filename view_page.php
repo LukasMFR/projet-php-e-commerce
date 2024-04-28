@@ -121,35 +121,35 @@ if (isset($_POST['add_to_cart'])) {
 											<h1>Caractéristiques du véhicule</h1>
 											<ul class="list-unstyled skill-list">
 												<li class="skill-list-item">
-													<h1>Modèle:</h1>
+													<h1>Modèle :</h1>
 													<p class="skill-description"><?php echo $fetch_products['Modèle']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Année:</h1>
+													<h1>Année :</h1>
 													<p class="skill-description"><?php echo $fetch_products['Année']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Moteur:</h1>
+													<h1>Moteur :</h1>
 													<p class="skill-description"><?php echo $fetch_products['moteur']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Kilométrage:</h1>
+													<h1>Kilométrage :</h1>
 													<p class="skill-description"><?php echo $fetch_products['kilométrage']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Equipements:</h1>
+													<h1>Equipements :</h1>
 													<p class="skill-description"><?php echo $fetch_products['equipements']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Etat:</h1>
+													<h1>Etat :</h1>
 													<p class="skill-description"><?php echo $fetch_products['etat']; ?></p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Vitesse de pointe:</h1>
+													<h1>Vitesse de pointe :</h1>
 													<p class="skill-description"><?php echo $fetch_products['pointsforts']; ?></p>
 													</p>
 												</li>

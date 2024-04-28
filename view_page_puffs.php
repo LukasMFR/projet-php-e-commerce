@@ -116,12 +116,12 @@ if (isset($_POST['add_to_cart'])) {
 											<h1>Caractéristiques du véhicule</h1>
 											<ul class="list-unstyled skill-list">
 												<li class="skill-list-item">
-													<h1>Saveur:</h1>
+													<h1>Saveur :</h1>
 													<p class="skill-description"><?php echo $fetch_puff['goût']; ?>
 													</p>
 												</li>
 												<li class="skill-list-item">
-													<h1>Nombre de taffe:</h1>
+													<h1>Nombre de taffe :</h1>
 													<p class="skill-description"><?php echo $fetch_puff['taffe']; ?></p>
 												</li>
 											</ul>
