@@ -226,6 +226,10 @@ button {
 	align-items: center;
 }
 
+.banner.voiture {
+	background-image: url(./img/banner-bg.jpg);
+}
+
 .banner h1 {
 	text-transform: uppercase;
 	color: #fff;

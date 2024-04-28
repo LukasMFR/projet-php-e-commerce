@@ -94,7 +94,7 @@ if (isset($_POST['add_to_cart'])) {
         <section class="products">
             <div class="box-container">
                 <?php
-                $select_puff= $conn->prepare("SELECT * FROM `puff` WHERE `status` = 'actif'");
+                $select_puff = $conn->prepare("SELECT * FROM `puff` WHERE `status` = 'actif'");
                 $select_puff->execute();
                 if ($select_puff->rowCount() > 0) {
                     while ($fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)) {
@@ -125,7 +125,7 @@ if (isset($_POST['add_to_cart'])) {
             </div>
             <div class="box-container">
                 <?php
-                $select_puff= $conn->prepare("SELECT * FROM `puff ` WHERE `status` = 'inactif'");
+                $select_puff = $conn->prepare("SELECT * FROM `puff ` WHERE `status` = 'inactif'");
                 $select_puff->execute();
                 if ($select_puff->rowCount() > 0) {
                     while ($fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)) {
