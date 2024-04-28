@@ -1404,6 +1404,30 @@ footer .bottom-footer {
 	justify-content: space-between;
 }
 
+.products .box-container.wishlist-box-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	gap: 2rem;
+	align-items: start;
+	grid-auto-flow: dense;
+}
+
+.products .box-container.wishlist-box-container .box {
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+	padding: 1rem;
+	margin: 1rem;
+	position: relative;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .products .box-container .box h1 {
 	/* padding-top: 1.5rem; */
 	margin-top: 1.5rem;

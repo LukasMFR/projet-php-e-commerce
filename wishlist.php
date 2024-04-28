@@ -85,7 +85,7 @@ if (isset($_POST['delete_item'])) {
 		</div>
 		<section class="products">
 			<h1 class="title">Produits dans ma liste de souhaits</h1>
-			<div class="box-container">
+			<div class="box-container wishlist-box-container">
 				<?php
 				$grand_total = 0;
 				$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
