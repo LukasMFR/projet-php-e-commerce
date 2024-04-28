@@ -98,7 +98,7 @@ if (isset($_POST['delete_item'])) {
 							$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)
 
 								?>
-							<form method="post" action="" class="box">
+							<form method="post" action="" class="box product-view-form">
 								<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
 								<div class="button">
