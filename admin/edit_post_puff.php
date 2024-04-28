@@ -22,6 +22,9 @@ if (isset($_POST['save'])) {
 	$goût = filter_var($goût, FILTER_SANITIZE_STRING);
 	$taffe = $_POST['taffe'];
 	$taffe = filter_var($taffe, FILTER_SANITIZE_STRING);
+	$nicotine = $_POST['nicotine'];
+	$nicotine = filter_var($nicotine, FILTER_SANITIZE_STRING);
+
 
 
 	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ?, goût = ?, taffe = ? WHERE id = ?");
@@ -176,6 +179,12 @@ if (isset($_POST['delete_image'])) {
 								<label>Saveur du prduit<sup>*</sup></label>
 								<input type="text" name="goût" maxlength="100" required placeholder="add post title"
 									value="<?= $fetch_posts['goût']; ?>">
+							</div>
+
+							<div class="input-field">
+								<label>Nombre de taffe du produit <sup>*</sup></label>
+								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
+
 							</div>
 
 							<div class="input-field">
