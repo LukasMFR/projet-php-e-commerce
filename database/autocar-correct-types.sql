@@ -198,15 +198,16 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `pro
 --
 
 CREATE TABLE `puff` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `product_detail` varchar(500) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `goût` varchar(255) NOT NULL,
-  `taffe` varchar(255) NOT NULL,
-  `nicotine` varchar(255) NOT NULL
+  `id` CHAR(20) NOT NULL,  -- Assuming the ID is always 20 characters, adjust if necessary
+  `name` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL,  -- Changed to DECIMAL for accurate financial data handling
+  `image` VARCHAR(255) NOT NULL,
+  `product_detail` TEXT NOT NULL,  -- Changed to TEXT to handle potentially long descriptions more efficiently
+  `status` VARCHAR(100) NOT NULL,
+  `goût` VARCHAR(255) NOT NULL,
+  `taffe` INT NOT NULL,  -- Assuming this is a numeric quantity
+  `nicotine` DECIMAL(5, 2) NOT NULL,  -- Assuming this is a percentage, e.g., '0.00' for '0%'
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -214,7 +215,7 @@ CREATE TABLE `puff` (
 --
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`, `goût`, `taffe`, `nicotine`) VALUES
-('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', '300 ', 'puff6.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? \r\nDécouvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gaz Naturelle', '1000', '0%'),
+('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', 300.00, 'puff6.jpg', 'A la recherche d’une saveur d''essences et originale pour votre vapotage ?\r\nDécouvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande !', 'actif', 'Gaz Naturelle', 1000, 0.00),
 ('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Gazole by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gazole', '1000', '5%'),
 ('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Sans Plomb 95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Sans Plomb 95', '1000', '5%'),
 ('0lKHBlsFPaTpTFlnHUXf', 'Puff Superéthanol E85', '12', 'puff3.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Superéthanol E85 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Superéthanol E85', '1000', '7,5%'),
