@@ -106,20 +106,23 @@ INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `subject`, `message`, `
 --
 
 CREATE TABLE `orders` (
-  `id` varchar(20) NOT NULL,
-  `user_id` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `number` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `address_type` varchar(10) NOT NULL,
-  `method` varchar(50) NOT NULL,
-  `product_id` varchar(20) NOT NULL,
-  `price` varchar(10) NOT NULL,
-  `qty` varchar(2) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(50) NOT NULL DEFAULT 'in progress',
-  `payment_status` varchar(100) NOT NULL
+  `id` VARCHAR(20) NOT NULL,
+  `user_id` VARCHAR(20) NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `number` VARCHAR(15) NOT NULL,  -- Adjusted length for potential international numbers
+  `email` VARCHAR(50) NOT NULL,
+  `address` VARCHAR(200) NOT NULL,
+  `address_type` VARCHAR(10) NOT NULL,
+  `method` VARCHAR(50) NOT NULL,
+  `product_id` VARCHAR(20) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,  -- Changed to DECIMAL for accurate financial data handling
+  `qty` INT NOT NULL,  -- Changed to INT for quantity
+  `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- Changed to DATETIME to include time
+  `status` VARCHAR(50) NOT NULL DEFAULT 'en cours',
+  `payment_status` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,7 +130,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `address`, `address_type`, `method`, `product_id`, `price`, `qty`, `date`, `status`, `payment_status`) VALUES
-('EYZ94PhWrzea0s9Tdd2J', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'BLTtlhOgq1cuz7plh4Ia', '123', '1', '2023-02-28', 'annulee', 'en attente'),
+('EYZ94PhWrzea0s9Tdd2J', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'BLTtlhOgq1cuz7plh4Ia', 123.00, 1, '2023-02-28', 'annulee', 'en attente'),
 ('DStPLCBmD0m0OjAFYlhg', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'jo35YMmBWpvbCMB65UdA', '160', '1', '2023-02-28', 'annulee', 'en attente'),
 ('XyoWmad14f2YOWbi11XF', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'aSBHDzG26iXurm6cfoNv', '50', '1', '2023-02-28', 'annulee', 'en attente'),
 ('OGTzld6EmHmNHeXZQkB6', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'uOarNNg0n3KD9OvPtItP', '80', '1', '2023-02-28', 'annulee', 'en attente'),
