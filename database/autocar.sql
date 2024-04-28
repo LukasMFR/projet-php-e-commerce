@@ -205,7 +205,7 @@ CREATE TABLE `puff` (
 --
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
-('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', '300 ', 'puff6.jpg', 'cscscs', 'actif'),
+('x4T8md3lGxX7DkkXWoAN', 'Puff naturel', '300 ', 'puff6.jpg', 'cscscs', 'actif'),
 ('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'deded', 'actif'),
 ('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'sdsd', 'actif'),
 ('0lKHBlsFPaTpTFlnHUXf', 'Puff superéthanol E85', '12', 'puff3.jpg', 'sdsc', 'actif'),
