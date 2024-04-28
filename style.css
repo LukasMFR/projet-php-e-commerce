@@ -415,7 +415,7 @@ header.scrolled::before {
 
 .brand-navbar:hover {
 	color: var(--green);
-	/* Lift effect on hover */
+	/* color: #3f3f3f; */
 	transform: translateY(-2px);
 }
 
