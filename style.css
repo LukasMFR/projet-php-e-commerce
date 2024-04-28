@@ -2225,20 +2225,21 @@ footer .bottom-footer {
 	}
 }
 
+/* Ce @media est utilisé pour les écrans plus petits que 413px pour la page products. */
 @media (max-width: 413px) {
 	.products .box-container {
 		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 	}
-
 }
 
+/* Ce @media est utilisé pour les écrans plus petits que 450px pour la page wishlist. */
 @media (max-width: 450px) {
 	.products .box-container.wishlist-box-container {
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	}
 }
 
-/* Ce @media est utilisé pour la version plus petite que 768px pour le footer. */
+/* Ce @media est utilisé pour les écrans plus petits que 768px pour le footer. */
 @media (max-width: 768px) {
 	.footer-content {
 		padding: 1rem;
@@ -2294,7 +2295,7 @@ footer .bottom-footer {
 	}
 }
 
-/* Ce @media est utilisé pour la version plus petite que 480px pour le footer. */
+/* Ce @media est utilisé pour les écrans plus petits que 480px pour le footer. */
 @media (max-width: 480px) {
 
 	.top-footer input,
