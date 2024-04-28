@@ -3,10 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 26 avr. 2024 à 20:01
+-- Généré le : dim. 28 avr. 2024 à 04:56
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
-
 
 DROP DATABASE IF EXISTS autocar;
 CREATE DATABASE autocar ;
@@ -83,14 +82,13 @@ INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
 --
 
 CREATE TABLE `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `phone` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `phone` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -186,11 +184,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `pro
 ('0I8ZbLUgrxn7qWNMzxPE', 'McLaren 720s GT3 X', '330 000', 'MC3.jpg', 'MC5.jpg', 'MC4.jpg', 'Version extrême du 720s, conçue exclusivement pour une utilisation sur circuit avec des améliorations significatives en termes de performance.', 'inactif', 'McLaren 720s GT3 X', '2021', 'V8 de 4,0 L turbo', '40 km', 'Cockpit de course, système de télémétrie avancé, freins en carbone-céramique.', 'Neuf', 'Performance de circuit dominante, très limitée en production.'),
 ('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '300 000', 'mercedes1.jpg', 'mercedes3.png', 'mercedes2.jpg', 'Voiture de sport axée sur la performance avec un design élégant et une ingénierie de précision.', 'actif', 'Mercedes AMG GT2', '2023', 'V8 de 4,0 L turbo', '55 km', 'Sièges sport AMG, système multimédia haut de gamme, aide à la conduite active.', 'Neuf', 'Équilibre parfait entre performance et confort, design agressif.');
 
+-- --------------------------------------------------------
 
-
-
+--
 -- Structure de la table `puff`
-
+--
 
 CREATE TABLE `puff` (
   `id` varchar(255) NOT NULL,
@@ -201,17 +199,19 @@ CREATE TABLE `puff` (
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
+--
 -- Déchargement des données de la table `puff`
-
+--
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`) VALUES
-('wrJTrzoHsuEwr7hGi3R6', 'Mercedes AMG GT2', '300 000', 'mercedes1.jpg', 'Voiture de sport axée sur la performance avec un design élégant et une ingénierie de précision.', 'actif');
+('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', '300 ', 'puff6.jpg', 'cscscs', 'actif'),
+('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', '12', 'puff1.jpg', 'deded', 'actif'),
+('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', '14', 'puff2.jpg', 'sdsd', 'actif'),
+('0lKHBlsFPaTpTFlnHUXf', 'Puff superéthanol E85', '12', 'puff3.jpg', 'sdsc', 'actif'),
+('Wd3or2BwCtKebztba6aV', 'Puff supercarburants SP95', '12', 'puff4.jpg', 'devdv', 'actif'),
+('ugVkMKuH66eqSJFRyhAU', 'Puff electrique', '12', 'puff5.jpg', 'dzdz', 'actif');
 
-
-
-
-
+-- --------------------------------------------------------
 
 --
 -- Structure de la table `users`
@@ -255,6 +255,25 @@ CREATE TABLE `wishlist` (
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
 ('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
 
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
