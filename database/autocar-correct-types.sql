@@ -44,7 +44,7 @@ CREATE TABLE `admin` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL UNIQUE,
-  `password` CHAR(64) NOT NULL, -- Assuming SHA-256 hashing
+  `password` CHAR(60) NOT NULL, -- Length for bcrypt
   `profile` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
