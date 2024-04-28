@@ -118,37 +118,6 @@ if (isset($_POST['add_to_cart'])) {
                 }
                 ?>
             </div>
-
-            <div class="title-product">
-                <img src="img/download.png" class="logo-small">
-                <h1>Bientôt disponible</h1>
-            </div>
-            <div class="box-container">
-                <?php
-                $select_puff = $conn->prepare("SELECT * FROM `puff ` WHERE `status` = 'inactif'");
-                $select_puff->execute();
-                if ($select_puff->rowCount() > 0) {
-                    while ($fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                        <form action="" method="post" class="box product-view-form">
-                            <div class="image-container">
-                                <img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
-                                <a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>"
-                                    class="view-btn">Visualiser</a>
-                                <div class="button special-button">
-                                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-                                </div>
-                            </div>
-                            <input type="hidden" name="puff_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
-                            <h1><?= htmlspecialchars($fetch_puff['name']); ?></h1>
-                        </form>
-                        <?php
-                    }
-                } else {
-                    echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
-                }
-                ?>
-            </div>
         </section>
 
         <?php include 'components/footer.php'; ?>
