@@ -85,19 +85,19 @@ if (isset($_POST['delete_item'])) {
 		</div>
 		<section class="products">
 			<h1 class="title">Produits dans ma liste de souhaits</h1>
-			<div class="box-container wishlist-box-container">
-				<?php
-				$grand_total = 0;
-				$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
-				$select_wishlist->execute([$user_id]);
-				if ($select_wishlist->rowCount() > 0) {
-					while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
-						$select_products = $conn->prepare("SELECT * FROM `products` WHERE id= ?");
-						$select_products->execute([$fetch_wishlist['product_id']]);
-						if ($select_products->rowCount() > 0) {
-							$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)
+			<?php
+			$grand_total = 0;
+			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+			$select_wishlist->execute([$user_id]);
+			if ($select_wishlist->rowCount() > 0) {
+				while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
+					$select_products = $conn->prepare("SELECT * FROM `products` WHERE id= ?");
+					$select_products->execute([$fetch_wishlist['product_id']]);
+					if ($select_products->rowCount() > 0) {
+						$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)
 
-								?>
+							?>
+						<div class="box-container wishlist-box-container">
 							<form method="post" action="" class="box product-view-form">
 								<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
 								<div class="image-overlay">
@@ -123,15 +123,16 @@ if (isset($_POST['delete_item'])) {
 								<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
 								<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 							</form>
-							<?php
-							$grand_total += $fetch_wishlist['price'];
-						}
+						</div>
+						<?php
+						$grand_total += $fetch_wishlist['price'];
 					}
-				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
 				}
-				?>
-			</div>
+			} else {
+				echo '<div class="box-container"><p class="empty">Aucun produit ajouté pour le moment !</p></div>';
+			}
+			?>
+
 		</section>
 		<?php include 'components/footer.php'; ?>
 	</div>
