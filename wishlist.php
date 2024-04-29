@@ -161,7 +161,7 @@ if (isset($_POST['delete_item'])) {
 								<img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>&type=puff"
+									<a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>&type=puff"
 										class="icon-button"><i class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
