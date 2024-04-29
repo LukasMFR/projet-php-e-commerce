@@ -11,7 +11,7 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
-//adding products in wishlist
+// Adding products in wishlist
 if (isset($_POST['add_to_wishlist'])) {
 	$id = unique_id();
 	$product_id = $_POST['product_id'];
@@ -19,7 +19,8 @@ if (isset($_POST['add_to_wishlist'])) {
 	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$verify_wishlist->execute([$user_id, $product_id]);
 
-	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+	// Correct the query to match the `cart` table structure
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$cart_num->execute([$user_id, $product_id]);
 
 	if ($verify_wishlist->rowCount() > 0) {
@@ -27,10 +28,12 @@ if (isset($_POST['add_to_wishlist'])) {
 	} else if ($cart_num->rowCount() > 0) {
 		$warning_msg[] = 'Le produit est déjà dans votre panier';
 	} else {
+		// Select the price of the product
 		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
+		// Insert into wishlist
 		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, item_id, item_type, price) VALUES(?, ?, ?, 'product', ?)");
 		$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
 		$success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
