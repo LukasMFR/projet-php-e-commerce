@@ -12,52 +12,30 @@ if (isset($_POST['logout'])) {
 	header("location: login.php");
 }
 if (isset($_POST['place_order'])) {
+	// Sanitize and validate input data
+	$name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$number = filter_var($_POST['number'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$address = filter_var($_POST['flat'] . ', ' . $_POST['street'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ', ' . $_POST['pincode'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$address_type = filter_var($_POST['address_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+	$method = filter_var($_POST['method'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-	$name = $_POST['name'];
-	$name = filter_var($name, FILTER_SANITIZE_STRING);
-	$number = $_POST['number'];
-	$number = filter_var($number, FILTER_SANITIZE_STRING);
-	$email = $_POST['email'];
-	$email = filter_var($email, FILTER_SANITIZE_STRING);
-	$address = $_POST['flat'] . ', ' . $_POST['street'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ', ' . $_POST['pincode'];
-	$address = filter_var($address, FILTER_SANITIZE_STRING);
-	$address_type = $_POST['address_type'];
-	$address_type = filter_var($address_type, FILTER_SANITIZE_STRING);
-	$method = $_POST['method'];
-	$method = filter_var($method, FILTER_SANITIZE_STRING);
+	$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
+	$verify_cart->execute([$user_id]);
 
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
-	$varify_cart->execute([$user_id]);
-
-	if (isset($_GET['get_id'])) {
-		$get_product = $conn->prepare("SELECT * FROM `products` WHERE id=? LIMIT 1");
-		$get_product->execute([$_GET['get_id']]);
-		if ($get_product->rowCount() > 0) {
-			while ($fetch_p = $get_product->fetch(PDO::FETCH_ASSOC)) {
-				$insert_order = $conn->prepare("INSERT INTO `orders`(id, user_id, name, number, email, address, address_type, method, product_id, price, qty) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-				$insert_order->execute([unique_id(), $user_id, $name, $number, $email, $address, $address_type, $method, $fetch_p['id'], $fetch_p['price'], 1]);
-				header('location:order.php');
-
-
-			}
-		} else {
-			$warning_msg[] = 'somthing went wrong';
+	if ($verify_cart->rowCount() > 0) {
+		while ($f_cart = $verify_cart->fetch(PDO::FETCH_ASSOC)) {
+			$insert_order = $conn->prepare("INSERT INTO `orders`(id, user_id, name, number, email, address, address_type, method, item_id, item_type, price, qty, payment_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?, 'en attente')");
+			$insert_order->execute([unique_id(), $user_id, $name, $number, $email, $address, $address_type, $method, $f_cart['item_id'], $f_cart['item_type'], $f_cart['price'], $f_cart['qty']]);
 		}
-	} elseif ($varify_cart->rowCount() > 0) {
-		while ($f_cart = $varify_cart->fetch(PDO::FETCH_ASSOC)) {
-			$insert_order = $conn->prepare("INSERT INTO `orders`(id, user_id, name, number, email, address, address_type, method, product_id, price, qty) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-			$insert_order->execute([unique_id(), $user_id, $name, $number, $email, $address, $address_type, $method, $f_cart['product_id'], $f_cart['price'], $f_cart['qty']]);
-			header('location:order.php');
-		}
-		if ($insert_order) {
-			$delete_cart_id = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
-			$delete_cart_id->execute([$user_id]);
-			header('location: order.php');
-		}
+		// Clear cart after placing orders
+		$delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+		$delete_cart->execute([$user_id]);
+		header('location: order.php');
+		exit;
 	} else {
-		$warning_msg[] = 'somthing went wrong';
+		$warning_msg[] = 'Your cart is empty.';
 	}
-
 }
 
 
@@ -167,62 +145,29 @@ if (isset($_POST['place_order'])) {
 					<div class="box-container">
 						<?php
 						$grand_total = 0;
-						if (isset($_GET['get_id'])) {
-							$select_get = $conn->prepare("SELECT * FROM `products` WHERE id=?");
-							$select_get->execute([$_GET['get_id']]);
-							while ($fetch_get = $select_get->fetch(PDO::FETCH_ASSOC)) {
-								$sub_total = $fetch_get['price'];
-								$grand_total += $sub_total;
+						$select_cart = $conn->prepare("SELECT c.*, IF(c.item_type='product', p.price, f.price) AS price, IF(c.item_type='product', p.name, f.name) AS name, IF(c.item_type='product', p.image, f.image) AS image FROM `cart` c LEFT JOIN `products` p ON c.item_id = p.id AND c.item_type='product' LEFT JOIN `puff` f ON c.item_id = f.id AND c.item_type='puff' WHERE c.user_id=?");
+						$select_cart->execute([$user_id]);
 
+						if ($select_cart->rowCount() > 0) {
+							while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+								$sub_total = ($fetch_cart['qty'] * $fetch_cart['price']);
+								$grand_total += $sub_total;
 								?>
 								<div class="flex">
-									<img src="image/<?= $fetch_get['image']; ?>" class="image">
+									<img src="image/<?= $fetch_cart['image']; ?>" class="image">
 									<div>
-										<h3 class="name">
-											<?= $fetch_get['name']; ?>
-										</h3>
-										<p class="price">
-											<?= $fetch_get['price']; ?> €
-										</p>
+										<h3 class="name"><?= $fetch_cart['name']; ?></h3>
+										<p class="price"><?= $fetch_cart['price']; ?> € X <?= $fetch_cart['qty']; ?></p>
 									</div>
 								</div>
 								<?php
 							}
 						} else {
-							$select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
-							$select_cart->execute([$user_id]);
-							if ($select_cart->rowCount() > 0) {
-								while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-									$select_products = $conn->prepare("SELECT * FROM `products` WHERE id=?");
-									$select_products->execute([$fetch_cart['product_id']]);
-									$fetch_product = $select_products->fetch(PDO::FETCH_ASSOC);
-									$sub_total = ($fetch_cart['qty'] * $fetch_product['price']);
-									$grand_total += $sub_total;
-
-									?>
-									<div class="flex">
-										<img src="image/<?= $fetch_product['image']; ?>">
-										<div>
-											<h3 class="name">
-												<?= $fetch_product['name']; ?>
-											</h3>
-											<p class="price">
-												<?= $fetch_product['price']; ?> X
-												<?= $fetch_cart['qty']; ?>
-											</p>
-										</div>
-									</div>
-									<?php
-								}
-							} else {
-								echo '<p class="empty">Votre panier est vide</p>';
-							}
+							echo '<p class="empty">Votre panier est vide</p>';
 						}
 						?>
 					</div>
-					<div class="grand-total"><span>Montant total à payer : </span>
-						<?= $grand_total ?> €
-					</div>
+					<div class="grand-total"><span>Montant total à payer : </span><?= $grand_total ?> €</div>
 				</div>
 			</div>
 		</section>
