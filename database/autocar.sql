@@ -118,7 +118,7 @@ CREATE TABLE `cart` (
   `id` VARCHAR(20) NOT NULL,
   `user_id` VARCHAR(20) NOT NULL,
   `item_id` VARCHAR(20) NOT NULL,
-  `item_type` VARCHAR(50) NOT NULL,  -- 'product' or 'puff'
+  `item_type` VARCHAR(50) NOT NULL CHECK (item_type IN ('product', 'puff')),  -- 'product' or 'puff'
   `price` DECIMAL(10, 2) NOT NULL,
   `qty` INT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
@@ -154,15 +154,16 @@ CREATE TABLE `orders` (
   `id` VARCHAR(20) NOT NULL,
   `user_id` VARCHAR(20) NOT NULL,
   `name` VARCHAR(50) NOT NULL,
-  `number` VARCHAR(15) NOT NULL,  -- Adjusted length for potential international numbers
+  `number` VARCHAR(15) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `address` VARCHAR(200) NOT NULL,
   `address_type` VARCHAR(10) NOT NULL,
   `method` VARCHAR(50) NOT NULL,
-  `product_id` VARCHAR(20) NOT NULL,
-  `price` DECIMAL(10,2) NOT NULL,  -- Changed to DECIMAL for accurate financial data handling
-  `qty` INT NOT NULL,  -- Changed to INT for quantity
-  `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- Changed to DATETIME to include time
+  `item_id` VARCHAR(36) NOT NULL,  -- Adjusted to accommodate the longest possible ID
+  `item_type` VARCHAR(50) NOT NULL CHECK (item_type IN ('product', 'puff')), -- This specifies the type of item
+  `price` DECIMAL(10,2) NOT NULL,
+  `qty` INT NOT NULL,
+  `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` VARCHAR(50) NOT NULL DEFAULT 'en cours',
   `payment_status` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`)
