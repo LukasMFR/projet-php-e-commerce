@@ -16,13 +16,13 @@ if (isset($_POST['add_to_wishlist'])) {
 	$id = unique_id();
 	$product_id = $_POST['product_id'];
 
-	$varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-	$varify_wishlist->execute([$user_id, $product_id]);
+	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
+	$verify_wishlist->execute([$user_id, $product_id]);
 
 	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
 	$cart_num->execute([$user_id, $product_id]);
 
-	if ($varify_wishlist->rowCount() > 0) {
+	if ($verify_wishlist->rowCount() > 0) {
 		$warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
 	} else if ($cart_num->rowCount() > 0) {
 		$warning_msg[] = 'Le produit est déjà dans votre panier';
@@ -31,7 +31,7 @@ if (isset($_POST['add_to_wishlist'])) {
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
+		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, item_id, item_type, price) VALUES(?, ?, ?, 'product', ?)");
 		$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
 		$success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
 	}
@@ -92,6 +92,7 @@ if (isset($_POST['add_to_cart'])) {
 		</div>
 
 		<section class="products">
+			<h1 class="title">Produits dans ma liste de souhaits</h1>
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
@@ -114,7 +115,7 @@ if (isset($_POST['add_to_cart'])) {
 						<?php
 					}
 				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+					echo '<p class="empty">Aucun produit actif ajouté pour le moment !</p>';
 				}
 				?>
 			</div>
@@ -145,11 +146,10 @@ if (isset($_POST['add_to_cart'])) {
 						<?php
 					}
 				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+					echo '<p class="empty">Aucun produit inactif pour le moment !</p>';
 				}
 				?>
 			</div>
-
 		</section>
 
 		<?php include 'components/footer.php'; ?>
