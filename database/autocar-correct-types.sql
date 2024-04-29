@@ -8,9 +8,9 @@
 -- Version de PHP : 8.2.12
 
 
-DROP DATABASE IF EXISTS autocar;
-CREATE DATABASE autocar ;
-USE autocar ;
+DROP DATABASE IF EXISTS autocar_correct_types;
+CREATE DATABASE autocar_correct_types ;
+USE autocar_correct_types ;
 DROP TABLE IF EXISTS admin ;
 DROP TABLE IF EXISTS cart ;
 DROP TABLE IF EXISTS message ;
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `autocar`
+-- Base de données : `autocar_correct_types`
 --
 
 -- --------------------------------------------------------
