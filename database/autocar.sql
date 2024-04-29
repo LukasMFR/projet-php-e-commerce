@@ -266,15 +266,8 @@ CREATE TABLE `wishlist` (
 -- Déchargement des données de la table `wishlist`
 --
 
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
-('bXpS0Vb2T7chEAa28SGQ', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '0', 699),
-('9vEdPoV58gfvFSab0glR', 'UAVjN46f0bvXSKquej8S', '', '0', 12),
-('rgOdtejKScFP1LIhEsrL', 'UAVjN46f0bvXSKquej8S', '', '0', 300),
-('BsrWUeLicnDeAabpTamD', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '0', 375),
-('bEc7kdPA9Xts9PHY322T', 'UAVjN46f0bvXSKquej8S', 'uOarNNg0n3KD9OvPtItP', '0', 10),
-('7h1o2X2zlloVyeSVWS43', 'UAVjN46f0bvXSKquej8S', '', '0', 12),
-('X0N1DFP3fm7cUv1j1oYN', 'saXAlrnp3YHOBTxClO0A', '', '0', 12),
-('5zu6QaLMQggUlsj8XRQH', 'saXAlrnp3YHOBTxClO0A', 'BLTtlhOgq1cuz7plh4Ia', '', 375);
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', 160.00);
 
 
 
