@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 29 avr. 2024 à 09:43
+-- Généré le : lun. 29 avr. 2024 à 10:09
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
-
-DROP DATABASE IF EXISTS autocar_correct_types;
-CREATE DATABASE autocar_correct_types ;
-USE autocar_correct_types ;
+DROP DATABASE IF EXISTS autocar;
+CREATE DATABASE autocar ;
+USE autocar ;
 DROP TABLE IF EXISTS admin ;
 DROP TABLE IF EXISTS cart ;
 DROP TABLE IF EXISTS message ;
@@ -19,7 +18,6 @@ DROP TABLE IF EXISTS products ;
 DROP TABLE IF EXISTS puff ;
 DROP TABLE IF EXISTS users ;
 DROP TABLE IF EXISTS wishlist ;
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,6 +64,7 @@ CREATE TABLE `cart` (
   `id` varchar(20) NOT NULL,
   `user_id` varchar(20) NOT NULL,
   `product_id` varchar(20) NOT NULL,
+  `puff_id` varchar(255) NOT NULL,
   `price` varchar(10) NOT NULL,
   `qty` varchar(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -246,15 +245,6 @@ CREATE TABLE `wishlist` (
   `puff_id` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `wishlist`
---
-
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
-('72JgjmZfvweETLotqnje', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '', '375 000'),
-('7wnrZsxk8fWg2MRh4CTA', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '', '10 000 000'),
-('98zmjXGhj1SXV7WYaxnn', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '', '699 000');
 
 --
 -- Index pour les tables déchargées
