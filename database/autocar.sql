@@ -195,9 +195,9 @@ CREATE TABLE `message` (
 -- Déchargement des données de la table `message`
 --
 
-INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `subject`, `message`, `phone`) VALUES
-(1, '0', 'Paul', 'paul.roux@gmail.com', 'shop', 'good', '+123456789'),
-(2, 'UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'maths,science', 'kk', '+987654321');
+INSERT INTO `message` (`user_id`, `name`, `email`, `subject`, `message`, `phone`) VALUES
+('UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'shop', 'good', '+123456789'),
+('UAVjN46f0bvXSKquej8S', 'Paul', 'paul.roux@gmail.com', 'maths,science', 'kk', '+987654321');
 
 -- --------------------------------------------------------
 
@@ -276,26 +276,7 @@ INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUE
 ('X0N1DFP3fm7cUv1j1oYN', 'saXAlrnp3YHOBTxClO0A', '', '0', 12),
 ('5zu6QaLMQggUlsj8XRQH', 'saXAlrnp3YHOBTxClO0A', 'BLTtlhOgq1cuz7plh4Ia', '', 375);
 
---
--- Index pour les tables déchargées
---
 
---
--- Index pour la table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
