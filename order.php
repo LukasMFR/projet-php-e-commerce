@@ -34,7 +34,7 @@ if (isset($_POST['logout'])) {
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner commande">
-			<h1>Mes commandes</h1>
+			<h1></h1>
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Mes commandes</span>

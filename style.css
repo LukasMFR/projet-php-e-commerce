@@ -253,6 +253,10 @@ button {
 	background-image: url(./img/banner2.webp);
 }
 
+.banner.about{
+	background-image: url(./img/banner3.webp);
+}
+
 .banner.voiture h1 {
 	text-transform: uppercase;
 	color: #000000;
