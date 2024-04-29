@@ -241,6 +241,18 @@ button {
 	background-image: url(./img/banner-bg-puff.jpg);
 }
 
+.banner.voiture_page{
+	background-image: url(./img/banner-bg2.jpg);
+}
+
+.banner.puff_page{
+	background-image: url(./img/banner-bg-puff.jpg);
+}
+
+.banner.commande{
+	background-image: url(./img/banner2.webp);
+}
+
 .banner.voiture h1 {
 	text-transform: uppercase;
 	color: #000000;

@@ -84,8 +84,8 @@ if (isset($_POST['add_to_cart'])) {
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-		<div class="banner">
-			<h1>Détail du produit</h1>
+		<div class="banner voiture_page">
+
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Détail du produit</span>
