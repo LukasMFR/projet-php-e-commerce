@@ -12,32 +12,41 @@ if (isset($_POST['logout'])) {
 	header("location: login.php");
 }
 
-//adding products in cart
+// Adding products to cart
 if (isset($_POST['add_to_cart'])) {
-	$id = unique_id();
-	$product_id = $_POST['product_id'];
-
-	$qty = 1;
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
-
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-	$varify_cart->execute([$user_id, $product_id]);
-
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-	$max_cart_items->execute([$user_id]);
-
-	if ($varify_cart->rowCount() > 0) {
-		$warning_msg[] = 'Le produit est déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
-		$warning_msg[] = 'Le panier est plein';
+	if (!isset($_POST['item_type'])) {
+		$error_msg[] = 'Item type is not specified.';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-		$select_price->execute([$product_id]);
-		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+		$id = unique_id();
+		$product_id = $_POST['product_id'];
+		$item_type = $_POST['item_type'];
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-		$success_msg[] = 'Produit ajouté avec succès au panier';
+		$qty = 1;
+
+		$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = ?");
+		$verify_cart->execute([$user_id, $product_id, $item_type]);
+
+		$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+		$max_cart_items->execute([$user_id]);
+
+		if ($verify_cart->rowCount() > 0) {
+			$warning_msg[] = 'Le produit est déjà dans votre panier';
+		} else if ($max_cart_items->rowCount() > 20) {
+			$warning_msg[] = 'Le panier est plein';
+		} else {
+			$table = ($item_type === 'product') ? 'products' : 'puff';
+			$select_price = $conn->prepare("SELECT price FROM `$table` WHERE id = ? LIMIT 1");
+			$select_price->execute([$product_id]);
+			$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+			if ($fetch_price === false) {
+				$error_msg[] = 'Failed to retrieve product price';
+			} else {
+				$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id, item_id, item_type, price, qty) VALUES (?, ?, ?, ?, ?, ?)");
+				$insert_cart->execute([$id, $user_id, $product_id, $item_type, $fetch_price['price'], $qty]);
+				$success_msg[] = 'Produit ajouté avec succès au panier';
+			}
+		}
 	}
 }
 
@@ -103,6 +112,7 @@ if (isset($_POST['delete_item'])) {
 						?>
 						<form method="post" action="" class="box product-view-form">
 							<input type="hidden" name="wishlist_id" value="<?= htmlspecialchars($fetch_wishlist['id']); ?>">
+							<input type="hidden" name="item_type" value="product"> <!-- Specify the item type as 'product' -->
 							<div class="image-overlay">
 								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
 								<div class="button-group">
@@ -157,6 +167,7 @@ if (isset($_POST['delete_item'])) {
 						?>
 						<form method="post" action="" class="box product-view-form">
 							<input type="hidden" name="wishlist_id" value="<?= htmlspecialchars($fetch_wishlist['id']); ?>">
+							<input type="hidden" name="item_type" value="puff"> <!-- Specify the item type as 'puff' -->
 							<div class="image-overlay">
 								<img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
 								<div class="button-group">
