@@ -8,9 +8,9 @@
 -- Version de PHP : 8.2.12
 
 
-DROP DATABASE IF EXISTS autocar_correct_types;
-CREATE DATABASE autocar_correct_types ;
-USE autocar_correct_types ;
+DROP DATABASE IF EXISTS autocar;
+CREATE DATABASE autocar ;
+USE autocar ;
 DROP TABLE IF EXISTS wishlist;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS message;
@@ -183,15 +183,8 @@ CREATE TABLE `wishlist` (
   `price` DECIMAL(10, 2) NOT NULL,  -- Using DECIMAL for financial accuracy
 
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),  -- Assumes there is a users table with an id column
-  INDEX `idx_user_item_type` (`user_id`, `item_id`, `item_type`),  -- Optimizes queries involving these columns
-
-  CONSTRAINT `fk_wishlist_product`
-    FOREIGN KEY (`item_id`, `item_type`) REFERENCES `products`(`id`, 'product')
-    ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_wishlist_puff`
-    FOREIGN KEY (`item_id`, `item_type`) REFERENCES `puff`(`id`, 'puff')
-    ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),  -- Ensure 'users' table has an 'id' column
+  INDEX `idx_user_item_type` (`user_id`, `item_id`, `item_type`)  -- Helps optimize queries filtering by these columns
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
