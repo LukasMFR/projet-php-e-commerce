@@ -36,32 +36,33 @@ if (isset($_POST['add_to_wishlist'])) {
 		$success_msg[] = 'Produit ajouté à la liste de souhaits avec succès';
 	}
 }
-//adding puff in cart
-if (isset($_POST['add_to_cart'])) {
+
+// Ajout de puffs à la wishlist
+if (isset($_POST['add_puff_to_wishlist'])) {
 	$id = unique_id();
 	$puff_id = $_POST['puff_id'];
 
-	$qty = $_POST['qty'];
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+	// Vérifier si le puff est déjà dans la wishlist ou le panier
+	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND puff_id = ?");
+	$verify_wishlist->execute([$user_id, $puff_id]);
 
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
-	$varify_cart->execute([$user_id, $puff_id]);
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
+	$cart_num->execute([$user_id, $puff_id]);
 
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-	$max_cart_items->execute([$user_id]);
-
-	if ($varify_cart->rowCount() > 0) {
-		$warning_msg[] = 'Le produit existe déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
-		$warning_msg[] = 'Le panier est plein';
+	if ($verify_wishlist->rowCount() > 0) {
+		$warning_msg[] = 'Le puff existe déjà dans votre liste de souhaits';
+	} else if ($cart_num->rowCount() > 0) {
+		$warning_msg[] = 'Le puff existe déjà dans votre panier';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+		// Supposons que vous avez une table `puffs` pour les puffs
+		$select_price = $conn->prepare("SELECT * FROM `puffs` WHERE id = ? LIMIT 1");
 		$select_price->execute([$puff_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,puff_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $puff_id, $fetch_price['price'], $qty]);
-		$success_msg[] = 'Produit ajouté au panier avec succès';
+		// Ajouter le puff à la wishlist
+		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, puff_id, price) VALUES(?,?,?,?)");
+		$insert_wishlist->execute([$id, $user_id, $puff_id, $fetch_price['price']]);
+		$success_msg[] = 'Puff ajouté à la liste de souhaits avec succès';
 	}
 }
 
@@ -135,13 +136,14 @@ if (isset($_POST['add_to_cart'])) {
 
 								<input type="hidden" name="puff_id" value="<?php echo $fetch_puff['id']; ?>">
 								<div class="button">
-									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
-											class="bx bx-heart"></i></button>
+									<button type="submit" name="add_puff_to_wishlist" class="btn">
+										Ajouter à la liste de souhaits <i class="bx bx-heart"></i>
+									</button>
 									<input type="hidden" name="qty" value="1" min="0" class="quantity">
-									<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
-											class="bx bx-cart"></i></button>
+									<button type="submit" name="add_to_cart" class="btn">
+										Ajouter au panier <i class="bx bx-cart"></i>
+									</button>
 								</div>
-							</div>
 						</form>
 
 						<?php
