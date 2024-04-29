@@ -20,8 +20,8 @@ if (isset($_POST['add_to_wishlist'])) {
 	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$verify_wishlist->execute([$user_id, $product_id]);
 
-	// Verify if product is already in cart
-	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+	// Corrected: Verify if product is already in cart
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$cart_num->execute([$user_id, $product_id]);
 
 	if ($verify_wishlist->rowCount() > 0) {
