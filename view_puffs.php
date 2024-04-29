@@ -11,28 +11,27 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header("location: login.php");
 }
-//adding pu in wishlist
+// Adding an item to the wishlist
 if (isset($_POST['add_to_wishlist'])) {
-    $id = unique_id();
-    $product_id = $_POST['puff_id'];
+    $id = unique_id();  // Ensure this function exists and generates a unique ID
+    $item_id = $_POST['item_id'];  // The ID of the car or puff
+    $item_type = $_POST['item_type'];  // 'product' or 'puff'
 
-    $varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-    $varify_wishlist->execute([$user_id, $puff_id]);
+    // Verify if the item is already in the wishlist
+    $verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = ?");
+    $verify_wishlist->execute([$user_id, $item_id, $item_type]);
 
-    $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-    $cart_num->execute([$user_id, $pufff_id]);
-
-    if ($varify_wishlist->rowCount() > 0) {
+    if ($verify_wishlist->rowCount() > 0) {
         $warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
-    } else if ($cart_num->rowCount() > 0) {
-        $warning_msg[] = 'Le produit est déjà dans votre panier';
     } else {
-        $select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
-        $select_price->execute([$puff_id]);
+        // Get the price of the item from the appropriate table
+        $select_price = $conn->prepare("SELECT price FROM `" . ($item_type == 'product' ? 'products' : 'puff') . "` WHERE id = ?");
+        $select_price->execute([$item_id]);
         $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-        $insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,puff_id,price) VALUES(?,?,?,?)");
-        $insert_wishlist->execute([$id, $user_id, $puff_id, $fetch_price['price']]);
+        // Insert into wishlist
+        $insert_wishlist = $conn->prepare("INSERT INTO `wishlist` (id, user_id, item_id, item_type, price) VALUES (?, ?, ?, ?, ?)");
+        $insert_wishlist->execute([$id, $user_id, $item_id, $item_type, $fetch_price['price']]);
         $success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
     }
 }
@@ -102,13 +101,14 @@ if (isset($_POST['add_to_cart'])) {
                         <form action="" method="post" class="box product-view-form">
                             <div class="image-container">
                                 <img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img puff">
-                                <a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>"
+                                <a href="view_puff.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>"
                                     class="view-btn">Visualiser</a>
                                 <div class="button special-button">
                                     <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
                                 </div>
                             </div>
-                            <input type="hidden" name="puff_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
+                            <input type="hidden" name="item_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
+                            <input type="hidden" name="item_type" value="puff">
                             <h1><?= htmlspecialchars($fetch_puff['name']); ?></h1>
                         </form>
                         <?php
