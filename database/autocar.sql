@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 29 avr. 2024 à 10:09
+-- Généré le : lun. 29 avr. 2024 à 10:20
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
+
 
 DROP DATABASE IF EXISTS autocar;
 CREATE DATABASE autocar ;
@@ -15,7 +16,6 @@ DROP TABLE IF EXISTS cart ;
 DROP TABLE IF EXISTS message ;
 DROP TABLE IF EXISTS orders ;
 DROP TABLE IF EXISTS products ;
-DROP TABLE IF EXISTS puff ;
 DROP TABLE IF EXISTS users ;
 DROP TABLE IF EXISTS wishlist ;
 
@@ -245,6 +245,18 @@ CREATE TABLE `wishlist` (
   `puff_id` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `wishlist`
+--
+
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
+('bXpS0Vb2T7chEAa28SGQ', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '', '699 000'),
+('9vEdPoV58gfvFSab0glR', 'UAVjN46f0bvXSKquej8S', '', 'pWY5Mf0987NUdbPoxuBu', '12'),
+('rgOdtejKScFP1LIhEsrL', 'UAVjN46f0bvXSKquej8S', '', 'wrJTrzoHsuEwr7hGi3R6', '300 '),
+('BsrWUeLicnDeAabpTamD', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '', '375 000'),
+('bEc7kdPA9Xts9PHY322T', 'UAVjN46f0bvXSKquej8S', 'uOarNNg0n3KD9OvPtItP', '', '10 000 000'),
+('7h1o2X2zlloVyeSVWS43', 'UAVjN46f0bvXSKquej8S', '', 'Wd3or2BwCtKebztba6aV', '12');
 
 --
 -- Index pour les tables déchargées

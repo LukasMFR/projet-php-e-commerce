@@ -165,6 +165,38 @@ if (isset($_POST['delete_item'])) {
 			}
 			?>
 		</section>
+
+		<div class="title-product">
+				<img src="img/download.png" class="logo-small">
+				<h1>Bientôt disponible</h1>
+			</div>
+			<div class="box-container">
+				<?php
+				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'inactif'");
+				$select_products->execute();
+				if ($select_products->rowCount() > 0) {
+					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+						?>
+						<form action="" method="post" class="box product-view-form">
+							<div class="image-container">
+								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
+								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+									class="view-btn">Visualiser</a>
+								<div class="button special-button">
+									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
+								</div>
+							</div>
+							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
+							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+						</form>
+						<?php
+					}
+				} else {
+					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+				}
+				?>
+			</div>
+			
 		<?php include 'components/footer.php'; ?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
