@@ -1,4 +1,5 @@
 <?php
+// Code utilsé pour afficher les erreurs et les debugs
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 $db_name = 'mysql:host=localhost;dbname=autocar';
