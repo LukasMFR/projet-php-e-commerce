@@ -184,7 +184,6 @@ CREATE TABLE `wishlist` (
 
   PRIMARY KEY (`id`),
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)  -- Ensure 'users' table has an 'id' column
-  -- INDEX `idx_user_item_type` (`user_id`, `item_id`, `item_type`)  -- Helps optimize queries filtering by these columns
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
