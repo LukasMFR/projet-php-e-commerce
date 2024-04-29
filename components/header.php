@@ -7,7 +7,7 @@
 		<nav class="navbar">
 			<!-- <a href="home.php">Accueil</a> -->
 			<a href="view_products.php">Voitures</a>
-			<a href="view_puffs.php">Puffs</a>
+			<a href="view_puffs.php">Vapes</a>
 			<a href="order.php">Commandes</a>
 			<a href="about.php">À propos</a>
 			<a href="contact.php">Nous contacter</a>
