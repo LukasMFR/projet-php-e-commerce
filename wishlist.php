@@ -116,7 +116,7 @@ if (isset($_POST['delete_item'])) {
 		</div>
 
 		<section class="products">
-		<h1>Voiture dans ma liste de souhaits</h1>
+		<h1 class="title">Voiture dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
 			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
@@ -168,8 +168,7 @@ if (isset($_POST['delete_item'])) {
 		</section>
 
 			<section class="products">
-			<h1>Puff dans ma liste de souhaits</h1>
-			<h1 class="title">Produits dans ma liste de souhaits</h1>
+			<h1 class="title">Puff dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
 			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
