@@ -11,6 +11,29 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
+if (isset($_GET['get_id']) && !empty($_GET['get_id'])) {
+	$item_id = $_GET['get_id'];
+	$item_type = $_GET['type'] ?? 'product';  // Default to 'product' if type is not specified
+
+	// Fetch item details from the appropriate table based on type
+	$table = ($item_type === 'puff') ? 'puff' : 'products';
+	$select_item = $conn->prepare("SELECT * FROM `$table` WHERE id=? LIMIT 1");
+	$select_item->execute([$item_id]);
+
+	if ($fetch_item = $select_item->fetch(PDO::FETCH_ASSOC)) {
+		// Prepare item details for checkout
+		$item_for_checkout = [
+			'item_id' => $item_id,
+			'item_type' => $item_type,
+			'price' => $fetch_item['price'],
+			'qty' => 1  // Default quantity to 1 for direct checkout
+		];
+	} else {
+		echo "<p>Item not found.</p>";
+		exit;
+	}
+}
+
 if (isset($_POST['place_order'])) {
 	// Sanitize and validate input data
 	$name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -20,6 +43,15 @@ if (isset($_POST['place_order'])) {
 	$address_type = filter_var($_POST['address_type'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 	$method = filter_var($_POST['method'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+	// Direct checkout if item_id is passed via URL
+	if (!empty($item_for_checkout)) {
+		$insert_order = $conn->prepare("INSERT INTO `orders`(id, user_id, name, number, email, address, address_type, method, item_id, item_type, price, qty, payment_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?, 'en attente')");
+		$insert_order->execute([unique_id(), $user_id, $name, $number, $email, $address, $address_type, $method, $item_for_checkout['item_id'], $item_for_checkout['item_type'], $item_for_checkout['price'], $item_for_checkout['qty']]);
+		header('location: order.php');
+		exit;
+	}
+
+	// Handle checkout from the cart if no direct item is checked out
 	$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
 	$verify_cart->execute([$user_id]);
 
@@ -28,13 +60,12 @@ if (isset($_POST['place_order'])) {
 			$insert_order = $conn->prepare("INSERT INTO `orders`(id, user_id, name, number, email, address, address_type, method, item_id, item_type, price, qty, payment_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?, 'en attente')");
 			$insert_order->execute([unique_id(), $user_id, $name, $number, $email, $address, $address_type, $method, $f_cart['item_id'], $f_cart['item_type'], $f_cart['price'], $f_cart['qty']]);
 		}
-		// Clear cart after placing orders
 		$delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
 		$delete_cart->execute([$user_id]);
 		header('location: order.php');
 		exit;
 	} else {
-		$warning_msg[] = 'Your cart is empty.';
+		echo '<p>Your cart is empty.</p>';
 	}
 }
 
@@ -145,25 +176,52 @@ if (isset($_POST['place_order'])) {
 					<div class="box-container">
 						<?php
 						$grand_total = 0;
-						$select_cart = $conn->prepare("SELECT c.*, IF(c.item_type='product', p.price, f.price) AS price, IF(c.item_type='product', p.name, f.name) AS name, IF(c.item_type='product', p.image, f.image) AS image FROM `cart` c LEFT JOIN `products` p ON c.item_id = p.id AND c.item_type='product' LEFT JOIN `puff` f ON c.item_id = f.id AND c.item_type='puff' WHERE c.user_id=?");
-						$select_cart->execute([$user_id]);
 
-						if ($select_cart->rowCount() > 0) {
-							while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
-								$sub_total = ($fetch_cart['qty'] * $fetch_cart['price']);
+						if (isset($_GET['get_id']) && isset($_GET['type'])) {
+							$item_id = $_GET['get_id'];
+							$item_type = $_GET['type'];
+							$table = ($item_type === 'puff') ? 'puff' : 'products';
+							$select_item = $conn->prepare("SELECT * FROM `$table` WHERE id=? LIMIT 1");
+							$select_item->execute([$item_id]);
+
+							if ($fetch_item = $select_item->fetch(PDO::FETCH_ASSOC)) {
+								$sub_total = $fetch_item['price'];  // Assuming the quantity is 1 for direct checkout
 								$grand_total += $sub_total;
 								?>
 								<div class="flex">
-									<img src="image/<?= $fetch_cart['image']; ?>" class="image">
+									<img src="image/<?= htmlspecialchars($fetch_item['image']); ?>" class="image">
 									<div>
-										<h3 class="name"><?= $fetch_cart['name']; ?></h3>
-										<p class="price"><?= $fetch_cart['price']; ?> € X <?= $fetch_cart['qty']; ?></p>
+										<h3 class="name"><?= htmlspecialchars($fetch_item['name']); ?></h3>
+										<p class="price"><?= htmlspecialchars($fetch_item['price']); ?> € X 1</p>
 									</div>
 								</div>
 								<?php
+							} else {
+								echo '<p class="empty">Item not found.</p>';
 							}
 						} else {
-							echo '<p class="empty">Votre panier est vide</p>';
+							$select_cart = $conn->prepare("SELECT c.*, IF(c.item_type='product', p.price, f.price) AS price, IF(c.item_type='product', p.name, f.name) AS name, IF(c.item_type='product', p.image, f.image) AS image FROM `cart` c LEFT JOIN `products` p ON c.item_id = p.id AND c.item_type='product' LEFT JOIN `puff` f ON c.item_id = f.id AND c.item_type='puff' WHERE c.user_id=?");
+							$select_cart->execute([$user_id]);
+
+							if ($select_cart->rowCount() > 0) {
+								while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+									$sub_total = ($fetch_cart['qty'] * $fetch_cart['price']);
+									$grand_total += $sub_total;
+									?>
+									<div class="flex">
+										<img src="image/<?= htmlspecialchars($fetch_cart['image']); ?>" class="image">
+										<div>
+											<h3 class="name"><?= htmlspecialchars($fetch_cart['name']); ?></h3>
+											<p class="price"><?= htmlspecialchars($fetch_cart['price']); ?> € X
+												<?= htmlspecialchars($fetch_cart['qty']); ?>
+											</p>
+										</div>
+									</div>
+									<?php
+								}
+							} else {
+								echo '<p class="empty">Votre panier est vide</p>';
+							}
 						}
 						?>
 					</div>
