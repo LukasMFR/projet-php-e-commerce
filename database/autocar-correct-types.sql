@@ -63,11 +63,14 @@ INSERT INTO `admin` (`name`, `email`, `password`, `profile`) VALUES
 --
 
 CREATE TABLE `cart` (
-  `id` varchar(20) NOT NULL,
-  `user_id` varchar(20) NOT NULL,
-  `product_id` varchar(20) NOT NULL,
-  `price` varchar(10) NOT NULL,
-  `qty` varchar(2) NOT NULL DEFAULT '1'
+  `id` VARCHAR(20) NOT NULL,
+  `user_id` VARCHAR(20) NOT NULL,
+  `product_id` VARCHAR(20) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL,  -- Changed to DECIMAL for accurate financial data handling
+  `qty` INT NOT NULL DEFAULT 1,  -- Changed to INT as quantity should be a numeric value
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -75,7 +78,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
-('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '50', '1');
+('UzH7ynJfxmARltq6q5Sx', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', 50.00, 1);
 
 -- --------------------------------------------------------
 
