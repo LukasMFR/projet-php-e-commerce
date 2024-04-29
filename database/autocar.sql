@@ -165,9 +165,9 @@ CREATE TABLE `orders` (
   `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- Changed to DATETIME to include time
   `status` VARCHAR(50) NOT NULL DEFAULT 'en cours',
   `payment_status` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
-  FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
+  PRIMARY KEY (`id`)
+  -- FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+  -- FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
