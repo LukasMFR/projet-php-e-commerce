@@ -296,8 +296,8 @@ INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `address`, `ad
 -- Déchargement des données de la table `wishlist`
 --
 
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', 160.00);
+INSERT INTO `wishlist` (`id`, `user_id`, `item_id`, `item_type`, `price`) VALUES
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', 'product', 160.00);
 
 COMMIT;
 
