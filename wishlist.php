@@ -114,8 +114,9 @@ if (isset($_POST['delete_item'])) {
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Ma liste de souhaits</span>
 		</div>
+
 		<section class="products">
-			<h1 class="title">Produits dans ma liste de souhaits</h1>
+		<h1>Voiture dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
 			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
@@ -156,6 +157,59 @@ if (isset($_POST['delete_item'])) {
 							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
 						</form>
 						<?php
+						 $grand_total += $fetch_wishlist['price'];
+					}
+				}
+				echo '</div>';
+			} else {
+				echo '<div class="box-container"><p class="empty">Aucun produit ajouté pour le moment !</p></div>';
+			}
+			?>
+		</section>
+
+			<section class="products">
+			<h1>Puff dans ma liste de souhaits</h1>
+			<h1 class="title">Produits dans ma liste de souhaits</h1>
+			<?php
+			$grand_total = 0;
+			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+			$select_wishlist->execute([$user_id]);
+			if ($select_wishlist->rowCount() > 0) {
+				echo '<div class="box-container wishlist-box-container">';
+
+				while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
+					$select_puff = $conn->prepare("SELECT * FROM `puff` WHERE id= ?");
+					$select_puff->execute([$fetch_wishlist['puff_id']]);
+					if ($select_puff->rowCount() > 0) {
+						$fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)
+
+							?>
+
+						<form method="post" action="" class="box product-view-form">
+							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
+							<div class="image-overlay">
+								<img src="image/<?= $fetch_puff['image']; ?>" class="img">
+								<div class="button-group">
+									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
+									<a href="view_page_puffs.php?pid=<?php echo $fetch_puff['id']; ?>" class="icon-button"><i
+											class="bx bxs-show"></i></a>
+									<button type="submit" name="delete_item" class="icon-button"
+										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
+											class="bx bx-x"></i></button>
+								</div>
+							</div>
+							<div class="wishlist-info">
+								<h3 class="name wishlist-name">
+									<?= $fetch_puff['name']; ?>
+								</h3>
+								<p class="price wishlist-price">Prix :
+									<?= $fetch_puff['price']; ?> €
+								</p>
+							</div>
+							<input type="hidden" name="puff_id" value="<?= $fetch_puff['id']; ?>">
+							<a href="checkout.php?get_id=<?= $fetch_puff['id']; ?>" class="btn">Acheter maintenant</a>
+						</form>
+						<?php
 						$grand_total += $fetch_wishlist['price'];
 					}
 				}
@@ -166,37 +220,6 @@ if (isset($_POST['delete_item'])) {
 			?>
 		</section>
 
-		<div class="title-product">
-				<img src="img/download.png" class="logo-small">
-				<h1>Bientôt disponible</h1>
-			</div>
-			<div class="box-container">
-				<?php
-				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'inactif'");
-				$select_products->execute();
-				if ($select_products->rowCount() > 0) {
-					while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
-						?>
-						<form action="" method="post" class="box product-view-form">
-							<div class="image-container">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
-									class="view-btn">Visualiser</a>
-								<div class="button special-button">
-									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-								</div>
-							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
-						</form>
-						<?php
-					}
-				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
-				}
-				?>
-			</div>
-			
 		<?php include 'components/footer.php'; ?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
