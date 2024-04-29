@@ -257,10 +257,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 --
 
 CREATE TABLE `wishlist` (
-  `id` varchar(255) NOT NULL,
-  `user_id` varchar(255) NOT NULL,
-  `product_id` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL
+  `id` VARCHAR(20) NOT NULL,  -- Assuming the IDs are similarly formatted as previous tables
+  `user_id` VARCHAR(20) NOT NULL,
+  `product_id` VARCHAR(20) NOT NULL,
+  `price` DECIMAL(10, 2) NOT NULL,  -- Changed to DECIMAL for accurate financial data handling
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -268,7 +271,7 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '160');
+('FngaVJmk3vBeq3KUmt03', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', 160.00);
 
 COMMIT;
 
