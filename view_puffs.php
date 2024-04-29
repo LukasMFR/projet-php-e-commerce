@@ -14,14 +14,15 @@ if (isset($_POST['logout'])) {
 // Adding puff to wishlist
 if (isset($_POST['add_to_wishlist'])) {
     $id = unique_id();
-    $puff_id = $_POST['puff_id'];  // Corrected variable name
+    $puff_id = $_POST['puff_id'];
 
-    // Verify if puff is already in wishlist or cart
+    // Verify if puff is already in wishlist
     $verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'puff'");
     $verify_wishlist->execute([$user_id, $puff_id]);
 
-    $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-    $cart_num->execute([$user_id, $puff_id]);  // Corrected variable name to 'puff_id'
+    // Verify if puff is already in cart (correct field names according to new schema)
+    $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'puff'");
+    $cart_num->execute([$user_id, $puff_id]);
 
     if ($verify_wishlist->rowCount() > 0) {
         $warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
