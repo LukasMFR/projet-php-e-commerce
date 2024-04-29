@@ -7,6 +7,20 @@
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
+
+DROP DATABASE IF EXISTS autocar_correct_types;
+CREATE DATABASE autocar_correct_types ;
+USE autocar_correct_types ;
+DROP TABLE IF EXISTS admin ;
+DROP TABLE IF EXISTS cart ;
+DROP TABLE IF EXISTS message ;
+DROP TABLE IF EXISTS orders ;
+DROP TABLE IF EXISTS products ;
+DROP TABLE IF EXISTS puff ;
+DROP TABLE IF EXISTS users ;
+DROP TABLE IF EXISTS wishlist ;
+
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
