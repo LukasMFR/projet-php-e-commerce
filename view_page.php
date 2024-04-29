@@ -40,31 +40,36 @@ if (isset($_POST['add_to_wishlist'])) {
 		$success_msg[] = 'Produit ajouté à la liste de souhaits avec succès';
 	}
 }
-//adding products in cart
+// Adding products to cart
 if (isset($_POST['add_to_cart'])) {
 	$id = unique_id();
 	$product_id = $_POST['product_id'];
 
 	$qty = $_POST['qty'];
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+	$qty = filter_var($qty, FILTER_SANITIZE_NUMBER_INT);  // Correctly sanitize as an integer
 
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-	$varify_cart->execute([$user_id, $product_id]);
+	// Verify the cart for existing product
+	$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
+	$verify_cart->execute([$user_id, $product_id]);
 
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+	// Count the number of items in the cart
+	$max_cart_items = $conn->prepare("SELECT COUNT(*) FROM `cart` WHERE user_id = ?");
 	$max_cart_items->execute([$user_id]);
+	$cart_count = $max_cart_items->fetchColumn();
 
-	if ($varify_cart->rowCount() > 0) {
+	if ($verify_cart->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
+	} else if ($cart_count >= 20) {
 		$warning_msg[] = 'Le panier est plein';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
+		// Select the price of the product
+		$select_price = $conn->prepare("SELECT price FROM `products` WHERE id = ? LIMIT 1");
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
+		// Insert into cart
+		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id, item_id, item_type, price, qty) VALUES(?,?,?,?,?,?)");
+		$insert_cart->execute([$id, $user_id, $product_id, 'product', $fetch_price['price'], $qty]);
 		$success_msg[] = 'Produit ajouté au panier avec succès';
 	}
 }
