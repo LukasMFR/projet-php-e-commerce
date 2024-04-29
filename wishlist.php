@@ -41,6 +41,35 @@ if (isset($_POST['add_to_cart'])) {
 	}
 }
 
+//adding puff in cart
+if (isset($_POST['add_to_cart'])) {
+	$id = unique_id();
+	$puff_id = $_POST['puff_id'];
+
+	$qty = 1;
+	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+
+	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
+	$varify_cart->execute([$user_id, $puff_id]);
+
+	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+	$max_cart_items->execute([$user_id]);
+
+	if ($varify_cart->rowCount() > 0) {
+		$warning_msg[] = 'Le produit est déjà dans votre panier';
+	} else if ($max_cart_items->rowCount() > 20) {
+		$warning_msg[] = 'Le panier est plein';
+	} else {
+		$select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+		$select_price->execute([$puff_id]);
+		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,puff_id,price,qty) VALUES(?,?,?,?,?)");
+		$insert_cart->execute([$id, $user_id, $puff_id, $fetch_price['price'], $qty]);
+		$success_msg[] = 'Produit ajouté avec succès au panier';
+	}
+}
+
 //delete item from wishlist
 if (isset($_POST['delete_item'])) {
 	$wishlist_id = $_POST['wishlist_id'];
@@ -58,6 +87,7 @@ if (isset($_POST['delete_item'])) {
 	}
 }
 
+
 ?>
 <style type="text/css">
 	<?php include 'style.css'; ?>
@@ -65,7 +95,7 @@ if (isset($_POST['delete_item'])) {
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
+<head>²
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

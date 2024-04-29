@@ -3,22 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 28 avr. 2024 à 16:14
+-- Généré le : lun. 29 avr. 2024 à 09:43
 -- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.2.12
-
-
-DROP DATABASE IF EXISTS autocar;
-CREATE DATABASE autocar ;
-USE autocar ;
-DROP TABLE IF EXISTS admin ;
-DROP TABLE IF EXISTS cart ;
-DROP TABLE IF EXISTS message ;
-DROP TABLE IF EXISTS orders ;
-DROP TABLE IF EXISTS products ;
-DROP TABLE IF EXISTS puff ;
-DROP TABLE IF EXISTS users ;
-DROP TABLE IF EXISTS wishlist ;
+-- Version de PHP : 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -69,10 +56,6 @@ CREATE TABLE `cart` (
   `qty` varchar(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `cart`
---
-
 -- --------------------------------------------------------
 
 --
@@ -80,14 +63,13 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `phone` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `phone` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -247,6 +229,7 @@ CREATE TABLE `wishlist` (
   `id` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `product_id` varchar(255) NOT NULL,
+  `puff_id` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -254,8 +237,30 @@ CREATE TABLE `wishlist` (
 -- Déchargement des données de la table `wishlist`
 --
 
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
+('72JgjmZfvweETLotqnje', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '', '375 000'),
+('7wnrZsxk8fWg2MRh4CTA', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '', '10 000 000'),
+('98zmjXGhj1SXV7WYaxnn', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '', '699 000');
 
+--
+-- Index pour les tables déchargées
+--
 
+--
+-- Index pour la table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

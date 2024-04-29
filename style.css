@@ -237,6 +237,10 @@ button {
 	background-image: url(./img/banner-bg2-80.webp);
 }
 
+.banner.puff {
+	background-image: url(./img/banner-bg-puff.jpg);
+}
+
 .banner.voiture h1 {
 	text-transform: uppercase;
 	color: #000000;
@@ -245,7 +249,7 @@ button {
 }
 
 .title2 {
-	border-top: 1px solid var(--green);
+	border-top: 1px solid var(#3f3f3fde);
 	padding: 1rem 2rem;
 	text-transform: uppercase;
 	box-shadow: var(--box-shadow);
@@ -253,7 +257,7 @@ button {
 }
 
 .title2 a {
-	color: var(--green);
+	color: #3f3f3fde;
 }
 
 /*--------header------------------*/
