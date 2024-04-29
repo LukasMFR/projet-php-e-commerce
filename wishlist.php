@@ -133,7 +133,7 @@ if (isset($_POST['delete_item'])) {
 								</p>
 							</div>
 							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<a href="checkout.php?get_id=<?= htmlspecialchars($fetch_products['id']); ?>" class="btn">Acheter
+							<a href="checkout.php?get_id=<?= htmlspecialchars($fetch_products['id']); ?>&type=product" class="btn">Acheter
 								maintenant</a>
 						</form>
 						<?php
