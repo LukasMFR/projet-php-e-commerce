@@ -182,8 +182,8 @@ CREATE TABLE `wishlist` (
   `item_type` VARCHAR(50) NOT NULL CHECK (item_type IN ('product', 'puff')),  -- Ensures only 'product' or 'puff' can be stored
   `price` DECIMAL(10, 2) NOT NULL,  -- Using DECIMAL for financial accuracy
 
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)  -- Ensure 'users' table has an 'id' column
+  PRIMARY KEY (`id`)
+  -- FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)  -- Ensure 'users' table has an 'id' column
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
