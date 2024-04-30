@@ -13,6 +13,9 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 	$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
 	$price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 	$content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+	$goût = filter_var($_POST['goût'], FILTER_SANITIZE_STRING); // Correctly handling 'goût'
+	$taffe = filter_var($_POST['taffe'], FILTER_VALIDATE_INT);
+	$nicotine = filter_var($_POST['nicotine'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 	$status = isset($_POST['publish']) ? 'actif' : 'inactif';
 
 	$image = $_FILES['image']['name'];
@@ -31,8 +34,8 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 		if ($select_image->rowCount() > 0) {
 			$message[] = 'Nom de l\'image déjà utilisé !';
 		} else {
-			$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status) VALUES (?, ?, ?, ?, ?, ?)");
-			$insert_post->execute([$id, $title, $price, $image, $content, $status]);
+			$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status, goût, taffe, nicotine) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			$insert_post->execute([$id, $title, $price, $image, $content, $status, $goût, $taffe, $nicotine]);
 			$message[] = 'Produit ' . (isset($_POST['publish']) ? 'publié' : 'enregistré en brouillon') . '.';
 		}
 	}
@@ -80,6 +83,14 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 					<label>Détail du produit<sup>*</sup></label>
 					<textarea name="content" required maxlength="10000"
 						placeholder="Ajoutez le détail du produit"></textarea>
+				</div>
+				<div class="input-field">
+					<label>Goût du produit <sup>*</sup></label>
+					<input type="text" name="goût" required placeholder="Ajoutez le goût du produit">
+				</div>
+				<div class="input-field">
+					<label>Taffe <sup>*</sup></label>
+					<input type="number" name="taffe" required placeholder="Ajoutez le nombre de taffes">
 				</div>
 				<div class="input-field">
 					<label>Nicotine (%) <sup>*</sup></label>
