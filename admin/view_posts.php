@@ -65,6 +65,7 @@ if (isset($_POST['delete'])) {
 			<h1 class="heading">Vos produits</h1>
 			<div class="show-post">
 				<div class="box-container">
+					
 					<?php
 					$select_posts = $conn->prepare("SELECT * FROM `products`");
 					$select_posts->execute();
@@ -86,7 +87,7 @@ if (isset($_POST['delete'])) {
 									<?= $fetch_posts['status'] ?>
 								</div>
 								<div class="price"><?= $fetch_posts['price'] ?> €</div>
-								<div class="title"><?= $fetch_posts['name'] ?></div>
+								<div class="title-view"><?= $fetch_posts['name'] ?></div>
 								<div class="flex-btn">
 									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">Modifier</a>
 									<button type="submit" name="delete" class="btn"
@@ -98,7 +99,7 @@ if (isset($_POST['delete'])) {
 						}
 					} else {
 
-						echo '
+						echo '	
 								<div class="empty">
 									<p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p>
 								</div>

@@ -1,5 +1,5 @@
-- [ ] Numéro panier et wishlist
-- [ ] Justifier view voiture à gauche
+- [ ] Numéro panier et wishlist anis
+- [ ] Justifier view voiture à gauche anis 
 - [ ] Changer style newsletter en bas
 - [ ] Changer commande, ne pas afficher les commandes si personne n’est connecté
 - [ ] Rajouter quelque chose ou un message quand on se connecte ou enregistre genre message de bienvenue avec nom
