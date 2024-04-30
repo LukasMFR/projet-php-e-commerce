@@ -35,6 +35,7 @@ if (isset($_POST['delete'])) {
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<title>Les produits - Road Luxury</title>
 </head>
 
@@ -92,10 +93,9 @@ if (isset($_POST['delete'])) {
 								<div class="title"><?= $fetch_posts['name'] ?></div>
 								<div class="price"><?= $fetch_posts['price'] ?> €</div>
 								<div class="flex-btn">
-									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn">Modifier</a>
-									<button type="submit" name="delete" class="btn"
-										onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
-									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn">Voir le produit</a>
+									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa fa-edit"></i></a>
+									<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')"><i class="fa fa-trash"></i></button>
+									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa fa-eye"></i></a>
 								</div>
 							</form>
 							<?php
