@@ -263,7 +263,7 @@ form sup {
 	text-transform: uppercase;
 	padding: 1rem 0;
 	color: var(--orange);
-	margin-bottom: 1rem;
+	margin-bottom: -12rem;
 }
 
 section,
@@ -391,6 +391,13 @@ header {
 	transition: .3s;
 	box-shadow: var(--box-shadow);
 	border-radius: 15px;
+}
+
+
+.post-image{
+	position: relative;
+	display: flex;
+    align-items: center;
 }
 
 header::before {
@@ -609,7 +616,7 @@ header.scrolled::before {
 .profile-detail .flex-btn {
 	display: flex;
 	justify-content: space-evenly;
-	padding-bottom: 10px;
+	padding-bottom: 114px;
 }
 
 .profile-detail .flex-btn .btn {
@@ -709,7 +716,7 @@ header.scrolled::before {
 
 .show-post .box-container .box .price {
 	position: absolute;
-	right: 5%;
+	right: 2%;
 	top: 5%;
 	font-size: 2rem;
 	font-weight: bold;
@@ -718,11 +725,14 @@ header.scrolled::before {
 
 .show-post .box-container .box .title {
 	font-size: 1.2rem;
+	position: relative;
+	top: -12rem;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: var(--orange);
 	margin-bottom: -9rem;
 }
+
 
 .show-post .box-container .box .posts-content {
 	font-size: 1.3rem;
@@ -736,6 +746,7 @@ header.scrolled::before {
 	padding: 0rem 0.5rem;
 	width: 10%;
 	text-align: center;
+	
 }
 
 .show-post .box-container .box button {
