@@ -134,14 +134,14 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `message` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `user_id` VARCHAR(20) NOT NULL,  -- Adjusted to match the user ID type assumed from other tables
+  `user_id` VARCHAR(20) NULL,
   `name` VARCHAR(255) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `subject` VARCHAR(255) NOT NULL,
   `message` TEXT NOT NULL,
   `phone` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)  -- Assuming a foreign key relationship is appropriate
+  PRIMARY KEY (`id`)
+  -- FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
