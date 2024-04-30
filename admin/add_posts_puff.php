@@ -82,9 +82,10 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 						placeholder="Ajoutez le détail du produit"></textarea>
 				</div>
 				<div class="input-field">
-					<label>Nicotine (mg) <sup>*</sup></label>
-					<input type="number" name="nicotine" min="0" max="100" required
-						placeholder="Ajoutez la teneur en nicotine">
+					<label>Nicotine (%) <sup>*</sup></label>
+					<input type="text" name="nicotine" pattern="^\d*(\.\d{0,2})?$"
+						title="Please enter a valid percentage (e.g., 5, 5.5)" required
+						placeholder="Ajoutez la teneur en nicotine en %">
 				</div>
 				<div class="input-field">
 					<label>Image du produit <sup>*</sup></label>
