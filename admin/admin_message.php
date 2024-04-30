@@ -21,7 +21,7 @@ if (isset($_POST['delete_review'])) {
 		$delete_review->execute([$delete_id]);
 		$success_msg[] = "Message supprimé";
 	} else {
-		$warning_msg[] = 'Message déjà supprimé';
+		$warning_msg[] = 'Message déjà supprimé ou non trouvé';
 	}
 }
 ?>
@@ -57,25 +57,25 @@ if (isset($_POST['delete_review'])) {
 			</div>
 			<div class="box-container">
 				<?php
-				$select_reviews = $conn->prepare("SELECT * FROM `message`");
-				$select_reviews->execute();
-				if ($select_reviews->rowCount() > 0) {
-					while ($fetch_review = $select_reviews->fetch(PDO::FETCH_ASSOC)) {
-
-
+				$select_messages = $conn->prepare("SELECT * FROM `message` ORDER BY id DESC");
+				$select_messages->execute();
+				if ($select_messages->rowCount() > 0) {
+					while ($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)) {
 						?>
 						<div class="box">
-							<h3 class="name"><?= $fetch_review['name']; ?></h3>
-							<h4><?= $fetch_review['subject']; ?></h4>
-							<p><?= $fetch_review['message']; ?></p>
+							<h3 class="name"><?= htmlspecialchars($fetch_message['name']); ?></h3>
+							<h4><?= htmlspecialchars($fetch_message['subject']); ?></h4>
+							<p class="email"><strong>Email:</strong> <?= htmlspecialchars($fetch_message['email']); ?></p>
+							<?php if (!empty($fetch_message['phone'])) { ?>
+								<p class="phone"><strong>Téléphone:</strong> <?= htmlspecialchars($fetch_message['phone']); ?></p>
+							<?php } ?>
+							<p class="message-content"><?= htmlspecialchars($fetch_message['message']); ?></p>
 
 							<form action="" method="post" class="flex-btn">
-								<input type="hidden" name="delete_id" value="<?= $fetch_review['id']; ?>">
-
+								<input type="hidden" name="delete_id" value="<?= $fetch_message['id']; ?>">
 								<input type="submit" name="delete_review" value="Supprimer le message" class="btn"
-									onclick="return confirm('Supprimer ce message ?');">
+									onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?');">
 							</form>
-
 						</div>
 						<?php
 					}
