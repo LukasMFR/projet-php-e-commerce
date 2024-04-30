@@ -67,7 +67,7 @@ if (isset($_POST['logout'])) {
 		<section class="container">
 			<div class="welcome">
 				<div class="box">
-					<img src="img/imagepres.jpg" class="rounded">
+					<img src="img/imagepres.png" class="rounded">
 				</div>
 				<div class="box">
 					<img src="img/download.png" class="logo-small">
