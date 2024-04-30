@@ -93,8 +93,8 @@ if (isset($_POST['delete'])) {
 								<div class="title"><?= $fetch_posts['name'] ?></div>
 								<div class="price"><?= $fetch_posts['price'] ?> €</div>
 								<div class="flex-btn">
-									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa fa-edit"></i></a>
-									<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')"><i class="fa fa-trash"></i></button>
+									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa-solid fa-pen"></i></a>
+									<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')"><i class="fa-solid fa-trash"></i></button>
 									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa fa-eye"></i></a>
 								</div>
 							</form>
