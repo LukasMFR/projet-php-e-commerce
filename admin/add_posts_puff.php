@@ -8,88 +8,33 @@ if (!isset($admin_id)) {
 	header('location: admin_login.php');
 }
 
-if (isset($_POST['publish'])) {
+if (isset($_POST['publish']) || isset($_POST['draft'])) {
 	$id = unique_id();
-	$title = $_POST['title'];
-	$title = filter_var($title, FILTER_SANITIZE_STRING);
-
-	$price = $_POST['price'];
-	$price = filter_var($price, FILTER_SANITIZE_STRING);
-
-	$content = $_POST['content'];
-	$content = filter_var($content, FILTER_SANITIZE_STRING);
-
-	$status = 'actif';
+	$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+	$price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+	$content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+	$status = isset($_POST['publish']) ? 'actif' : 'inactif';
 
 	$image = $_FILES['image']['name'];
 	$image = filter_var($image, FILTER_SANITIZE_STRING);
 	$image_size = $_FILES['image']['size'];
 	$image_tmp_name = $_FILES['image']['tmp_name'];
-	$image_folder = '../image/' . $image;
+	$image_folder = '../image/' . basename($image);
 
-	$select_image = $conn->prepare("SELECT * FROM `puff` WHERE image = ?");
-	$select_image->execute([$image]);
-
-	if (isset($image)) {
+	if ($image_size > 2000000) {
+		$message[] = 'Taille de l\'image trop grande !';
+	} elseif (!move_uploaded_file($image_tmp_name, $image_folder)) {
+		$message[] = 'Erreur lors du téléchargement de l\'image.';
+	} else {
+		$select_image = $conn->prepare("SELECT * FROM `puff` WHERE image = ?");
+		$select_image->execute([$image]);
 		if ($select_image->rowCount() > 0) {
 			$message[] = 'Nom de l\'image déjà utilisé !';
-		} elseif ($image_size > 2000000) {
-			$message[] = 'Taille de l\'image trop grande !';
 		} else {
-			move_uploaded_file($image_tmp_name, $image_folder);
+			$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status) VALUES (?, ?, ?, ?, ?, ?)");
+			$insert_post->execute([$id, $title, $price, $image, $content, $status]);
+			$message[] = 'Produit ' . (isset($_POST['publish']) ? 'publié' : 'enregistré en brouillon') . '.';
 		}
-	} else {
-		$image = '';
-	}
-	if ($select_image->rowCount() > 0 and $image != '') {
-		$message[] = 'Veuillez renommer votre image';
-	} else {
-		$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status) VALUES (?,?,?,?,?,?)");
-		$insert_post->execute([$id, $title, $price, $image, $content, $status]);
-		$message[] = 'Produit publié';
-	}
-}
-
-//post adding in draft
-if (isset($_POST['draft'])) {
-	$id = unique_id();
-	$title = $_POST['title'];
-	$title = filter_var($title, FILTER_SANITIZE_STRING);
-
-	$price = $_POST['price'];
-	$price = filter_var($price, FILTER_SANITIZE_STRING);
-
-	$content = $_POST['content'];
-	$content = filter_var($content, FILTER_SANITIZE_STRING);
-
-	$status = 'inactif';
-
-	$image = $_FILES['image']['name'];
-	$image = filter_var($image, FILTER_SANITIZE_STRING);
-	$image_size = $_FILES['image']['size'];
-	$image_tmp_name = $_FILES['image']['tmp_name'];
-	$image_folder = '../image/' . $image;
-
-	$select_image = $conn->prepare("SELECT * FROM `puff` WHERE image = ? AND admin_id = ?");
-	$select_image->execute([$image, $admin_id]);
-
-	if (isset($image)) {
-		if ($select_image->rowCount() > 0) {
-			$message[] = 'Nom de l\'image déjà utilisé !';
-		} elseif ($image_size > 2000000) {
-			$message[] = 'Taille de l\'image trop grande !';
-		} else {
-			move_uploaded_file($image_tmp_name, $image_folder);
-		}
-	} else {
-		$image = '';
-	}
-	if ($select_image->rowCount() > 0 and $image != '') {
-		$message[] = 'Veuillez renommer votre image';
-	} else {
-		$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status) VALUES (?,?,?,?,?,?)");
-		$insert_post->execute([$id, $title, $price, $image, $content, $status]);
-		$message[] = 'Produit publié';
 	}
 }
 ?>
@@ -136,7 +81,11 @@ if (isset($_POST['draft'])) {
 					<textarea name="content" required maxlength="10000"
 						placeholder="Ajoutez le détail du produit"></textarea>
 				</div>
-
+				<div class="input-field">
+					<label>Nicotine (mg) <sup>*</sup></label>
+					<input type="number" name="nicotine" min="0" max="100" required
+						placeholder="Ajoutez la teneur en nicotine">
+				</div>
 				<div class="input-field">
 					<label>Image du produit <sup>*</sup></label>
 					<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp" required>
