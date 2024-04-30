@@ -28,22 +28,13 @@ if (isset($_POST['delete_order'])) {
 }
 
 //updateing payment status
-
-
-
 if (isset($_POST['update_order'])) {
-	$order_id = $_POST['order_id'];
-	$order_id = filter_var($order_id, FILTER_SANITIZE_STRING);
-
-	$update_payment = $_POST['update_payment'];
-	$update_payment = filter_var($update_payment, FILTER_SANITIZE_STRING);
-
-
+	$order_id = filter_var($_POST['order_id'], FILTER_SANITIZE_STRING);
+	$update_payment = filter_var($_POST['update_payment'], FILTER_SANITIZE_STRING);
 
 	$update_pay = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
 	$update_pay->execute([$update_payment, $order_id]);
 	$success_msg[] = 'Commande mise à jour';
-
 }
 
 ?>
@@ -80,35 +71,30 @@ if (isset($_POST['update_order'])) {
 			<h1 class="heading">Total des commandes passées</h1>
 			<div class="box-container">
 				<?php
-				$select_orders = $conn->prepare("SELECT * FROM `orders` ");
+				$select_orders = $conn->prepare("SELECT * FROM `orders` ORDER BY date DESC");
 				$select_orders->execute();
 				if ($select_orders->rowCount() > 0) {
 					while ($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)) {
-
-
 						?>
 						<div class="box">
-							<div class="status" style="color: <?php if ($fetch_orders['status'] == 'en cours') {
-								echo 'limegreen';
-							} else {
-								echo "coral";
-							} ?>;">
-								<?= $fetch_orders['status'] ?>
+							<div class="status"
+								style="color: <?= $fetch_orders['status'] == 'en cours' ? 'limegreen' : 'coral'; ?>;">
+								<?= htmlspecialchars($fetch_orders['status']) ?>
 							</div>
 							<div class="detail">
-								<p>Nom de l'utilisateur : <span><?= $fetch_orders['name']; ?></span></p>
-								<p>ID de l'utilisateur : <span><?php echo $fetch_orders['user_id']; ?></span></p>
-								<p>Placée le : <span><?= $fetch_orders['date']; ?></span></p>
-								<p>Numéro : <span><?php echo $fetch_orders['number']; ?></span></p>
-								<p>Email : <span><?php echo $fetch_orders['email']; ?></span></p>
-								<p>Prix total : <span><?php echo $fetch_orders['price']; ?></span></p>
-								<p>Méthode : <span><?php echo $fetch_orders['method']; ?></span></p>
-								<p>Adresse : <span><?php echo $fetch_orders['address']; ?></span></p>
+								<p>Nom de l'utilisateur : <span><?= htmlspecialchars($fetch_orders['name']); ?></span></p>
+								<p>ID de l'utilisateur : <span><?= htmlspecialchars($fetch_orders['user_id']); ?></span></p>
+								<p>Placée le : <span><?= htmlspecialchars($fetch_orders['date']); ?></span></p>
+								<p>Numéro : <span><?= htmlspecialchars($fetch_orders['number']); ?></span></p>
+								<p>Email : <span><?= htmlspecialchars($fetch_orders['email']); ?></span></p>
+								<p>Prix total : <span><?= htmlspecialchars($fetch_orders['price']); ?></span></p>
+								<p>Méthode : <span><?= htmlspecialchars($fetch_orders['method']); ?></span></p>
+								<p>Adresse : <span><?= htmlspecialchars($fetch_orders['address']); ?></span></p>
 							</div>
 							<form method="post">
-								<input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
+								<input type="hidden" name="order_id" value="<?= htmlspecialchars($fetch_orders['id']); ?>">
 								<select name="update_payment">
-									<option disabled selected><?php echo $fetch_orders['payment_status']; ?></option>
+									<option disabled selected><?= htmlspecialchars($fetch_orders['payment_status']); ?></option>
 									<option value="en attente">en attente</option>
 									<option value="completee">completee</option>
 								</select>
@@ -118,16 +104,11 @@ if (isset($_POST['update_order'])) {
 										onclick="return confirm('Supprimer cette commande ?');">
 								</div>
 							</form>
-
 						</div>
 						<?php
 					}
 				} else {
-					echo '
-								<div class="empty">
-									<p>Aucune commande passée pour le moment !</p>
-								</div>
-							';
+					echo '<div class="empty"><p>Aucune commande passée pour le moment !</p></div>';
 				}
 				?>
 			</div>
