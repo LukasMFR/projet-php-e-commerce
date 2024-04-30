@@ -293,7 +293,7 @@ if (isset($_POST['delete_image'])) {
 								<?php } ?>
 							</div>
 
-							<div class="flex-btn">
+							<div class="flex-btn edit">
 								<input type="submit" value="Enregistrer le produit" name="save" class="btn">
 								<input type="submit" value="Supprimer le produit" class="option-btn" name="delete_post">
 							</div>
