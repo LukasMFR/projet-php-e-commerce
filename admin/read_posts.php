@@ -108,7 +108,7 @@ if (isset($_POST['delete'])) {
 				}
 				?>
 			</div>
-
+		</section>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
