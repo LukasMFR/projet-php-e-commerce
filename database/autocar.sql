@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 01 mai 2024 à 16:32
+-- Généré le : mer. 01 mai 2024 à 16:40
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -52,6 +52,7 @@ CREATE TABLE `cart` (
   `id` varchar(20) NOT NULL,
   `user_id` varchar(20) NOT NULL,
   `product_id` varchar(20) NOT NULL,
+  `puff_id` varchar(255) NOT NULL,
   `price` varchar(10) NOT NULL,
   `qty` varchar(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -60,8 +61,8 @@ CREATE TABLE `cart` (
 -- Déchargement des données de la table `cart`
 --
 
-INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
-('JLLFIOldIciYlxyQ7bH1', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '375 000', '1');
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `puff_id`, `price`, `qty`) VALUES
+('JLLFIOldIciYlxyQ7bH1', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '', '375 000', '1');
 
 -- --------------------------------------------------------
 
@@ -238,6 +239,7 @@ CREATE TABLE `wishlist` (
   `id` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `product_id` varchar(255) NOT NULL,
+  `puff_id` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -245,9 +247,9 @@ CREATE TABLE `wishlist` (
 -- Déchargement des données de la table `wishlist`
 --
 
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
-('iQYxaH3xkxMZRiy81XHx', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '10 000 000'),
-('YVriKrp5QsvZ70RXVJia', '', 'aSBHDzG26iXurm6cfoNv', '699 000');
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
+('iQYxaH3xkxMZRiy81XHx', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '', '10 000 000'),
+('YVriKrp5QsvZ70RXVJia', '', 'aSBHDzG26iXurm6cfoNv', '', '699 000');
 
 --
 -- Index pour les tables déchargées
