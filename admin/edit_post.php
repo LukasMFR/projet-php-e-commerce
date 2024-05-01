@@ -188,28 +188,22 @@ if (isset($_POST['delete_post'])) {
 									<img src="../image/<?= $fetch_posts[$field_name]; ?>" class="image">
 								<?php } ?>
 							</div>
-							<div class="flex-btn edit">
-								<input type="submit" value="Enregistrer le produit" name="save" class="btn">
-								<input type="submit" value="Supprimer le produit" class="option-btn" name="delete_post">
-							</div>
-
-						</form>
-					</div>
-
-					<?php
-				}
-			}
-		}
-			} else {
-				echo '<div class="empty"><p>Aucun produit trouvé !</p></div>';
-				?>
+						<?php } ?>
+						<div class="flex-btn edit">
+							<input type="submit" value="Enregistrer le produit" name="save" class="btn">
+							<input type="submit" value="Supprimer le produit" class="option-btn" name="delete_post">
+						</div>
+					</form>
+				</div>
+			<?php } else { ?>
+				<div class="empty">
+					<p>Aucun produit trouvé !</p>
+				</div>
 				<div class="flex-btn">
 					<a href="view_posts.php" class="option-btn">Voir les produits</a>
 					<a href="add_posts.php" class="btn">Ajouter un produit</a>
 				</div>
-				<?php
-			}
-			?>
+			<?php } ?>
 		</section>
 	</div>
 
