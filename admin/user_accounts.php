@@ -8,24 +8,11 @@ if (!isset($admin_id)) {
 	header('location: admin_login.php');
 }
 if (isset($_POST['delete'])) {
-	$delete_image = $conn->prepare("SELECT * FROM `posts` WHERE admin_id = ?");
-	$delete_image->execute([$admin_id]);
-	while ($fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC)) {
-		unlink('../update_image/' . $fetch_delete_image);
-	}
-
-	$delete_posts = $conn->prepare("DELETE FROM `posts` WHERE admin_id = ?");
-	$delete_posts->execute([$admin_id]);
-	$delete_likes = $conn->prepare("DELETE FROM `likes` WHERE admin_id = ?");
-	$delete_likes->execute([$admin_id]);
-	$delete_comment = $conn->prepare("DELETE FROM `comments` WHERE admin_id = ?");
-	$delete_comment->execute([$admin_id]);
-
+	// Suppression du compte administrateur
 	$delete_admin = $conn->prepare("DELETE FROM `admin` WHERE id = ?");
 	$delete_admin->execute([$admin_id]);
 
 	header('location:../components/admin_logout.php');
-
 }
 ?>
 <style>
@@ -63,8 +50,6 @@ if (isset($_POST['delete'])) {
 				if ($select_users->rowCount() > 0) {
 					while ($fetch_accounts = $select_users->fetch(PDO::FETCH_ASSOC)) {
 						$user_id = $fetch_accounts['id'];
-
-
 						?>
 						<div class="box">
 							<p>Identifiant : <span><?= $user_id; ?></span></p>
@@ -75,15 +60,12 @@ if (isset($_POST['delete'])) {
 						<?php
 					}
 				} else {
-					echo '
-								<div class="empty">
-									<p>Aucun utilisateur enregistré !</p>
-								</div>
-							';
+					echo '<div class="empty"><p>Aucun utilisateur enregistré !</p></div>';
 				}
 				?>
 			</div>
 		</section>
+
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
