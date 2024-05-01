@@ -263,7 +263,7 @@ form sup {
 	text-transform: uppercase;
 	padding: 1rem 0;
 	color: var(--orange);
-	margin-bottom: 1rem;
+	margin-bottom: -12rem;
 }
 
 section,
@@ -365,7 +365,7 @@ form span {
 .flex-btn.edit {
 	display: flex;
 	margin-bottom: 26px;
-	margin-top:  120px;
+	margin-top: 120px;
 	justify-content: right;
 }
 
@@ -391,6 +391,13 @@ header {
 	transition: .3s;
 	box-shadow: var(--box-shadow);
 	border-radius: 15px;
+}
+
+
+.post-image {
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 header::before {
@@ -609,7 +616,7 @@ header.scrolled::before {
 .profile-detail .flex-btn {
 	display: flex;
 	justify-content: space-evenly;
-	padding-bottom: 10px;
+	padding-bottom: 114px;
 }
 
 .profile-detail .flex-btn .btn {
@@ -663,7 +670,7 @@ header.scrolled::before {
 
 .dashboard .box-container .box h3 {
 	font-size: 2.7rem;
-	margin-bottom: -1rem;
+	margin-bottom: 1rem;
 }
 
 .dashboard .box-container .box p {
@@ -695,7 +702,8 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .status {
-	position: absolute;
+	position: relative;
+	top: -14rem;
 	left: -4%;
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -709,7 +717,7 @@ header.scrolled::before {
 
 .show-post .box-container .box .price {
 	position: absolute;
-	right: 5%;
+	right: 2%;
 	top: 5%;
 	font-size: 2rem;
 	font-weight: bold;
@@ -718,11 +726,14 @@ header.scrolled::before {
 
 .show-post .box-container .box .title {
 	font-size: 1.2rem;
+	position: relative;
+	top: -233px;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: var(--orange);
 	margin-bottom: -9rem;
 }
+
 
 .show-post .box-container .box .posts-content {
 	font-size: 1.3rem;
@@ -732,10 +743,11 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .btn {
-	margin: .2rem;
-	padding: 0rem 0.5rem;
-	width: 10%;
+	margin: 0.2rem;
+	padding: 1rem 0.5rem;
+	width: 5%;
 	text-align: center;
+
 }
 
 .show-post .box-container .box button {
@@ -997,4 +1009,10 @@ header.scrolled::before {
 	form {
 		width: 100%;
 	}
+}
+
+
+canvas {
+	display: block;
+	background-color: #fff;
 }

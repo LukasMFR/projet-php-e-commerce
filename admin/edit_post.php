@@ -185,7 +185,7 @@ if (isset($_POST['delete_image'])) {
 		<section class="post-editor">
 
 
-			<h1 class="heading">Modifier le produit</h1>
+			<h1 class="heading"> </h1>
 			<?php
 			$post_id = $_GET['id'];
 			$select_posts = $conn->prepare("SELECT * FROM `products` WHERE id =?");

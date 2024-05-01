@@ -21,6 +21,7 @@ if (!isset($admin_id)) {
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<title>Tableau de bord admin - Road Luxury</title>
 </head>
 
@@ -36,13 +37,17 @@ if (!isset($admin_id)) {
 		<section class="dashboard">
 			<h1 class="heading">Tableau de bord</h1>
 			<div class="box-container">
+
 				<div class="box">
-					<h3>Bienvenue !</h3>
-					<p><?= $fetch_profile['name']; ?></p>
-					<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
+    				<h3>Statistiques de vente des voitures</h3>
+    				<canvas id="myChart" style=""></canvas> 
 				</div>
 
-
+				<div class="box">
+    				<h3>Statistiques de vente des Vapes</h3>
+    				<canvas id="myChart" style=""></canvas> 
+				</div>
+				
 				<div class="box">
 					<?php
 					$select_post = $conn->prepare("SELECT * FROM `products`");
@@ -141,6 +146,92 @@ if (!isset($admin_id)) {
 	</div>
 
 	<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Quantité vendue par produit',
+                data: [],
+                backgroundColor: ['red', 'green', 'blue', 'orange', 'brown', 'yellow'],
+                borderColor: ['black'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    function updateChart() {
+        fetch('get_sales_data.php')
+        .then(response => response.json())
+        .then(data => {
+            const productNames = data.map(item => item.product_name);
+            const quantities = data.map(item => item.total_quantity);
+
+            myChart.data.labels = productNames;
+            myChart.data.datasets[0].data = quantities;
+            myChart.update();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    setInterval(updateChart, 1000); // Met à jour le graphique toutes les 5 secondes
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [],
+            datasets: [{
+                backgroundColor: [], // Les couleurs seront ajoutées dynamiquement
+                data: []
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Répartition des ventes de puffs'
+            }
+        }
+    });
+
+    function updateChart() {
+        fetch('get_sales_data_puff.php')
+        .then(response => response.json())
+        .then(data => {
+            const productNames = data.map(item => item.product_name);
+            const quantities = data.map(item => item.total_quantity);
+            const colors = data.map(() => '#' + Math.floor(Math.random()*16777215).toString(16)); // Génère des couleurs aléatoires
+
+            myChart.data.labels = productNames;
+            myChart.data.datasets[0].data = quantities;
+            myChart.data.datasets[0].backgroundColor = colors;
+            myChart.update();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    setInterval(updateChart, 5000); // Met à jour le graphique toutes les 5 secondes
+});
+</script>
+
 </body>
 
 </html>
