@@ -9,16 +9,18 @@ if (!isset($admin_id)) {
 }
 
 //delete post from database
-
 if (isset($_POST['delete'])) {
-	$p_id = $_POST['product_id'];
-	$p_id = filter_var($p_id, FILTER_SANITIZE_STRING);
-
-
-	$delete_post = $conn->prepare("DELETE FROM `products` WHERE id = ?");
-	$delete_post->execute([$p_id]);
-
-	$message[] = 'Produit supprimé avec succès !';
+	$p_id = filter_var($_POST['product_id'], FILTER_SANITIZE_STRING);
+	// Vérification de l'existence du produit avant de procéder à la suppression
+	$check_existence = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+	$check_existence->execute([$p_id]);
+	if ($check_existence->rowCount() > 0) {
+		$delete_post = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+		$delete_post->execute([$p_id]);
+		$message[] = 'Produit supprimé avec succès !';
+	} else {
+		$message[] = 'Produit non trouvé ou déjà supprimé.';
+	}
 }
 
 ?>
@@ -52,13 +54,8 @@ if (isset($_POST['delete'])) {
 		<section class="post-editor">
 			<?php
 			if (isset($message)) {
-				foreach ($message as $message) {
-					echo '
-							<div class="message">
-								<span>' . $message . '</span>
-								<i class="bx bx-x" onclick="this.parentElement.remove();"></i>
-							</div>
-						';
+				foreach ($message as $msg) {
+					echo '<div class="message"><span>' . $msg . '</span><i class="bx bx-x" onclick="this.parentElement.remove();"></i></div>';
 				}
 			}
 			?>
@@ -71,27 +68,22 @@ if (isset($_POST['delete'])) {
 					$select_posts->execute();
 					if ($select_posts->rowCount() > 0) {
 						while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
-
-
 							?>
 							<form method="post" class="box">
 								<input type="hidden" name="product_id" value="<?= $fetch_posts['id']; ?>">
-								<?php if ($fetch_posts['image'] != '') { ?>
+								<?php if (!empty($fetch_posts['image'])) { ?>
 									<div class="post-image">
-									<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
-									<img src="../image/<?= $fetch_posts['image2'] ?>" class="image">
-									<img src="../image/<?= $fetch_posts['image3'] ?>" class="image">
+									<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
+									<img src="../image/<?= $fetch_posts['image2']; ?>" class="image">
+									<img src="../image/<?= $fetch_posts['image3']; ?>" class="image">
 									</div>
 								<?php } ?>
-								<div class="status" style="color: <?php if ($fetch_posts['status'] == 'actif') {
-									echo 'limegreen';
-								} else {
-									echo "coral";
-								} ?>;">
-									<?= $fetch_posts['status'] ?>
+								<div class="status"
+									style="color: <?= $fetch_posts['status'] == 'actif' ? 'limegreen' : 'coral'; ?>;">
+									<?= $fetch_posts['status']; ?>
 								</div>
-								<div class="title"><?= $fetch_posts['name'] ?></div>
-								<div class="price"><?= $fetch_posts['price'] ?> €</div>
+								<div class="title"><?= $fetch_posts['name']; ?></div>
+								<div class="price"><?= number_format($fetch_posts['price'], 2, ',', ' ') ?> €</div>
 								<div class="flex-btn">
 									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa-solid fa-pen"></i></a>
 									<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')"><i class="fa-solid fa-trash"></i></button>
@@ -101,16 +93,10 @@ if (isset($_POST['delete'])) {
 							<?php
 						}
 					} else {
-
-						echo '
-								<div class="empty">
-									<p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p>
-								</div>
-							';
+						echo '<div class="empty"><p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p></div>';
 					}
 					?>
 				</div>
-
 			</div>
 		</section>
 	</div>

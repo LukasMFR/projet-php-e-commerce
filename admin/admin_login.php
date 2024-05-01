@@ -4,20 +4,22 @@ include '../components/connection.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-
 	$name = $_POST['name'];
 	$name = filter_var($name, FILTER_SANITIZE_STRING);
 
-	$pass = sha1($_POST['password']); // encrypt password before saving in database using sha1
+	// Le mot de passe est haché avec SHA1 (non recommandé pour les environnements de production)
+	$pass = sha1($_POST['password']);
 	$pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
+	// Modification de la requête pour correspondre aux champs de la nouvelle table `admin`
 	$select_admin = $conn->prepare("SELECT * FROM `admin` WHERE name = ? AND password = ?");
 	$select_admin->execute([$name, $pass]);
 
 	if ($select_admin->rowCount() > 0) {
-		$fetch_admin_id = $select_admin->fetch(PDO::FETCH_ASSOC);
-		$_SESSION['admin_id'] = $fetch_admin_id['id'];
+		$fetch_admin = $select_admin->fetch(PDO::FETCH_ASSOC);
+		$_SESSION['admin_id'] = $fetch_admin['id'];
 		header('location:dashboard.php');
+		exit();  // Il est bon d'ajouter exit après un header location pour éviter d'exécuter du code supplémentaire
 	} else {
 		$message[] = 'Nom d\'utilisateur ou mot de passe incorrect';
 	}
@@ -44,11 +46,11 @@ if (isset($_POST['submit'])) {
 	if (isset($message)) {
 		foreach ($message as $message) {
 			echo '
-					<div class="message">
-						<span>' . $message . '</span>
-						<i class="bx bx-x" onclick="this.parentElement.remove();"></i>
-					</div>
-				';
+                <div class="message">
+                    <span>' . $message . '</span>
+                    <i class="bx bx-x" onclick="this.parentElement.remove();"></i>
+                </div>
+            ';
 		}
 	}
 	?>

@@ -11,56 +11,65 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
-//adding products in wishlist
+// Adding products to wishlist
 if (isset($_POST['add_to_wishlist'])) {
 	$id = unique_id();
-	$product_id = $_POST['product_id'];
+	$product_id = $_POST['product_id']; // This is obtained from the form submission.
 
-	$varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-	$varify_wishlist->execute([$user_id, $product_id]);
+	// Verify if product is already in wishlist
+	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
+	$verify_wishlist->execute([$user_id, $product_id]);
 
-	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+	// Corrected: Verify if product is already in cart
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$cart_num->execute([$user_id, $product_id]);
 
-	if ($varify_wishlist->rowCount() > 0) {
+	if ($verify_wishlist->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre liste de souhaits';
 	} else if ($cart_num->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre panier';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
+		// Select the price of the product
+		$select_price = $conn->prepare("SELECT price FROM `products` WHERE id = ? LIMIT 1");
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
+		// Insert into wishlist
+		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, item_id, item_type, price) VALUES(?, ?, ?, 'product', ?)");
 		$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
 		$success_msg[] = 'Produit ajouté à la liste de souhaits avec succès';
 	}
 }
-//adding products in cart
+// Adding products to cart
 if (isset($_POST['add_to_cart'])) {
 	$id = unique_id();
 	$product_id = $_POST['product_id'];
 
 	$qty = $_POST['qty'];
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+	$qty = filter_var($qty, FILTER_SANITIZE_NUMBER_INT);  // Correctly sanitize as an integer
 
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-	$varify_cart->execute([$user_id, $product_id]);
+	// Verify the cart for existing product
+	$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
+	$verify_cart->execute([$user_id, $product_id]);
 
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+	// Count the number of items in the cart
+	$max_cart_items = $conn->prepare("SELECT COUNT(*) FROM `cart` WHERE user_id = ?");
 	$max_cart_items->execute([$user_id]);
+	$cart_count = $max_cart_items->fetchColumn();
 
-	if ($varify_cart->rowCount() > 0) {
+	if ($verify_cart->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
+	} else if ($cart_count >= 20) {
 		$warning_msg[] = 'Le panier est plein';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
+		// Select the price of the product
+		$select_price = $conn->prepare("SELECT price FROM `products` WHERE id = ? LIMIT 1");
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
+		// Insert into cart
+		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id, item_id, item_type, price, qty) VALUES(?,?,?,?,?,?)");
+		$insert_cart->execute([$id, $user_id, $product_id, 'product', $fetch_price['price'], $qty]);
 		$success_msg[] = 'Produit ajouté au panier avec succès';
 	}
 }
@@ -158,7 +167,8 @@ if (isset($_POST['add_to_cart'])) {
 									</div>
 								</section>
 
-								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+								<input type="hidden" name="product_id"
+									value="<?php echo $fetch_products['id']; ?>">
 								<div class="button">
 									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
 											class="bx bx-heart"></i></button>

@@ -9,25 +9,16 @@ if (!isset($admin_id)) {
 }
 
 if (isset($_POST['save'])) {
-	$post_id = $_GET['id'];
-	$title = $_POST['title'];
-	$title = filter_var($title, FILTER_SANITIZE_STRING);
-	$price = $_POST['price'];
-	$price = filter_var($price, FILTER_SANITIZE_STRING);
-	$content = $_POST['content'];
-	$content = filter_var($content, FILTER_SANITIZE_STRING);
-	$status = $_POST['status'];
-	$status = filter_var($status, FILTER_SANITIZE_STRING);
-	$goût = $_POST['goût'];
-	$goût = filter_var($goût, FILTER_SANITIZE_STRING);
-	$taffe = $_POST['taffe'];
-	$taffe = filter_var($taffe, FILTER_SANITIZE_STRING);
-	$nicotine = $_POST['nicotine'];
-	$nicotine = filter_var($nicotine, FILTER_SANITIZE_STRING);
+	$post_id = $_GET['id']; // Récupération de l'ID depuis l'URL
+	$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+	$price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION); // Validation comme nombre décimal
+	$content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+	$status = filter_var($_POST['status'], FILTER_SANITIZE_STRING);
+	$goût = filter_var($_POST['goût'], FILTER_SANITIZE_STRING);
+	$taffe = filter_var($_POST['taffe'], FILTER_SANITIZE_NUMBER_INT); // Validation comme entier
+	$nicotine = filter_var($_POST['nicotine'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION); // Validation comme décimal
 
-
-
-	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?,status = ?, goût = ?, taffe = ?, nicotine = ? WHERE id = ?");
+	$update_post = $conn->prepare("UPDATE `puff` SET name = ?, price = ?, product_detail = ?, status = ?, goût = ?, taffe = ?, nicotine = ? WHERE id = ?");
 	$update_post->execute([$title, $price, $content, $status, $goût, $taffe, $nicotine, $post_id]);
 
 	$success_msg[] = 'Produit mis à jour';
@@ -38,36 +29,29 @@ if (isset($_POST['save'])) {
 	$image_tmp_name = $_FILES['image']['tmp_name'];
 	$image_folder = '../image/' . $image;
 
-
 	$select_image = $conn->prepare("SELECT * FROM `puff` WHERE image = ?");
 	$select_image->execute([$image]);
 
 	if (!empty($image)) {
 		if ($image_size > 2000000) {
 			$warning_msg[] = 'La taille de l\'image est trop grande';
-		} elseif ($select_image->rowCount() > 0 and $image != '') {
+		} elseif ($select_image->rowCount() > 0 && $image != '') {
 			$warning_msg[] = 'Veuillez renommer votre image';
 		} else {
 			$update_image = $conn->prepare("UPDATE `puff` SET image = ? WHERE id = ?");
 			$update_image->execute([$image, $post_id]);
 			move_uploaded_file($image_tmp_name, $image_folder);
-			if ($old_image != $image and $old_image != '') {
+			if ($old_image != $image && $old_image != '') {
 				unlink('../image/' . $old_image);
 			}
 			$success_msg[] = 'Image mise à jour !';
 		}
 	}
+}
 
-	
-} 
-
-
-	
-//delete post
+// Code pour supprimer un produit
 if (isset($_POST['delete_post'])) {
-
-	$post_id = $_POST['post_id'];
-	$post_id = filter_var($post_id, FILTER_SANITIZE_STRING);
+	$post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_STRING);
 	$delete_image = $conn->prepare("SELECT * FROM `puff` WHERE id = ?");
 	$delete_image->execute([$post_id]);
 	$fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
@@ -76,18 +60,13 @@ if (isset($_POST['delete_post'])) {
 	}
 	$delete_post = $conn->prepare("DELETE FROM `puff` WHERE id = ?");
 	$delete_post->execute([$post_id]);
-	$delete_comments = $conn->prepare("DELETE FROM `comments` WHERE post_id = ?");
-	$delete_comments->execute([$post_id]);
 	$success_msg[] = 'Produit supprimé avec succès !';
-
 }
 
-//delete image 
-
+// Code pour supprimer uniquement l'image d'un produit
 if (isset($_POST['delete_image'])) {
 	$empty_image = '';
-	$post_id = $_POST['post_id'];
-	$post_id = filter_var($post_id, FILTER_SANITIZE_STRING);
+	$post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_STRING);
 	$delete_image = $conn->prepare("SELECT * FROM `puff` WHERE id = ?");
 	$delete_image->execute([$post_id]);
 	$fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
@@ -126,8 +105,6 @@ if (isset($_POST['delete_image'])) {
 			<a href="dashboard.php">Accueil </a><span>/ Modifier le produit</span>
 		</div>
 		<section class="post-editor">
-
-
 			<h1 class="heading">Modifier le produit</h1>
 			<?php
 			$post_id = $_GET['id'];
@@ -135,8 +112,6 @@ if (isset($_POST['delete_image'])) {
 			$select_posts->execute([$post_id]);
 			if ($select_posts->rowCount() > 0) {
 				while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
-
-
 					?>
 					<div class="form-container">
 						<form action="" method="post" enctype="multipart/form-data">
@@ -145,49 +120,44 @@ if (isset($_POST['delete_image'])) {
 							<div class="input-field">
 								<label>Statut du produit <sup>*</sup></label>
 								<select name="status" required>
-									<option value="<?= $fetch_posts['status']; ?>" selected><?= $fetch_posts['status']; ?>
+									<option value="<?= $fetch_posts['status']; ?>" selected>
+										<?= $fetch_posts['status']; ?>
 									</option>
-									<option value="actif">Actif</option>
-									<option value="inactif">Inactif</option>
+									<option value="actif">actif</option>
+									<option value="inactif">inactif</option>
 								</select>
 							</div>
-
 							<div class="input-field">
 								<label>Nom du produit<sup>*</sup></label>
-								<input type="text" name="title" maxlength="100" required placeholder="add post title"
+								<input type="text" name="title" maxlength="100" required placeholder="Entrez le nom du produit"
 									value="<?= $fetch_posts['name']; ?>">
 							</div>
-
 							<div class="input-field">
 								<label>Prix du produit <sup>*</sup></label>
-								<input type="text" name="price" value="<?= $fetch_posts['price']; ?>">
-
+								<input type="number" name="price" min="0" step="0.01"
+									value="<?= $fetch_posts['price']; ?>" required>
 							</div>
-
 							<div class="input-field">
 								<label>Détail du produit <sup>*</sup></label>
 								<textarea name="content" required maxlength="10000"
-									placeholder="write your content.."><?= $fetch_posts['product_detail']; ?></textarea>
+									placeholder="Écrivez le détail du produit..."><?= $fetch_posts['product_detail']; ?></textarea>
 							</div>
-
 							<div class="input-field">
-								<label>Saveur du prduit<sup>*</sup></label>
-								<input type="text" name="goût" maxlength="100" required placeholder="add post title"
+								<label>Saveur du produit<sup>*</sup></label>
+								<input type="text" name="goût" maxlength="100" required
+									placeholder="Entrez la saveur du produit"
 									value="<?= $fetch_posts['goût']; ?>">
 							</div>
-
 							<div class="input-field">
 								<label>Taux de nicotine <sup>*</sup></label>
-								<input type="text" name="nicotine" value="<?= $fetch_posts['nicotine']; ?>">
-
+								<input type="number" name="nicotine" min="0" step="0.01"
+									value="<?= $fetch_posts['nicotine']; ?>" required>
 							</div>
-
 							<div class="input-field">
-								<label>Nombre de taffe du produit<sup>*</sup></label>
-								<input type="text" name="taffe" value="<?= $fetch_posts['taffe']; ?>">
-
+								<label>Nombre de taffes du produit<sup>*</sup></label>
+								<input type="number" name="taffe" min="0"
+									value="<?= $fetch_posts['taffe']; ?>" required>
 							</div>
-
 							<div class="input-field">
 								<label>Image du produit <sup>*</sup></label>
 								<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
@@ -195,33 +165,25 @@ if (isset($_POST['delete_image'])) {
 									<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
 									<div class="flex-btn">
 										<input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image">
-										<a href="view_posts.php" class="btn"
+										<a href="view_posts_puff.php" class="btn"
 											style="width:49%; text-align: center; font-size: 1.2rem; margin: .5rem;">Retour</a>
 									</div>
-
 								<?php } ?>
 							</div>
-
 							<div class="flex-btn">
 								<input type="submit" value="Enregistrer le produit" name="save" class="btn">
 								<input type="submit" value="Supprimer le produit" class="option-btn" name="delete_post">
 							</div>
-
 						</form>
 					</div>
-
 					<?php
 				}
-			
-		}
-			else {
-
+			} else {
 				echo '
-							<div class="empty">
-								<p>Aucun produit trouvé !</p>
-							</div>
-					';
-
+            <div class="empty">
+                <p>Aucun produit trouvé !</p>
+            </div>
+        ';
 				?>
 				<div class="flex-btn">
 					<a href="view_posts.php" class="option-btn">Voir le produit</a>

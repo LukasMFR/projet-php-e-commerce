@@ -11,56 +11,65 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
-//adding puff in wishlist
+// Adding puff to wishlist
 if (isset($_POST['add_to_wishlist'])) {
 	$id = unique_id();
 	$puff_id = $_POST['puff_id'];
 
-	$varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND puff_id = ?");
-	$varify_wishlist->execute([$user_id, $puff_id]);
+	// Verify if puff is already in wishlist
+	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'puff'");
+	$verify_wishlist->execute([$user_id, $puff_id]);
 
-	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
+	// Verify if puff is already in cart (correct field names according to new schema)
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'puff'");
 	$cart_num->execute([$user_id, $puff_id]);
 
-	if ($varify_wishlist->rowCount() > 0) {
+	if ($verify_wishlist->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre liste de souhaits';
 	} else if ($cart_num->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre panier';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+		// Select the price of the puff
+		$select_price = $conn->prepare("SELECT price FROM `puff` WHERE id = ? LIMIT 1");
 		$select_price->execute([$puff_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,puff_id,price) VALUES(?,?,?,?)");
+		// Insert into wishlist
+		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, item_id, item_type, price) VALUES(?, ?, ?, 'puff', ?)");
 		$insert_wishlist->execute([$id, $user_id, $puff_id, $fetch_price['price']]);
 		$success_msg[] = 'Produit ajouté à la liste de souhaits avec succès';
 	}
 }
-//adding puff in cart
+// Adding puff to cart
 if (isset($_POST['add_to_cart'])) {
 	$id = unique_id();
-	$puff_id = $_POST['puff_id'];
+	$puff_id = $_POST['puff_id'];  // Correctly handling the puff ID
 
 	$qty = $_POST['qty'];
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+	$qty = filter_var($qty, FILTER_SANITIZE_NUMBER_INT); // Ensuring quantity is a valid integer
 
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
-	$varify_cart->execute([$user_id, $puff_id]);
+	// Verify the cart for existing puff
+	$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'puff'");
+	$verify_cart->execute([$user_id, $puff_id]);  // Adjusted to include item_type
 
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+	// Check the number of items in the cart
+	$max_cart_items = $conn->prepare("SELECT COUNT(*) FROM `cart` WHERE user_id = ?");
 	$max_cart_items->execute([$user_id]);
+	$cart_count = $max_cart_items->fetchColumn();
 
-	if ($varify_cart->rowCount() > 0) {
+	if ($verify_cart->rowCount() > 0) {
 		$warning_msg[] = 'Le produit existe déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
+	} else if ($cart_count >= 20) {
 		$warning_msg[] = 'Le panier est plein';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+		// Select the price of the puff
+		$select_price = $conn->prepare("SELECT price FROM `puff` WHERE id = ? LIMIT 1");
 		$select_price->execute([$puff_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,puff_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $puff_id, $fetch_price['price'], $qty]);
+		// Insert into cart
+		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id, item_id, item_type, price, qty) VALUES(?,?,?,?,?,?)");
+		$insert_cart->execute([$id, $user_id, $puff_id, 'puff', $fetch_price['price'], $qty]);
 		$success_msg[] = 'Produit ajouté au panier avec succès';
 	}
 }

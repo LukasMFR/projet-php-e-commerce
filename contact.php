@@ -11,6 +11,31 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
+
+if (isset($_POST['submit-btn'])) {
+	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$phone = filter_var($_POST['number'], FILTER_SANITIZE_STRING);
+	$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+	$subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+
+	// Si user_id est vide, vous pouvez décider de le passer à NULL ou de le laisser vide
+	$user_id = !empty($_SESSION['user_id']) ? $_SESSION['user_id'] : NULL;
+
+	$stmt = $conn->prepare("INSERT INTO message (user_id, name, email, subject, message, phone) VALUES (?, ?, ?, ?, ?, ?)");
+	$stmt->bindParam(1, $user_id);
+	$stmt->bindParam(2, $name);
+	$stmt->bindParam(3, $email);
+	$stmt->bindParam(4, $subject);
+	$stmt->bindParam(5, $message);
+	$stmt->bindParam(6, $phone);
+
+	if ($stmt->execute()) {
+		echo '<p>Merci pour votre message. Nous vous contacterons bientôt.</p>';
+	} else {
+		echo '<p>Erreur lors de l\'envoi de votre message. Veuillez réessayer plus tard.</p>';
+	}
+}
 ?>
 <style type="text/css">
 	<?php include 'style.css'; ?>
@@ -44,19 +69,23 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="input-field">
 					<p>Votre nom <sup>*</sup></p>
-					<input type="text" name="name">
+					<input type="text" name="name" required>
 				</div>
 				<div class="input-field">
 					<p>Votre email <sup>*</sup></p>
-					<input type="email" name="email">
+					<input type="email" name="email" required>
 				</div>
 				<div class="input-field">
 					<p>Votre numéro <sup>*</sup></p>
 					<input type="text" name="number">
 				</div>
 				<div class="input-field">
+					<p>Sujet <sup>*</sup></p>
+					<input type="text" name="subject" required placeholder="Entrez le sujet de votre message">
+				</div>
+				<div class="input-field">
 					<p>Votre message <sup>*</sup></p>
-					<textarea name="message"></textarea>
+					<textarea name="message" required></textarea>
 				</div>
 				<button type="submit" name="submit-btn" class="btn">Envoyer le message</button>
 			</form>
