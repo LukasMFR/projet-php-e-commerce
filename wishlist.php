@@ -12,32 +12,41 @@ if (isset($_POST['logout'])) {
 	header("location: login.php");
 }
 
-//adding products in cart
+// Adding products to cart
 if (isset($_POST['add_to_cart'])) {
-	$id = unique_id();
-	$product_id = $_POST['product_id'];
-
-	$qty = 1;
-	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
-
-	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-	$varify_cart->execute([$user_id, $product_id]);
-
-	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-	$max_cart_items->execute([$user_id]);
-
-	if ($varify_cart->rowCount() > 0) {
-		$warning_msg[] = 'Le produit est déjà dans votre panier';
-	} else if ($max_cart_items->rowCount() > 20) {
-		$warning_msg[] = 'Le panier est plein';
+	if (!isset($_POST['item_type'])) {
+		$error_msg[] = 'Item type is not specified.';
 	} else {
-		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-		$select_price->execute([$product_id]);
-		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+		$id = unique_id();
+		$product_id = $_POST['product_id'];
+		$item_type = $_POST['item_type'];
 
-		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,product_id,price,qty) VALUES(?,?,?,?,?)");
-		$insert_cart->execute([$id, $user_id, $product_id, $fetch_price['price'], $qty]);
-		$success_msg[] = 'Produit ajouté avec succès au panier';
+		$qty = 1;
+
+		$verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = ?");
+		$verify_cart->execute([$user_id, $product_id, $item_type]);
+
+		$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+		$max_cart_items->execute([$user_id]);
+
+		if ($verify_cart->rowCount() > 0) {
+			$warning_msg[] = 'Le produit est déjà dans votre panier';
+		} else if ($max_cart_items->rowCount() > 20) {
+			$warning_msg[] = 'Le panier est plein';
+		} else {
+			$table = ($item_type === 'product') ? 'products' : 'puff';
+			$select_price = $conn->prepare("SELECT price FROM `$table` WHERE id = ? LIMIT 1");
+			$select_price->execute([$product_id]);
+			$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+			if ($fetch_price === false) {
+				$error_msg[] = 'Failed to retrieve product price';
+			} else {
+				$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id, item_id, item_type, price, qty) VALUES (?, ?, ?, ?, ?, ?)");
+				$insert_cart->execute([$id, $user_id, $product_id, $item_type, $fetch_price['price'], $qty]);
+				$success_msg[] = 'Produit ajouté avec succès au panier';
+			}
+		}
 	}
 }
 
@@ -116,30 +125,31 @@ if (isset($_POST['delete_item'])) {
 		</div>
 
 		<section class="products">
-		<h1 class="title">Voiture dans ma liste de souhaits</h1>
+			<h1 class="title">Voitures dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
-			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+			// Select only wishlist items where item_type is 'product'
+			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_type = 'product'");
 			$select_wishlist->execute([$user_id]);
 			if ($select_wishlist->rowCount() > 0) {
 				echo '<div class="box-container wishlist-box-container">';
 
 				while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
-					$select_products = $conn->prepare("SELECT * FROM `products` WHERE id= ?");
-					$select_products->execute([$fetch_wishlist['product_id']]);
+					// Fetch details from the `products` table using the item_id
+					$select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+					$select_products->execute([$fetch_wishlist['item_id']]);
 					if ($select_products->rowCount() > 0) {
-						$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)
-
-							?>
-
+						$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC);
+						?>
 						<form method="post" action="" class="box product-view-form">
 							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
+							<input type="hidden" name="item_type" value="product"> <!-- Specify the item type as 'product' -->
 							<div class="image-overlay">
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="icon-button"><i
-											class="bx bxs-show"></i></a>
+									<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
+										class="icon-button"><i class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
 											class="bx bx-x"></i></button>
@@ -154,44 +164,47 @@ if (isset($_POST['delete_item'])) {
 								</p>
 							</div>
 							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Acheter maintenant</a>
+							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>&type=product" class="btn">Acheter
+								maintenant</a>
 						</form>
 						<?php
-						 $grand_total += $fetch_wishlist['price'];
+						$grand_total += floatval($fetch_wishlist['price']);  // Update total price from the wishlist
 					}
 				}
 				echo '</div>';
 			} else {
-				echo '<div class="box-container"><p class="empty">Aucun produit ajouté pour le moment !</p></div>';
+				echo '<div class="box-container"><p class="empty">Aucune voiture ajoutée pour le moment !</p></div>';
 			}
 			?>
 		</section>
 
-			<section class="products">
-			<h1 class="title">Puff dans ma liste de souhaits</h1>
+		<section class="products">
+			<h1 class="title">Puffs dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
-			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+			// Select only wishlist items where item_type is 'puff'
+			$select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_type = 'puff'");
 			$select_wishlist->execute([$user_id]);
 			if ($select_wishlist->rowCount() > 0) {
 				echo '<div class="box-container wishlist-box-container">';
 
 				while ($fetch_wishlist = $select_wishlist->fetch(PDO::FETCH_ASSOC)) {
-					$select_puff = $conn->prepare("SELECT * FROM `puff` WHERE id= ?");
-					$select_puff->execute([$fetch_wishlist['puff_id']]);
-					if ($select_puff->rowCount() > 0) {
-						$fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC)
+					// Fetch details from the `puff` table using the item_id
+					$select_puffs = $conn->prepare("SELECT * FROM `puff` WHERE id = ?");
+					$select_puffs->execute([$fetch_wishlist['item_id']]);
+					if ($select_puffs->rowCount() > 0) {
+						$fetch_puff = $select_puffs->fetch(PDO::FETCH_ASSOC);
 
-							?>
-
+						?>
 						<form method="post" action="" class="box product-view-form">
 							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
+							<input type="hidden" name="item_type" value="puff"> <!-- Specify the item type as 'puff' -->
 							<div class="image-overlay">
 								<img src="image/<?= $fetch_puff['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page_puffs.php?pid=<?php echo $fetch_puff['id']; ?>" class="icon-button"><i
-											class="bx bxs-show"></i></a>
+									<a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>&type=puff"
+										class="icon-button"><i class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
 											class="bx bx-x"></i></button>
@@ -205,20 +218,20 @@ if (isset($_POST['delete_item'])) {
 									<?= $fetch_puff['price']; ?> €
 								</p>
 							</div>
-							<input type="hidden" name="puff_id" value="<?= $fetch_puff['id']; ?>">
-							<a href="checkout.php?get_id=<?= $fetch_puff['id']; ?>" class="btn">Acheter maintenant</a>
+							<input type="hidden" name="product_id" value="<?= $fetch_puff['id']; ?>">
+							<a href="checkout.php?get_id=<?= $fetch_puff['id']; ?>&type=puff" class="btn">Acheter
+								maintenant</a>
 						</form>
 						<?php
-						$grand_total += $fetch_wishlist['price'];
+						$grand_total += floatval($fetch_wishlist['price']);
 					}
 				}
 				echo '</div>';
 			} else {
-				echo '<div class="box-container"><p class="empty">Aucun produit ajouté pour le moment !</p></div>';
+				echo '<div class="box-container"><p class="empty">Aucun puff ajouté pour le moment !</p></div>';
 			}
 			?>
 		</section>
-
 		<?php include 'components/footer.php'; ?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

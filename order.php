@@ -69,12 +69,13 @@ if (isset($_POST['logout'])) {
 				$select_orders->execute([$user_id]);
 				if ($select_orders->rowCount() > 0) {
 					while ($fetch_order = $select_orders->fetch(PDO::FETCH_ASSOC)) {
-						$select_products = $conn->prepare("SELECT * FROM `products` WHERE id=?");
-						$select_products->execute([$fetch_order['product_id']]);
-						if ($select_products->rowCount() > 0) {
-							while ($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)) {
+						// Determine which table to select from based on item_type
+						$table = ($fetch_order['item_type'] === 'puff') ? 'puff' : 'products';
+						$select_item = $conn->prepare("SELECT * FROM `$table` WHERE id=?");
+						$select_item->execute([$fetch_order['item_id']]);
 
-
+						if ($select_item->rowCount() > 0) {
+							while ($fetch_item = $select_item->fetch(PDO::FETCH_ASSOC)) {
 								?>
 								<div class="box" <?php if ($fetch_order['status'] == 'cancle') {
 									echo 'style="border:2px solid red";';
@@ -83,31 +84,31 @@ if (isset($_POST['logout'])) {
 										<p class="date"><i class="bi bi-calender-fill"></i><span>
 												<?= $fetch_order['date']; ?>
 											</span></p>
-										<img src="image/<?= $fetch_product['image']; ?>" class="image">
+										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<div class="row">
 											<h3 class="name">
-												<?= $fetch_product['name']; ?>
+												<?= $fetch_item['name']; ?>
 											</h3>
 											<p class="price">Prix :
 												<?= $fetch_order['price']; ?> € x
 												<?= $fetch_order['qty']; ?>
 											</p>
-											<p class="status"
-												style="color:<?php if ($fetch_order['status'] == 'livree') {
-													echo 'green';
-												} elseif ($fetch_order['status'] == 'annulee') {
-													echo 'red';
-												} else {
-													echo 'orange';
-												} ?>">
+											<p class="status" style="color:<?php if ($fetch_order['status'] == 'livree') {
+												echo 'green';
+											} elseif ($fetch_order['status'] == 'annulee') {
+												echo 'red';
+											} else {
+												echo 'orange';
+											} ?>">
 												<?= $fetch_order['status']; ?>
 											</p>
 										</div>
 									</a>
-
 								</div>
-							<?php
+								<?php
 							}
+						} else {
+							echo '<p class="empty">Item details not found.</p>';
 						}
 					}
 				} else {

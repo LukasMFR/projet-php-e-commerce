@@ -11,27 +11,30 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
-//adding products in wishlist
+// Adding products in wishlist
 if (isset($_POST['add_to_wishlist'])) {
 	$id = unique_id();
 	$product_id = $_POST['product_id'];
 
-	$varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-	$varify_wishlist->execute([$user_id, $product_id]);
+	$verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
+	$verify_wishlist->execute([$user_id, $product_id]);
 
-	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+	// Correct the query to match the `cart` table structure
+	$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND item_id = ? AND item_type = 'product'");
 	$cart_num->execute([$user_id, $product_id]);
 
-	if ($varify_wishlist->rowCount() > 0) {
+	if ($verify_wishlist->rowCount() > 0) {
 		$warning_msg[] = 'Le produit est déjà dans votre liste de souhaits';
 	} else if ($cart_num->rowCount() > 0) {
 		$warning_msg[] = 'Le produit est déjà dans votre panier';
 	} else {
+		// Select the price of the product
 		$select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
 		$select_price->execute([$product_id]);
 		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
 
-		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id,product_id,price) VALUES(?,?,?,?)");
+		// Insert into wishlist
+		$insert_wishlist = $conn->prepare("INSERT INTO `wishlist`(id, user_id, item_id, item_type, price) VALUES(?, ?, ?, 'product', ?)");
 		$insert_wishlist->execute([$id, $user_id, $product_id, $fetch_price['price']]);
 		$success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
 	}
@@ -92,6 +95,7 @@ if (isset($_POST['add_to_cart'])) {
 		</div>
 
 		<section class="products">
+			<h1 class="title">Produits dans ma liste de souhaits</h1>
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
@@ -101,20 +105,20 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
 									class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<h1><?= $fetch_products['name']; ?></h1>
 						</form>
 						<?php
 					}
 				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+					echo '<p class="empty">Aucun produit actif ajouté pour le moment !</p>';
 				}
 				?>
 			</div>
@@ -132,24 +136,23 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
 									class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<h1><?= $fetch_products['name']; ?></h1>
 						</form>
 						<?php
 					}
 				} else {
-					echo '<p class="empty">Aucun produit ajouté pour le moment !</p>';
+					echo '<p class="empty">Aucun produit inactif pour le moment !</p>';
 				}
 				?>
 			</div>
-
 		</section>
 
 		<?php include 'components/footer.php'; ?>

@@ -6,26 +6,24 @@ $admin_id = $_SESSION['admin_id'];
 
 if (!isset($admin_id)) {
 	header('location: admin_login.php');
+	exit();
 }
+
 if (isset($_POST['delete'])) {
-	$delete_image = $conn->prepare("SELECT * FROM `posts` WHERE admin_id = ?");
-	$delete_image->execute([$admin_id]);
-	while ($fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC)) {
-		unlink('../update_image/' . $fetch_delete_image);
+	// Suppression de l'image de profil, si nécessaire
+	$select_admin = $conn->prepare("SELECT profile FROM `admin` WHERE id = ?");
+	$select_admin->execute([$admin_id]);
+	$admin_data = $select_admin->fetch(PDO::FETCH_ASSOC);
+	if ($admin_data && file_exists('../image/' . $admin_data['profile'])) {
+		unlink('../image/' . $admin_data['profile']);
 	}
 
-	$delete_posts = $conn->prepare("DELETE FROM `posts` WHERE admin_id = ?");
-	$delete_posts->execute([$admin_id]);
-	$delete_likes = $conn->prepare("DELETE FROM `likes` WHERE admin_id = ?");
-	$delete_likes->execute([$admin_id]);
-	$delete_comment = $conn->prepare("DELETE FROM `comments` WHERE admin_id = ?");
-	$delete_comment->execute([$admin_id]);
-
+	// Suppression de l'entrée de l'administrateur dans la base de données
 	$delete_admin = $conn->prepare("DELETE FROM `admin` WHERE id = ?");
 	$delete_admin->execute([$admin_id]);
 
 	header('location:../components/admin_logout.php');
-
+	exit();
 }
 ?>
 <style>
@@ -62,19 +60,17 @@ if (isset($_POST['delete'])) {
 				$select_admin->execute();
 				if ($select_admin->rowCount() > 0) {
 					while ($fetch_accounts = $select_admin->fetch(PDO::FETCH_ASSOC)) {
-						$user_id = $fetch_accounts['id'];
-
-
 						?>
 						<div class="box">
 							<div class="profile">
-								<img src="../image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
+								<img src="../image/<?= $fetch_accounts['profile']; ?>" class="logo-image" width="100">
 							</div>
-							<p>ID administrateur : <span><?= $user_id; ?></span></p>
+							<p>ID administrateur : <span><?= $fetch_accounts['id']; ?></span></p>
 							<p>Nom de l'administrateur : <span><?= $fetch_accounts['name']; ?></span></p>
 							<p>Email de l'administrateur : <span><?= $fetch_accounts['email']; ?></span></p>
 							<div class="flex-btn">
-								<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
+								<a href="update_profile.php?id=<?= $fetch_accounts['id']; ?>" class="btn">Mettre à jour le
+									profil</a>
 								<a href="components/admin_logout.php" onclick="return confirm('Se déconnecter du site ?')"
 									class="btn">Se déconnecter</a>
 							</div>
@@ -83,10 +79,10 @@ if (isset($_POST['delete'])) {
 					}
 				} else {
 					echo '
-								<div class="empty">
-									<p>Aucun post trouvé !</p>
-								</div>
-							';
+            <div class="empty">
+                <p>Aucun administrateur trouvé !</p>
+            </div>
+        ';
 				}
 				?>
 			</div>

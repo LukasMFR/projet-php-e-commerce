@@ -48,6 +48,7 @@ if (!isset($admin_id)) {
     				<canvas id="myChartpuff" style="display: block; box-sizing: border-box; height: 617px; width: 1235px; "></canvas> 
 				</div>
 				
+        <!-- Bloc pour les produits ajoutés -->
 				<div class="box">
 					<?php
 					$select_post = $conn->prepare("SELECT * FROM `products`");
@@ -58,10 +59,12 @@ if (!isset($admin_id)) {
 					<p>Produits ajoutés</p>
 					<a href="add_posts.php" class="btn">Ajouter un nouveau produit</a>
 				</div>
+
+				<!-- Bloc pour les produits actifs -->
 				<div class="box">
 					<?php
-					$select_active_post = $conn->prepare("SELECT * FROM `products` WHERE status = ?");
-					$select_active_post->execute(['actif']);
+					$select_active_post = $conn->prepare("SELECT * FROM `products` WHERE status = 'actif'");
+					$select_active_post->execute();
 					$number_of_active_post = $select_active_post->rowCount();
 					?>
 					<h3><?= $number_of_active_post; ?></h3>
@@ -69,16 +72,19 @@ if (!isset($admin_id)) {
 					<a href="view_posts.php" class="btn">Voir les produits</a>
 				</div>
 
+				<!-- Bloc pour les produits désactivés -->
 				<div class="box">
 					<?php
-					$select_deactive_post = $conn->prepare("SELECT * FROM `products` WHERE status = ?");
-					$select_deactive_post->execute(['inactif']);
+					$select_deactive_post = $conn->prepare("SELECT * FROM `products` WHERE status = 'inactif'");
+					$select_deactive_post->execute();
 					$number_of_deactive_post = $select_deactive_post->rowCount();
 					?>
 					<h3><?= $number_of_deactive_post; ?></h3>
 					<p>Produits désactivés</p>
 					<a href="view_posts.php" class="btn">Voir les produits</a>
 				</div>
+
+				<!-- Bloc pour les utilisateurs -->
 				<div class="box">
 					<?php
 					$select_users = $conn->prepare("SELECT * FROM `users`");
@@ -89,6 +95,8 @@ if (!isset($admin_id)) {
 					<p>Comptes utilisateurs</p>
 					<a href="user_accounts.php" class="btn">Voir les utilisateurs</a>
 				</div>
+
+				<!-- Bloc pour les administrateurs -->
 				<div class="box">
 					<?php
 					$select_admins = $conn->prepare("SELECT * FROM `admin`");
@@ -99,10 +107,11 @@ if (!isset($admin_id)) {
 					<p>Comptes admins</p>
 					<a href="admin_accounts.php" class="btn">Voir les admins</a>
 				</div>
+
+				<!-- Bloc pour les messages -->
 				<div class="box">
 					<?php
 					$select_comments = $conn->prepare("SELECT * FROM `message`");
-					$select_comments->execute();
 					$select_comments->execute();
 					$numbers_of_comments = $select_comments->rowCount();
 					?>
@@ -110,26 +119,33 @@ if (!isset($admin_id)) {
 					<p>Messages ajoutés</p>
 					<a href="admin_message.php" class="btn">Voir les messages</a>
 				</div>
+
+				<!-- Divers blocs pour les commandes -->
+				<!-- Bloc pour les commandes annulées -->
 				<div class="box">
 					<?php
-					$select_annulee_order = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-					$select_annulee_order->execute(['annulee']);
+					$select_annulee_order = $conn->prepare("SELECT * FROM `orders` WHERE status = 'annulee'");
+					$select_annulee_order->execute();
 					$total_annulee_order = $select_annulee_order->rowCount();
 					?>
 					<h3><?= $total_annulee_order; ?></h3>
 					<p>Total commandes annulées</p>
 					<a href="admin_order.php" class="btn">Voir les commandes</a>
 				</div>
+
+				<!-- Bloc pour les commandes en cours -->
 				<div class="box">
 					<?php
-					$select_confirm_order = $conn->prepare("SELECT * FROM `orders` WHERE status = ?");
-					$select_confirm_order->execute(['en cours']);
+					$select_confirm_order = $conn->prepare("SELECT * FROM `orders` WHERE status = 'en cours'");
+					$select_confirm_order->execute();
 					$total_confirm_order = $select_confirm_order->rowCount();
 					?>
 					<h3><?= $total_confirm_order; ?></h3>
 					<p>Total commandes en cours</p>
 					<a href="admin_order.php" class="btn">Voir les commandes</a>
 				</div>
+
+				<!-- Bloc pour le total des commandes -->
 				<div class="box">
 					<?php
 					$select_total_order = $conn->prepare("SELECT * FROM `orders`");

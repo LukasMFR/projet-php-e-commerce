@@ -2,13 +2,10 @@
 include '../components/connection.php';
 
 if (isset($_POST['submit'])) {
-
-	$name = $_POST['name'];
-	$name = filter_var($name, FILTER_SANITIZE_STRING);
-	$pass = sha1($_POST['password']);
-	$pass = filter_var($pass, FILTER_SANITIZE_STRING);
-	$cpass = sha1($_POST['cpassword']);
-	$cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$password = sha1($_POST['password']);
+	$cpassword = sha1($_POST['cpassword']);
 
 	$image = $_FILES['image']['name'];
 	$image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -21,16 +18,15 @@ if (isset($_POST['submit'])) {
 	if ($select_admin->rowCount() > 0) {
 		$message[] = 'Le nom d\'utilisateur existe déjà !';
 	} else {
-		if ($pass != $cpass) {
+		if ($password != $cpassword) {
 			$warning_msg[] = 'Le mot de passe de confirmation ne correspond pas !';
 		} else {
-			$insert_admin = $conn->prepare("INSERT INTO `admin`(name, password,profile) VALUES(?,?,?)");
-			$insert_admin->execute([$name, $cpass, $image]);
+			$insert_admin = $conn->prepare("INSERT INTO `admin`(name, email, password, profile) VALUES(?,?,?,?)");
+			$insert_admin->execute([$name, $email, $password, $image]);
 			move_uploaded_file($image_tmp_name, $image_folder);
 			$success_msg[] = 'Nouvel administrateur enregistré !';
 		}
 	}
-
 }
 
 ?>
@@ -62,18 +58,20 @@ if (isset($_POST['submit'])) {
 					<h3>S'enregistrer</h3>
 					<div class="input-field">
 						<label>Nom d'utilisateur <sup>*</sup></label>
-						<input type="text" name="name" maxlength="20" required
-							placeholder="Saisir votre nom d'utilisateur" oninput="this.value.replace(/\s/g,'')">
+						<input type="text" name="name" maxlength="255" required
+							placeholder="Saisir votre nom d'utilisateur">
+					</div>
+					<div class="input-field">
+						<label>Email <sup>*</sup></label>
+						<input type="email" name="email" maxlength="255" required placeholder="Saisir votre email">
 					</div>
 					<div class="input-field">
 						<label>Mot de passe <sup>*</sup></label>
-						<input type="password" name="password" maxlength="20" required
-							placeholder="Saisir votre mot de passe" oninput="this.value.replace(/\s/g,'')">
+						<input type="password" name="password" required placeholder="Saisir votre mot de passe">
 					</div>
 					<div class="input-field">
 						<label>Confirmer le mot de passe <sup>*</sup></label>
-						<input type="password" name="cpassword" maxlength="20" required
-							placeholder="Confirmer votre mot de passe" oninput="this.value.replace(/\s/g,'')">
+						<input type="password" name="cpassword" required placeholder="Confirmer votre mot de passe">
 					</div>
 					<div class="input-field">
 						<label>Télécharger la photo de profil <sup>*</sup></label>

@@ -3,22 +3,24 @@ include 'components/connection.php';
 session_start();
 
 if (isset($_POST['submit'])) {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 
-    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-    $select_user->execute([$email, $pass]);
-    $row = $select_user->fetch(PDO::FETCH_ASSOC);
+	// Prepare and execute the SQL statement
+	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+	$select_user->execute([$email, $pass]);
+	$row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-    if ($select_user->rowCount() > 0) {
-        $_SESSION['user_id'] = $row['id'];
-        $_SESSION['user_name'] = $row['name'];
-        $_SESSION['user_email'] = $row['email'];
-        $_SESSION['welcome_login'] = true; // Variable pour afficher le message de bienvenue
-        header('location: order.php');
-    } else {
-        $warning_msg[] = 'Identifiant ou mot de passe incorrect';
-    }
+	if ($select_user->rowCount() > 0) {
+		// Set session variables upon successful login
+		$_SESSION['user_id'] = $row['id'];
+		$_SESSION['user_name'] = $row['name'];
+		$_SESSION['user_email'] = $row['email'];
+		$_SESSION['welcome_login'] = true;
+		header('location: order.php');
+	} else {
+		$warning_msg[] = 'Identifiant ou mot de passe incorrect';
+	}
 }
 ?>
 

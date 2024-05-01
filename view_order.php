@@ -11,16 +11,19 @@ if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
 }
+
 if (isset($_GET['get_id'])) {
 	$get_id = $_GET['get_id'];
 } else {
-	$get_id = '';
 	header('location:order.php');
+	exit;
 }
-if (isset($_POST['cancle'])) {
-	$update_order = $conn->prepare("UPDATE `orders` SET status = ? WHERE id=?");
-	$update_order->execute(['annulee', $get_id]);
+
+if (isset($_POST['cancel'])) {
+	$update_order = $conn->prepare("UPDATE `orders` SET status = 'annulee' WHERE id=?");
+	$update_order->execute([$get_id]);
 	header('location:order.php');
+	exit;
 }
 
 ?>
@@ -58,35 +61,33 @@ if (isset($_POST['cancle'])) {
 			</div>
 			<div class="box-container">
 				<?php
-				$grand_total = 0;
 				$select_orders = $conn->prepare("SELECT * FROM `orders` WHERE id=? LIMIT 1");
 				$select_orders->execute([$get_id]);
 				if ($select_orders->rowCount() > 0) {
 					while ($fetch_order = $select_orders->fetch(PDO::FETCH_ASSOC)) {
-						$select_product = $conn->prepare("SELECT * FROM `products` WHERE id=? LIMIT 1");
-						$select_product->execute([$fetch_order['product_id']]);
-						if ($select_product->rowCount() > 0) {
-							while ($fetch_product = $select_product->fetch(PDO::FETCH_ASSOC)) {
-								$sub_total = ($fetch_order['price'] * $fetch_order['qty']);
-								$grand_total += $sub_total;
+						// Determine which table to select from based on item_type
+						$table = ($fetch_order['item_type'] === 'puff') ? 'puff' : 'products';
+						$select_item = $conn->prepare("SELECT * FROM `$table` WHERE id=? LIMIT 1");
+						$select_item->execute([$fetch_order['item_id']]);
 
+						if ($select_item->rowCount() > 0) {
+							while ($fetch_item = $select_item->fetch(PDO::FETCH_ASSOC)) {
+								$sub_total = ($fetch_order['price'] * $fetch_order['qty']);
 								?>
 								<div class="box">
 									<div class="col">
 										<p class="title"><i class="bi bi-calendar-fill"></i>
 											<?= $fetch_order['date']; ?>
 										</p>
-										<img src="image/<?= $fetch_product['image']; ?>" class="image">
+										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<p class="price">
-											<?= $fetch_product['price']; ?> x
+											<?= $fetch_item['price']; ?> x
 											<?= $fetch_order['qty']; ?>
 										</p>
 										<h3 class="name">
-											<?= $fetch_product['name']; ?>
+											<?= $fetch_item['name']; ?>
 										</h3>
-										<p class="grand-total">Montant total payé :&nbsp;<span>
-												<?= $grand_total; ?> €
-											</span></p>
+										<p class="grand-total">Montant total payé : <span><?= $sub_total; ?> €</span></p>
 									</div>
 									<div class="col">
 										<p class="title">Adresse de facturation</p>
@@ -102,35 +103,34 @@ if (isset($_POST['cancle'])) {
 										<p class="user"><i class="bi bi-pin-map-fill"></i>
 											<?= $fetch_order['address']; ?>
 										</p>
-										<p class="title">status</p>
-										<p class="Statut"
-											style="color:<?php if ($fetch_order['status'] == 'delevered') {
-												echo 'green';
-											} elseif ($fetch_order['status'] == 'annulee') {
-												echo 'red';
-											} else {
-												echo 'orange';
-											} ?>">
-											<?= $fetch_order['status'] ?>
+										<p class="title">Status</p>
+										<p class="status" style="color:<?php if ($fetch_order['status'] == 'livree') {
+											echo 'green';
+										} elseif ($fetch_order['status'] == 'annulee') {
+											echo 'red';
+										} else {
+											echo 'orange';
+										} ?>">
+											<?= $fetch_order['status']; ?>
 										</p>
 										<?php if ($fetch_order['status'] == 'annulee') { ?>
-											<a href="checkout.php?get_id=<?= $fetch_product['id']; ?>" class="btn">Commander à nouveau</a>
+											<a href="checkout.php?get_id=<?= $fetch_item['id']; ?>&type=<?= $fetch_order['item_type']; ?>"
+												class="btn">Commander à nouveau</a>
 										<?php } else { ?>
 											<form method="post">
-												<button type="submit" name="cancle" class="btn"
+												<button type="submit" name="cancel" class="btn"
 													onclick="return confirm('Voulez-vous annuler cette commande ?')">Annuler la
 													commande</button>
 											</form>
 										<?php } ?>
 									</div>
 								</div>
-							<?php
+								<?php
 							}
 						} else {
 							echo '<p class="empty">Produit non trouvé</p>';
 						}
 					}
-
 				} else {
 					echo '<p class="empty">Aucune commande trouvée</p>';
 				}
