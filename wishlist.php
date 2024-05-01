@@ -119,8 +119,8 @@ if (isset($_POST['delete_item'])) {
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
-										class="icon-button"><i class="bx bxs-show"></i></a>
+									<a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="icon-button"><i
+											class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
 											class="bx bx-x"></i></button>
@@ -174,8 +174,8 @@ if (isset($_POST['delete_item'])) {
 								<img src="image/<?= $fetch_puff['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>&type=puff"
-										class="icon-button"><i class="bx bxs-show"></i></a>
+									<a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>&type=puff" class="icon-button"><i
+											class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
 											class="bx bx-x"></i></button>
