@@ -8,7 +8,9 @@
 			<!-- <a href="home.php">Accueil</a> -->
 			<a href="view_products.php">Voitures</a>
 			<a href="view_puffs.php">Vapes</a>
+			<?php if (isset($_SESSION['user_id'])): ?>
 			<a href="order.php">Commandes</a>
+			 <?php endif; ?>
 			<a href="about.php">À propos</a>
 			<a href="contact.php">Nous contacter</a>
 		</nav>

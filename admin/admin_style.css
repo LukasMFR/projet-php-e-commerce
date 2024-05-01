@@ -1012,7 +1012,7 @@ header.scrolled::before {
 }
 
 
-canvas {
+.canvas {
 	display: block;
 	background-color: #fff;
 }
