@@ -12,11 +12,32 @@ if (isset($_POST['logout'])) {
 	header("location: login.php");
 }
 
-
 ?>
 <style type="text/css">
 	<?php include 'style.css'; ?>
 </style>
+
+
+<?php
+include_once 'components/connection.php';
+session_start();
+
+// Redirection si l'utilisateur n'est pas connecté
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;  // Assurez-vous de terminer l'exécution du script après la redirection
+}
+
+$user_id = $_SESSION['user_id'];
+
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,8 +54,8 @@ if (isset($_POST['logout'])) {
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-		<div class="banner">
-			<h1>Mes commandes</h1>
+		<div class="banner commande">
+			<h1></h1>
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Mes commandes</span>

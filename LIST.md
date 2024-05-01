@@ -1,0 +1,16 @@
+- [ ] Numéro panier et wishlist anis
+- [x] Justifier view voiture à gauche anis
+- [x] Changer style newsletter en bas
+- [x] Changer commande, ne pas afficher les commandes si personne n’est connecté
+- [ ] Rajouter quelque chose ou un message quand on se connecte ou enregistre genre message de bienvenue avec nom
+- [ ] Quand on se connecte charger une autre page
+- [ ] Afficher le nom de l’utilisateur sous l’icône utilisateur dans la barre de NAV
+- [ ] Dès qu’on se connecte, on charge commande
+- [ ] Ajouter option pour modifier son profil compte utilisateur
+- [ ] Sur la page se connecter et s’enregistrer mettre un bouton pour revenir sur le site normal
+- [ ] Mettre la vidéo sur la page, inscrivez-vous en background
+- [ ] Remettre la barre de navigation sur les pages se connecter et s’inscrire
+- [ ] Quand je me connecte avec un compte type admin, j’affiche l’interface de admin
+- [ ] Mettre des graphes et des statistiques sur la page admin (sur le Dashboard) (D3.js)
+- [ ] Changer l’interface, mes produits sous forme de liste et avec des icônes
+- [ ] Mettre une option pour cliquer, n’importe où pour revenir sur le Dashboard sur la page admin

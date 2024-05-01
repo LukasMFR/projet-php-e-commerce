@@ -7,8 +7,10 @@
 		<nav class="navbar">
 			<!-- <a href="home.php">Accueil</a> -->
 			<a href="view_products.php">Voitures</a>
-			<a href="view_puffs.php">Puffs</a>
+			<a href="view_puffs.php">Vapes</a>
+			<?php if (isset($_SESSION['user_id'])): ?>
 			<a href="order.php">Commandes</a>
+			 <?php endif; ?>
 			<a href="about.php">À propos</a>
 			<a href="contact.php">Nous contacter</a>
 		</nav>
@@ -27,9 +29,11 @@
 			$count_cart_items->execute([$user_id]);
 			$total_cart_items = $count_cart_items->rowCount();
 			?>
-			<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i><sup>
-					<?= $total_cart_items ?>
-				</sup></a>
+			<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i>
+            <?php if ($total_cart_items > 0): ?>
+                 <sup><?= $total_cart_items ?></sup>
+            <?php endif; ?>
+
 			<i class='bx bx-list-plus' id="menu-btn" style="font-size: 2rem;"></i>
 		</div>
 		<div class="user-box">

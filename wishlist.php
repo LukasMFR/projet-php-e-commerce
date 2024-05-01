@@ -50,6 +50,35 @@ if (isset($_POST['add_to_cart'])) {
 	}
 }
 
+//adding puff in cart
+if (isset($_POST['add_to_cart'])) {
+	$id = unique_id();
+	$puff_id = $_POST['puff_id'];
+
+	$qty = 1;
+	$qty = filter_var($qty, FILTER_SANITIZE_STRING);
+
+	$varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
+	$varify_cart->execute([$user_id, $puff_id]);
+
+	$max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+	$max_cart_items->execute([$user_id]);
+
+	if ($varify_cart->rowCount() > 0) {
+		$warning_msg[] = 'Le produit est déjà dans votre panier';
+	} else if ($max_cart_items->rowCount() > 20) {
+		$warning_msg[] = 'Le panier est plein';
+	} else {
+		$select_price = $conn->prepare("SELECT * FROM `puff` WHERE id = ? LIMIT 1");
+		$select_price->execute([$puff_id]);
+		$fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
+
+		$insert_cart = $conn->prepare("INSERT INTO `cart`(id, user_id,puff_id,price,qty) VALUES(?,?,?,?,?)");
+		$insert_cart->execute([$id, $user_id, $puff_id, $fetch_price['price'], $qty]);
+		$success_msg[] = 'Produit ajouté avec succès au panier';
+	}
+}
+
 //delete item from wishlist
 if (isset($_POST['delete_item'])) {
 	$wishlist_id = $_POST['wishlist_id'];
@@ -66,6 +95,7 @@ if (isset($_POST['delete_item'])) {
 		$warning_msg[] = 'Article de la liste de souhaits déjà supprimé';
 	}
 }
+
 
 ?>
 <style type="text/css">
@@ -93,6 +123,7 @@ if (isset($_POST['delete_item'])) {
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Ma liste de souhaits</span>
 		</div>
+
 		<section class="products">
 			<h1 class="title">Voitures dans ma liste de souhaits</h1>
 			<?php
@@ -201,7 +232,6 @@ if (isset($_POST['delete_item'])) {
 			}
 			?>
 		</section>
-
 		<?php include 'components/footer.php'; ?>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

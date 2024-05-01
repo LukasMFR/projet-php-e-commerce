@@ -120,6 +120,53 @@ if (isset($_POST['empty_cart'])) {
 				}
 				?>
 			</div>
+
+			<div class="box-container">
+				<?php
+				$grand_total = 0;
+				$select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+				$select_cart->execute([$user_id]);
+				if ($select_cart->rowCount() > 0) {
+					while ($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)) {
+						$select_puff = $conn->prepare("SELECT * FROM `puff` WHERE id= ?");
+						$select_puff->execute([$fetch_cart['puff_id']]);
+						if ($select_puff->rowCount() > 0) {
+							$fetch_puff = $select_puff->fetch(PDO::FETCH_ASSOC);
+
+								?>
+							<form method="post" action="" class="box">
+								<input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
+								<img src="image/<?= $fetch_puff['image']; ?>" class="img">
+								<h3 class="name">
+									<?= $fetch_puff['name']; ?>
+								</h3>
+								<div class="flex">
+									<p class="price">Prix :
+										<?= $fetch_puff['price']; ?> €
+									</p>
+									<input type="number" name="qty" required min="1" value="<?= $fetch_cart['qty']; ?>" max="99"
+										maxlength="2" class="qty">
+									<button type="submit" name="update_cart" class="bx bxs-edit fa-edit"></button>
+								</div>
+								<p class="sub-total">Sous-total : <span>
+										<?= $sub_total = ($fetch_cart['qty'] * $fetch_cart['price']) ?> €
+									</span></p>
+
+								<button type="submit" name="delete_item" class="btn"
+									onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
+							</form>
+							<?php
+							$grand_total += $sub_total;
+						} else {
+							echo '<p class="empty">Produit non trouvé</p>';
+						}
+					}
+				} else {
+					echo '<p class="empty">Aucun produit ajouté !</p>';
+				}
+				?>
+			</div>
+
 			<?php
 			if ($grand_total != 0) {
 				?>

@@ -11,6 +11,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header("location: login.php");
 }
+
 // Adding puff to wishlist
 if (isset($_POST['add_to_wishlist'])) {
     $id = unique_id();
@@ -40,15 +41,15 @@ if (isset($_POST['add_to_wishlist'])) {
         $success_msg[] = 'Produit ajouté avec succès à la liste de souhaits';
     }
 }
-//adding pu in cart
+//adding puff in cart
 if (isset($_POST['add_to_cart'])) {
     $id = unique_id();
-    $product_id = $_POST['puff_id'];
+    $puff_id = $_POST['puff_id'];
 
     $qty = $_POST['qty'];
     $qty = filter_var($qty, FILTER_SANITIZE_STRING);
 
-    $varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+    $varify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND puff_id = ?");
     $varify_cart->execute([$user_id, $puff_id]);
 
     $max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
@@ -88,8 +89,8 @@ if (isset($_POST['add_to_cart'])) {
 <body>
     <?php include 'components/header.php'; ?>
     <div class="main">
-        <div class="banner">
-            <h1>Puffs</h1>
+        <div class="banner puff">
+            <h1></h1>
         </div>
         <div class="title2">
             <a href="home.php">Accueil </a><span>/ Puffs</span>
