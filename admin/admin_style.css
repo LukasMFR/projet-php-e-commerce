@@ -670,7 +670,7 @@ header.scrolled::before {
 
 .dashboard .box-container .box h3 {
 	font-size: 2.7rem;
-	margin-bottom: -1rem;
+	margin-bottom: 1rem;
 }
 
 .dashboard .box-container .box p {
@@ -1014,7 +1014,5 @@ header.scrolled::before {
 
 canvas {
 	display: block;
-	/* Assurez-vous que le canvas est affiché */
 	background-color: #fff;
-	/* Ajoute une couleur de fond pour le distinguer */
 }
