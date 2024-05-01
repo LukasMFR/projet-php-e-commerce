@@ -1,7 +1,7 @@
 - [ ] Numéro panier et wishlist anis
 - [x] Justifier view voiture à gauche anis
 - [x] Changer style newsletter en bas
-- [ ] Changer commande, ne pas afficher les commandes si personne n’est connecté
+- [x] Changer commande, ne pas afficher les commandes si personne n’est connecté
 - [ ] Rajouter quelque chose ou un message quand on se connecte ou enregistre genre message de bienvenue avec nom
 - [ ] Quand on se connecte charger une autre page
 - [ ] Afficher le nom de l’utilisateur sous l’icône utilisateur dans la barre de NAV
