@@ -73,9 +73,9 @@ if (isset($_POST['delete'])) {
 								<input type="hidden" name="product_id" value="<?= $fetch_posts['id']; ?>">
 								<?php if (!empty($fetch_posts['image'])) { ?>
 									<div class="post-image">
-									<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
-									<img src="../image/<?= $fetch_posts['image2']; ?>" class="image">
-									<img src="../image/<?= $fetch_posts['image3']; ?>" class="image">
+										<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
+										<img src="../image/<?= $fetch_posts['image2']; ?>" class="image">
+										<img src="../image/<?= $fetch_posts['image3']; ?>" class="image">
 									</div>
 								<?php } ?>
 								<div class="status"
@@ -85,9 +85,13 @@ if (isset($_POST['delete'])) {
 								<div class="title"><?= $fetch_posts['name']; ?></div>
 								<div class="price"><?= number_format($fetch_posts['price'], 2, ',', ' ') ?> €</div>
 								<div class="flex-btn">
-									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa-solid fa-pen"></i></a>
-									<button type="submit" name="delete" class="btn" onclick="return confirm('Supprimer cet article ?')"><i class="fa-solid fa-trash"></i></button>
-									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i class="fa fa-eye"></i></a>
+									<a href="edit_post.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i
+											class="fa-solid fa-pen"></i></a>
+									<button type="submit" name="delete" class="btn"
+										onclick="return confirm('Supprimer cet article ?')"><i
+											class="fa-solid fa-trash"></i></button>
+									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i
+											class="fa fa-eye"></i></a>
 								</div>
 							</form>
 							<?php
