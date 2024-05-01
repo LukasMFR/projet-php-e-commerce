@@ -111,13 +111,13 @@ if (isset($_POST['delete_item'])) {
 						$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC);
 						?>
 						<form method="post" action="" class="box product-view-form">
-							<input type="hidden" name="wishlist_id" value="<?= htmlspecialchars($fetch_wishlist['id']); ?>">
+							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
 							<input type="hidden" name="item_type" value="product"> <!-- Specify the item type as 'product' -->
 							<div class="image-overlay">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+									<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
 										class="icon-button"><i class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
@@ -126,14 +126,14 @@ if (isset($_POST['delete_item'])) {
 							</div>
 							<div class="wishlist-info">
 								<h3 class="name wishlist-name">
-									<?= htmlspecialchars($fetch_products['name']); ?>
+									<?= $fetch_products['name']; ?>
 								</h3>
 								<p class="price wishlist-price">Prix :
-									<?= htmlspecialchars($fetch_products['price']); ?> €
+									<?= $fetch_products['price']; ?> €
 								</p>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<a href="checkout.php?get_id=<?= htmlspecialchars($fetch_products['id']); ?>&type=product" class="btn">Acheter
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<a href="checkout.php?get_id=<?= $fetch_products['id']; ?>&type=product" class="btn">Acheter
 								maintenant</a>
 						</form>
 						<?php
@@ -166,13 +166,13 @@ if (isset($_POST['delete_item'])) {
 
 						?>
 						<form method="post" action="" class="box product-view-form">
-							<input type="hidden" name="wishlist_id" value="<?= htmlspecialchars($fetch_wishlist['id']); ?>">
+							<input type="hidden" name="wishlist_id" value="<?= $fetch_wishlist['id']; ?>">
 							<input type="hidden" name="item_type" value="puff"> <!-- Specify the item type as 'puff' -->
 							<div class="image-overlay">
-								<img src="image/<?= htmlspecialchars($fetch_puff['image']); ?>" class="img">
+								<img src="image/<?= $fetch_puff['image']; ?>" class="img">
 								<div class="button-group">
 									<button type="submit" name="add_to_cart" class="icon-button"><i class="bx bx-cart"></i></button>
-									<a href="view_page_puffs.php?pid=<?= htmlspecialchars($fetch_puff['id']); ?>&type=puff"
+									<a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>&type=puff"
 										class="icon-button"><i class="bx bxs-show"></i></a>
 									<button type="submit" name="delete_item" class="icon-button"
 										onclick="return confirm('Voulez-vous supprimer cet article de la liste de souhaits ?');"><i
@@ -181,14 +181,14 @@ if (isset($_POST['delete_item'])) {
 							</div>
 							<div class="wishlist-info">
 								<h3 class="name wishlist-name">
-									<?= htmlspecialchars($fetch_puff['name']); ?>
+									<?= $fetch_puff['name']; ?>
 								</h3>
 								<p class="price wishlist-price">Prix :
-									<?= htmlspecialchars($fetch_puff['price']); ?> €
+									<?= $fetch_puff['price']; ?> €
 								</p>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_puff['id']); ?>">
-							<a href="checkout.php?get_id=<?= htmlspecialchars($fetch_puff['id']); ?>&type=puff" class="btn">Acheter
+							<input type="hidden" name="product_id" value="<?= $fetch_puff['id']; ?>">
+							<a href="checkout.php?get_id=<?= $fetch_puff['id']; ?>&type=puff" class="btn">Acheter
 								maintenant</a>
 						</form>
 						<?php

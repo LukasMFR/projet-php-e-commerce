@@ -94,13 +94,13 @@ if (isset($_POST['empty_cart'])) {
 							$fetch_products = $select_products->fetch(PDO::FETCH_ASSOC);
 							?>
 							<form method="post" action="" class="box">
-								<input type="hidden" name="cart_id" value="<?= htmlspecialchars($fetch_cart['id']); ?>">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<h3 class="name"><?= htmlspecialchars($fetch_products['name']); ?></h3>
+								<input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<h3 class="name"><?= $fetch_products['name']; ?></h3>
 								<div class="flex">
-									<p class="price">Prix : <?= htmlspecialchars($fetch_products['price']); ?> €</p>
+									<p class="price">Prix : <?= $fetch_products['price']; ?> €</p>
 									<input type="number" name="qty" required min="1"
-										value="<?= htmlspecialchars($fetch_cart['qty']); ?>" max="99" maxlength="2" class="qty">
+										value="<?= $fetch_cart['qty']; ?>" max="99" maxlength="2" class="qty">
 									<button type="submit" name="update_cart" class="bx bxs-edit fa-edit"></button>
 								</div>
 								<p class="sub-total">Sous-total :

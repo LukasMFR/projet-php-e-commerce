@@ -189,10 +189,10 @@ if (isset($_POST['place_order'])) {
 								$grand_total += $sub_total;
 								?>
 								<div class="flex">
-									<img src="image/<?= htmlspecialchars($fetch_item['image']); ?>" class="image">
+									<img src="image/<?= $fetch_item['image']; ?>" class="image">
 									<div>
-										<h3 class="name"><?= htmlspecialchars($fetch_item['name']); ?></h3>
-										<p class="price"><?= htmlspecialchars($fetch_item['price']); ?> € X 1</p>
+										<h3 class="name"><?= $fetch_item['name']; ?></h3>
+										<p class="price"><?= $fetch_item['price']; ?> € X 1</p>
 									</div>
 								</div>
 								<?php
@@ -209,11 +209,11 @@ if (isset($_POST['place_order'])) {
 									$grand_total += $sub_total;
 									?>
 									<div class="flex">
-										<img src="image/<?= htmlspecialchars($fetch_cart['image']); ?>" class="image">
+										<img src="image/<?= $fetch_cart['image']; ?>" class="image">
 										<div>
-											<h3 class="name"><?= htmlspecialchars($fetch_cart['name']); ?></h3>
-											<p class="price"><?= htmlspecialchars($fetch_cart['price']); ?> € X
-												<?= htmlspecialchars($fetch_cart['qty']); ?>
+											<h3 class="name"><?= $fetch_cart['name']; ?></h3>
+											<p class="price"><?= $fetch_cart['price']; ?> € X
+												<?= $fetch_cart['qty']; ?>
 											</p>
 										</div>
 									</div>

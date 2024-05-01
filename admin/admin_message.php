@@ -63,13 +63,13 @@ if (isset($_POST['delete_review'])) {
 					while ($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)) {
 						?>
 						<div class="box">
-							<h3 class="name"><?= htmlspecialchars($fetch_message['name']); ?></h3>
-							<h4><?= htmlspecialchars($fetch_message['subject']); ?></h4>
-							<p class="email"><strong>Email:</strong> <?= htmlspecialchars($fetch_message['email']); ?></p>
+							<h3 class="name"><?= $fetch_message['name']; ?></h3>
+							<h4><?= $fetch_message['subject']; ?></h4>
+							<p class="email"><strong>Email:</strong> <?= $fetch_message['email']; ?></p>
 							<?php if (!empty($fetch_message['phone'])) { ?>
-								<p class="phone"><strong>Téléphone:</strong> <?= htmlspecialchars($fetch_message['phone']); ?></p>
+								<p class="phone"><strong>Téléphone:</strong> <?= $fetch_message['phone']; ?></p>
 							<?php } ?>
-							<p class="message-content"><?= htmlspecialchars($fetch_message['message']); ?></p>
+							<p class="message-content"><?= $fetch_message['message']; ?></p>
 
 							<form action="" method="post" class="flex-btn">
 								<input type="hidden" name="delete_id" value="<?= $fetch_message['id']; ?>">

@@ -115,13 +115,13 @@ if (isset($_POST['delete_image'])) {
 					?>
 					<div class="form-container">
 						<form action="" method="post" enctype="multipart/form-data">
-							<input type="hidden" name="old_image" value="<?= htmlspecialchars($fetch_posts['image']); ?>">
-							<input type="hidden" name="post_id" value="<?= htmlspecialchars($fetch_posts['id']); ?>">
+							<input type="hidden" name="old_image" value="<?= $fetch_posts['image']; ?>">
+							<input type="hidden" name="post_id" value="<?= $fetch_posts['id']; ?>">
 							<div class="input-field">
 								<label>Statut du produit <sup>*</sup></label>
 								<select name="status" required>
-									<option value="<?= htmlspecialchars($fetch_posts['status']); ?>" selected>
-										<?= htmlspecialchars($fetch_posts['status']); ?>
+									<option value="<?= $fetch_posts['status']; ?>" selected>
+										<?= $fetch_posts['status']; ?>
 									</option>
 									<option value="actif">Actif</option>
 									<option value="inactif">Inactif</option>
@@ -130,12 +130,12 @@ if (isset($_POST['delete_image'])) {
 							<div class="input-field">
 								<label>Nom du produit<sup>*</sup></label>
 								<input type="text" name="title" maxlength="100" required placeholder="Entrez le nom du produit"
-									value="<?= htmlspecialchars($fetch_posts['name']); ?>">
+									value="<?= $fetch_posts['name']; ?>">
 							</div>
 							<div class="input-field">
 								<label>Prix du produit <sup>*</sup></label>
 								<input type="number" name="price" min="0" step="0.01"
-									value="<?= htmlspecialchars($fetch_posts['price']); ?>" required>
+									value="<?= $fetch_posts['price']; ?>" required>
 							</div>
 							<div class="input-field">
 								<label>Détail du produit <sup>*</sup></label>
@@ -146,23 +146,23 @@ if (isset($_POST['delete_image'])) {
 								<label>Saveur du produit<sup>*</sup></label>
 								<input type="text" name="goût" maxlength="100" required
 									placeholder="Entrez la saveur du produit"
-									value="<?= htmlspecialchars($fetch_posts['goût']); ?>">
+									value="<?= $fetch_posts['goût']; ?>">
 							</div>
 							<div class="input-field">
 								<label>Taux de nicotine <sup>*</sup></label>
 								<input type="number" name="nicotine" min="0" step="0.01"
-									value="<?= htmlspecialchars($fetch_posts['nicotine']); ?>" required>
+									value="<?= $fetch_posts['nicotine']; ?>" required>
 							</div>
 							<div class="input-field">
 								<label>Nombre de taffes du produit<sup>*</sup></label>
 								<input type="number" name="taffe" min="0"
-									value="<?= htmlspecialchars($fetch_posts['taffe']); ?>" required>
+									value="<?= $fetch_posts['taffe']; ?>" required>
 							</div>
 							<div class="input-field">
 								<label>Image du produit <sup>*</sup></label>
 								<input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
 								<?php if ($fetch_posts['image'] != '') { ?>
-									<img src="../image/<?= htmlspecialchars($fetch_posts['image']); ?>" class="image">
+									<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
 									<div class="flex-btn">
 										<input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image">
 										<a href="view_posts_puff.php" class="btn"

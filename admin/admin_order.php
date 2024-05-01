@@ -79,22 +79,22 @@ if (isset($_POST['update_order'])) {
 						<div class="box">
 							<div class="status"
 								style="color: <?= $fetch_orders['status'] == 'en cours' ? 'limegreen' : 'coral'; ?>;">
-								<?= htmlspecialchars($fetch_orders['status']) ?>
+								<?= $fetch_orders['status'] ?>
 							</div>
 							<div class="detail">
-								<p>Nom de l'utilisateur : <span><?= htmlspecialchars($fetch_orders['name']); ?></span></p>
-								<p>ID de l'utilisateur : <span><?= htmlspecialchars($fetch_orders['user_id']); ?></span></p>
-								<p>Placée le : <span><?= htmlspecialchars($fetch_orders['date']); ?></span></p>
-								<p>Numéro : <span><?= htmlspecialchars($fetch_orders['number']); ?></span></p>
-								<p>Email : <span><?= htmlspecialchars($fetch_orders['email']); ?></span></p>
-								<p>Prix total : <span><?= htmlspecialchars($fetch_orders['price']); ?></span></p>
-								<p>Méthode : <span><?= htmlspecialchars($fetch_orders['method']); ?></span></p>
-								<p>Adresse : <span><?= htmlspecialchars($fetch_orders['address']); ?></span></p>
+								<p>Nom de l'utilisateur : <span><?= $fetch_orders['name']; ?></span></p>
+								<p>ID de l'utilisateur : <span><?= $fetch_orders['user_id']; ?></span></p>
+								<p>Placée le : <span><?= $fetch_orders['date']; ?></span></p>
+								<p>Numéro : <span><?= $fetch_orders['number']; ?></span></p>
+								<p>Email : <span><?= $fetch_orders['email']; ?></span></p>
+								<p>Prix total : <span><?= $fetch_orders['price']; ?></span></p>
+								<p>Méthode : <span><?= $fetch_orders['method']; ?></span></p>
+								<p>Adresse : <span><?= $fetch_orders['address']; ?></span></p>
 							</div>
 							<form method="post">
-								<input type="hidden" name="order_id" value="<?= htmlspecialchars($fetch_orders['id']); ?>">
+								<input type="hidden" name="order_id" value="<?= $fetch_orders['id']; ?>">
 								<select name="update_payment">
-									<option disabled selected><?= htmlspecialchars($fetch_orders['payment_status']); ?></option>
+									<option disabled selected><?= $fetch_orders['payment_status']; ?></option>
 									<option value="en attente">en attente</option>
 									<option value="completee">completee</option>
 								</select>

@@ -105,15 +105,15 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
 									class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<h1><?= $fetch_products['name']; ?></h1>
 						</form>
 						<?php
 					}
@@ -136,15 +136,15 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
-								<img src="image/<?= htmlspecialchars($fetch_products['image']); ?>" class="img">
-								<a href="view_page.php?pid=<?= htmlspecialchars($fetch_products['id']); ?>"
+								<img src="image/<?= $fetch_products['image']; ?>" class="img">
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
 									class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
 							</div>
-							<input type="hidden" name="product_id" value="<?= htmlspecialchars($fetch_products['id']); ?>">
-							<h1><?= htmlspecialchars($fetch_products['name']); ?></h1>
+							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+							<h1><?= $fetch_products['name']; ?></h1>
 						</form>
 						<?php
 					}

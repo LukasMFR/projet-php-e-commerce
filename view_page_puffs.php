@@ -142,7 +142,7 @@ if (isset($_POST['add_to_cart'])) {
 									</div>
 								</section>
 
-								<input type="hidden" name="puff_id" value="<?php echo htmlspecialchars($fetch_puff['id']); ?>">
+								<input type="hidden" name="puff_id" value="<?php echo $fetch_puff['id']; ?>">
 								<div class="button">
 									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
 											class="bx bx-heart"></i></button>
