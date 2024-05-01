@@ -88,7 +88,7 @@ if (isset($_POST['add_to_cart'])) {
 	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner voiture">
-			<h1></h1>
+			<h1>Voitures</h1>
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Voitures</span>
@@ -124,7 +124,7 @@ if (isset($_POST['add_to_cart'])) {
 			</div>
 
 			<div class="title-product">
-				<img src="img/logotime.webp" class="logo-small">
+				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>
 			<div class="box-container">

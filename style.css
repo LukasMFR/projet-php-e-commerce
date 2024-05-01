@@ -234,27 +234,7 @@ button {
 }
 
 .banner.voiture {
-	background-image: url(./img/banner-bg2.jpg);
-}
-
-.banner.puff {
-	background-image: url(./img/banner-bg-puff.jpg);
-}
-
-.banner.voiture_page {
-	background-image: url(./img/banner-bg2.jpg);
-}
-
-.banner.puff_page {
-	background-image: url(./img/banner-bg-puff.jpg);
-}
-
-.banner.commande {
-	background-image: url(./img/banner2.webp);
-}
-
-.banner.about {
-	background-image: url(./img/banner3.webp);
+	background-image: url(./img/banner-bg2-80.webp);
 }
 
 .banner.voiture h1 {
@@ -265,7 +245,7 @@ button {
 }
 
 .title2 {
-	border-top: 1px solid var(#3f3f3fde);
+	border-top: 1px solid var(--green);
 	padding: 1rem 2rem;
 	text-transform: uppercase;
 	box-shadow: var(--box-shadow);
@@ -273,7 +253,7 @@ button {
 }
 
 .title2 a {
-	color: #3f3f3fde;
+	color: var(--green);
 }
 
 /*--------header------------------*/
@@ -720,7 +700,6 @@ video {
 	width: 60px;
 	height: 60px;
 	object-fit: contain;
-	border-radius: 9px;
 }
 
 .container .box .rounded {
@@ -1227,8 +1206,6 @@ textarea {
 .top-footer .input-field input {
 	flex: 1;
 	min-width: 0;
-	border-radius: 1rem;
-	opacity: 90%;
 }
 
 .top-footer .input-field .btn {
@@ -1681,13 +1658,13 @@ footer .bottom-footer {
 }
 
 .products .box-container.wishlist-box-container .box .price.wishlist-price {
-	color: #333333;
-	font-size: 1.2rem;
-	font-weight: bold;
-	margin: .5rem 0;
-	margin-bottom: 1rem;
-	text-align: left;
-	width: 100%;
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: .5rem 0;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
 }
 
 /*------------view products----------*/
@@ -1800,7 +1777,7 @@ footer .bottom-footer {
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: -120px;
+	margin-top: 30px;
 }
 
 .view_page form .detail {

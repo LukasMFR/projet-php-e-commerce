@@ -244,11 +244,9 @@ textarea {
 
 .box-container {
 	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 	align-items: center;
 }
-
-
-
 
 .box-container .box {
 	margin: 1rem;
@@ -263,7 +261,7 @@ form sup {
 	text-transform: uppercase;
 	padding: 1rem 0;
 	color: var(--orange);
-	margin-bottom: -12rem;
+	margin-bottom: 1rem;
 }
 
 section,
@@ -357,23 +355,6 @@ form span {
 
 .flex-btn {
 	display: flex;
-	margin-bottom: -104px;
-	margin-top: 10px;
-	justify-content: right;
-}
-
-.flex-btn.edit {
-	display: flex;
-	margin-bottom: 26px;
-	margin-top: 120px;
-	justify-content: right;
-}
-
-.view-posts {
-	display: flex;
-	margin-bottom: -10px;
-	margin-top: 10px;
-	justify-content: right;
 }
 
 /*-----------header---------*/
@@ -391,13 +372,6 @@ header {
 	transition: .3s;
 	box-shadow: var(--box-shadow);
 	border-radius: 15px;
-}
-
-
-.post-image {
-	position: relative;
-	display: flex;
-	align-items: center;
 }
 
 header::before {
@@ -616,7 +590,7 @@ header.scrolled::before {
 .profile-detail .flex-btn {
 	display: flex;
 	justify-content: space-evenly;
-	padding-bottom: 114px;
+	padding-bottom: 10px;
 }
 
 .profile-detail .flex-btn .btn {
@@ -657,7 +631,10 @@ header.scrolled::before {
 }
 
 /*-------dashboard-------------*/
+.box-container {
 
+	align-items: center;
+}
 
 .dashboard .box-container .box {
 	text-align: center;
@@ -670,7 +647,7 @@ header.scrolled::before {
 
 .dashboard .box-container .box h3 {
 	font-size: 2.7rem;
-	margin-bottom: 1rem;
+	margin-bottom: -1rem;
 }
 
 .dashboard .box-container .box p {
@@ -693,8 +670,8 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .image {
-	height: 10rem;
-	width: 19%;
+	height: 20rem;
+	width: 100%;
 	object-fit: contain;
 	padding: 1rem;
 	margin: 1rem 0;
@@ -702,8 +679,7 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .status {
-	position: relative;
-	top: -14rem;
+	position: absolute;
 	left: -4%;
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -717,7 +693,7 @@ header.scrolled::before {
 
 .show-post .box-container .box .price {
 	position: absolute;
-	right: 2%;
+	right: 5%;
 	top: 5%;
 	font-size: 2rem;
 	font-weight: bold;
@@ -726,14 +702,12 @@ header.scrolled::before {
 
 .show-post .box-container .box .title {
 	font-size: 1.2rem;
-	position: relative;
-	top: -233px;
 	text-transform: uppercase;
+	text-align: center;
 	font-weight: bold;
 	color: var(--orange);
-	margin-bottom: -9rem;
+	margin-bottom: 1rem;
 }
-
 
 .show-post .box-container .box .posts-content {
 	font-size: 1.3rem;
@@ -743,11 +717,10 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .btn {
-	margin: 0.2rem;
-	padding: 1rem 0.5rem;
-	width: 5%;
+	margin: .2rem;
+	padding: .6rem 1.5rem;
+	width: 30%;
 	text-align: center;
-
 }
 
 .show-post .box-container .box button {
@@ -1009,10 +982,4 @@ header.scrolled::before {
 	form {
 		width: 100%;
 	}
-}
-
-
-.canvas {
-	display: block;
-	background-color: #fff;
 }

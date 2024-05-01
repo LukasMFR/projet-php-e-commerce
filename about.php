@@ -30,7 +30,7 @@ if (isset($_POST['logout'])) {
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-		<div class="banner about">
+		<div class="banner">
 			<h1>À propos de nous</h1>
 		</div>
 		<div class="title2">

@@ -93,8 +93,8 @@ if (isset($_POST['add_to_cart'])) {
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main">
-		<div class="banner voiture_page">
-
+		<div class="banner">
+			<h1>Détail du produit</h1>
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Détail du produit</span>
@@ -118,10 +118,10 @@ if (isset($_POST['add_to_cart'])) {
 										class="third-image">
 								</div>
 							</div>
-							<div class="detail" style="text-align: left;">
+							<div class="detail">
 								<div class="price"><?php echo $fetch_products['price']; ?> €</div>
 								<div class="name"><?php echo $fetch_products['name']; ?></div>
-								<div class="detail" style="text-align: left;">
+								<div class="detail">
 									<?php echo nl2br($fetch_products['product_detail']); ?>
 								</div>
 								<section id="skills" class="skills">

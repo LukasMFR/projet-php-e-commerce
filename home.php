@@ -67,7 +67,7 @@ if (isset($_POST['logout'])) {
 		<section class="container">
 			<div class="welcome">
 				<div class="box">
-					<img src="img/imagepres.png" class="rounded">
+					<img src="img/imagepres.jpg" class="rounded">
 				</div>
 				<div class="box">
 					<img src="img/download.png" class="logo-small">
@@ -80,7 +80,7 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="shop">
 			<div class="title">
-				<img src="img/logobuff.webp" class="logo-small">
+				<img src="img/download.png" class="logo-small">
 				<h1>Produits tendance</h1>
 			</div>
 			<div class="box-container">
@@ -101,7 +101,7 @@ if (isset($_POST['logout'])) {
 				</div>
 			</div>
 			<div class="title">
-				<img src="img/logotime.webp" class="logo-small">
+				<img src="img/download.png" class="logo-small">
 				<h1>Bientôt disponible</h1>
 			</div>
 			<div class="box-container">
@@ -124,7 +124,7 @@ if (isset($_POST['logout'])) {
 		</section>
 		<section class="shop-category">
 			<div class="title">
-				<img src="img/logopuff.webp" class="logo-small">
+				<img src="img/download.png" class="logo-small">
 				<h1>Gamme de puffs</h1>
 			</div>
 			<div class="box-container">
