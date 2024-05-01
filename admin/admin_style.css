@@ -365,7 +365,7 @@ form span {
 .flex-btn.edit {
 	display: flex;
 	margin-bottom: 26px;
-	margin-top:  120px;
+	margin-top: 120px;
 	justify-content: right;
 }
 
@@ -394,10 +394,10 @@ header {
 }
 
 
-.post-image{
+.post-image {
 	position: relative;
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
 
 header::before {
@@ -702,7 +702,8 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .status {
-	position: absolute;
+	position: relative;
+	top: -14rem;
 	left: -4%;
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -726,7 +727,7 @@ header.scrolled::before {
 .show-post .box-container .box .title {
 	font-size: 1.2rem;
 	position: relative;
-	top: -12rem;
+	top: -233px;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: var(--orange);
@@ -742,11 +743,11 @@ header.scrolled::before {
 }
 
 .show-post .box-container .box .btn {
-	margin: .2rem;
-	padding: 0rem 0.5rem;
-	width: 10%;
+	margin: 0.2rem;
+	padding: 1rem 0.5rem;
+	width: 5%;
 	text-align: center;
-	
+
 }
 
 .show-post .box-container .box button {
@@ -1008,4 +1009,12 @@ header.scrolled::before {
 	form {
 		width: 100%;
 	}
+}
+
+
+canvas {
+	display: block;
+	/* Assurez-vous que le canvas est affiché */
+	background-color: #fff;
+	/* Ajoute une couleur de fond pour le distinguer */
 }

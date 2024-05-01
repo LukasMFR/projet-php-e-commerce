@@ -21,6 +21,7 @@ if (!isset($admin_id)) {
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<title>Tableau de bord admin - Road Luxury</title>
 </head>
 
@@ -36,13 +37,12 @@ if (!isset($admin_id)) {
 		<section class="dashboard">
 			<h1 class="heading">Tableau de bord</h1>
 			<div class="box-container">
+
 				<div class="box">
-					<h3>Bienvenue !</h3>
-					<p><?= $fetch_profile['name']; ?></p>
-					<a href="update_profile.php" class="btn">Mettre à jour le profil</a>
+    				<h3>Statistiques de vente</h3>
+    				<canvas id="myChart" style=""></canvas> 
 				</div>
-
-
+				
 				<div class="box">
 					<?php
 					$select_post = $conn->prepare("SELECT * FROM `products`");
@@ -141,6 +141,32 @@ if (!isset($admin_id)) {
 	</div>
 
 	<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+var xValues = ["MCLAREN", "BUGATTI", "LAMBORGHINI", "ALPINE ", "FERRARI ", "PORSCHE ", "MERCEDES"];
+var yValues = [55, 49, 44, 24, 15, 0, 0];
+var barColors = ["red", "green", "blue", "orange", "brown", "black", "yellow"];
+
+new Chart("myChart", {
+    type: "bar",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 </body>
 
 </html>
