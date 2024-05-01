@@ -123,8 +123,8 @@ if (isset($_POST['delete_image'])) {
 									<option value="<?= $fetch_posts['status']; ?>" selected>
 										<?= $fetch_posts['status']; ?>
 									</option>
-									<option value="actif">Actif</option>
-									<option value="inactif">Inactif</option>
+									<option value="actif">actif</option>
+									<option value="inactif">inactif</option>
 								</select>
 							</div>
 							<div class="input-field">
