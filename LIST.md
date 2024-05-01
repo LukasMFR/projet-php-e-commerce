@@ -1,4 +1,4 @@
-- [x] Numéro panier et wishlist anis
+- [] Numéro panier et wishlist anis
 - [x] Justifier view voiture à gauche anis
 - [ ] Changer style newsletter en bas
 - [ ] Changer commande, ne pas afficher les commandes si personne n’est connecté

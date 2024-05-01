@@ -3,21 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 29 avr. 2024 à 11:17
+-- Généré le : mer. 01 mai 2024 à 16:32
 -- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.0.30
-
-DROP DATABASE IF EXISTS autocar;
-CREATE DATABASE autocar ;
-USE autocar ;
-DROP TABLE IF EXISTS admin ;
-DROP TABLE IF EXISTS cart ;
-DROP TABLE IF EXISTS message ;
-DROP TABLE IF EXISTS orders ;
-DROP TABLE IF EXISTS products ;
-DROP TABLE IF EXISTS puff ;
-DROP TABLE IF EXISTS users ;
-DROP TABLE IF EXISTS wishlist ;
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,10 +52,16 @@ CREATE TABLE `cart` (
   `id` varchar(20) NOT NULL,
   `user_id` varchar(20) NOT NULL,
   `product_id` varchar(20) NOT NULL,
-  `puff_id` varchar(255) NOT NULL,
-  `price` int(10) NOT NULL,
+  `price` varchar(10) NOT NULL,
   `qty` varchar(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `price`, `qty`) VALUES
+('JLLFIOldIciYlxyQ7bH1', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '375 000', '1');
 
 -- --------------------------------------------------------
 
@@ -134,7 +128,9 @@ INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `address`, `ad
 ('9vucKr2sSPqcIUidPedP', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'office', 'cash on delivery', 'kun96OpQed6Eww6M1URo', '120', '1', '2023-02-28', 'en cours', 'en attente'),
 ('gq2RDUuhaPe7TDcxiGCy', 'UAVjN46f0bvXSKquej8S', 'Paul', '0675001234', 'paul.roux@gmail.com', '5 avenue Victor Hugo, 75016 Paris', 'home', 'cash on delivery', 'g5DLcNHmtHvq3DtJYsCb', '80', '1', '2023-02-28', 'en cours', 'en attente'),
 ('JqyfHoT9UzR4qcvp3LNJ', 'd5URvsP8VusCXQoCdMBG', 'Camille', '0675001234', 'camille.blanchard@gmail.com', '20 rue Montorgueil, 75001 Paris', 'home', 'credit or debit card', 'BLTtlhOgq1cuz7plh4Ia', '123', '1', '2023-02-28', 'en cours', 'completee'),
-('yyD4B276Pg9lfGpRjcr9', 'd5URvsP8VusCXQoCdMBG', 'Camille', '0675045678', 'camille.blanchard@gmail.com', '20 rue Montorgueil, 75001 Paris', 'office', 'credit or debit card', 'jo35YMmBWpvbCMB65UdA', '160', '2', '2023-02-28', 'annulee', 'en attente');
+('yyD4B276Pg9lfGpRjcr9', 'd5URvsP8VusCXQoCdMBG', 'Camille', '0675045678', 'camille.blanchard@gmail.com', '20 rue Montorgueil, 75001 Paris', 'office', 'credit or debit card', 'jo35YMmBWpvbCMB65UdA', '160', '2', '2023-02-28', 'annulee', 'en attente'),
+('78CgqrjlncU1nv6BqECi', 'UAVjN46f0bvXSKquej8S', 'hillel ohayon', '0667676767', 'ohayonhillel173@gmail.com', '12 Rue Scandicci, 12, PANTIN, France, 93500', 'home', 'cash on delivery', 'jo35YMmBWpvbCMB65UdA', '10 000 000', '1', '2024-05-01', 'annulee', 'completee'),
+('arHJ26o0g6pK2EhXU07J', 'UAVjN46f0bvXSKquej8S', 'hillel ohayon', '0667676767', 'ohayonhillel173@gmail.com', '12 Rue Scandicci, 12, PANTIN, France, 93500', 'home', 'cash on delivery', 'g5DLcNHmtHvq3DtJYsCb', '111 997', '1', '2024-05-01', 'in progress', '');
 
 -- --------------------------------------------------------
 
@@ -166,7 +162,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `image3`, `image2`, `product_detail`, `status`, `Modèle`, `Année`, `moteur`, `kilométrage`, `equipements`, `etat`, `pointsforts`) VALUES
 ('BLTtlhOgq1cuz7plh4Ia', 'McLaren 720s', '375 000', 'mc1.jpg', 'mc3.png', 'mc2.jpg', 'Véhicule sportif haute performance alliant design aérodynamique et technologie de pointe.', 'actif', 'McLaren 720s', '2022', 'V8 de 4,0 L', '1000 Km', 'Climatisation automatique bizone, Régulateur de vitesse, Système multimédia avec écran tactile de 8 pouces, Bluetooth, Prises USB, Navigateur GPS, Capteurs de pluie et de lumière', 'Neuf', 'Le 0 à 100 km/h est parcouru en seulement 2,8 secondes'),
-('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', 'Climatisation automatique bizone, système multimédia avancé, sièges en cuir premium, capteurs de stationnement.', 'Neuf', '0 à 100 km/h en 2,4s'),
+('jo35YMmBWpvbCMB65UdA', 'Bugatti La Voiture Noire', '10 000 000', 'bugatienoir.jpg', 'bugati3.jpg', 'bugati2.jpg', 'Un chef-d’œuvre moderne rendant hommage au patrimoine de Bugatti, limité à quelques unités.', 'actif', 'Bugatti La Voiture Noire', '2029', '16-cylindres en W quadri-turbo de 8 litres', '10 Km', '', '', ''),
 ('aSBHDzG26iXurm6cfoNv', 'Lamborghini Revuelto', '699 000', 'lambo4.jpg', 'lambo6.jpg', 'lambo5.jpg', 'Un supercar électrifiant qui combine performance extrême et style audacieux.', 'actif', 'Lamborghini Revuelto', '2023', 'V12 hybride', '75 km', 'Système infotainment avec écran tactile, intégration smartphone, régulateur de vitesse adaptatif.', 'Neuf', 'Une accélération de 0 à 100 km/h en seulement 2,8 secondes.'),
 ('g5DLcNHmtHvq3DtJYsCb', 'Alpine A110 R', '111 997', 'alpine.jpg', 'alpine3.jpg', 'alpine2.jpg', 'Voiture sportive légère et agile, optimisée pour les performances de piste.', 'actif', 'Alpine A110 R', '2020', '4 cylindres en ligne de 1,8 L', '1000 Km', 'KIT AERO MP-R', 'Occasion', '0 à 100 km/h en 3,9 sec pour une vitesse de pointe de 285 km/h'),
 ('uOarNNg0n3KD9OvPtItP', 'Ferrari SP51', '10 000 000', 'ferariesp51.png', 'ferarie3.jpg', 'ferarie2.png', 'Un roadster exclusif au design saisissant et aux performances époustouflantes, basé sur la 812 GTS.', 'actif', 'Ferrari SP51', '2022', 'V12', '0 Km', 'Intérieur luxueux en cuir, système de navigation avancé, caméra de recul.', 'Neuf', '0 à 100 km/h en moins de 3 secondes'),
@@ -242,23 +238,16 @@ CREATE TABLE `wishlist` (
   `id` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `product_id` varchar(255) NOT NULL,
-  `puff_id` varchar(255) NOT NULL,
-  `price` int(255) NOT NULL
+  `price` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `wishlist`
 --
 
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `puff_id`, `price`) VALUES
-('bXpS0Vb2T7chEAa28SGQ', 'UAVjN46f0bvXSKquej8S', 'aSBHDzG26iXurm6cfoNv', '0', 699),
-('9vEdPoV58gfvFSab0glR', 'UAVjN46f0bvXSKquej8S', '', '0', 12),
-('rgOdtejKScFP1LIhEsrL', 'UAVjN46f0bvXSKquej8S', '', '0', 300),
-('BsrWUeLicnDeAabpTamD', 'UAVjN46f0bvXSKquej8S', 'BLTtlhOgq1cuz7plh4Ia', '0', 375),
-('bEc7kdPA9Xts9PHY322T', 'UAVjN46f0bvXSKquej8S', 'uOarNNg0n3KD9OvPtItP', '0', 10),
-('7h1o2X2zlloVyeSVWS43', 'UAVjN46f0bvXSKquej8S', '', '0', 12),
-('X0N1DFP3fm7cUv1j1oYN', 'saXAlrnp3YHOBTxClO0A', '', '0', 12),
-('5zu6QaLMQggUlsj8XRQH', 'saXAlrnp3YHOBTxClO0A', 'BLTtlhOgq1cuz7plh4Ia', '', 375);
+INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `price`) VALUES
+('iQYxaH3xkxMZRiy81XHx', 'UAVjN46f0bvXSKquej8S', 'jo35YMmBWpvbCMB65UdA', '10 000 000'),
+('YVriKrp5QsvZ70RXVJia', '', 'aSBHDzG26iXurm6cfoNv', '699 000');
 
 --
 -- Index pour les tables déchargées
