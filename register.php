@@ -45,8 +45,21 @@ if (isset($_POST['submit'])) {
 		}
 	}
 }
-
 ?>
+
+<?php
+session_start();
+// Vérifiez les identifiants de l'utilisateur ici et connectez-le
+if (identifiants_corrects) {
+    $_SESSION['user_id'] = $user_id_obtenu; // Assurez-vous de définir les informations utilisateur
+    $_SESSION['welcome'] = true; // Préparer le message de bienvenue
+    header("Location: homepage.php"); // Redirigez l'utilisateur vers la page d'accueil après connexion
+    exit;
+}
+?>
+
+
+
 <style type="text/css">
 	<?php include 'style.css'; ?>
 </style>
