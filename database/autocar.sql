@@ -236,7 +236,7 @@ INSERT INTO `admin` (`name`, `email`, `password`, `profile`) VALUES
 --
 
 INSERT INTO `puff` (`id`, `name`, `price`, `image`, `product_detail`, `status`, `goût`, `taffe`, `nicotine`) VALUES
-('wrJTrzoHsuEwr7hGi3R6', 'Puff naturel', 300.00, 'puff6.jpg', 'A la recherche d’une saveur d''essences et originale pour votre vapotage ?\r\nDécouvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande !', 'actif', 'Gaz Naturelle', 1000, 0.00),
+('ejdeAP6eQg302GkPE4E9', 'Puff naturel', 300.00, 'puff6.jpg', 'A la recherche d’une saveur d''essences et originale pour votre vapotage ?\r\nDécouvrez la TurboVape Gaz Naturelle by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande !', 'actif', 'Gaz Naturelle', 1000, 0.00),
 ('pWY5Mf0987NUdbPoxuBu', 'Puff Gazole', 12.00, 'puff1.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Gazole by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Gazole', 1000, 5.00),
 ('ICg3StZandimDp1BU1m2', 'Puff Sans Plomb 95', 14.00, 'puff2.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Sans Plomb 95 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Sans Plomb 95', 1000, 5.00),
 ('0lKHBlsFPaTpTFlnHUXf', 'Puff Superéthanol E85', 12.00, 'puff3.jpg', 'A la recherche d’une saveur d&#39;essences et originale pour votre vapotage ? Découvrez la TurboVape Superéthanol E85 by Road Luxury, aux arômes exclusifs pour une vape fun et gourmande ! ', 'actif', 'Superéthanol E85', 1000, 7.50),

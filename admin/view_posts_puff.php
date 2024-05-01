@@ -9,11 +9,9 @@ if (!isset($admin_id)) {
 }
 
 //delete post from database
-
 if (isset($_POST['delete'])) {
 	$p_id = $_POST['puff_id'];
 	$p_id = filter_var($p_id, FILTER_SANITIZE_STRING);
-
 
 	$delete_post = $conn->prepare("DELETE FROM `puff` WHERE id = ?");
 	$delete_post->execute([$p_id]);
@@ -51,13 +49,8 @@ if (isset($_POST['delete'])) {
 		<section class="post-editor">
 			<?php
 			if (isset($message)) {
-				foreach ($message as $message) {
-					echo '
-							<div class="message">
-								<span>' . $message . '</span>
-								<i class="bx bx-x" onclick="this.parentElement.remove();"></i>
-							</div>
-						';
+				foreach ($message as $msg) {
+					echo '<div class="message"><span>' . $msg . '</span><i class="bx bx-x" onclick="this.parentElement.remove();"></i></div>';
 				}
 			}
 			?>
@@ -70,19 +63,14 @@ if (isset($_POST['delete'])) {
 					$select_posts->execute();
 					if ($select_posts->rowCount() > 0) {
 						while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
-
-
 							?>
 							<form method="post" class="box">
-								<input type="hidden" name="ppuff_id" value="<?= $fetch_posts['id']; ?>">
-								<?php if ($fetch_posts['image'] != '') { ?>
+								<input type="hidden" name="puff_id" value="<?= $fetch_posts['id']; ?>">
+								<?php if (!empty($fetch_posts['image'])) { ?>
 									<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
 								<?php } ?>
-								<div class="status" style="color: <?php if ($fetch_posts['status'] == 'actif') {
-									echo 'limegreen';
-								} else {
-									echo "coral";
-								} ?>;">
+								<div class="status"
+									style="color: <?= $fetch_posts['status'] == 'actif' ? 'limegreen' : 'coral'; ?>;">
 									<?= $fetch_posts['status'] ?>
 								</div>
 								<div class="price"><?= $fetch_posts['price'] ?> €</div>
@@ -97,16 +85,10 @@ if (isset($_POST['delete'])) {
 							<?php
 						}
 					} else {
-
-						echo '
-								<div class="empty">
-									<p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p>
-								</div>
-							';
+						echo '<div class="empty"><p>Aucun produit pour le moment ! <br><a href="add_posts.php" class="btn" style="margin-top: 1.5rem;">Ajouter un produit</a></p></div>';
 					}
 					?>
 				</div>
-
 			</div>
 		</section>
 	</div>
