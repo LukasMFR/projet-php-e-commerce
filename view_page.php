@@ -167,8 +167,7 @@ if (isset($_POST['add_to_cart'])) {
 									</div>
 								</section>
 
-								<input type="hidden" name="product_id"
-									value="<?php echo $fetch_products['id']; ?>">
+								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
 								<div class="button">
 									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
 											class="bx bx-heart"></i></button>
