@@ -65,7 +65,6 @@ if (isset($_POST['submit'])) {
 				<p>Vous n'avez pas de compte ? <a href="register.php">Inscrivez-vous maintenant</a></p>
 
 				<a href="home.php" class="btn">Retour à l'accueil</a>
-
 			</form>
 		</section>
 	</div>
