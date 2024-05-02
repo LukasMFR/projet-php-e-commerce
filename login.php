@@ -63,14 +63,7 @@ if (isset($_POST['submit'])) {
 
 				<input type="submit" name="submit" value="Se connecter" class="btn">
 				<p>Vous n'avez pas de compte ? <a href="register.php">Inscrivez-vous maintenant</a></p>
-<<<<<<< Updated upstream
-				<!-- Lien Retour vers la page d'accueil -->
 				<a href="home.php" class="btn">Retour à l'accueil</a>
-=======
-
-				<input type="submit" name="submit" value="Go Home" class="btn">
-				<p>Retourner sur le site<a href="home.php">Retourner sur le site</a></p>
->>>>>>> Stashed changes
 			</form>
 		</section>
 	</div>
