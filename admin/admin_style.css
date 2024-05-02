@@ -1059,3 +1059,57 @@ header.scrolled::before {
 	}
 
 }
+
+@media (max-width: 1215px) {
+    .show-post .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 20px;
+		align-items: start;
+    }
+
+    .show-post .box-container .box {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack content vertically */
+        grid-template-rows: auto auto 1fr auto; /* Allocate space for status, name-price, image, and buttons */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .show-post .box-container .box .status, 
+    .show-post .box-container .box .name-price, 
+    .show-post .box-container .box .flex-btn {
+        grid-column: 1 / -1; /* Extend full width of the grid */
+    }
+
+    .show-post .box-container .box .name-price {
+        display: flex;
+        flex-direction: column; /* Stack name and price vertically */
+        align-items: start; /* Align items to the start of the container */
+        gap: 5px; /* Add a small gap between name and price */
+    }
+
+    .show-post .box-container .box .image-box {
+        display: block;
+    }
+
+    .show-post .box-container .box .image-container {
+        display: flex;
+        overflow: hidden; /* Hide additional images */
+    }
+
+    .show-post .box-container .box .image {
+        aspect-ratio: 16 / 9;
+        border-radius: 10px;
+        object-fit: cover;
+        flex: 0 0 100%; /* Make first image take the full width of its container and not shrink or grow */
+    }
+
+    .show-post .box-container .box .image + .image {
+        display: none; /* Hide all images after the first one */
+    }
+
+    .show-post .box-container .box .flex-btn {
+        justify-content: center;
+    }
+}
