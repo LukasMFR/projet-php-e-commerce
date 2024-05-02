@@ -359,13 +359,6 @@ form span {
 	display: flex;
 }
 
-.flex-btn.edit {
-	display: flex;
-	margin-bottom: 26px;
-	margin-top: 120px;
-	justify-content: right;
-}
-
 /*-----------header---------*/
 /*--------header------------------*/
 header {
