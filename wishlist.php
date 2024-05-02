@@ -131,7 +131,7 @@ if (isset($_POST['delete_item'])) {
 									<?= $fetch_products['name']; ?>
 								</h3>
 								<p class="price wishlist-price">Prix :
-									<?= $fetch_products['price']; ?> €
+									<?= number_format($fetch_products['price'], 2, ',', ' '); ?> €
 								</p>
 							</div>
 							<input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">

@@ -114,7 +114,7 @@ if (isset($_POST['add_to_cart'])) {
 								<img src="image/<?php echo $fetch_puff['image']; ?>" alt="Image principale" class="puff">
 							</div>
 							<div class="detail">
-								<div class="price"><?php echo $fetch_puff['price']; ?> €</div>
+								<div class="price"><?php echo number_format($fetch_puff['price'], 2, ',', ' '); ?> €</div>
 								<div class="name"><?php echo $fetch_puff['name']; ?></div>
 								<div class="detail">
 									<?php echo nl2br($fetch_puff['product_detail']); ?>

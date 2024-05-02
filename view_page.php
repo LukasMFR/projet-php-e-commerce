@@ -119,7 +119,7 @@ if (isset($_POST['add_to_cart'])) {
 								</div>
 							</div>
 							<div class="detail">
-								<div class="price"><?php echo $fetch_products['price']; ?> €</div>
+								<div class="price"><?php echo number_format($fetch_products['price'], 2, ',', ' '); ?> €</div>
 								<div class="name"><?php echo $fetch_products['name']; ?></div>
 								<div class="detail">
 									<?php echo nl2br($fetch_products['product_detail']); ?>
