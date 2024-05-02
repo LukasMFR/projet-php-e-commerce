@@ -56,9 +56,9 @@ if (isset($_POST['delete'])) {
 			}
 			?>
 
-			<h1 class="heading"></h1>
+			<!-- <h1 class="heading"></h1> -->
 			<div class="show-post">
-				<div class="box-container">
+				<div class="box-container view-posts">
 					<?php
 					$select_posts = $conn->prepare("SELECT * FROM `puff`");
 					$select_posts->execute();
@@ -67,23 +67,29 @@ if (isset($_POST['delete'])) {
 							?>
 							<form method="post" class="box">
 								<input type="hidden" name="puff_id" value="<?= $fetch_posts['id']; ?>">
-								<?php if (!empty($fetch_posts['image'])) { ?>
-									<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
-								<?php } ?>
 								<div class="status"
 									style="color: <?= $fetch_posts['status'] == 'actif' ? 'limegreen' : 'coral'; ?>;">
-									<?= $fetch_posts['status'] ?>
+									<?= $fetch_posts['status']; ?>
 								</div>
-								<div class="price"><?= $fetch_posts['price'] ?> €</div>
-								<div class="title"><?= $fetch_posts['name'] ?></div>
-								<div class="flex-btn">
-									<a href="edit_post_puff.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i
-											class="fa-solid fa-pen"></i></a>
-									<button type="submit" name="delete" class="btn"
-										onclick="return confirm('Supprimer cet article ?')"><i
-											class="fa-solid fa-trash"></i></button>
-									<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i
-											class="fa fa-eye"></i></a>
+								<div class="name-price">
+									<div class="title"><?= $fetch_posts['name']; ?></div>
+									<div class="price"><?= number_format($fetch_posts['price'], 2, ',', ' ') ?> €</div>
+								</div>
+								<div class="image-box">
+									<?php if (!empty($fetch_posts['image'])) { ?>
+										<div class="image-container">
+											<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
+										</div>
+									<?php } ?>
+									<div class="flex-btn">
+										<a href="edit_post_puff.php?id=<?= $fetch_posts['id']; ?>" class="btn"><i
+												class="fa-solid fa-pen"></i></a>
+										<button type="submit" name="delete" class="btn"
+											onclick="return confirm('Supprimer cet article ?')"><i
+												class="fa-solid fa-trash"></i></button>
+										<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i
+												class="fa fa-eye"></i></a>
+									</div>
 								</div>
 							</form>
 							<?php
