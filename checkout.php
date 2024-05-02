@@ -192,7 +192,7 @@ if (isset($_POST['place_order'])) {
 									<img src="image/<?= $fetch_item['image']; ?>" class="image">
 									<div>
 										<h3 class="name"><?= $fetch_item['name']; ?></h3>
-										<p class="price"><?= $fetch_item['price']; ?> € X 1</p>
+										<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> € X 1</p>
 									</div>
 								</div>
 								<?php
@@ -212,7 +212,7 @@ if (isset($_POST['place_order'])) {
 										<img src="image/<?= $fetch_cart['image']; ?>" class="image">
 										<div>
 											<h3 class="name"><?= $fetch_cart['name']; ?></h3>
-											<p class="price"><?= $fetch_cart['price']; ?> € X
+											<p class="price"><?= number_format($fetch_cart['price'], 2, ',', ' '); ?> € X
 												<?= $fetch_cart['qty']; ?>
 											</p>
 										</div>
@@ -225,7 +225,7 @@ if (isset($_POST['place_order'])) {
 						}
 						?>
 					</div>
-					<div class="grand-total"><span>Montant total à payer : </span><?= $grand_total ?> €</div>
+					<div class="grand-total"><span>Montant total à payer : </span><?= number_format($grand_total, 2, ',', ' ') ?> €</div>
 				</div>
 			</div>
 		</section>
