@@ -77,7 +77,7 @@ if (isset($_POST['logout'])) {
 						if ($select_item->rowCount() > 0) {
 							while ($fetch_item = $select_item->fetch(PDO::FETCH_ASSOC)) {
 								?>
-								<div class="box" <?php if ($fetch_order['status'] == 'cancle') {
+								<div class="box" <?php if ($fetch_order['status'] == 'cancel') {
 									echo 'style="border:2px solid red";';
 								} ?>>
 									<a href="view_order.php?get_id=<?= $fetch_order['id']; ?>">
