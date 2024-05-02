@@ -78,7 +78,7 @@ if (isset($_POST['delete'])) {
 								<div class="image-box">
 									<?php if (!empty($fetch_posts['image'])) { ?>
 										<div class="image-container">
-											<img src="../image/<?= $fetch_posts['image']; ?>" class="image">
+											<img src="../image/<?= $fetch_posts['image']; ?>" class="image puff">
 										</div>
 									<?php } ?>
 									<div class="flex-btn">
