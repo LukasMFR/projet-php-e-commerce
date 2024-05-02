@@ -39,10 +39,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
-
-
-
 <style type="text/css">
 	<?php include 'style.css'; ?>
 </style>
