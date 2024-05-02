@@ -967,8 +967,6 @@ header.scrolled::before {
 	display: inline-block;
 	margin-bottom: 1rem;
 	background: var(--light-green);
-
-
 }
 
 .order-container .detail {
