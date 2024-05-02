@@ -108,7 +108,7 @@ if (isset($_POST['cancel'])) {
 										<p class="user"><i class="bi bi-pin-map-fill"></i>
 											<?= $fetch_order['address']; ?>
 										</p>
-										<p class="title">Status</p>
+										<p class="title">Statut</p>
 										<p class="status" style="color:<?php if ($fetch_order['status'] == 'livree') {
 											echo 'green';
 										} elseif ($fetch_order['status'] == 'annulee') {
