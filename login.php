@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_POST['submit'])) {
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
+	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 
 	// Prepare and execute the SQL statement
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
@@ -62,6 +62,8 @@ if (isset($_POST['submit'])) {
 
 				<input type="submit" name="submit" value="Se connecter" class="btn">
 				<p>Vous n'avez pas de compte ? <a href="register.php">Inscrivez-vous maintenant</a></p>
+				<!-- Lien Retour vers la page d'accueil -->
+				<a href="home.php" class="btn">Retour à l'accueil</a>
 			</form>
 		</section>
 	</div>

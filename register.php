@@ -84,6 +84,8 @@ if (isset($_POST['submit'])) {
 				</div>
 				<input type="submit" name="submit" value="S'enregistrer" class="btn">
 				<p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous maintenant</a></p>
+				<!-- Lien Retour vers la page d'accueil -->
+				<a href="home.php" class="btn">Retour à l'accueil</a>
 			</form>
 		</section>
 	</div>
