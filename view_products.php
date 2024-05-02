@@ -95,7 +95,7 @@ if (isset($_POST['add_to_cart'])) {
 		</div>
 
 		<section class="products">
-			<h1 class="title">Produits dans ma liste de souhaits</h1>
+			<!-- <h1 class="title">Produits dans ma liste de souhaits</h1> -->
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
