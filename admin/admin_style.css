@@ -673,7 +673,7 @@ header.scrolled::before {
 
 /*-------media screen-------------*/
 
-.view-posts {
+.show-post .view-posts {
 	display: block;
 }
 
