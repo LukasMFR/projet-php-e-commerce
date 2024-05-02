@@ -35,21 +35,20 @@ if (!isset($admin_id)) {
 			<a href="dashboard.php">Accueil </a><span>/ Tableau de bord</span>
 		</div>
 		<section class="dashboard">
-			<!-- <h1 class="heading">Tableau de bord</h1> -->
+			<div class="box">
+				<h3>Statistiques de vente des voitures</h3>
+				<canvas id="myChart"
+					style="display: block; box-sizing: border-box; height: 617px; width: 1235px; "></canvas>
+			</div>
+
+			<div class="box">
+				<h3>Statistiques de vente des Vapes</h3>
+				<canvas id="myChartpuff"
+					style="display: block; box-sizing: border-box; height: 617px; width: 1235px; "></canvas>
+			</div>
+
+			<h1 class="heading">Tableau de bord</h1>
 			<div class="box-container">
-
-				<div class="box">
-					<h3>Statistiques de vente des voitures</h3>
-					<canvas id="myChart"
-						style="display: block; box-sizing: border-box; height: 617px; width: 1235px; "></canvas>
-				</div>
-
-				<div class="box">
-					<h3>Statistiques de vente des Vapes</h3>
-					<canvas id="myChartpuff"
-						style="display: block; box-sizing: border-box; height: 617px; width: 1235px; "></canvas>
-				</div>
-
 				<!-- Bloc pour les produits ajoutés -->
 				<div class="box">
 					<?php
