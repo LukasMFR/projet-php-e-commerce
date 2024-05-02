@@ -35,7 +35,7 @@ if (!isset($admin_id)) {
 			<a href="dashboard.php">Accueil </a><span>/ Tableau de bord</span>
 		</div>
 		<section class="dashboard">
-			<h1 class="heading">Tableau de bord</h1>
+			<!-- <h1 class="heading">Tableau de bord</h1> -->
 			<div class="box-container">
 
 				<div class="box">
