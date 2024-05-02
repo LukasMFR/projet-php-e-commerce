@@ -81,9 +81,16 @@ if (isset($_POST['logout'])) {
 									echo 'style="border:2px solid red";';
 								} ?>>
 									<a href="view_order.php?get_id=<?= $fetch_order['id']; ?>">
-										<p class="date"><i class="bi bi-calender-fill"></i><span>
-												<?= $fetch_order['date']; ?>
-											</span></p>
+										<p class="date">
+											<i class="bi bi-calendar-fill"></i>
+											<span>
+												<?php
+												$date = strtotime($fetch_order['date']);
+												$formattedDate = date('d ', $date) . $mois[date('F', $date)] . date(' Y à H:i', $date);
+												echo $formattedDate;
+												?>
+											</span>
+										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<div class="row">
 											<h3 class="name">

@@ -77,7 +77,11 @@ if (isset($_POST['cancel'])) {
 								<div class="box">
 									<div class="col">
 										<p class="title"><i class="bi bi-calendar-fill"></i>
-											<?= $fetch_order['date']; ?>
+											<?php
+											$date = strtotime($fetch_order['date']);
+											$formattedDate = date('d ', $date) . $mois[date('F', $date)] . date(' Y à H:i', $date);
+											echo $formattedDate;
+											?>
 										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<p class="price">
@@ -87,7 +91,8 @@ if (isset($_POST['cancel'])) {
 										<h3 class="name">
 											<?= $fetch_item['name']; ?>
 										</h3>
-										<p class="grand-total">Montant total payé : <span><?= number_format($sub_total, 2, ',', ' '); ?> €</span></p>
+										<p class="grand-total">Montant total payé : <span><?= number_format($sub_total, 2, ',', ' '); ?>
+												€</span></p>
 									</div>
 									<div class="col">
 										<p class="title">Adresse de facturation</p>
