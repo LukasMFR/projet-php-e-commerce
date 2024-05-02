@@ -62,13 +62,13 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 	<?php include '../components/admin_header.php'; ?>
 	<div class="main">
 		<div class="banner">
-			<h1>Ajouter un produit</h1>
+			<h1>Ajouter une puff</h1>
 		</div>
 		<div class="title2">
 			<a href="dashboard.php">Tableau de bord </a><span>/ Ajouter une Puff </span>
 		</div>
 
-		<h1 class="heading">Ajouter un produit</h1>
+		<!-- <h1 class="heading">Ajouter un produit</h1> -->
 		<div class="form-container">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="input-field">

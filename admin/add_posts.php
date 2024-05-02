@@ -70,7 +70,7 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 			<a href="dashboard.php">Tableau de bord </a><span>/ Ajouter un produit </span>
 		</div>
 
-		<h1 class="heading">Ajouter un produit</h1>
+		<!-- <h1 class="heading">Ajouter un produit</h1> -->
 		<div class="form-container">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="input-field">
