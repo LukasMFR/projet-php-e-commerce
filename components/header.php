@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();  // Assurez-vous que la session est démarrée
+}
+// Initialiser $user_id à partir de la session ou à NULL si non disponible
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+?>
+
 <header class="header">
 	<div class="flex">
 		<a href="home.php" class="brand-navbar">
