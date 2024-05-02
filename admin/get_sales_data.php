@@ -2,7 +2,7 @@
 include '../components/connection.php';
 
 // Requête mise à jour pour intégrer item_id et item_type
-$query = "SELECT p.name as product_name, SUM(o.qty) as total_quantity 
+$query = "SELECT p.name AS product_name, SUM(o.qty) AS total_quantity 
           FROM orders o 
           JOIN products p ON o.item_id = p.id AND o.item_type = 'product' 
           GROUP BY o.item_id";
