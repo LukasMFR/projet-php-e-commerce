@@ -1063,7 +1063,7 @@ header.scrolled::before {
 @media (max-width: 1215px) {
     .show-post .box-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
         gap: 20px;
 		align-items: start;
     }
