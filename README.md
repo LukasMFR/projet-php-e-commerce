@@ -4,7 +4,11 @@ Welcome to the repository for Road Luxury, an e-commerce platform developed as a
 
 ## About the Project
 
-Road Luxury aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience. 
+Road Luxury aims to provide a user-friendly platform to facilitate the easy purchase of cars and puffs. The project is developed using PHP and integrates various e-commerce functionalities to ensure a smooth and efficient shopping experience.
+
+## Current TODO List
+
+Find the current TODO list for the project here: [LIST.md](LIST.md)
 
 ### Features
 
