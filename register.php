@@ -54,6 +54,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+	<?php include 'components/header.php'; ?>
 	<div class="main-container">
 		<section class="form-container">
 			<div class="title">
