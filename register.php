@@ -3,19 +3,19 @@ include 'components/connection.php';
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-	$user_id = $_SESSION['user_id'];
-} else {
-	$user_id = '';
+	header('location: order.php');  // Si déjà connecté, rediriger directement
+	exit;
 }
 
-//register user
+// Enregistrement de l'utilisateur
 if (isset($_POST['submit'])) {
-	$id = unique_id(); // This function needs to generate a unique ID compatible with your user table
+	$id = unique_id();  // Assurez-vous que cette fonction existe et est définie correctement
 	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 	$cpass = filter_var($_POST['cpass'], FILTER_SANITIZE_STRING);
 
+	// Vérifier si l'utilisateur existe déjà
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
 	$select_user->execute([$email]);
 
@@ -25,28 +25,21 @@ if (isset($_POST['submit'])) {
 		if ($pass !== $cpass) {
 			$warning_msg[] = 'Les mots de passe ne correspondent pas';
 		} else {
+			// Insérer le nouvel utilisateur
 			$insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password) VALUES(?, ?, ?, ?)");
 			$insert_user->execute([$id, $name, $email, $pass]);
 			$_SESSION['user_id'] = $id;
 			$_SESSION['user_name'] = $name;
 			$_SESSION['user_email'] = $email;
-			header('location: home.php');
+			$_SESSION['welcome_login'] = true;  // Préparer le message de bienvenue
+			header('location: order.php');  // Rediriger vers une page de confirmation
 			exit;
 		}
 	}
 }
 ?>
 
-<?php
-session_start();
-// Vérifiez les identifiants de l'utilisateur ici et connectez-le
-if (identifiants_corrects) {
-    $_SESSION['user_id'] = $user_id_obtenu; // Assurez-vous de définir les informations utilisateur
-    $_SESSION['welcome'] = true; // Préparer le message de bienvenue
-    header("Location: homepage.php"); // Redirigez l'utilisateur vers la page d'accueil après connexion
-    exit;
-}
-?>
+
 
 
 
