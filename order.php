@@ -90,7 +90,7 @@ if (isset($_POST['logout'])) {
 												<?= $fetch_item['name']; ?>
 											</h3>
 											<p class="price">Prix :
-												<?= $fetch_order['price']; ?> € x
+												<?= number_format($fetch_order['price'], 2, ',', ' '); ?> € x
 												<?= $fetch_order['qty']; ?>
 											</p>
 											<p class="status" style="color:<?php if ($fetch_order['status'] == 'livree') {
