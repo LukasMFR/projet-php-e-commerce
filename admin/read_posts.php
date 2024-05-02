@@ -8,11 +8,11 @@ if (!isset($admin_id)) {
 	header('location: admin_login.php');
 }
 
-$get_id = $_GET['post_id'];  // Assurez-vous que ce paramètre est utilisé correctement ou sécurisé contre les injections SQL.
+$get_id = $_GET['post_id'];
 
 // Suppression du produit de la base de données
 if (isset($_POST['delete'])) {
-	$p_id = filter_var($_POST['post_id'], FILTER_SANITIZE_STRING); // Bonne pratique de filtrage de l'ID
+	$p_id = filter_var($_POST['post_id'], FILTER_SANITIZE_STRING);
 
 	// Sélectionner les informations du produit pour supprimer les images
 	$select_images = $conn->prepare("SELECT image, image2, image3 FROM `products` WHERE id = ?");
@@ -22,7 +22,7 @@ if (isset($_POST['delete'])) {
 	// Supprimer les fichiers image du serveur
 	foreach (['image', 'image2', 'image3'] as $image_field) {
 		if (!empty($images[$image_field])) {
-			unlink('../image/' . $images[$image_field]); // Assurez-vous que le chemin d'accès est correct
+			unlink('../image/' . $images[$image_field]);
 		}
 	}
 
@@ -33,10 +33,8 @@ if (isset($_POST['delete'])) {
 	// Rediriger l'utilisateur vers la page de vue d'ensemble des produits
 	header('Location: view_posts.php');
 }
-
-
-
 ?>
+
 <style>
 	<?php include 'admin_style.css'; ?>
 </style>

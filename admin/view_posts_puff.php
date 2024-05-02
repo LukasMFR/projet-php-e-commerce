@@ -87,7 +87,7 @@ if (isset($_POST['delete'])) {
 										<button type="submit" name="delete" class="btn"
 											onclick="return confirm('Supprimer cet article ?')"><i
 												class="fa-solid fa-trash"></i></button>
-										<a href="read_posts.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i
+										<a href="read_posts_puff.php?post_id=<?= $fetch_posts['id']; ?>" class="btn"><i
 												class="fa fa-eye"></i></a>
 									</div>
 								</div>
