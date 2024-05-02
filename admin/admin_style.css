@@ -599,7 +599,7 @@ header.scrolled::before {
 .profile-detail .flex-btn {
 	display: flex;
 	justify-content: space-evenly;
-	padding-bottom: 114px;
+	padding-bottom: 10px;
 }
 
 .profile-detail .flex-btn .btn {
