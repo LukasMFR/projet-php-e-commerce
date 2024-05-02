@@ -1,17 +1,17 @@
-<<?php
+<?php
 include 'components/connection.php';
 session_start();
 
 // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
 if (!isset($_SESSION['user_id'])) {
-    header("Location: order.php");
-    exit;
+	header("Location: order.php");
+	exit;
 }
 
 // Code pour afficher le message de bienvenue avec SweetAlert
 if (isset($_SESSION['welcome_login'])) {
-    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-    echo "<script>
+	echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+	echo "<script>
         Swal.fire({
             title: 'Bienvenue !',
             text: 'Vous êtes maintenant connecté(e).',
@@ -19,19 +19,19 @@ if (isset($_SESSION['welcome_login'])) {
             confirmButtonText: 'OK'
         });
     </script>";
-    unset($_SESSION['welcome_login']); // Supprimez la variable après l'affichage pour éviter que le message ne réapparaisse lors des chargements futurs de la page.
+	unset($_SESSION['welcome_login']); // Supprimez la variable après l'affichage pour éviter que le message ne réapparaisse lors des chargements futurs de la page.
 }
 
 $user_id = $_SESSION['user_id'];
 
 if (isset($_POST['logout'])) {
-    session_destroy();
-    header("Location: login.php");
-    exit;
+	session_destroy();
+	header("Location: login.php");
+	exit;
 }
 ?>
 <style type="text/css">
-    <?php include 'style.css'; ?>
+	<?php include 'style.css'; ?>
 </style>
 
 
