@@ -753,6 +753,10 @@ header.scrolled::before {
 	object-fit: cover;
 }
 
+.show-post .box-container .box .image.puff {
+	aspect-ratio: 1 / 1;
+}
+
 /* Button container styling */
 .show-post .box-container .box .flex-btn {
 	display: flex;
@@ -1056,6 +1060,7 @@ header.scrolled::before {
 	.show-post .box-container .box .image {
 		height: auto;
 		width: 30%;
+		margin: 1rem 0;
 	}
 
 }
@@ -1108,6 +1113,7 @@ header.scrolled::before {
     .show-post .box-container .box .image-container {
         display: flex;
         overflow: hidden;
+		justify-content: flex-start;
     }
 
     .show-post .box-container .box .image {
