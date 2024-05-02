@@ -1089,6 +1089,18 @@ header.scrolled::before {
         gap: 5px;
     }
 
+    .show-post .box-container .box .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--orange);
+    }
+
+    .show-post .box-container .box .price {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #666;
+    }
+
     .show-post .box-container .box .image-box {
         display: block;
     }
