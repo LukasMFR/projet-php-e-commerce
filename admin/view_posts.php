@@ -39,6 +39,7 @@ if (isset($_POST['delete'])) {
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<title>Les produits - Road Luxury</title>
+	<?php include '../components/meta_tags.php'; ?>
 </head>
 
 <body>
