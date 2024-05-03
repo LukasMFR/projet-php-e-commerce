@@ -2093,63 +2093,64 @@ footer .bottom-footer {
 
 /*------------view order section----------*/
 .order-detail .box-container {
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    background: #f5f5f5; /* Fond commun pour toute la box */
+	box-shadow: var(--box-shadow);
+	border-radius: .5rem;
+	padding: 2rem;
+	max-width: 1200px;
+	margin: auto;
+	background: #f5f5f5;
 }
 
 .order-detail .box {
-    display: flex;
-    background: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden; /* Empêche les débordements hors des bords arrondis */
+	display: flex;
+	background: #fff;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	overflow: hidden;
 }
 
-.order-detail .box .product-details, .order-detail .box .billing-info {
-    flex: 1; /* Chaque section prend 50% de l'espace horizontal */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Assure une distribution verticale adéquate du contenu */
-    padding: 20px;
-    align-items: flex-start; /* Alignement des éléments à gauche pour billing-info */
+.order-detail .box .product-details,
+.order-detail .box .billing-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+	align-items: flex-start;
 }
 
 .order-detail .box .product-details {
-    border-right: 2px solid #ccc; /* Ajoute un trait vertical séparateur */
+	border-right: 2px solid #ccc;
 }
 
 .order-detail .box .product-details .image {
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 1rem;
+	height: auto;
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 1rem;
 }
 
-.order-detail .box .product-details .date, 
-.order-detail .box .product-details .price, 
-.order-detail .box .product-details .name, 
+.order-detail .box .product-details .date,
+.order-detail .box .product-details .price,
+.order-detail .box .product-details .name,
 .order-detail .box .product-details .grand-total {
-    margin-bottom: 1rem; /* Espacement entre les éléments */
+	margin-bottom: 1rem;
 }
 
-.order-detail .box .billing-info .user, 
+.order-detail .box .billing-info .user,
 .order-detail .box .billing-info .status {
-    margin-bottom: 10px; /* Espacement entre les informations de l'utilisateur */
+	margin-bottom: 10px;
 }
 
 .order-detail .box .billing-info .btn {
-    width: 100%;
-    text-align: center;
-    background-color: var(--light-green);
-    color: white;
-    border: none;
-    border-radius: .5rem;
-    padding: 10px 0;
-    cursor: pointer;
+	width: 100%;
+	text-align: center;
+	background-color: var(--light-green);
+	color: white;
+	border: none;
+	border-radius: .5rem;
+	padding: 10px 0;
+	cursor: pointer;
 }
 
 /*------------FAQ section----------*/
