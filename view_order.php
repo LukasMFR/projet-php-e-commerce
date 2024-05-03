@@ -79,12 +79,14 @@ if (isset($_POST['cancel'])) {
 												class="bi bi-calendar-fill"></i><?= date('d F Y à H:i', strtotime($fetch_order['date'])); ?>
 										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
-										<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> € x
-											<?= $fetch_order['qty']; ?>
-										</p>
-										<h3 class="name"><?= $fetch_item['name']; ?></h3>
-										<p class="grand-total">Montant total : <span><?= number_format($sub_total, 2, ',', ' '); ?>
-												€</span></p>
+										<div class="product-info">
+											<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> € x
+												<?= $fetch_order['qty']; ?>
+											</p>
+											<h3 class="name"><?= $fetch_item['name']; ?></h3>
+											<p class="grand-total">Montant total : <span><?= number_format($sub_total, 2, ',', ' '); ?>
+													€</span></p>
+										</div>
 									</div>
 									<div class="billing-info">
 										<p class="title">Adresse de facturation</p>

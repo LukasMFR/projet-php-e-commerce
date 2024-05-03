@@ -673,7 +673,7 @@ video {
 	color: var(--green);
 }
 
-.box-container .box p {
+.thumb .box-container .box p {
 	color: #555;
 	margin: .5rem;
 }
@@ -2121,6 +2121,7 @@ footer .bottom-footer {
 
 .order-detail .box .product-details {
 	border-right: 2px solid #ccc;
+	align-items: flex-start;
 }
 
 .order-detail .box .product-details .image {
@@ -2130,6 +2131,25 @@ footer .bottom-footer {
 	margin-bottom: 1rem;
 }
 
+.order-detail .box .product-details .product-info {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.order-detail .box .product-details .product-info p,
+.order-detail .box .product-details .product-info h3 {
+    text-align: left;
+    width: 100%;
+}
+
+.order-detail .box .product-details .date {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+}
+
 .order-detail .box .product-details .date,
 .order-detail .box .product-details .price,
 .order-detail .box .product-details .name,
@@ -2137,9 +2157,19 @@ footer .bottom-footer {
 	margin-bottom: 1rem;
 }
 
+.order-detail .box .billing-info .title {
+	text-align: center;
+	width: 100%;
+}
+
 .order-detail .box .billing-info .user,
 .order-detail .box .billing-info .status {
 	margin-bottom: 10px;
+}
+
+.order-detail .box .product-details .date i,
+.order-detail .box .billing-info .user i {
+	margin-right: 10px;
 }
 
 .order-detail .box .billing-info .btn {
