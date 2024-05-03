@@ -2158,6 +2158,13 @@ footer .bottom-footer {
 	margin-bottom: 1rem;
 }
 
+.order-detail .box .product-details .price,
+.order-detail .box .product-details .quantity {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
 .order-detail .box .billing-info .title {
 	text-align: center;
 	width: 100%;

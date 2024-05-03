@@ -84,9 +84,8 @@ if (isset($_POST['cancel'])) {
 										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<div class="product-info">
-											<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> € x
-												<?= $fetch_order['qty']; ?>
-											</p>
+											<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> €</p>
+											<p class="quantity">Quantité : <?= $fetch_order['qty']; ?></p>
 											<h3 class="name"><?= $fetch_item['name']; ?></h3>
 											<p class="grand-total">Montant total : <span><?= number_format($sub_total, 2, ',', ' '); ?>
 													€</span></p>
