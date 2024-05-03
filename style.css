@@ -2410,7 +2410,24 @@ footer .bottom-footer {
 }
 
 /* Ce @media est utilisé pour les écrans plus petits que 680px pour la view order page. */
-@media (max-width: 680px) {}
+@media (max-width: 680px) {
+	.order-detail .box {
+		flex-direction: column;
+		/* Change la disposition de flex-row à flex-column */
+	}
+
+	.order-detail .box .product-details {
+		border-right: none;
+		/* Retire le trait vertical */
+		border-bottom: 2px solid #ccc;
+		/* Ajoute un trait horizontal */
+	}
+
+	.order-detail .box .billing-info {
+		padding-top: 20px;
+		/* Ajoute de l'espace au-dessus de la section de facturation */
+	}
+}
 
 .bxs-user:before {
 	content: "\eee1";
