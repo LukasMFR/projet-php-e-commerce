@@ -65,7 +65,6 @@ if (isset($_POST['cancel'])) {
 				$select_orders->execute([$get_id]);
 				if ($select_orders->rowCount() > 0) {
 					while ($fetch_order = $select_orders->fetch(PDO::FETCH_ASSOC)) {
-						// Determine which table to select from based on item_type
 						$table = ($fetch_order['item_type'] === 'puff') ? 'puff' : 'products';
 						$select_item = $conn->prepare("SELECT * FROM `$table` WHERE id=? LIMIT 1");
 						$select_item->execute([$fetch_order['item_id']]);
@@ -75,57 +74,33 @@ if (isset($_POST['cancel'])) {
 								$sub_total = ($fetch_order['price'] * $fetch_order['qty']);
 								?>
 								<div class="box">
-									<div class="col">
-										<p class="title"><i class="bi bi-calendar-fill"></i>
-											<?php
-											$date = strtotime($fetch_order['date']);
-											$formattedDate = date('d ', $date) . $mois[date('F', $date)] . date(' Y à H:i', $date);
-											echo $formattedDate;
-											?>
+									<div class="product-details">
+										<p class="date"><i
+												class="bi bi-calendar-fill"></i><?= date('d F Y à H:i', strtotime($fetch_order['date'])); ?>
 										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
-										<p class="price">
-											<?= number_format($fetch_item['price'], 2, ',', ' '); ?> € x
+										<p class="price"><?= number_format($fetch_item['price'], 2, ',', ' '); ?> € x
 											<?= $fetch_order['qty']; ?>
 										</p>
-										<h3 class="name">
-											<?= $fetch_item['name']; ?>
-										</h3>
-										<p class="grand-total">Montant total payé : <span><?= number_format($sub_total, 2, ',', ' '); ?>
+										<h3 class="name"><?= $fetch_item['name']; ?></h3>
+										<p class="grand-total">Montant total : <span><?= number_format($sub_total, 2, ',', ' '); ?>
 												€</span></p>
 									</div>
-									<div class="col">
+									<div class="billing-info">
 										<p class="title">Adresse de facturation</p>
-										<p class="user"><i class="bi bi-person-bounding-box"></i>
-											<?= $fetch_order['name']; ?>
-										</p>
-										<p class="user"><i class="bi bi-phone"></i>
-											<?= $fetch_order['number']; ?>
-										</p>
-										<p class="user"><i class="bi bi-envelope"></i>
-											<?= $fetch_order['email']; ?>
-										</p>
-										<p class="user"><i class="bi bi-pin-map-fill"></i>
-											<?= $fetch_order['address']; ?>
-										</p>
-										<p class="title">Statut</p>
-										<p class="status" style="color:<?php if ($fetch_order['status'] == 'livree') {
-											echo 'green';
-										} elseif ($fetch_order['status'] == 'annulee') {
-											echo 'red';
-										} else {
-											echo 'orange';
-										} ?>">
-											<?= $fetch_order['status']; ?>
-										</p>
+										<div class="user-details">
+											<p class="user"><i class="bi bi-person-bounding-box"></i><?= $fetch_order['name']; ?></p>
+											<p class="user"><i class="bi bi-phone"></i><?= $fetch_order['number']; ?></p>
+											<p class="user"><i class="bi bi-envelope"></i><?= $fetch_order['email']; ?></p>
+											<p class="user"><i class="bi bi-pin-map-fill"></i><?= $fetch_order['address']; ?></p>
+											<p class="status">Statut : <?= $fetch_order['status']; ?></p>
+										</div>
 										<?php if ($fetch_order['status'] == 'annulee') { ?>
 											<a href="checkout.php?get_id=<?= $fetch_item['id']; ?>&type=<?= $fetch_order['item_type']; ?>"
 												class="btn">Commander à nouveau</a>
 										<?php } else { ?>
 											<form method="post">
-												<button type="submit" name="cancel" class="btn"
-													onclick="return confirm('Voulez-vous annuler cette commande ?')">Annuler la
-													commande</button>
+												<button type="submit" name="cancel" class="btn">Annuler la commande</button>
 											</form>
 										<?php } ?>
 									</div>
