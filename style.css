@@ -2116,7 +2116,7 @@ footer .bottom-footer {
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 20px;
-	align-items: flex-start;
+	/* align-items: flex-start; */
 }
 
 .order-detail .box .product-details {
