@@ -2137,8 +2137,8 @@ footer .bottom-footer {
 
 .order-detail .box .product-details .product-info p,
 .order-detail .box .product-details .product-info h3 {
-    text-align: left;
-    width: 100%;
+	text-align: left;
+	width: 100%;
 }
 
 .order-detail .box .product-details .date {
@@ -2156,9 +2156,9 @@ footer .bottom-footer {
 
 .order-detail .box .product-details .price,
 .order-detail .box .product-details .quantity {
-    display: block;
-    text-align: left;
-    margin-bottom: 0.5rem;
+	display: block;
+	text-align: left;
+	margin-bottom: 0.5rem;
 }
 
 .order-detail .box .billing-info .title {
@@ -2188,15 +2188,18 @@ footer .bottom-footer {
 }
 
 .order-detail .box .status span[data-status="livree"] {
-    color: green; /* Vert pour les commandes livrées */
+	color: green;
+	/* Vert pour les commandes livrées */
 }
 
 .order-detail .box .status span[data-status="annulee"] {
-    color: red; /* Rouge pour les commandes annulées */
+	color: red;
+	/* Rouge pour les commandes annulées */
 }
 
 .order-detail .box .status span[data-status="en cours"] {
-    color: orange; /* Orange pour les commandes en cours */
+	color: orange;
+	/* Orange pour les commandes en cours */
 }
 
 
@@ -2405,6 +2408,9 @@ footer .bottom-footer {
 		grid-template-columns: 1fr;
 	}
 }
+
+/* Ce @media est utilisé pour les écrans plus petits que 680px pour la view order page. */
+@media (max-width: 680px) {}
 
 .bxs-user:before {
 	content: "\eee1";
