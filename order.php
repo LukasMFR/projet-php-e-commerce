@@ -96,8 +96,8 @@ if (isset($_POST['logout'])) {
 											<p class="price">Prix : <?= number_format($fetch_order['price'], 2, ',', ' '); ?> € x
 												<?= $fetch_order['qty']; ?>
 											</p>
-											<p class="status" data-status="<?= $fetch_order['status']; ?>">
-												<?= $fetch_order['status']; ?>
+											<p class="status">Statut : <span
+													data-status="<?= $fetch_order['status']; ?>"><?= $fetch_order['status']; ?></span>
 											</p>
 										</div>
 									</a>

@@ -2068,20 +2068,26 @@ footer .bottom-footer {
 
 .orders .box .status {
 	font-size: 1.1rem;
-	color: green;
+	color: #555;
 	margin-top: 5px;
+	display: block;
+}
+
+.orders .box .status span {
+	color: green;
+	font-weight: bold;
 }
 
 /* Specific status colors */
-.orders .box .status[data-status="livree"] {
+.orders .box .status span[data-status="livree"] {
 	color: green;
 }
 
-.orders .box .status[data-status="annulee"] {
+.orders .box .status span[data-status="annulee"] {
 	color: red;
 }
 
-.orders .box .status[data-status="en cours"] {
+.orders .box .status span[data-status="en cours"] {
 	color: orange;
 }
 
