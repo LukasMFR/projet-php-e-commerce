@@ -88,13 +88,17 @@ if (isset($_POST['logout'])) {
 												?>
 											</span>
 										</div>
-										<img src="image/<?= $fetch_item['image']; ?>" class="image">
+										<img src="image/<?= $fetch_item['image']; ?>"
+											class="<?= $fetch_order['item_type'] === 'product' ? 'car-image' : 'puff-image'; ?>"
+											alt="Product Image">
 										<div class="info">
 											<h3 class="name"><?= $fetch_item['name']; ?></h3>
 											<p class="price">Prix : <?= number_format($fetch_order['price'], 2, ',', ' '); ?> € x
 												<?= $fetch_order['qty']; ?>
 											</p>
-											<p class="status"><?= $fetch_order['status']; ?></p>
+											<p class="status" data-status="<?= $fetch_order['status']; ?>">
+												<?= $fetch_order['status']; ?>
+											</p>
 										</div>
 									</a>
 								</div>
