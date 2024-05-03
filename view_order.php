@@ -105,7 +105,9 @@ if (isset($_POST['cancel'])) {
 												class="btn">Commander à nouveau</a>
 										<?php } else { ?>
 											<form method="post">
-												<button type="submit" name="cancel" class="btn">Annuler la commande</button>
+												<button type="submit" name="cancel" class="btn"
+													onclick="return confirm('Voulez-vous annuler cette commande ?')">Annuler la
+													commande</button>
 											</form>
 										<?php } ?>
 									</div>
