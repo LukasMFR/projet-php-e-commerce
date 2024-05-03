@@ -4,6 +4,9 @@ if (!isset($_SESSION)) {
 }
 // Initialiser $user_id à partir de la session ou à NULL si non disponible
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
+require_once('connection.php');
+
 ?>
 
 <header class="header">

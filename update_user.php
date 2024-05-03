@@ -1,12 +1,15 @@
 <?php
-include '../components/connection.php';
+include 'components/connection.php';
 session_start();
 
-$users_id = $_SESSION['users_id'];
-
-if (!isset($users_id)) {
-	header('location: login.php');
+if (!isset($_SESSION['user_id'])) {
+    header('location: login.php');
+    exit;
 }
+
+$users_id = $_SESSION['user_id']?? null;
+
+
 
 if (isset($_POST['submit'])) {
 
@@ -91,13 +94,13 @@ if (isset($_POST['submit'])) {
 
 <body style="padding-left: 0 !important;">
 
-	<?php include '../components/header.php'; ?>
+	<?php include 'components/header.php'; ?>
 	<div class="main">
 		<div class="banner">
 			<h1>Mettre à jour le profil</h1>
 		</div>
 		<div class="title2">
-			<a href="dashboard.php">Accueil </a><span>/ Mettre à jour le profil</span>
+			<a href="home.php">Accueil </a><span>/ Mettre à jour le profil</span>
 		</div>
 		<section>
 			<?php
@@ -153,6 +156,8 @@ if (isset($_POST['submit'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
 	<?php include '../components/alert.php'; ?>
+
+	 <?php include 'path/to/header.php'; ?>
 </body>
 
 </html>
