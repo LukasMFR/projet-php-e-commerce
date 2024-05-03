@@ -1988,72 +1988,93 @@ footer .bottom-footer {
 
 /*------------view products----------*/
 .orders .box-container {
-	padding: 2% 6%;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-	align-items: flex-start;
-	justify-content: center;
-	gap: 1.5rem;
+	margin: 0;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
 }
 
-.orders .box-container .box {
-	box-shadow: var(--box-shadow);
-	border-radius: .5em;
-	position: relative;
-	overflow-x: hidden;
+.orders .box {
+	padding: 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	overflow: hidden;
+	background: white;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.orders .box-container .box a {
+.orders .box:hover {
+	padding: 0;
+	transform: scale(1.03);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.orders .box a {
 	display: flex;
-	align-items: center;
-
+	flex-direction: column;
+	color: inherit;
+	text-decoration: none;
 }
 
-.orders .box-container .box a .row {
-	position: absolute;
-	right: 1%;
+.orders .box .date {
+	padding: 10px;
+	background-color: var(--light-green);
+	color: white;
+	font-size: 0.9rem;
+	display: block;
+	border-radius: 10px 10px 0 0;
 }
 
-.orders .box-container .box .date {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: .5rem 1.5rem;
-	background: var(--light-green);
-	color: #ffffff;
-	font-size: .6rem;
-	display: inline-block;
-	margin-bottom: 1.5rem;
-	border-radius: .5rem;
-}
-
-.orders .box-container .box .image {
-	height: 20rem;
+.orders .box .image {
 	width: 100%;
-	object-fit: contain;
-	margin-left: -4rem;
+	/* height: 200px; */
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
 }
 
-.orders .box-container .box .name {
-	font-size: 1rem;
-	/* text-transform: capitalize; */
-	text-overflow: ellipsis;
-	overflow-x: hidden;
-	color: #000;
+.orders .box .info {
+	padding: 10px;
+	text-align: left;
 }
 
-.orders .box-container .box .price {
+.orders .box .name,
+.orders .box .price,
+.orders .box .status {
+	margin: 5px 0;
+	display: block;
+	font-size: 1.1rem;
+}
+
+.orders .box .name {
+	font-size: 1.2rem;
+	margin: 5px 0;
+}
+
+.orders .box .price {
+	color: #555;
+	font-size: 1.1rem;
+	margin: 5px 0;
+}
+
+.orders .box .status {
+	font-size: 1.1rem;
+	color: green;
+	/* Default color */
+	margin-top: 5px;
+}
+
+/* Specific status colors */
+.orders .box .status[data-status="livree"] {
+	color: green;
+}
+
+.orders .box .status[data-status="annulee"] {
+	color: red;
+}
+
+.orders .box .status[data-status="en cours"] {
 	color: orange;
-	font-size: 1rem;
-}
-
-.orders .box-container .box .status {
-	margin-left: .5rem;
-	font-size: 1rem;
-	/* text-transform: capitalize; */
-}
-
-.orders .box-container .box:hover {
-	box-shadow: var(--box-shadow);
 }
 
 /*------------view order section----------*/
