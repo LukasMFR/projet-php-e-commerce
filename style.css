@@ -2127,6 +2127,7 @@ footer .bottom-footer {
 .order-detail .box .product-details .image {
 	height: auto;
 	width: 100%;
+	border-radius: 10px;
 	object-fit: cover;
 	margin-bottom: 1rem;
 }
