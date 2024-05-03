@@ -75,8 +75,12 @@ if (isset($_POST['cancel'])) {
 								?>
 								<div class="box">
 									<div class="product-details">
-										<p class="date"><i
-												class="bi bi-calendar-fill"></i><?= date('d F Y à H:i', strtotime($fetch_order['date'])); ?>
+										<p class="date"><i class="bi bi-calendar-fill"></i>
+											<?php
+											$date = strtotime($fetch_order['date']);
+											$formattedDate = date('d ', $date) . $mois[date('F', $date)] . date(' Y à H:i', $date);
+											echo $formattedDate;
+											?>
 										</p>
 										<img src="image/<?= $fetch_item['image']; ?>" class="image">
 										<div class="product-info">
