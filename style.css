@@ -1991,7 +1991,7 @@ footer .bottom-footer {
 	margin: 0;
 	padding: 20px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
 	gap: 20px;
 }
 
@@ -1999,7 +1999,7 @@ footer .bottom-footer {
 	padding: 0;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	background: white;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
