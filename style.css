@@ -2191,6 +2191,19 @@ footer .bottom-footer {
 	cursor: pointer;
 }
 
+.order-detail .box .status span[data-status="livree"] {
+    color: green; /* Vert pour les commandes livrées */
+}
+
+.order-detail .box .status span[data-status="annulee"] {
+    color: red; /* Rouge pour les commandes annulées */
+}
+
+.order-detail .box .status span[data-status="en cours"] {
+    color: orange; /* Orange pour les commandes en cours */
+}
+
+
 /*------------FAQ section----------*/
 .faq-section {
 	padding: 40px;

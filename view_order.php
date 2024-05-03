@@ -98,7 +98,9 @@ if (isset($_POST['cancel'])) {
 											<p class="user"><i class="bi bi-phone"></i><?= $fetch_order['number']; ?></p>
 											<p class="user"><i class="bi bi-envelope"></i><?= $fetch_order['email']; ?></p>
 											<p class="user"><i class="bi bi-pin-map-fill"></i><?= $fetch_order['address']; ?></p>
-											<p class="status">Statut : <?= $fetch_order['status']; ?></p>
+											<p class="status">Statut : <span
+													data-status="<?= strtolower($fetch_order['status']); ?>"><?= $fetch_order['status']; ?></span>
+											</p>
 										</div>
 										<?php if ($fetch_order['status'] == 'annulee') { ?>
 											<a href="checkout.php?get_id=<?= $fetch_item['id']; ?>&type=<?= $fetch_order['item_type']; ?>"
