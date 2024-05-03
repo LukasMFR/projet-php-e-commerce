@@ -57,12 +57,12 @@ require_once('connection.php');
 				$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
 				?>
 				<div class="profile">
-					<img src="../image/<?= htmlspecialchars($fetch_profile['profile']); ?>" class="logo-image" width="100">
+					<img src="image/<?= htmlspecialchars($fetch_profile['profile']); ?>" class="logo-image" width="100">
 					<p><?= htmlspecialchars($fetch_profile['name']); ?></p>
 				</div>
 				<div class="flex-btn">
 					<a href="update_user.php" class="btn">Mettre à jour le profil</a>
-					<form method="post" action="logout.php">
+					<form method="post" action="components/logout.php">
 						<button type="submit" name="logout" class="btn">Se déconnecter</button>
 					</form>
 				</div>

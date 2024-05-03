@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) {
 			<div class="form-container" id="users_login">
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="profile">
-						<img src="../image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
+						<img src="image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
 					</div>
 					<h3>Mettre à jour le profil</h3>
 					<input type="hidden" name="old_image" value="<?= $fetch_profile['profile']; ?>">
