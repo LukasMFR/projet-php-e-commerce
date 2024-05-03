@@ -59,7 +59,7 @@ if (isset($_POST['cancel'])) {
 				<p>Retrouvez ici tous les détails de votre commande, y compris les informations sur le produit, le
 					montant total et le statut de livraison.</p>
 			</div>
-			<div class="box-container">
+			<!-- <div class="box-container"> -->
 				<?php
 				$select_orders = $conn->prepare("SELECT * FROM `orders` WHERE id=? LIMIT 1");
 				$select_orders->execute([$get_id]);
@@ -124,7 +124,7 @@ if (isset($_POST['cancel'])) {
 					echo '<p class="empty">Aucune commande trouvée</p>';
 				}
 				?>
-			</div>
+			<!-- </div> -->
 
 		</section>
 		<?php include 'components/footer.php'; ?>

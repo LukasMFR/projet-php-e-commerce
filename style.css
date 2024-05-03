@@ -2092,20 +2092,16 @@ footer .bottom-footer {
 }
 
 /*------------view order section----------*/
-.order-detail .box-container {
-	box-shadow: var(--box-shadow);
-	border-radius: .5rem;
-	padding: 2rem;
-	max-width: 1200px;
-	margin: auto;
-	background: #f5f5f5;
-}
-
 .order-detail .box {
 	display: flex;
 	background: #fff;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	/* box-shadow: var(--box-shadow); */
+	max-width: 1200px;
+	margin: 2rem auto;
 	border-radius: 10px;
+	/* border-radius: .5rem; */
+	background: #f5f5f5;
 	overflow: hidden;
 }
 
