@@ -73,3 +73,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         skillItem.style.setProperty('--skill-level', '70%');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const userBtn = document.querySelector('#user-btn');
+    const userBox = document.querySelector('.profile-detail');
+    console.log(userBtn, userBox); // Doit afficher les deux éléments, pas null
+
+    if (userBtn && userBox) {
+        userBtn.addEventListener('click', function () {
+            userBox.classList.toggle('active');
+        });
+    } else {
+        console.log('Elements not found');
+    }
+});
