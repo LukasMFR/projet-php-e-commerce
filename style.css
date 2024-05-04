@@ -372,41 +372,63 @@ header.scrolled::before {
 
 #menu-btn {
 	display: none;
+	font-size: 2rem;
+	box-shadow: var(--inner-box-shadow);
+	padding: .5rem;
+	color: var(--lightgay);
+	cursor: pointer;
+	transition: .6s;
+}
+
+#menu-btn:hover {
+	box-shadow: var(--outer-shadow);
+	border-radius: 50%;
 }
 
 .header .user-box {
 	position: absolute;
 	top: 120%;
 	right: 0rem;
-	background: rgb(255 255 255 / 80%);
+	background: #fff;
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
-	padding: 1rem;
+	padding: 1.5rem;
 	text-align: center;
-	width: 20rem;
+	width: auto;
 	transform: scale(0);
 	transform-origin: top right;
 	line-height: 2;
-}
-
-.header .user-box .btn {
-	border-radius: .5rem;
-	padding: 0 1.5rem;
-}
-
-.logout-btn {
-	background: #000;
-	color: #fff;
-	text-transform: uppercase;
-	width: 11rem;
-	border-radius: .5rem;
-	margin: .5rem 0;
-	padding: .5rem 0;
+	transition: all .2s linear;
+	animation: .2s linear fadeIn;
+	overflow: hidden;
 }
 
 .header .user-box.active {
 	transform: scale(1.0);
-	transition: .2s linear;
+	display: inline-block;
+}
+
+.header .user-box img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	padding: .5rem;
+	border: 3px solid var(--green);
+}
+
+.header .user-box .flex-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* padding-bottom: 10px; */
+}
+
+.header .user-box .flex-btn .btn {
+	padding: 0.4rem 1rem;
+	margin: 0.3rem 0;
+	border-radius: 0.25rem;
+	text-align: center;
+	cursor: pointer;
 }
 
 /*----------brand-----------------*/
@@ -2095,7 +2117,7 @@ footer .bottom-footer {
 
 /*------------view order section----------*/
 .order-detail .order-description {
-    text-transform: none; /* Annule toute transformation majuscule */
+	text-transform: none;
 }
 
 .order-detail .box {
