@@ -2094,6 +2094,10 @@ footer .bottom-footer {
 }
 
 /*------------view order section----------*/
+.order-detail .order-description {
+    text-transform: none; /* Annule toute transformation majuscule */
+}
+
 .order-detail .box {
 	display: flex;
 	background: #fff;
@@ -2164,6 +2168,7 @@ footer .bottom-footer {
 }
 
 .order-detail .box .billing-info .title {
+	text-decoration: underline;
 	text-align: center;
 	width: 100%;
 }

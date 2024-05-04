@@ -56,8 +56,8 @@ if (isset($_POST['cancel'])) {
 			<div class="title">
 				<img src="img/download.png" class="logo">
 				<h1>Détail de la commande</h1>
-				<p>Retrouvez ici tous les détails de votre commande, y compris les informations sur le produit, le
-					montant total et le statut de livraison.</p>
+				<p class="order-description">Retrouvez ici tous les détails de votre commande, y compris les
+					informations sur le produit, le montant total et le statut de livraison.</p>
 			</div>
 			<div class="box-container">
 				<?php
@@ -92,7 +92,7 @@ if (isset($_POST['cancel'])) {
 										</div>
 									</div>
 									<div class="billing-info">
-										<p class="title">Adresse de facturation</p>
+										<p class="title">Informations de facturation</p>
 										<div class="user-details">
 											<p class="user"><i class="bi bi-person-bounding-box"></i><?= $fetch_order['name']; ?></p>
 											<p class="user"><i class="bi bi-phone"></i><?= $fetch_order['number']; ?></p>
