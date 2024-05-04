@@ -1,5 +1,13 @@
 <?php
 include 'components/connection.php';
+
+// if (session_status() === PHP_SESSION_NONE) {
+//     session_start();
+// }
+
+// Initialisez $user_id avec une valeur par défaut pour éviter les erreurs si non défini
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+
 session_start();
 
 if (isset($_SESSION['user_id'])) {
