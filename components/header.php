@@ -38,33 +38,21 @@
 
 		<div class="user-box">
 			<?php if (isset($_SESSION['user_id'])): ?>
-				<?php
-				$select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-				$select_profile->execute([$_SESSION['user_id']]);
-				if ($select_profile->rowCount() > 0) {
-					$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-					echo "<div class='profile'>";
-					if (!empty($fetch_profile['profile'])) {
-						$profileImage = "image/" . $fetch_profile['profile'];
-						echo "<img src='$profileImage' class='profile-image' width='100'>";
-					} else {
-						echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
-					}
-					echo "<p class='user-name'>" . $fetch_profile['name'] . "</p>";
-					echo "<p class='user-email'>" . $fetch_profile['email'] . "</p>";
-					echo "</div>";
-					?>
-					<div class="flex-btn">
-						<a href="update_user.php" class="btn">Mettre à jour le profil</a>
-						<form method="post" action="components/logout.php">
-							<button type="submit" name="logout" class="btn">Se déconnecter</button>
-						</form>
-					</div>
-					<?php
-				} else {
-					echo "<p>Profil non trouvé.</p>";
-				}
-				?>
+				<div class="profile">
+					<?php if (!empty($_SESSION['user_profile'])): ?>
+						<img src="image/<?= $_SESSION['user_profile']; ?>" class="profile-image" width="100">
+					<?php else: ?>
+						<div class='user-icon-default'><i class='bx bxs-user'></i></div>
+					<?php endif; ?>
+					<p class='user-name'><?= $_SESSION['user_name']; ?></p>
+					<p class='user-email'><?= $_SESSION['user_email']; ?></p>
+				</div>
+				<div class="flex-btn">
+					<a href="update_user.php" class="btn">Mettre à jour le profil</a>
+					<form method="post" action="components/logout.php">
+						<button type="submit" name="logout" class="btn">Se déconnecter</button>
+					</form>
+				</div>
 			<?php else: ?>
 				<!-- Code pour les utilisateurs non connectés -->
 				<div class="flex-btn flex-btn-inline">
