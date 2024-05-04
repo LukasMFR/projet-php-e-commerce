@@ -1745,30 +1745,45 @@ footer .bottom-footer {
 }
 
 /*------------view products----------*/
+
+.view_page .product-container {
+	display: flex;
+	align-items: flex-start;
+	gap: 50px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.view_page .product-images,
+.view_page .detail {
+	flex: 1;
+}
+
 .view_page {
-	padding: 5% 3%;
+	margin: 1rem;
 }
 
 .view_page img {
 	display: block;
 	max-width: 100%;
-	margin-bottom: 20px;
-
 }
 
-.product-images img {
-	width: 100%;
-	display: block;
-	margin-bottom: 10px;
+.view_page .product-images {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+	align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
-.product-images .third-image {
-
-	display: inline-block;
-	vertical-align: top;
+.view_page .product-images img {
+    width: 90%;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.product-details {
+.view_page .product-details {
 	width: 100%
 }
 
@@ -1779,8 +1794,8 @@ footer .bottom-footer {
 	align-items: center;
 	box-shadow: var(--box-shadow);
 	background: #ffffff96;
-	margin: -4rem;
-	padding: 7rem;
+	/* margin: -4rem; */
+	padding: 2rem;
 }
 
 .view_page form img {
@@ -1789,8 +1804,7 @@ footer .bottom-footer {
 	height: auto;
 	aspect-ratio: 16 / 9;
 	object-fit: cover;
-	margin-left: -5rem;
-	border-radius: 30px;
+	border-radius: 20px;
 }
 
 /* Pour l'image de puff sur la page voir la page produit */
@@ -1808,12 +1822,12 @@ footer .bottom-footer {
 	font-size: 2rem;
 	color: #000000;
 	font-weight: bold;
+	/* Line spacing */
 }
 
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
-	margin-top: 30px;
 }
 
 .view_page form .detail {
@@ -1822,6 +1836,13 @@ footer .bottom-footer {
 	line-height: 2;
 	margin-bottom: 2.5rem;
 	text-align: left;
+}
+
+.view_page .button {
+    display: flex;
+    flex-direction: row; /* Horizontalement par défaut */
+    gap: 20px;
+    align-items: center;
 }
 
 .view_page .btn {
@@ -1836,17 +1857,17 @@ footer .bottom-footer {
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
-.cart-total .button {
+.view_page .cart-total .button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.cart-total .button .btn {
+.view_page .cart-total .button .btn {
 	margin: 1;
 }
 
-.skill-description {
+.view_page .skill-description {
 	display: block;
 	margin-block-start: 1em;
 	margin-block-end: 1em;
@@ -1856,14 +1877,14 @@ footer .bottom-footer {
 	margin: 0 0 0.3rem 0;
 }
 
-.skill-list-item {
+.view_page .skill-list-item {
 	background-color: #3f3f3f1a;
 	border-left: 3px solid rgb(91, 107, 120);
 	padding: .9rem 2rem;
 	margin-bottom: 1rem;
 }
 
-.skill-item {
+.view_page .skill-item {
 	flex-grow: 1;
 	flex-shrink: 0;
 	width: 100%;
@@ -2458,4 +2479,11 @@ footer .bottom-footer {
 		flex-direction: column;
 		align-items: center;
 	}
+}
+
+/* Ce @media est utilisé pour les écrans plus petits que 600px pour la page view page. */
+@media (max-width: 900px) {
+    .view_page .button {
+        flex-direction: column; /* Passe en mode colonne sur les petits écrans */
+    }
 }

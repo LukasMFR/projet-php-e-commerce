@@ -110,70 +110,70 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 
 						<form method="post">
-							<div class="product-images">
-								<img src="image/<?php echo $fetch_products['image']; ?>" alt="Image principale">
-								<div class="image-container">
+							<div class="product-container">
+								<div class="product-images">
+									<img src="image/<?php echo $fetch_products['image']; ?>" alt="Image principale">
 									<img src="image/<?php echo $fetch_products['image2']; ?>" alt="Image secondaire">
-									<img src="image/<?php echo $fetch_products['image3']; ?>" alt="Image tertiaire"
-										class="third-image">
+									<img src="image/<?php echo $fetch_products['image3']; ?>" alt="Image tertiaire" class>
 								</div>
-							</div>
-							<div class="detail">
-								<div class="price"><?php echo number_format($fetch_products['price'], 2, ',', ' '); ?> €</div>
-								<div class="name"><?php echo $fetch_products['name']; ?></div>
 								<div class="detail">
-									<?php echo nl2br($fetch_products['product_detail']); ?>
-								</div>
-								<section id="skills" class="skills">
-									<div class="grid">
-										<div class="grid__item skill-item">
-											<h1>Caractéristiques du véhicule</h1>
-											<ul class="list-unstyled skill-list">
-												<li class="skill-list-item">
-													<h1>Modèle :</h1>
-													<p class="skill-description"><?php echo $fetch_products['Modèle']; ?>
-													</p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Année :</h1>
-													<p class="skill-description"><?php echo $fetch_products['Année']; ?></p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Moteur :</h1>
-													<p class="skill-description"><?php echo $fetch_products['moteur']; ?>
-													</p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Kilométrage :</h1>
-													<p class="skill-description"><?php echo $fetch_products['kilométrage']; ?>
-													</p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Equipements :</h1>
-													<p class="skill-description"><?php echo $fetch_products['equipements']; ?>
-													</p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Etat :</h1>
-													<p class="skill-description"><?php echo $fetch_products['etat']; ?></p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Vitesse de pointe :</h1>
-													<p class="skill-description"><?php echo $fetch_products['pointsforts']; ?></p>
-													</p>
-												</li>
-											</ul>
-										</div>
+									<div class="price"><?php echo number_format($fetch_products['price'], 2, ',', ' '); ?> €</div>
+									<div class="name"><?php echo $fetch_products['name']; ?></div>
+									<div class="detail">
+										<?php echo nl2br($fetch_products['product_detail']); ?>
 									</div>
-								</section>
+									<section id="skills" class="skills">
+										<div class="grid">
+											<div class="grid__item skill-item">
+												<h1>Caractéristiques du véhicule</h1>
+												<ul class="list-unstyled skill-list">
+													<li class="skill-list-item">
+														<h1>Modèle :</h1>
+														<p class="skill-description"><?php echo $fetch_products['Modèle']; ?>
+														</p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Année :</h1>
+														<p class="skill-description"><?php echo $fetch_products['Année']; ?></p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Moteur :</h1>
+														<p class="skill-description"><?php echo $fetch_products['moteur']; ?>
+														</p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Kilométrage :</h1>
+														<p class="skill-description"><?php echo $fetch_products['kilométrage']; ?>
+														</p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Équipements :</h1>
+														<p class="skill-description"><?php echo $fetch_products['equipements']; ?>
+														</p>
+													</li>
+													<li class="skill-list-item">
+														<h1>État :</h1>
+														<p class="skill-description"><?php echo $fetch_products['etat']; ?></p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Vitesse de pointe :</h1>
+														<p class="skill-description"><?php echo $fetch_products['pointsforts']; ?>
+														</p>
+														</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</section>
 
-								<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
-								<div class="button">
-									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
-											class="bx bx-heart"></i></button>
-									<input type="hidden" name="qty" value="1" min="0" class="quantity">
-									<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
-											class="bx bx-cart"></i></button>
+									<input type="hidden" name="product_id" value="<?php echo $fetch_products['id']; ?>">
+									<div class="button">
+										<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
+												class="bx bx-heart"></i></button>
+										<input type="hidden" name="qty" value="1" min="0" class="quantity">
+										<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
+												class="bx bx-cart"></i></button>
+									</div>
 								</div>
 							</div>
 						</form>
