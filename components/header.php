@@ -1,11 +1,11 @@
 <?php
 if (!isset($_SESSION)) {
-    session_start();  // Assurez-vous que la session est démarrée
+	session_start();  // Assurez-vous que la session est démarrée
 }
 // Initialiser $user_id à partir de la session ou à NULL si non disponible
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
-require_once('connection.php');
+require_once ('connection.php');
 
 ?>
 
@@ -45,34 +45,34 @@ require_once('connection.php');
 			}
 			?>
 			<i class='bx bx-list-plus' id="menu-btn" style="font-size: 2rem;"></i>
-	</div>
+		</div>
 
 		<div class="user-box">
 			<?php if (isset($_SESSION['user_id'])): ?>
-			<?php 
-			// Effectuez la requête ici
-			$select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-			$select_profile->execute([$_SESSION['user_id']]);
-			if ($select_profile->rowCount() > 0) {
-				$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-				?>
-				<div class="profile">
-					<img src="image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
-					<p><?= $fetch_profile['name']; ?></p>
-				</div>
-				<div class="flex-btn">
-					<a href="update_user.php" class="btn">Mettre à jour le profil</a>
-					<form method="post" action="components/logout.php">
-						<button type="submit" name="logout" class="btn">Se déconnecter</button>
-					</form>
-				</div>
 				<?php
-			} else {
-				echo "<p>Profil non trouvé.</p>";
-			}
-			?>
+				// Effectuez la requête ici
+				$select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+				$select_profile->execute([$_SESSION['user_id']]);
+				if ($select_profile->rowCount() > 0) {
+					$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+					?>
+					<div class="profile">
+						<img src="image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
+						<p><?= $fetch_profile['name']; ?></p>
+					</div>
+					<div class="flex-btn">
+						<a href="update_user.php" class="btn">Mettre à jour le profil</a>
+						<form method="post" action="components/logout.php">
+							<button type="submit" name="logout" class="btn">Se déconnecter</button>
+						</form>
+					</div>
+					<?php
+				} else {
+					echo "<p>Profil non trouvé.</p>";
+				}
+				?>
 			<?php else: ?>
-			<!-- Code pour les utilisateurs non connectés -->
+				<!-- Code pour les utilisateurs non connectés -->
 				<div class="flex-btn">
 					<a href="login.php" class="btn">Se connecter</a>
 					<a href="register.php" class="btn">S'enregistrer</a>
