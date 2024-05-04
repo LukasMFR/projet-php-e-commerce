@@ -436,6 +436,37 @@ header.scrolled::before {
 	cursor: pointer;
 }
 
+.header .user-box .user-icon-default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    padding: .5rem;
+    border: 3px solid var(--green);
+    font-size: 60px;
+    color: #555;
+    margin: auto;
+}
+
+.header .user-box .user-icon-default i {
+    color: inherit;
+}
+
+.header .user-box .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.header .user-box .user-email {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
