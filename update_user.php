@@ -20,6 +20,33 @@ if (isset($_POST['logout'])) {
 	exit; // Assurez-vous de terminer le script après la redirection
 }
 
+// Gestion de la suppression de l'image de profil
+if (isset($_POST['delete_image'])) {
+	$select_image = $conn->prepare("SELECT profile_pic FROM `users` WHERE id = ?");
+	$select_image->execute([$user_id]);
+	$row = $select_image->fetch(PDO::FETCH_ASSOC);
+	$current_image = $row['profile_pic'];
+
+	if ($current_image) {
+		// Supprimez l'image du dossier
+		if (file_exists($current_image)) {
+			unlink($current_image);
+		}
+
+		// Mettez à jour la base de données pour supprimer le chemin de l'image
+		$update_image = $conn->prepare("UPDATE `users` SET profile_pic = NULL WHERE id = ?");
+		$update_image->execute([$user_id]);
+
+		// Mettez à jour la variable de session
+		$_SESSION['user_profile'] = null;
+
+		// Message de confirmation
+		echo "<p>Photo de profil supprimée avec succès.</p>";
+	} else {
+		echo "<p>Aucune photo de profil à supprimer.</p>";
+	}
+}
+
 // Traitement du formulaire de mise à jour
 if (isset($_POST['submit'])) {
 	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
@@ -29,14 +56,14 @@ if (isset($_POST['submit'])) {
 	if (!empty($name) && $name !== $_SESSION['user_name']) {
 		$update_name = $conn->prepare("UPDATE `users` SET name = ? WHERE id = ?");
 		$update_name->execute([$name, $user_id]);
-		$_SESSION['user_name'] = $name; // Mise à jour de la session
+		$_SESSION['user_name'] = $name;
 	}
 
 	// Mise à jour de l'email
 	if (!empty($email) && $email !== $_SESSION['user_email'] && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$update_email = $conn->prepare("UPDATE `users` SET email = ? WHERE id = ?");
 		$update_email->execute([$email, $user_id]);
-		$_SESSION['user_email'] = $email; // Mise à jour de la session
+		$_SESSION['user_email'] = $email;
 	}
 
 	// Gestion de l'image de profil
@@ -49,6 +76,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['user_profile'] = $image_folder; // Mise à jour de la session avec le chemin de l'image
 			$update_image = $conn->prepare("UPDATE `users` SET profile_pic = ? WHERE id = ?");
 			$update_image->execute([$image_folder, $user_id]);
+			$success_msg[] = 'Image mise à jour avec succès.';
 		} else {
 			$error_msg[] = "Erreur lors du téléchargement de l'image.";
 		}
@@ -147,6 +175,7 @@ if (isset($_POST['submit'])) {
 						<label for="image">Télécharger la photo de profil <sup>*</sup></label>
 						<input type="file" id="image" name="image" accept="image/jpeg, image/png">
 					</div>
+					<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
 					<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 				</form>
 			</div>
