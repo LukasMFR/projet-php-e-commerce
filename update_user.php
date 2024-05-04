@@ -59,9 +59,9 @@ if (isset($_POST['submit'])) {
 			$new_pass = $_POST['new_pass'];
 			$update_pass = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
 			$update_pass->execute([$new_pass, $user_id]);
-			$message[] = 'Mot de passe mis à jour avec succès.';
+			$success_msg[] = 'Mot de passe mis à jour avec succès.';
 		} else {
-			$message[] = "L'ancien mot de passe ne correspond pas.";
+			$warning_msg[] = "L'ancien mot de passe ne correspond pas.";
 		}
 	}
 }
@@ -94,14 +94,6 @@ if (isset($_POST['submit'])) {
 			<a href="home.php">Accueil </a><span>/ Mettre à jour le profil</span>
 		</div>
 		<section>
-			<?php
-			// Affichage des messages de réussite ou d'erreur
-			if (isset($message)) {
-				foreach ($message as $msg) {
-					echo '<div class="message"><span>' . $msg . '</span><i class="bx bx-x" onclick="this.parentElement.remove();"></i></div>';
-				}
-			}
-			?>
 			<div class="form-container" id="users_login">
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="profile">
@@ -153,7 +145,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
-	<?php include '../components/alert.php'; ?>
+	<?php include 'components/alert.php'; ?>
 </body>
 
 </html>
