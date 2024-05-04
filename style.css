@@ -2593,3 +2593,10 @@ footer .bottom-footer {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
+
+/* Ce @media est utilisé pour les écrans plus petits que 600px pour la page cart page. */
+@media (max-width: 1024px) {
+    .cart-page .button {
+        flex-direction: column;
+    }
+}
