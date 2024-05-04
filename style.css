@@ -372,17 +372,6 @@ header.scrolled::before {
 
 #menu-btn {
 	display: none;
-	font-size: 2rem;
-	box-shadow: var(--inner-box-shadow);
-	padding: .5rem;
-	color: var(--lightgay);
-	cursor: pointer;
-	transition: .6s;
-}
-
-#menu-btn:hover {
-	box-shadow: var(--outer-shadow);
-	border-radius: 50%;
 }
 
 .header .user-box {
