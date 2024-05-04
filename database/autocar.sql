@@ -61,6 +61,7 @@ CREATE TABLE `users` (
   `email` VARCHAR(255) NOT NULL UNIQUE,
   `password` VARCHAR(255) NOT NULL,  -- Adjusted to store plain text passwords
   `user_type` VARCHAR(255) NOT NULL DEFAULT 'user',
+  `profile_pic` VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -1,4 +1,7 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 include 'components/connection.php';
 session_start();
 
@@ -9,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$message = [];
 
 // Gestion de la déconnexion
 if (isset($_POST['logout'])) {
@@ -39,13 +41,17 @@ if (isset($_POST['submit'])) {
 
 	// Gestion de l'image de profil
 	if (!empty($_FILES['image']['name'])) {
-		$image = $_FILES['image']['name'];
-		$image_tmp_name = $_FILES['image']['tmp_name'];
-		$image_folder = 'image/' . $image;
-		move_uploaded_file($image_tmp_name, $image_folder);
-		$_SESSION['user_profile'] = $image; // Mise à jour de la session
-		$update_image = $conn->prepare("UPDATE `users` SET profile = ? WHERE id = ?");
-		$update_image->execute([$image, $user_id]);
+		$image_name = $_FILES['image']['name'];
+		$image_ext = pathinfo($image_name, PATHINFO_EXTENSION);
+		$new_image_name = $user_id . '_' . time() . '.' . $image_ext; // Crée un nom unique pour l'image
+		$image_folder = 'user_profile_images/' . $new_image_name; // Dossier et nom de fichier final
+		if (move_uploaded_file($_FILES['image']['tmp_name'], $image_folder)) {
+			$_SESSION['user_profile'] = $image_folder; // Mise à jour de la session avec le chemin de l'image
+			$update_image = $conn->prepare("UPDATE `users` SET profile_pic = ? WHERE id = ?");
+			$update_image->execute([$image_folder, $user_id]);
+		} else {
+			$error_msg[] = "Erreur lors du téléchargement de l'image.";
+		}
 	}
 
 	// Mise à jour du mot de passe
@@ -104,7 +110,7 @@ if (isset($_POST['submit'])) {
 						<?php
 						// Affichage de l'image de profil ou d'une icône par défaut
 						if (!empty($_SESSION['user_profile'])) {
-							echo "<img src='image/" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
+							echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
 						} else {
 							echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
 						}
@@ -113,34 +119,33 @@ if (isset($_POST['submit'])) {
 					<h3>Mettre à jour le profil</h3>
 					<div class="input-field">
 						<label for="name">Nom d'utilisateur <sup>*</sup></label>
-						<input type="text" id="name" name="name" maxlength="20"
+						<input type="text" id="name" name="name" maxlength="255"
 							placeholder="Saisissez votre nom d'utilisateur" required
 							value="<?= $_SESSION['user_name'] ?? ''; ?>">
 					</div>
 					<div class="input-field">
 						<label for="email">Email de l'utilisateur <sup>*</sup></label>
-						<input type="email" id="email" name="email" maxlength="50" placeholder="Saisissez votre email"
+						<input type="email" id="email" name="email" maxlength="255" placeholder="Saisissez votre email"
 							required value="<?= $_SESSION['user_email'] ?? ''; ?>">
 					</div>
 					<div class="input-field">
 						<label for="old_pass">Ancien mot de passe <sup>*</sup></label>
-						<input type="password" id="old_pass" name="old_pass" maxlength="20"
+						<input type="password" id="old_pass" name="old_pass" maxlength="255"
 							placeholder="Saisissez votre mot de passe actuel">
 					</div>
 					<div class="input-field">
 						<label for="new_pass">Nouveau mot de passe <sup>*</sup></label>
-						<input type="password" id="new_pass" name="new_pass" maxlength="20"
+						<input type="password" id="new_pass" name="new_pass" maxlength="255"
 							placeholder="Saisissez votre nouveau mot de passe">
 					</div>
 					<div class="input-field">
 						<label for="confirm_pass">Confirmer le mot de passe <sup>*</sup></label>
-						<input type="password" id="confirm_pass" name="confirm_pass" maxlength="20"
+						<input type="password" id="confirm_pass" name="confirm_pass" maxlength="255"
 							placeholder="Confirmez votre nouveau mot de passe">
 					</div>
 					<div class="input-field">
 						<label for="image">Télécharger la photo de profil <sup>*</sup></label>
-						<input type="file" id="image" name="image"
-							accept="image/jpg, image/jpeg, image/png, image/webp">
+						<input type="file" id="image" name="image" accept="image/jpeg, image/png">
 					</div>
 					<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 				</form>
