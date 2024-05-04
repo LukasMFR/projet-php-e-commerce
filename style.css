@@ -966,6 +966,14 @@ video {
 }
 
 /*----------about section-----------------*/
+.slides img {
+	width: 100%;
+}
+
+.slides img.active {
+	display: block;
+}
+
 .about-category {
 	max-width: 1200px;
 	display: grid;
@@ -1739,47 +1747,6 @@ footer .bottom-footer {
 /*------------view products----------*/
 .view_page {
 	padding: 5% 3%;
-}
-
-.color-button {
-	border: none;
-	border: 1px solid black;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	margin: 5px;
-	cursor: pointer;
-}
-
-.button-container {
-	text-align: center;
-	height: 69%;
-}
-
-.color-button[data-color="#FF0000"] {
-	background-color: #FF0000;
-}
-
-.color-button[data-color="#00FF00"] {
-	background-color: #00FF00;
-}
-
-.color-button[data-color="#0000FF"] {
-	background-color: #0000FF;
-}
-
-.slider {
-	position: relative;
-	width: 175%;
-	max-width: 741px;
-}
-
-.slides img {
-	width: 100%;
-}
-
-.slides img.active {
-	display: block;
 }
 
 .view_page img {
