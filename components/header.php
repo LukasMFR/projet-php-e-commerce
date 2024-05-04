@@ -49,7 +49,7 @@
 				</div>
 				<div class="flex-btn">
 					<a href="update_user.php" class="btn">Mettre à jour le profil</a>
-					<form method="post" action="components/logout.php">
+					<form method="post">
 						<button type="submit" name="logout" class="btn">Se déconnecter</button>
 					</form>
 				</div>
