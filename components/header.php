@@ -40,7 +40,7 @@
 			<?php if (isset($_SESSION['user_id'])): ?>
 				<div class="profile">
 					<?php if (!empty($_SESSION['user_profile'])): ?>
-						<img src="image/<?= $_SESSION['user_profile']; ?>" class="profile-image" width="100">
+						<img src="<?= $_SESSION['user_profile']; ?>" class="profile-image" alt="Profile Image" width="100">
 					<?php else: ?>
 						<div class='user-icon-default'><i class='bx bxs-user'></i></div>
 					<?php endif; ?>

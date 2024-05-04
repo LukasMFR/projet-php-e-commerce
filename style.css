@@ -401,6 +401,7 @@ header.scrolled::before {
 	height: 120px;
 	border-radius: 50%;
 	padding: .5rem;
+	object-fit: cover;
 	border: 3px solid var(--green);
 }
 
