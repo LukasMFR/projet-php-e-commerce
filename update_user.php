@@ -49,19 +49,23 @@ if (isset($_POST['submit'])) {
 	}
 
 	// Mise à jour du mot de passe
-	if (!empty($_POST['old_pass']) && !empty($_POST['new_pass']) && $_POST['new_pass'] === $_POST['confirm_pass']) {
-		$old_pass = $_POST['old_pass'];
-		$select_old_pass = $conn->prepare("SELECT password FROM `users` WHERE id = ?");
-		$select_old_pass->execute([$user_id]);
-		$fetch_pass = $select_old_pass->fetch(PDO::FETCH_ASSOC);
-
-		if ($old_pass === $fetch_pass['password']) {
-			$new_pass = $_POST['new_pass'];
-			$update_pass = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
-			$update_pass->execute([$new_pass, $user_id]);
-			$success_msg[] = 'Mot de passe mis à jour avec succès.';
+	if (!empty($_POST['old_pass']) && !empty($_POST['new_pass']) && !empty($_POST['confirm_pass'])) {
+		if ($_POST['new_pass'] !== $_POST['confirm_pass']) {
+			$warning_msg[] = "Le nouveau mot de passe et la confirmation ne correspondent pas.";
 		} else {
-			$warning_msg[] = "L'ancien mot de passe ne correspond pas.";
+			$old_pass = $_POST['old_pass'];
+			$select_old_pass = $conn->prepare("SELECT password FROM `users` WHERE id = ?");
+			$select_old_pass->execute([$user_id]);
+			$fetch_pass = $select_old_pass->fetch(PDO::FETCH_ASSOC);
+
+			if ($old_pass === $fetch_pass['password']) {
+				$new_pass = $_POST['new_pass'];
+				$update_pass = $conn->prepare("UPDATE `users` SET password = ? WHERE id = ?");
+				$update_pass->execute([$new_pass, $user_id]);
+				$success_msg[] = 'Mot de passe mis à jour avec succès.';
+			} else {
+				$warning_msg[] = "L'ancien mot de passe ne correspond pas.";
+			}
 		}
 	}
 }
