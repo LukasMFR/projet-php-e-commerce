@@ -1477,6 +1477,13 @@ footer .bottom-footer {
 	padding: 2rem;
 }
 
+.products .box-container.cart-page {
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+	gap: 2rem;
+	display: grid;
+	padding: 2rem;
+}
+
 .products .box-container .box {
 	box-shadow: var(--box-shadow);
 	border-radius: 1rem;
@@ -2397,6 +2404,10 @@ footer .bottom-footer {
 
 	form:not(.product-view-form):not(.view_page form) {
 		width: 100%;
+	}
+
+	#cart-page form {
+		width: auto;
 	}
 
 	.shop-category .detail h1 {
