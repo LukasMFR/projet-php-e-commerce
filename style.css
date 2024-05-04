@@ -2049,6 +2049,7 @@ footer .bottom-footer {
 
 .orders .box .name,
 .orders .box .price,
+.orders .box .quantity,
 .orders .box .status {
 	margin: 5px 0;
 	display: block;
@@ -2060,7 +2061,8 @@ footer .bottom-footer {
 	margin: 5px 0;
 }
 
-.orders .box .price {
+.orders .box .price,
+.orders .box .quantity {
 	color: #555;
 	font-size: 1.1rem;
 	margin: 5px 0;

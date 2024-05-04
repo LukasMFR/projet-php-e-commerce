@@ -93,9 +93,8 @@ if (isset($_POST['logout'])) {
 											alt="Product Image">
 										<div class="info">
 											<h3 class="name"><?= $fetch_item['name']; ?></h3>
-											<p class="price">Prix : <?= number_format($fetch_order['price'], 2, ',', ' '); ?> € x
-												<?= $fetch_order['qty']; ?>
-											</p>
+											<p class="price">Prix : <?= number_format($fetch_order['price'], 2, ',', ' '); ?> €</p>
+											<p class="quantity">Quantité : <?= $fetch_order['qty']; ?></p>
 											<p class="status">Statut : <span
 													data-status="<?= $fetch_order['status']; ?>"><?= $fetch_order['status']; ?></span>
 											</p>
