@@ -1769,18 +1769,18 @@ footer .bottom-footer {
 }
 
 .view_page .product-images {
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-end; */
+	display: flex;
+	flex-direction: column;
+	/* align-items: flex-end; */
 	align-items: center;
-    justify-content: flex-start;
-    width: 100%;
+	justify-content: flex-start;
+	width: 100%;
 }
 
 .view_page .product-images img {
-    width: 90%;
-    display: block;
-    margin-bottom: 10px;
+	width: 90%;
+	display: block;
+	margin-bottom: 10px;
 }
 
 .view_page .product-details {
@@ -1838,10 +1838,11 @@ footer .bottom-footer {
 }
 
 .view_page .button {
-    display: flex;
-    flex-direction: row; /* Horizontalement par défaut */
-    gap: 20px;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	/* Horizontalement par défaut */
+	gap: 20px;
+	align-items: center;
 }
 
 .view_page .btn {
@@ -2482,7 +2483,39 @@ footer .bottom-footer {
 
 /* Ce @media est utilisé pour les écrans plus petits que 600px pour la page view page. */
 @media (max-width: 900px) {
-    .view_page .button {
-        flex-direction: column; /* Passe en mode colonne sur les petits écrans */
-    }
+	.view_page .button {
+		flex-direction: column;
+	}
+}
+
+/* Ce media est utilisé pour les écrans plus petits que 1024px pour la page view page. */
+@media (max-width: 1024px) {
+	.view_page .product-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.view_page .product-images {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.view_page .product-images img {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.view_page form {
+		display: block;
+		padding: 1rem;
+	}
+
+	.view_page .detail,
+	.view_page .skills {
+		width: 100%;
+	}
 }
