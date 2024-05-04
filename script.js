@@ -87,3 +87,15 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Elements not found');
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (sessionStorage.getItem('welcome_login') === 'true') {
+        Swal.fire({
+            title: 'Bienvenue!',
+            text: 'Votre connexion/enregistrement a réussi.',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+        sessionStorage.removeItem('welcome_login'); // Nettoyez après affichage
+    }
+});

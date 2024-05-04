@@ -1,48 +1,29 @@
 <?php
 include 'components/connection.php';
-
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-// Initialisez $user_id avec une valeur par défaut pour éviter les erreurs si non défini
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-	header('location: order.php');  // Si déjà connecté, rediriger directement
-	exit;
-}
-
-// Enregistrement de l'utilisateur
 if (isset($_POST['submit'])) {
-	$id = unique_id();  // Assurez-vous que cette fonction existe et est définie correctement
 	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 	$cpass = filter_var($_POST['cpass'], FILTER_SANITIZE_STRING);
 
-	// Vérifier si l'utilisateur existe déjà
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
 	$select_user->execute([$email]);
 
 	if ($select_user->rowCount() > 0) {
 		$warning_msg[] = 'Email déjà existant';
+	} elseif ($pass !== $cpass) {
+		$warning_msg[] = 'Les mots de passe ne correspondent pas';
 	} else {
-		if ($pass !== $cpass) {
-			$warning_msg[] = 'Les mots de passe ne correspondent pas';
-		} else {
-			// Insérer le nouvel utilisateur
-			$insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password) VALUES(?, ?, ?, ?)");
-			$insert_user->execute([$id, $name, $email, $pass]);
-			$_SESSION['user_id'] = $id;
-			$_SESSION['user_name'] = $name;
-			$_SESSION['user_email'] = $email;
-			$_SESSION['welcome_login'] = true;  // Préparer le message de bienvenue
-			header('location: order.php');  // Rediriger vers une page de confirmation
-			exit;
-		}
+		$insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password) VALUES(?, ?, ?, ?)");
+		$insert_user->execute([uniqid(), $name, $email, $pass]);
+		$_SESSION['user_id'] = $insert_user->lastInsertId();
+		$_SESSION['user_name'] = $name;
+		$_SESSION['user_email'] = $email;
+		$_SESSION['welcome_login'] = true;
+		echo "<script>sessionStorage.setItem('welcome_login', 'true');</script>";
+		header('location: order.php');
 	}
 }
 ?>
@@ -58,6 +39,7 @@ if (isset($_POST['submit'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<title>S'enregistrer - Road Luxury</title>
 </head>
 
@@ -100,6 +82,8 @@ if (isset($_POST['submit'])) {
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<?php include 'components/alert.php'; ?>
+	<script src="script.js"></script>
 </body>
 
 </html>
+

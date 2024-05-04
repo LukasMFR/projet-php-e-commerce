@@ -7,7 +7,7 @@ if (headers_sent($file, $line)) {
     session_start();
     session_unset();
     session_destroy();
-    header('Location: /projet-php-e-commerce/home.php');
+    header('Location: ../home.php');
     exit;
 }
 ?>

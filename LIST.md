@@ -4,7 +4,7 @@
 - [x] Changer commande, ne pas afficher les commandes si personne n’est connecté
 - [x] Rajouter quelque chose ou un message quand on se connecte ou enregistre genre message de bienvenue avec nom
 - [x] Quand on se connecte charger une autre page
-- [/] Afficher le nom de l’utilisateur sous l’icône utilisateur dans la barre de NAV
+- [x] Afficher le nom de l’utilisateur sous l’icône utilisateur dans la barre de NAV
 - [x] Dès qu’on se connecte, on charge commande
 - [x] Ajouter option pour modifier son profil compte utilisateur
 - [x] Sur la page se connecter et s’enregistrer mettre un bouton pour revenir sur le site normal

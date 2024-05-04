@@ -1,31 +1,22 @@
 <?php
 include 'components/connection.php';
-
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-// Initialisez $user_id avec une valeur par défaut pour éviter les erreurs si non défini
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-
 session_start();
 
 if (isset($_POST['submit'])) {
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 
-	// Prepare and execute the SQL statement
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
 	$select_user->execute([$email, $pass]);
 	$row = $select_user->fetch(PDO::FETCH_ASSOC);
 
 	if ($select_user->rowCount() > 0) {
-		// Set session variables upon successful login
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
 		$_SESSION['user_profile'] = $row['profile_pic'];
 		$_SESSION['welcome_login'] = true;
+		echo "<script>sessionStorage.setItem('welcome_login', 'true');</script>";
 		header('location: order.php');
 	} else {
 		$warning_msg[] = 'Identifiant ou mot de passe incorrect';
@@ -45,6 +36,7 @@ if (isset($_POST['submit'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<title>Se connecter - Road Luxury</title>
 </head>
 
@@ -79,6 +71,7 @@ if (isset($_POST['submit'])) {
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<?php include 'components/alert.php'; ?>
+	<script src="script.js"></script>
 </body>
 
 </html>
