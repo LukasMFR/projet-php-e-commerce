@@ -467,6 +467,10 @@ header.scrolled::before {
     margin-bottom: 1rem;
 }
 
+.bxs-user:before {
+	content: "\eee1";
+}
+
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
@@ -613,12 +617,6 @@ video {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
-
-
-
-
-
-
 
 .slide1 {
 	background-image: url('img/slider.jpg');
@@ -2496,8 +2494,4 @@ footer .bottom-footer {
 		padding-top: 20px;
 		/* Ajoute de l'espace au-dessus de la section de facturation */
 	}
-}
-
-.bxs-user:before {
-	content: "\eee1";
 }
