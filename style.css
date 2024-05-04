@@ -1825,23 +1825,23 @@ footer .bottom-footer {
 }
 
 .view_page .name {
-    text-align: left;
-    font-size: 2rem;
-    color: #000000;
-    font-weight: bold;
-    line-height: 1.2;
+	text-align: left;
+	font-size: 2rem;
+	color: #000000;
+	font-weight: bold;
+	line-height: 1.2;
 	margin-bottom: 20px;
 }
 
 .view_page .price {
-    font-size: 24px;
-    margin-bottom: 20px;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
 
 .view_page .detail {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 20px;
 }
 
 
@@ -2538,5 +2538,17 @@ footer .bottom-footer {
 	.view_page .detail,
 	.view_page .skills {
 		width: 100%;
+	}
+
+	.view_page .skill-item {
+		padding: 0;
+	}
+}
+
+/* Ce @media est utilisé pour les écrans plus petits que 600px pour la page view page (puff). */
+@media (max-width: 600px) {
+	.view_page .product-images:has(.puff) {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
