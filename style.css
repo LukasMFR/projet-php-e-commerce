@@ -420,12 +420,17 @@ header.scrolled::before {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* padding-bottom: 10px; */
+}
+
+/* Ajout pour gérer les boutons en ligne pour les utilisateurs non connectés */
+.header .user-box .flex-btn.flex-btn-inline {
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .header .user-box .flex-btn .btn {
 	padding: 0.4rem 1rem;
-	margin: 0.3rem 0;
+	margin: 0.3rem;
 	border-radius: 0.25rem;
 	text-align: center;
 	cursor: pointer;
