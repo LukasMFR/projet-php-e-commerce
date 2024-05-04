@@ -1177,7 +1177,7 @@ textarea {
 }
 
 input[type="submit"].btn {
-    color: black;
+	color: black;
 }
 
 .form-container form {
@@ -2335,7 +2335,7 @@ footer .bottom-footer {
 		width: 100%;
 	}
 
-	form:not(.product-view-form) {
+	form:not(.product-view-form):not(.view_page form) {
 		width: 100%;
 	}
 
