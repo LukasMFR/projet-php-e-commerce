@@ -68,6 +68,7 @@ body {
 .main {
 	width: 93vw;
 	background: #f5f5f5bd;
+	/* background: #e0e0e0; */
 	box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%);
 	margin: 1rem auto;
 	margin-top: 10rem;
@@ -1476,6 +1477,13 @@ footer .bottom-footer {
 	padding: 2rem;
 }
 
+.products .box-container.cart-page {
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+	gap: 2rem;
+	display: grid;
+	padding: 2rem;
+}
+
 .products .box-container .box {
 	box-shadow: var(--box-shadow);
 	border-radius: 1rem;
@@ -1674,6 +1682,7 @@ footer .bottom-footer {
 .products .cart-total {
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
+	background-color: white;
 	max-width: 50vw;
 	margin: 1rem auto;
 	text-align: center;
@@ -1689,6 +1698,13 @@ footer .bottom-footer {
 
 .products .cart-total p span {
 	color: var(--green);
+}
+
+.cart-page .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .image-overlay {
@@ -2267,6 +2283,23 @@ footer .bottom-footer {
 	/* Orange pour les commandes en cours */
 }
 
+/*------------update profile section----------*/
+.update-profile .profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.update-profile .profile-image {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	/* padding: .5rem; */
+	object-fit: cover;
+	border: 3px solid var(--green);
+	margin-bottom: 1rem;
+}
+
 
 /*------------FAQ section----------*/
 .faq-section {
@@ -2379,6 +2412,10 @@ footer .bottom-footer {
 
 	form:not(.product-view-form):not(.view_page form) {
 		width: 100%;
+	}
+
+	#cart-page form {
+		width: auto;
 	}
 
 	.shop-category .detail h1 {
@@ -2543,6 +2580,10 @@ footer .bottom-footer {
 	.view_page .skill-item {
 		padding: 0;
 	}
+
+	.view_page form img {
+		border-radius: 10px;
+	}
 }
 
 /* Ce @media est utilisé pour les écrans plus petits que 600px pour la page view page (puff). */
@@ -2551,4 +2592,11 @@ footer .bottom-footer {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 	}
+}
+
+/* Ce @media est utilisé pour les écrans plus petits que 600px pour la page cart page. */
+@media (max-width: 1024px) {
+    .cart-page .button {
+        flex-direction: column;
+    }
 }

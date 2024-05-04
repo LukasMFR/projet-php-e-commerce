@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
 		<section>
 			<div class="form-container" id="users_login">
 				<form action="" method="post" enctype="multipart/form-data">
-					<div class="profile">
+					<div class="update-profile">
 						<?php
 						// Affichage de l'image de profil ou d'une icône par défaut
 						if (!empty($_SESSION['user_profile'])) {

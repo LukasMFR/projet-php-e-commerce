@@ -71,7 +71,7 @@ if (isset($_POST['empty_cart'])) {
 
 <body>
 	<?php include 'components/header.php'; ?>
-	<div class="main">
+	<div id="cart-page" class="main cart-page">
 		<div class="banner">
 			<h1>Mon panier</h1>
 		</div>
@@ -80,7 +80,7 @@ if (isset($_POST['empty_cart'])) {
 		</div>
 		<section class="products">
 			<h1 class="title">Produits ajoutés au panier</h1>
-			<div class="box-container">
+			<div class="box-container cart-page">
 				<?php
 				$grand_total = 0;
 				$select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
