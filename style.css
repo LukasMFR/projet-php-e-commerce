@@ -1824,6 +1824,27 @@ footer .bottom-footer {
 	/* Line spacing */
 }
 
+.view_page .name {
+    text-align: left;
+    font-size: 2rem;
+    color: #000000;
+    font-weight: bold;
+    line-height: 1.2;
+	margin-bottom: 20px;
+}
+
+.view_page .price {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.view_page .detail {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
 .view_page form .price {
 	font-size: 24px;
 	line-height: 1;
