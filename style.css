@@ -2269,19 +2269,19 @@ footer .bottom-footer {
 
 /*------------update profile section----------*/
 .update-profile .profile {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement si nécessaire */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .update-profile .profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    /* padding: .5rem; */
-    object-fit: cover;
-    border: 3px solid var(--green);
-    margin-bottom: 1rem;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	/* padding: .5rem; */
+	object-fit: cover;
+	border: 3px solid var(--green);
+	margin-bottom: 1rem;
 }
 
 
@@ -2559,6 +2559,10 @@ footer .bottom-footer {
 
 	.view_page .skill-item {
 		padding: 0;
+	}
+
+	.view_page form img {
+		border-radius: 10px;
 	}
 }
 
