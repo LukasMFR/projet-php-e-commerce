@@ -54,15 +54,17 @@ require_once ('connection.php');
 				$select_profile->execute([$_SESSION['user_id']]);
 				if ($select_profile->rowCount() > 0) {
 					$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+					echo "<div class='profile'>";
 					if (!empty($fetch_profile['profile'])) {
 						$profileImage = "image/" . $fetch_profile['profile'];
-						echo "<img src='$profileImage' class='logo-image' width='100'>";
+						echo "<img src='$profileImage' class='profile-image' width='100'>";
 					} else {
-						// Utilisez la classe `user-icon-default` pour appliquer le style
 						echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
 					}
+					echo "<p class='user-name'>" . $fetch_profile['name'] . "</p>";
+					echo "<p class='user-email'>" . $fetch_profile['email'] . "</p>";
+					echo "</div>";
 					?>
-					<p><?= $fetch_profile['name']; ?></p>
 					<div class="flex-btn">
 						<a href="update_user.php" class="btn">Mettre à jour le profil</a>
 						<form method="post" action="components/logout.php">
