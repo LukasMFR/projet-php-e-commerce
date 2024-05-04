@@ -2267,6 +2267,23 @@ footer .bottom-footer {
 	/* Orange pour les commandes en cours */
 }
 
+/*------------update profile section----------*/
+.update-profile .profile {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+}
+
+.update-profile .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* padding: .5rem; */
+    object-fit: cover;
+    border: 3px solid var(--green);
+    margin-bottom: 1rem;
+}
+
 
 /*------------FAQ section----------*/
 .faq-section {
