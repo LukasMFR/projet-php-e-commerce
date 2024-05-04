@@ -2173,6 +2173,10 @@ footer .bottom-footer {
 	width: 100%;
 }
 
+.order-detail .box .billing-info .user-details {
+	flex-grow: 1;
+}
+
 .order-detail .box .billing-info .user,
 .order-detail .box .billing-info .status {
 	margin-bottom: 10px;
