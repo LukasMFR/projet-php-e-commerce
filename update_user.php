@@ -95,6 +95,7 @@ if (isset($_POST['submit'])) {
 		</div>
 		<section>
 			<?php
+			// Affichage des messages de réussite ou d'erreur
 			if (isset($message)) {
 				foreach ($message as $msg) {
 					echo '<div class="message"><span>' . $msg . '</span><i class="bx bx-x" onclick="this.parentElement.remove();"></i></div>';
@@ -105,8 +106,9 @@ if (isset($_POST['submit'])) {
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="profile">
 						<?php
+						// Affichage de l'image de profil ou d'une icône par défaut
 						if (!empty($_SESSION['user_profile'])) {
-							echo "<img src='image/" . $_SESSION['user_profile'] . "' class='profile-image' width='100'>";
+							echo "<img src='image/" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
 						} else {
 							echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
 						}
