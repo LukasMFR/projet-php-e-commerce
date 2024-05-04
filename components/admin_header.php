@@ -11,6 +11,7 @@
 			<a href="view_posts.php">Voir voitures</a>
 			<a href="view_posts_puff.php">Voir puffs</a>
 			<a href="user_accounts.php">Comptes</a>
+			<a href="../home.php">Retourner au site</a>
 
 		</nav>
 		<div class="icons">
