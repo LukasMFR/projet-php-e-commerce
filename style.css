@@ -456,10 +456,6 @@ header.scrolled::before {
 	margin-bottom: 1rem;
 }
 
-.bxs-user:before {
-	content: "\eee1";
-}
-
 /*----------brand-----------------*/
 /* This code is for the brand div that includes the logo and the brand name */
 .brand-navbar {
