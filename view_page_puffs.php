@@ -110,45 +110,47 @@ if (isset($_POST['add_to_cart'])) {
 						?>
 
 						<form method="post">
-							<div class="product-images">
-								<img src="image/<?php echo $fetch_puff['image']; ?>" alt="Image principale" class="puff">
-							</div>
-							<div class="detail">
-								<div class="price"><?php echo number_format($fetch_puff['price'], 2, ',', ' '); ?> €</div>
-								<div class="name"><?php echo $fetch_puff['name']; ?></div>
-								<div class="detail">
-									<?php echo nl2br($fetch_puff['product_detail']); ?>
+							<div class="product-container">
+								<div class="product-images">
+									<img src="image/<?php echo $fetch_puff['image']; ?>" alt="Image principale" class="puff">
 								</div>
-								<section id="skills" class="skills">
-									<div class="grid">
-										<div class="grid__item skill-item">
-											<h1>Caractéristiques du véhicule</h1>
-											<ul class="list-unstyled skill-list">
-												<li class="skill-list-item">
-													<h1>Saveur :</h1>
-													<p class="skill-description"><?php echo $fetch_puff['goût']; ?>
-													</p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Nombre de taffe :</h1>
-													<p class="skill-description"><?php echo $fetch_puff['taffe']; ?></p>
-												</li>
-												<li class="skill-list-item">
-													<h1>Taux de nicotine :</h1>
-													<p class="skill-description"><?php echo $fetch_puff['nicotine']; ?></p>
-												</li>
-											</ul>
-										</div>
+								<div class="detail">
+									<div class="price"><?php echo number_format($fetch_puff['price'], 2, ',', ' '); ?> €</div>
+									<div class="name"><?php echo $fetch_puff['name']; ?></div>
+									<div class="detail">
+										<?php echo nl2br($fetch_puff['product_detail']); ?>
 									</div>
-								</section>
+									<section id="skills" class="skills">
+										<div class="grid">
+											<div class="grid__item skill-item">
+												<h1>Caractéristiques du véhicule</h1>
+												<ul class="list-unstyled skill-list">
+													<li class="skill-list-item">
+														<h1>Saveur :</h1>
+														<p class="skill-description"><?php echo $fetch_puff['goût']; ?>
+														</p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Nombre de taffe :</h1>
+														<p class="skill-description"><?php echo $fetch_puff['taffe']; ?></p>
+													</li>
+													<li class="skill-list-item">
+														<h1>Taux de nicotine :</h1>
+														<p class="skill-description"><?php echo $fetch_puff['nicotine']; ?></p>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</section>
 
-								<input type="hidden" name="puff_id" value="<?php echo $fetch_puff['id']; ?>">
-								<div class="button">
-									<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
-											class="bx bx-heart"></i></button>
-									<input type="hidden" name="qty" value="1" min="0" class="quantity">
-									<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
-											class="bx bx-cart"></i></button>
+									<input type="hidden" name="puff_id" value="<?php echo $fetch_puff['id']; ?>">
+									<div class="button">
+										<button type="submit" name="add_to_wishlist" class="btn">Ajouter à la liste de souhaits <i
+												class="bx bx-heart"></i></button>
+										<input type="hidden" name="qty" value="1" min="0" class="quantity">
+										<button type="submit" name="add_to_cart" class="btn">Ajouter au panier <i
+												class="bx bx-cart"></i></button>
+									</div>
 								</div>
 							</div>
 						</form>
