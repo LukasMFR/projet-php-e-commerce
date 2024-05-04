@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
+		$_SESSION['user_profile'] = $row['profile_pic'];
 		$_SESSION['welcome_login'] = true;
 		header('location: order.php');
 	} else {
