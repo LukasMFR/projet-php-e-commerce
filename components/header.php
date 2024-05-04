@@ -50,16 +50,19 @@ require_once ('connection.php');
 		<div class="user-box">
 			<?php if (isset($_SESSION['user_id'])): ?>
 				<?php
-				// Effectuez la requête ici
 				$select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
 				$select_profile->execute([$_SESSION['user_id']]);
 				if ($select_profile->rowCount() > 0) {
 					$fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+					if (!empty($fetch_profile['profile'])) {
+						$profileImage = "image/" . $fetch_profile['profile'];
+						echo "<img src='$profileImage' class='logo-image' width='100'>";
+					} else {
+						// Utilisez la classe `user-icon-default` pour appliquer le style
+						echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
+					}
 					?>
-					<div class="profile">
-						<img src="image/<?= $fetch_profile['profile']; ?>" class="logo-image" width="100">
-						<p><?= $fetch_profile['name']; ?></p>
-					</div>
+					<p><?= $fetch_profile['name']; ?></p>
 					<div class="flex-btn">
 						<a href="update_user.php" class="btn">Mettre à jour le profil</a>
 						<form method="post" action="components/logout.php">
@@ -73,7 +76,7 @@ require_once ('connection.php');
 				?>
 			<?php else: ?>
 				<!-- Code pour les utilisateurs non connectés -->
-				<div class="flex-btn">
+				<div class="flex-btn flex-btn-inline">
 					<a href="login.php" class="btn">Se connecter</a>
 					<a href="register.php" class="btn">S'enregistrer</a>
 				</div>
