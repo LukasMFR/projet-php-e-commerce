@@ -1700,6 +1700,13 @@ footer .bottom-footer {
 	color: var(--green);
 }
 
+.cart-page .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .image-overlay {
 	position: relative;
 }

@@ -71,7 +71,7 @@ if (isset($_POST['empty_cart'])) {
 
 <body>
 	<?php include 'components/header.php'; ?>
-	<div id="cart-page" class="main">
+	<div id="cart-page" class="main cart-page">
 		<div class="banner">
 			<h1>Mon panier</h1>
 		</div>
