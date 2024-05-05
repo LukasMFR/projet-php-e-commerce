@@ -1957,17 +1957,16 @@ footer .bottom-footer {
 
 .checkout .row form,
 .checkout .summary {
-	flex: 1;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
+	width: 100%;
 	max-width: 1000px;
 	padding: 1rem;
 	margin: 1rem;
 	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .checkout h3 {
