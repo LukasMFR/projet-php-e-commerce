@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
 		$_SESSION['user_profile'] = $row['profile_pic'];
-		$_SESSION['success_msg'] = 'Bienvenue ' . $row['name'] . ' ! Vous êtes maintenant connecté.';
+		$_SESSION['success_msg'] = 'Bienvenue ' . $row['name'] . ' ! Vous êtes maintenant connecté(e).';
 		header('location: order.php');
 		exit;
 	} else {
