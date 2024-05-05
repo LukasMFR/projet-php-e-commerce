@@ -1963,7 +1963,7 @@ footer .bottom-footer {
 	max-width: 1000px;
 	padding: 1rem;
 	margin: 1rem;
-	background: #fff;
+	background: #fdfdfd;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -1992,6 +1992,7 @@ footer .bottom-footer {
 	column-gap: 1.5rem;
 	flex-wrap: wrap;
 	height: 100%;
+	align-items: flex-start;
 }
 
 .checkout .row form .flex .box {
@@ -2079,6 +2080,7 @@ footer .bottom-footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 
 /*------------view products----------*/
