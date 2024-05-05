@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['user_id'] = $id;
 			$_SESSION['user_name'] = $name;
 			$_SESSION['user_email'] = $email;
+			$_SESSION['success_msg'] = 'Votre compte a été créé avec succès ! Bienvenue ' . $name . '.';
 			header('location: home.php');
 			exit;
 		}
