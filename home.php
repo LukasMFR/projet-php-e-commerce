@@ -1,6 +1,18 @@
 <?php
 include 'components/connection.php';
 session_start();
+
+if (isset($_SESSION['success_msg'])) {
+	$success_msg[] = $_SESSION['success_msg'];
+	unset($_SESSION['success_msg']);
+}
+
+if (isset($success_msg)) {
+	foreach ($success_msg as $message) {
+		echo '<script>swal("' . $message . '", "" ,"success");</script>';
+	}
+}
+
 if (isset($_SESSION['user_id'])) {
 	$user_id = $_SESSION['user_id'];
 } else {
