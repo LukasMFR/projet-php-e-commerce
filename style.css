@@ -1677,7 +1677,7 @@ footer .bottom-footer {
 }
 
 .products .box-container .box .sub-total span {
-	color: red;
+	color: #cc0000;
 }
 
 .products .cart-total {
@@ -1697,7 +1697,7 @@ footer .bottom-footer {
 }
 
 .products .cart-total p span {
-	color: var(--green);
+	color: #000;
 }
 
 /* Media query pour les appareils mobiles */
@@ -1960,6 +1960,7 @@ footer .bottom-footer {
 	font-size: 1.2rem;
 	line-height: 1.2;
 	margin: 1rem;
+	color: #333;
 }
 
 .checkout .row form,
