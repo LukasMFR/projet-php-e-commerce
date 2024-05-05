@@ -2,22 +2,27 @@
 include 'components/connection.php';
 session_start();
 
-if (isset($_SESSION['success_msg'])) {
-	$success_msg[] = $_SESSION['success_msg'];  // Ajouter le message de bienvenue au tableau des messages de succès
-	unset($_SESSION['success_msg']);  // Nettoyer la variable de session pour éviter les duplications de message
+// Redirection si aucun utilisateur n'est connecté
+if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == '') {
+	header("location: login.php");
+	exit;
 }
 
+// Gestion de l'affichage d'un message de connexion ou non
+if (isset($_SESSION['success_msg'])) {
+	$success_msg[] = $_SESSION['success_msg'];
+	unset($_SESSION['success_msg']);
+}
+
+// Affichage d'un message de connexion réussie
 if (isset($success_msg)) {
 	foreach ($success_msg as $message) {
 		echo '<script>swal("' . $message . '", "" ,"success");</script>';
 	}
 }
 
-if (isset($_SESSION['user_id'])) {
-	$user_id = $_SESSION['user_id'];
-} else {
-	$user_id = '';
-}
+// Gestion de la connexion
+$user_id = $_SESSION['user_id'];
 
 if (isset($_POST['logout'])) {
 	session_destroy();
