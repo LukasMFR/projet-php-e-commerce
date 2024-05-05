@@ -22,6 +22,7 @@ if (isset($_SESSION['user_id'])) {
 if (isset($_POST['logout'])) {
 	session_destroy();
 	header("location: login.php");
+	exit;
 }
 ?>
 <style type="text/css">

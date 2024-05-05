@@ -25,14 +25,14 @@ if (isset($_POST['submit'])) {
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
-		$_SESSION['success_msg'] = 'Bienvenue ' . $row['name'] . ' ! Vous êtes maintenant connecté.';  // Stocker un seul message de bienvenue
+		$_SESSION['user_profile'] = $row['profile_pic'];
+		$_SESSION['success_msg'] = 'Bienvenue ' . $row['name'] . ' ! Vous êtes maintenant connecté.';
 		header('location: order.php');
 		exit;
 	} else {
 		$warning_msg[] = 'Identifiant ou mot de passe incorrect';
 	}
 }
-
 ?>
 
 
