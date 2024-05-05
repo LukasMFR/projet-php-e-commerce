@@ -1478,10 +1478,11 @@ footer .bottom-footer {
 }
 
 .products .box-container.cart-page {
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
-	gap: 2rem;
 	display: grid;
-	padding: 2rem;
+	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	gap: 2rem;
+	align-items: start;
+	grid-auto-flow: dense;
 }
 
 .products .box-container .box {
@@ -2598,5 +2599,12 @@ footer .bottom-footer {
 @media (max-width: 1024px) {
 	.cart-page .button {
 		flex-direction: column;
+	}
+}
+
+/* Ce @media est utilisé pour les écrans plus petits que 600px pour la page cart page. */
+@media (max-width: 420px) {
+	.products .box-container.cart-page {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	}
 }
