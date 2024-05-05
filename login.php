@@ -1,18 +1,19 @@
 <?php
 include 'components/connection.php';
-
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-// Initialisez $user_id avec une valeur par défaut pour éviter les erreurs si non défini
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-
 session_start();
 
+if (isset($_SESSION['user_id'])) {
+	$user_id = $_SESSION['user_id'];
+} else {
+	$user_id = '';
+}
+
+//register user
 if (isset($_POST['submit'])) {
-	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
+	$email = $_POST['email'];
+	$email = filter_var($email, FILTER_SANITIZE_EMAIL); // Using FILTER_SANITIZE_EMAIL to clean the email
+	$pass = $_POST['pass'];
+	$pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
 	// Prepare and execute the SQL statement
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
@@ -24,13 +25,14 @@ if (isset($_POST['submit'])) {
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
-		$_SESSION['user_profile'] = $row['profile_pic'];
-		$_SESSION['welcome_login'] = true;
+		$_SESSION['success_message'] = 'Bienvenue ' . $row['name'] . '! Vous êtes maintenant connecté.';
 		header('location: order.php');
+		exit;
 	} else {
-		$warning_msg[] = 'Identifiant ou mot de passe incorrect';
+		echo '<script>alert("Identifiant ou mot de passe incorrect");</script>';
 	}
 }
+
 ?>
 
 
