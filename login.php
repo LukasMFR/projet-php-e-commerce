@@ -2,22 +2,33 @@
 include 'components/connection.php';
 session_start();
 
-if (isset($_POST['submit'])) {
-	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
+if (isset($_SESSION['user_id'])) {
+	$user_id = $_SESSION['user_id'];
+} else {
+	$user_id = '';
+}
 
+//register user
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$email = filter_var($email, FILTER_SANITIZE_EMAIL); // Using FILTER_SANITIZE_EMAIL to clean the email
+	$pass = $_POST['pass'];
+	$pass = filter_var($pass, FILTER_SANITIZE_STRING);
+
+	// Prepare and execute the SQL statement
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
 	$select_user->execute([$email, $pass]);
 	$row = $select_user->fetch(PDO::FETCH_ASSOC);
 
 	if ($select_user->rowCount() > 0) {
+		// Set session variables upon successful login
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_name'] = $row['name'];
 		$_SESSION['user_email'] = $row['email'];
 		$_SESSION['user_profile'] = $row['profile_pic'];
-		$_SESSION['welcome_login'] = true;
-		echo "<script>sessionStorage.setItem('welcome_login', 'true');</script>";
+		$_SESSION['success_msg'] = 'Bienvenue ' . $row['name'] . ' ! Vous êtes maintenant connecté(e).';
 		header('location: order.php');
+		exit;
 	} else {
 		$warning_msg[] = 'Identifiant ou mot de passe incorrect';
 	}
@@ -70,8 +81,8 @@ if (isset($_POST['submit'])) {
 		</section>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-	<?php include 'components/alert.php'; ?>
 	<script src="script.js"></script>
+	<?php include 'components/alert.php'; ?>
 </body>
 
 </html>

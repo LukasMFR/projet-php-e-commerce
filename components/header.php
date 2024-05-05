@@ -1,11 +1,3 @@
-<?php
-if (!isset($_SESSION)) {
-    session_start();  // Assurez-vous que la session est démarrée
-}
-// Initialiser $user_id à partir de la session ou à NULL si non disponible
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-?>
-
 <header class="header">
 	<div class="flex">
 		<a href="home.php" class="brand-navbar">
@@ -23,19 +15,26 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 		</nav>
 		<div class="icons">
 			<i class="bx bxs-user" id="user-btn"></i>
-			<?php
-            if ($user_id) {  // Utiliser $user_id seulement s'il est défini
-                $count_wishlist_items = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
-                $count_wishlist_items->execute([$user_id]);
-                $total_wishlist_items = $count_wishlist_items->rowCount();
-                echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i>' . ($total_wishlist_items ? "<sup>$total_wishlist_items</sup>" : '') . '</a>';
-
-                $count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-                $count_cart_items->execute([$user_id]);
-                $total_cart_items = $count_cart_items->rowCount();
-                echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i>' . ($total_cart_items ? "<sup>$total_cart_items</sup>" : '') . '</a>';
-            }
-            ?>
+			<?php if (isset($_SESSION['user_id'])): ?>
+				<?php
+				$count_wishlist_items = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+				$count_wishlist_items->execute([$_SESSION['user_id']]);
+				$total_wishlist_items = $count_wishlist_items->rowCount();
+				if ($total_wishlist_items > 0) {
+					echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>' . $total_wishlist_items . '</sup></a>';
+				} else {
+					echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i></a>';
+				}
+				$count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+				$count_cart_items->execute([$_SESSION['user_id']]);
+				$total_cart_items = $count_cart_items->rowCount();
+				if ($total_cart_items > 0) {
+					echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i><sup>' . $total_cart_items . '</sup></a>';
+				} else {
+					echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i></a>';
+				}
+				?>
+			<?php endif; ?>
 			<i class='bx bx-list-plus' id="menu-btn" style="font-size: 2rem;"></i>
 		</div>
 

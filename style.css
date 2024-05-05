@@ -1701,10 +1701,10 @@ footer .bottom-footer {
 }
 
 .cart-page .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
 }
 
 .image-overlay {
@@ -2596,7 +2596,7 @@ footer .bottom-footer {
 
 /* Ce @media est utilisé pour les écrans plus petits que 600px pour la page cart page. */
 @media (max-width: 1024px) {
-    .cart-page .button {
-        flex-direction: column;
-    }
+	.cart-page .button {
+		flex-direction: column;
+	}
 }
