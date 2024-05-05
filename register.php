@@ -1,29 +1,21 @@
 <?php
 include 'components/connection.php';
-
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-// Initialisez $user_id avec une valeur par défaut pour éviter les erreurs si non défini
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-	header('location: order.php');  // Si déjà connecté, rediriger directement
-	exit;
+	$user_id = $_SESSION['user_id'];
+} else {
+	$user_id = '';
 }
 
-// Enregistrement de l'utilisateur
+//register user
 if (isset($_POST['submit'])) {
-	$id = unique_id();  // Assurez-vous que cette fonction existe et est définie correctement
+	$id = unique_id();
 	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 	$pass = filter_var($_POST['pass'], FILTER_SANITIZE_STRING);
 	$cpass = filter_var($_POST['cpass'], FILTER_SANITIZE_STRING);
 
-	// Vérifier si l'utilisateur existe déjà
 	$select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
 	$select_user->execute([$email]);
 
@@ -33,14 +25,12 @@ if (isset($_POST['submit'])) {
 		if ($pass !== $cpass) {
 			$warning_msg[] = 'Les mots de passe ne correspondent pas';
 		} else {
-			// Insérer le nouvel utilisateur
 			$insert_user = $conn->prepare("INSERT INTO `users`(id, name, email, password) VALUES(?, ?, ?, ?)");
 			$insert_user->execute([$id, $name, $email, $pass]);
 			$_SESSION['user_id'] = $id;
 			$_SESSION['user_name'] = $name;
 			$_SESSION['user_email'] = $email;
-			$_SESSION['welcome_login'] = true;  // Préparer le message de bienvenue
-			header('location: order.php');  // Rediriger vers une page de confirmation
+			header('location: home.php');
 			exit;
 		}
 	}
