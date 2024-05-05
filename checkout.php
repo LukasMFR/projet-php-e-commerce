@@ -97,8 +97,8 @@ if (isset($_POST['place_order'])) {
 		</div>
 		<section class="checkout">
 			<div class="title">
-				<img src="img/download.png" class="logo">
-				<h1>Résumé de la commande</h1>
+				<!-- <img src="img/download.png" class="logo"> -->
+				<!-- <h1>Résumé de la commande</h1> -->
 				<p>Découvrez la simplicité et la sécurité de finaliser votre commande avec nous. Remplissez simplement
 					vos informations ci-dessous.</p>
 			</div>
