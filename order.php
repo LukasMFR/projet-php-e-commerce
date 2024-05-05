@@ -2,20 +2,23 @@
 include 'components/connection.php';
 session_start();
 
-if (isset($_SESSION['success_message'])) {
-    echo '<script>alert("' . $_SESSION['success_message'] . '");</script>';
-    unset($_SESSION['success_message']);
+// Gestion des messages avec SweetAlert
+if (isset($_SESSION['success_msg'])) {
+	foreach ($_SESSION['success_msg'] as $message) {
+		$success_msg[] = 'Identifiant ou mot de passe incorrect';
+	}
+	unset($_SESSION['success_msg']);
 }
 
 if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
+	$user_id = $_SESSION['user_id'];
 } else {
-    $user_id = '';
+	$user_id = '';
 }
 
 if (isset($_POST['logout'])) {
-    session_destroy();
-    header("location: login.php");
+	session_destroy();
+	header("location: login.php");
 }
 ?>
 <style type="text/css">
