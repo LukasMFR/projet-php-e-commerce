@@ -79,7 +79,7 @@ if (isset($_POST['empty_cart'])) {
 			<a href="home.php">Accueil </a><span>/ Panier</span>
 		</div>
 		<section class="products">
-			<h1 class="title">Produits ajoutés au panier</h1>
+			<h1 class="title cart">Produits ajoutés au panier</h1>
 			<div class="box-container cart-page">
 				<?php
 				$grand_total = 0;

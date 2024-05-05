@@ -1479,7 +1479,7 @@ footer .bottom-footer {
 
 .products .box-container.cart-page {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 	gap: 2rem;
 	align-items: start;
 	grid-auto-flow: dense;
@@ -1717,6 +1717,11 @@ footer .bottom-footer {
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
+}
+
+.cart-page .title.cart {
+	font-size: 1.7rem;
+	line-height: 1.2;
 }
 
 .image-overlay {
