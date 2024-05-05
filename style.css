@@ -1700,6 +1700,12 @@ footer .bottom-footer {
 	color: #000;
 }
 
+.products .title.wishlist {
+	font-size: 1.5rem;
+	line-height: 1.2;
+	text-transform: none;
+}
+
 /* Media query pour les appareils mobiles */
 @media (max-width: 800px) {
 	.products .cart-total {

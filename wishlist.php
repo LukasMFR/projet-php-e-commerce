@@ -96,7 +96,7 @@ if (isset($_POST['delete_item'])) {
 		</div>
 
 		<section class="products">
-			<h1 class="title">Voitures dans ma liste de souhaits</h1>
+			<h1 class="title wishlist">Voitures dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
 			// Select only wishlist items where item_type is 'product'
@@ -150,7 +150,7 @@ if (isset($_POST['delete_item'])) {
 		</section>
 
 		<section class="products">
-			<h1 class="title">Puffs dans ma liste de souhaits</h1>
+			<h1 class="title wishlist">Puffs dans ma liste de souhaits</h1>
 			<?php
 			$grand_total = 0;
 			// Select only wishlist items where item_type is 'puff'
