@@ -1951,15 +1951,22 @@ footer .bottom-footer {
 	display: flex;
 	flex-direction: column;
 	flex-flow: column-reverse;
+	align-items: center;
+	width: 100%;
 }
 
 .checkout .row form,
 .checkout .summary {
+	flex: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
-	width: 1000px;
+	max-width: 1000px;
 	padding: 1rem;
-	margin: 1rem auto;
+	margin: 1rem;
 	background: #fff;
 }
 
