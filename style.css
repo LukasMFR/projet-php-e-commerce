@@ -2132,6 +2132,21 @@ footer .bottom-footer {
 		width: 100%;
 		text-align: center;
 	}
+
+	.summary .grand-total {
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+
+	.summary .grand-total span {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	.summary .grand-total p {
+		font-size: 1.5rem;
+	}
 }
 
 
