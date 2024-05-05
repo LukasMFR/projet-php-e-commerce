@@ -1722,6 +1722,7 @@ footer .bottom-footer {
 .cart-page .title.cart {
 	font-size: 1.7rem;
 	line-height: 1.2;
+	text-transform: none;
 }
 
 .image-overlay {
