@@ -1684,7 +1684,7 @@ footer .bottom-footer {
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
 	background-color: white;
-	max-width: 50vw;
+	max-width: 50%;
 	margin: 1rem auto;
 	text-align: center;
 	padding: 2rem;
@@ -1694,11 +1694,22 @@ footer .bottom-footer {
 	padding-bottom: 1rem;
 	font-size: 2rem;
 	color: #555;
-	/* text-transform: capitalize; */
 }
 
 .products .cart-total p span {
 	color: var(--green);
+}
+
+/* Media query pour les appareils mobiles */
+@media (max-width: 800px) {
+	.products .cart-total {
+		max-width: 90%;
+		padding: 1rem;
+	}
+
+	.products .cart-total p {
+		font-size: 1.5rem;  /* Taille réduite pour les petits écrans */
+	}
 }
 
 .cart-page .button {

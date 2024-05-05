@@ -98,14 +98,15 @@ if (isset($_POST['empty_cart'])) {
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
 								<h3 class="name"><?= $fetch_products['name']; ?></h3>
 								<div class="flex">
-									<p class="price">Prix : <?= number_format($fetch_products['price'], 2, ',', ' '); ?> €</p>
+									<p class="price">Prix :
+										<?= number_format($fetch_products['price'], 2, ',', '&nbsp;') . '&nbsp;€'; ?>
+									</p>
 									<input type="number" name="qty" required min="1" value="<?= $fetch_cart['qty']; ?>" max="99"
 										maxlength="2" class="qty">
 									<button type="submit" name="update_cart" class="bx bxs-edit fa-edit"></button>
 								</div>
 								<p class="sub-total">Sous-total :
-									<span><?= number_format($sub_total = ($fetch_cart['qty'] * $fetch_cart['price']), 2, ',', ' '); ?>
-										€</span>
+									<span><?= number_format($sub_total = ($fetch_cart['qty'] * $fetch_cart['price']), 2, ',', '&nbsp;') . '&nbsp;€'; ?></span>
 								</p>
 								<button type="submit" name="delete_item" class="btn"
 									onclick="return confirm('Supprimer cet article ?')">Supprimer</button>
@@ -125,7 +126,7 @@ if (isset($_POST['empty_cart'])) {
 			if ($grand_total != 0) {
 				?>
 				<div class="cart-total">
-					<p>Total à payer : <span><?= number_format($grand_total, 2, ',', ' '); ?> €</span></p>
+					<p>Total à payer : <span><?= number_format($grand_total, 2, ',', '&nbsp;') . '&nbsp;€'; ?></span></p>
 					<div class="button">
 						<form method="post">
 							<button type="submit" name="empty_cart" class="btn"
