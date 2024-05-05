@@ -54,6 +54,18 @@ if (isset($_POST['submit'])) {
 <body>
 	<?php include 'components/header.php'; ?>
 	<div class="main-container">
+		<section class="home-section">
+			<div class="video-container">
+				<video autoplay loop muted playsinline>
+					<source src="image/videoPres3.mp4" type="video/mp4">
+				</video>
+				<div class="overlay"></div>
+					<div class="video-detail">
+						<h1>Bienvenue chez Road Luxury</h1>
+						<p>L'art de l'élégance automobile.</p>
+					</div>
+				</div>
+		</section>
 		<section class="form-container">
 			<div class="title">
 				<img src="img/download.png" class="logo">
