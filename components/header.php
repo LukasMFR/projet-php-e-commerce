@@ -15,24 +15,26 @@
 		</nav>
 		<div class="icons">
 			<i class="bx bxs-user" id="user-btn"></i>
-			<?php
-			$count_wishlist_items = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
-			$count_wishlist_items->execute([$user_id]);
-			$total_wishlist_items = $count_wishlist_items->rowCount();
-			if ($total_wishlist_items > 0) {
-				echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>' . $total_wishlist_items . '</sup></a>';
-			} else {
-				echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i></a>';
-			}
-			$count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-			$count_cart_items->execute([$user_id]);
-			$total_cart_items = $count_cart_items->rowCount();
-			if ($total_cart_items > 0) {
-				echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i><sup>' . $total_cart_items . '</sup></a>';
-			} else {
-				echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i></a>';
-			}
-			?>
+			<?php if (isset($_SESSION['user_id'])): ?>
+				<?php
+				$count_wishlist_items = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ?");
+				$count_wishlist_items->execute([$_SESSION['user_id']]);
+				$total_wishlist_items = $count_wishlist_items->rowCount();
+				if ($total_wishlist_items > 0) {
+					echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i><sup>' . $total_wishlist_items . '</sup></a>';
+				} else {
+					echo '<a href="wishlist.php" class="cart-btn"><i class="bx bx-heart"></i></a>';
+				}
+				$count_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+				$count_cart_items->execute([$_SESSION['user_id']]);
+				$total_cart_items = $count_cart_items->rowCount();
+				if ($total_cart_items > 0) {
+					echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i><sup>' . $total_cart_items . '</sup></a>';
+				} else {
+					echo '<a href="cart.php" class="cart-btn"><i class="bx bx-cart-download"></i></a>';
+				}
+				?>
+			<?php endif; ?>
 			<i class='bx bx-list-plus' id="menu-btn" style="font-size: 2rem;"></i>
 		</div>
 
