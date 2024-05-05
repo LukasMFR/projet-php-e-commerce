@@ -1955,6 +1955,13 @@ footer .bottom-footer {
 	width: 100%;
 }
 
+.checkout .title {
+	text-transform: none;
+	font-size: 1.2rem;
+	line-height: 1.2;
+	margin: 1rem;
+}
+
 .checkout .row form,
 .checkout .summary {
 	box-shadow: var(--box-shadow);
@@ -2029,6 +2036,7 @@ footer .bottom-footer {
 	margin: 1rem;
 	overflow: hidden;
 }
+
 .summary .flex {
 	height: auto;
 	min-height: 120px;
@@ -2065,22 +2073,22 @@ footer .bottom-footer {
 }
 
 .summary .flex .price {
-    font-size: 1.2rem;
-    color: #cc0000;
-    font-weight: bold;
-    margin-bottom: 10px;
+	font-size: 1.2rem;
+	color: #cc0000;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 
 .summary .flex .quantity {
-    font-size: 1rem;
-    color: #333;
-    font-weight: bold;
-    margin-top: 5px;
-    background-color: #f2f2f2;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	font-size: 1rem;
+	color: #333;
+	font-weight: bold;
+	margin-top: 5px;
+	background-color: #f2f2f2;
+	padding: 5px 10px;
+	border-radius: 5px;
+	display: inline-block;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .summary .grand-total {
@@ -2101,6 +2109,29 @@ footer .bottom-footer {
 
 .summary .grand-total p {
 	color: red;
+}
+
+@media (max-width: 460px) {
+	.summary .box-container {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+
+	.summary .flex {
+		grid-template-columns: 1fr;
+		align-items: center;
+	}
+
+	.summary .flex img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+	}
+
+	.summary .flex .content {
+		width: 100%;
+		text-align: center;
+	}
 }
 
 
