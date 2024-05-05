@@ -2,12 +2,15 @@
 include 'components/connection.php';
 session_start();
 
-// Gestion des messages avec SweetAlert
 if (isset($_SESSION['success_msg'])) {
-	foreach ($_SESSION['success_msg'] as $message) {
-		$success_msg[] = 'Identifiant ou mot de passe incorrect';
+	$success_msg[] = $_SESSION['success_msg'];  // Ajouter le message de bienvenue au tableau des messages de succès
+	unset($_SESSION['success_msg']);  // Nettoyer la variable de session pour éviter les duplications de message
+}
+
+if (isset($success_msg)) {
+	foreach ($success_msg as $message) {
+		echo '<script>swal("' . $message . '", "" ,"success");</script>';
 	}
-	unset($_SESSION['success_msg']);
 }
 
 if (isset($_SESSION['user_id'])) {
