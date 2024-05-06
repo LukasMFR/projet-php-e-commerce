@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<?php include 'components/header.php'; ?>
+
 	<div class="main-container">
 		<section class="home-section">
 			<div class="video-container">
