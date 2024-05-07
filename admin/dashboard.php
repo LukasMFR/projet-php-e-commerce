@@ -39,20 +39,20 @@ if (!isset($admin_id)) {
 
 		<section class="dashboard-stat">	
 		<div class="box">
-                <h3>Statistiques des ventes de Vapes</h3>
-                <canvas id="vapesChart"></canvas>
-            </div>
-            <div class="box">
                 <h3>Statistiques des ventes de voitures</h3>
                 <canvas id="carsChart"></canvas>
             </div>
             <div class="box">
-				<h3>Statistiques des ventes de Vapes</h3>
-				<canvas id="salesRegionChart"></canvas>
+                <h3>Statistiques des ventes de Vapes</h3>
+                <canvas id="vapesChart"></canvas>carsChart
+            </div>
+            <div class="box">
+				<h3>Statistiques des ventes de voitures</h3>
+				<canvas id="carsChartcam"></canvas>
 			</div>
 			<div class="box">
-				<h3>Statistiques des ventes de voitures</h3>
-				<canvas id="salesTypeChart"></canvas>
+				<h3>Statistiques des ventes de Vapes</h3>
+				<canvas id="vapesChartCam"></canvas>
 			</div>
 		</section>
 
@@ -177,17 +177,59 @@ if (!isset($admin_id)) {
 
 
 	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    var ctxCars = document.getElementById('carsChart').getContext('2d');
+    var carsChart = new Chart(ctxCars, {
+        type: 'bar',
+        data: {
+            labels: [], // Labels seront remplis par les données de la BDD
+            datasets: [{
+                label: 'Quantité vendue par produit',
+                data: [], // Données seront remplies par les données de la BDD
+                backgroundColor: [], // Vous pouvez aussi définir dynamiquement
+                borderColor: 'black',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    function updateCarsChart() {
+        fetch('get_sales_data.php')
+        .then(response => response.json())
+        .then(data => {
+            carsChart.data.labels = data.map(item => item.product_name);
+            carsChart.data.datasets[0].data = data.map(item => item.total_quantity);
+            carsChart.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Couleur aléatoire pour chaque barre
+            carsChart.update();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    updateCarsChart();
+    // Vous pouvez également configurer un intervalle pour rafraîchir le graphique régulièrement
+    // setInterval(updateCarsChart, 10000); // Rafraîchit le graphique toutes les 10 secondes
+});
+</script>
+
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     var ctxVapes = document.getElementById('vapesChart').getContext('2d');
     var vapesChart = new Chart(ctxVapes, {
         type: 'bar',
         data: {
-            labels: ['Puff Superéthanol E85', 'Puff Sans Plomb 95', 'Puff Gazole', 'Puff électrique', 'Puff Supercarburants SP95', 'Puff naturel'], // Mettez ici vos données réelles
+            labels: [], // Labels seront remplis par les données de la BDD
             datasets: [{
                 label: 'Quantité vendue par produit',
-                data: [5, 10],
-                backgroundColor: ['red', 'blue', 'green', 'blue', 'blue', 'blue'],
-                borderColor: ['black'],
+                data: [], // Données seront remplies par les données de la BDD
+                backgroundColor: [], // Vous pouvez aussi définir dynamiquement
+                borderColor: 'black',
                 borderWidth: 1
             }]
         },
@@ -200,73 +242,62 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var ctxCars = document.getElementById('carsChart').getContext('2d');
-    var carsChart = new Chart(ctxCars, {
-        type: 'bar',
-        data: {
-            labels: ['Bugatti La Voiture Noire', 'Porsche 911 GT3 R', 'Lamborghini Revuelto', 'Lamborghini Urus', 'McLaren 720s', 
-				'Maserati Granturismo', 'Alpine A110 R', 'Ferrari SP51', 'Mercedes AMG GT2'], // Mettez ici vos données réelles
-            datasets: [{
-                label: 'Quantité vendue par produit',
-                data: [3, 7],
-                backgroundColor: ['Bugatti La Voiture Noire', 'Porsche 911 GT3 R', 'Lamborghini Revuelto', 'Lamborghini Urus', 'McLaren 720s', 
-				'Maserati Granturismo', 'Alpine A110 R', 'Ferrari SP51', 'Mercedes AMG GT2'],
-                borderColor: ['black'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    function updateVapesChart() {
+        fetch('get_sales_data_puff.php')  // Assurez-vous que ce chemin est correct
+        .then(response => response.json())
+        .then(data => {
+            vapesChart.data.labels = data.map(item => item.product_name);
+            vapesChart.data.datasets[0].data = data.map(item => item.total_quantity);
+            vapesChart.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Couleur aléatoire pour chaque barre
+            vapesChart.update();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    updateVapesChart();
+    // Vous pouvez également configurer un intervalle pour rafraîchir le graphique régulièrement
+    // setInterval(updateVapesChart, 10000); // Rafraîchit le graphique toutes les 10 secondes
 });
 </script>
 
 
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-    var regionCtx = document.getElementById('salesRegionChart').getContext('2d');
-    var regionChart = new Chart(regionCtx, {
-        type: 'pie',
-        data: {
-            labels: ['Nord', 'Sud', 'Est', 'Ouest'],  // Exemple de régions
-            datasets: [{
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
-                data: [120, 150, 180, 90]  // Exemple de données
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Ventes par région'
-            }
-        }
-    });
+document.addEventListener('DOMContentLoaded', function () {
+                var ctx = document.getElementById('carsChartcam').getContext('2d');
+                var carsChartcam = new Chart(ctx, {
+                    type: "pie",
+                    data: {
+                        labels: [], // Les labels seront chargés dynamiquement
+                        datasets: [{
+                            backgroundColor: [], // Les couleurs seront définies dynamiquement
+                            data: [] // Les données seront chargées dynamiquement
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: "Ventes de voitures par région" // Titre modifié pour correspondre à vos données
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
 
-    var typeCtx = document.getElementById('salesTypeChart').getContext('2d');
-    var typeChart = new Chart(typeCtx, {
-        type: 'pie',
-        data: {
-            labels: ['Type 1', 'Type 2', 'Type 3'],  // Exemple de types de produits
-            datasets: [{
-                backgroundColor: ['#7E57C2', '#D4E157', '#29B6F6'],
-                data: [210, 130, 170]  // Exemple de données
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Répartition des ventes par type'
-            }
-        }
-    });
-});
+                function updateRegionChart() {
+                    fetch('get_sales_data2.php') // Assurez-vous que le chemin est correct.
+                    .then(response => response.json())
+                    .then(data => {
+                        carsChartcam.data.labels = data.map(item => item.region);
+                        carsChartcam.data.datasets[0].data = data.map(item => item.total_sales);
+                        carsChartcam.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Génère des couleurs aléatoires pour chaque région
+                        carsChartcam.update();
+                    })
+                    .catch(error => console.error('Error:', error));
+                }
+
+                updateRegionChart(); // Appel initial pour charger les données
+            });
 </script>
-
 </body>
 
 </html>
