@@ -1247,6 +1247,143 @@ input[type="submit"].btn {
 	color: #fff;
 }
 
+/*----------login section-----------------*/
+/* Structure principale du conteneur pour la page login */
+.main-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: center;
+    align-items: stretch; /* Ensures items fill the container vertically */
+    background: #fff;
+    width: calc(100vw - 4rem); /* Adjusts width to account for margin */
+    min-height: calc(100vh - 4rem); /* Adjusts height to account for margin */
+    box-shadow: var(--box-shadow);
+    margin: 2rem auto; /* Adds margin around the container and centers it */
+    padding: 0;
+}
+
+/* Conteneur de la vidéo à gauche */
+.main-container .video-container {
+    position: relative;
+    flex: 1 0 50%; /* Flex basis set to 50%, no growth or shrink */
+    width: 50vw; /* Explicitly set width to 50% of the viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hides any overflow */
+    display: flex; /* Uses flexbox to center content */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+
+.main-container .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretches to cover the container width */
+    height: 100%; /* Stretches to cover the container height */
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+
+/* Détails de la vidéo en avant-plan */
+.main-container .video-detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Snell Roundhand';
+    z-index: 3;
+}
+
+.main-container .video-detail h1 {
+    font-size: 2rem;
+}
+
+.main-container .video-detail p {
+    font-size: 1.25rem;
+}
+
+/* Conteneur du formulaire à droite */
+.main-container .form-container {
+    flex: 1 0 50%; /* Adjusted to take exactly half of the space */
+    margin: auto;
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent for aesthetics */
+    z-index: 2;
+    order: 2; /* Ensures it appears on the right */
+}
+
+/* Styles for input fields and text */
+.main-container .form-container input, textarea {
+    background-color: transparent;
+    width: 100%; /* Full width of the form */
+}
+
+.main-container .form-container p {
+    color: #3f3f3f;
+}
+
+.main-container .form-container sup {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.main-container .form-container form {
+    margin: 1rem auto;
+    padding: 3rem;
+    position: relative;
+    border-radius: 5px;
+}
+
+.main-container .form-container form .input-field p {
+    text-transform: uppercase; /* Aesthetic choice for form labels */
+}
+
+.main-container input[type="submit"].btn {
+    color: black;
+    cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
+}
+
+
+/* Responsive pour les écrans mobiles */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; /* Vidéo en arrière-plan */
+        min-width: 100%;
+        height: 100vh;
+    }
+
+    video {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .form-container {
+        position: relative;
+        z-index: 2; /* Formulaire au-dessus */
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.85); /* Formulaire semi-transparent */
+        max-width: 90%;
+    }
+
+    .video-detail {
+        display: none; /* Masquer les détails sur mobile */
+    }
+}
+
 /*----------footer section-----------------*/
 .top-footer {
 	width: 100%;
