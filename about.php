@@ -37,7 +37,47 @@ if (isset($_POST['logout'])) {
 			<a href="home.php">accueil </a><span>/ à propos</span>
 		</div>
 
-		
+		<div class="about">
+			<div class="row">
+				<div class="img-box">
+					<img src="img/3.png">
+				</div>
+				<div class="detail">
+					<h1>Notre mission</h1>
+					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de services, 
+						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle. 
+						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de location de 
+						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est de fournir un 
+						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que si le client 
+						est satisfait. Louez votre voiture de luxe chez nous pour être sur la bonne voie !</p>
+					<a href="view_products.php" class="btn">Acheter maintenant</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="about-section">
+    <div class="profile">
+        <img src="image/anis.jpg" alt="La chose">
+        <div class="name">Anis Fetouab </div>
+        <div class="role">Product Owner</div>
+    </div>
+    <div class="profile">
+        <img src="image/hillel.jpg" alt="Hillel Ohayon">
+        <div class="name">Hillel Ohayon</div>
+        <div class="role">CEO</div>
+    </div>
+    <div class="profile">
+        <img src="image/lukas.jpg" alt="Gilbert Maximilien">
+        <div class="name">Luklas Maufert</div>
+        <div class="role">Co-Fondateur</div>
+    </div>
+    <div class="profile">
+        <img src="path_to_image_chat.jpg" alt="L'alpha chat">
+        <div class="name">L'alpha chat</div>
+        <div class="role">Mascotte</div>
+    </div>
+</div>
+
 		<section class="thumb">
 					<div class="box-container">
 						<div class="box">
@@ -68,29 +108,8 @@ if (isset($_POST['logout'])) {
 								gamme pour une expérience de conduite exceptionnelle.</p>
 							<i class="bx bx-chevron-right"></i>
 						</div>
-						
-						
 					</div>
 				</section>
-
-
-		<div class="about">
-			<div class="row">
-				<div class="img-box">
-					<img src="img/3.png">
-				</div>
-				<div class="detail">
-					<h1>Notre mission</h1>
-					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de services, 
-						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle. 
-						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de location de 
-						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est de fournir un 
-						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que si le client 
-						est satisfait. Louez votre voiture de luxe chez nous pour être sur la bonne voie !</p>
-					<a href="view_products.php" class="btn">Acheter maintenant</a>
-				</div>
-			</div>
-		</div>
 		
 
 		<div class="testimonial-container">

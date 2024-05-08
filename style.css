@@ -2778,3 +2778,37 @@ footer .bottom-footer {
 	justify-content: center;
 	margin-top: 20px;
 }
+
+.about-section {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #cecece24;
+	/* Couleur de fond de la section */
+	padding: 20px;
+}
+
+.profile {
+	text-align: center;
+	margin: 20px;
+}
+
+.profile img {
+	width: 200px;
+	/* Ajustez selon la taille souhaitée */
+	height: auto;
+	border-radius: 10px;
+	/* Pour les coins arrondis */
+}
+
+.name {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.role {
+	font-size: 16px;
+	color: #666;
+	margin-top: 5px;
+}
