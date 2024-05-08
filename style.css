@@ -1359,6 +1359,13 @@ textarea {
 	cursor: pointer;
 }
 
+.main-container .form-container a.btn {
+    margin-top: 20px;
+    /* display: block; */
+    /* width: 100%; */
+    /* text-align: center; */
+}
+
 
 /* Responsive pour les écrans mobiles */
 @media screen and (max-width: 768px) {
