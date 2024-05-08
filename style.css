@@ -1317,6 +1317,9 @@ input[type="submit"].btn {
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 2;
 	order: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .main-container .form-container input,
