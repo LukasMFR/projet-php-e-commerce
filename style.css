@@ -1398,6 +1398,7 @@ textarea {
         background: #fff; /* White background to cover the full screen */
         box-shadow: none;
         overflow-x: hidden; /* Prevent horizontal scrolling */
+		min-height: 0;
     }
 
     .main-container .home-section {
@@ -1414,7 +1415,7 @@ textarea {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow-y: auto; /* Allow vertical scrolling if needed */
+        /* overflow-y: auto; */
     }
 
     .main-container .form-container .title {
@@ -1425,6 +1426,7 @@ textarea {
     .main-container .form-container form {
         width: 100%; /* Ensures form width matches the container width */
 		padding: 1rem;
+		margin: 0;
     }
 
     .main-container .form-container form .input-field {
