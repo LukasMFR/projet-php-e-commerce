@@ -61,13 +61,12 @@ if (isset($_POST['submit'])) {
 					<source src="image/videoPres2.mp4" type="video/mp4">
 				</video>
 				<div class="overlay"></div>
-					<div class="video-detail">
-						<h1>Bienvenue chez Road Luxury</h1>
-						<p>L'art de l'élégance automobile.</p>
-					</div>
+				<div class="video-detail">
+					<h1>Bienvenue chez Road Luxury</h1>
+					<p>L'art de l'élégance automobile.</p>
 				</div>
+			</div>
 		</section>
-		
 		<section class="form-container">
 			<div class="title">
 				<img src="img/download.png" class="logo">
@@ -96,7 +95,8 @@ if (isset($_POST['submit'])) {
 						oninput="this.value = this.value.replace(/\s/g, '')">
 				</div>
 				<input type="submit" name="submit" value="S'enregistrer" class="btn">
-				<p class="account-invitation">Vous avez déjà un compte ? <a href="login.php">Connectez-vous maintenant</a></p>
+				<p class="account-invitation">Vous avez déjà un compte ? <a href="login.php">Connectez-vous
+						maintenant</a></p>
 				<!-- Lien Retour vers la page d'accueil -->
 				<a href="home.php" class="btn">Retour à l'accueil</a>
 			</form>
