@@ -133,21 +133,20 @@ if (isset($_POST['submit'])) {
 		</div>
 		<section>
 			<div class="form-container" id="users_login">
-				<form action="" method="post" enctype="multipart/form-data">
+				<form action="path_to_your_handling_script.php" method="post" enctype="multipart/form-data">
 
 	<div class="profile-update-container">
     <div class="top-section">
         <div class="left-section">
-            <!-- Affichage et mise à jour de l'image de profil -->
-            <?php if (!empty($_SESSION['user_profile'])): ?>
-                <a href="update-image.php"><img src="<?= $_SESSION['user_profile'] ?>" class="profile-image" alt="Profile Image"></a>
-            <?php else: ?>
-                <a href="update-image.php"><div class='user-icon-default'><i class='bx bxs-user'></i></div></a>
-            <?php endif; ?>
-        </div>
+    <?php if (!empty($_SESSION['user_profile'])): ?>
+        <img src="<?= $_SESSION['user_profile'] ?>" class="profile-image" alt="Profile Image" style="cursor: pointer;">
+    <?php else: ?>
+        <div class='user-icon-default' style="cursor: pointer;"><i class='bx bxs-user'></i></div>
+    <?php endif; ?>
+    <input type="file" id="profileImageInput" name="image" accept="image/*" style="display: none;">
+</div>
         <div class="right-section">
             <div class="user-info-section">
-                <!-- Mise à jour du nom et de l'email -->
                 <div class="input-field">
                     <label for="name">Nom d'utilisateur <sup>*</sup></label>
                     <input type="text" id="name" name="name" required value="<?= $_SESSION['user_name'] ?? ''; ?>">
@@ -161,7 +160,6 @@ if (isset($_POST['submit'])) {
     </div>
     <div class="bottom-section">
         <div class="password-section">
-            <!-- Mise à jour des mots de passe -->
             <div class="input-field">
                 <label for="old_pass">Ancien mot de passe <sup>*</sup></label>
                 <input type="password" id="old_pass" name="old_pass">
@@ -188,6 +186,27 @@ if (isset($_POST['submit'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
 	<?php include 'components/alert.php'; ?>
+
+<script>
+    // Ajoutez un écouteur d'événements à l'image de profil et à l'icône par défaut
+    document.addEventListener('DOMContentLoaded', function () {
+        var profileImage = document.querySelector('.profile-image');
+        var defaultIcon = document.querySelector('.user-icon-default');
+        
+        if (profileImage) {
+            profileImage.addEventListener('click', function() {
+                document.getElementById('profileImageInput').click();
+            });
+        }
+        
+        if (defaultIcon) {
+            defaultIcon.addEventListener('click', function() {
+                document.getElementById('profileImageInput').click();
+            });
+        }
+    });
+</script>
+
 </body>
 
 </html>
