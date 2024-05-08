@@ -1264,9 +1264,14 @@ input[type="submit"].btn {
 	padding: 0;
 }
 
+.main-container .home-section {
+	position: relative;
+	margin: 0;
+}
+
 .main-container .video-container {
 	position: relative;
-	flex: 1 0 50%;
+	/* flex: 1 0 50%; */
 	width: 50vw;
 	height: 100vh;
 	overflow: hidden;
@@ -1304,11 +1309,11 @@ input[type="submit"].btn {
 }
 
 .main-container .form-container {
-	flex: 1 0 50%;
+	/* flex: 1 0 50%; */
 	margin: auto;
 	padding: 3rem;
-	box-shadow: var(--box-shadow);
-	border-radius: 5px;
+	/* box-shadow: var(--box-shadow); */
+	/* border-radius: 5px; */
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 2;
 	order: 2;
