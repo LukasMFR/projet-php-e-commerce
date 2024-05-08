@@ -1319,6 +1319,8 @@ input[type="submit"].btn {
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 2;
 	order: 2;
+	max-width: 800px;
+	width: 100%;
 }
 
 .main-container .form-container .title {
@@ -1346,7 +1348,7 @@ textarea {
 }
 
 .main-container .form-container .account-invitation {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .main-container .form-container sup {
