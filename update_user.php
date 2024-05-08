@@ -144,6 +144,7 @@ if (isset($_POST['submit'])) {
         <div class='user-icon-default' style="cursor: pointer;"><i class='bx bxs-user'></i></div>
     <?php endif; ?>
     <input type="file" id="profileImageInput" name="image" accept="image/*" style="display: none;">
+	<input type="file" id="image" name="image" accept="image/jpeg, image/png">
 </div>
         <div class="right-section">
             <div class="user-info-section">
@@ -173,6 +174,10 @@ if (isset($_POST['submit'])) {
                 <input type="password" id="confirm_pass" name="confirm_pass">
             </div>
         </div>
+		<div class="input-field">
+						<label for="image">Télécharger la photo de profil <sup>*</sup></label>
+						<input type="file" id="image" name="image" accept="image/jpeg, image/png">
+					</div>
         <div class="submit-section">
             <input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
         </div>
