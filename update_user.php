@@ -144,37 +144,37 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<title>Mettre à jour le profil - Road Luxury</title>
 	<script>
-function previewFile() {
-    const file = document.querySelector('input[type=file]').files[0];
-    const preview = document.getElementById('profile-preview');
-    const fileNameDisplay = document.getElementById('file-name');
+		function previewFile() {
+			const file = document.querySelector('input[type=file]').files[0];
+			const preview = document.getElementById('profile-preview');
+			const fileNameDisplay = document.getElementById('file-name');
 
-    if (file) {
-        const reader = new FileReader();
+			if (file) {
+				const reader = new FileReader();
 
-        reader.onloadend = function () {
-            if (preview.tagName === 'IMG') { // Assure que la prévisualisation fonctionne si c'est une balise img
-                preview.src = reader.result;
-            } else { // Crée une nouvelle img si l'icône par défaut est utilisée
-                const img = document.createElement('img');
-                img.src = reader.result;
-                img.classList.add('profile-image');
-                img.alt = 'Profile Image';
-                img.width = 100;
-                preview.parentNode.replaceChild(img, preview); // Remplace l'icône par l'image
-            }
-        }
+				reader.onloadend = function () {
+					if (preview.tagName === 'IMG') { // Assure que la prévisualisation fonctionne si c'est une balise img
+						preview.src = reader.result;
+					} else { // Crée une nouvelle img si l'icône par défaut est utilisée
+						const img = document.createElement('img');
+						img.src = reader.result;
+						img.classList.add('profile-image');
+						img.alt = 'Profile Image';
+						img.width = 100;
+						preview.parentNode.replaceChild(img, preview); // Remplace l'icône par l'image
+					}
+				}
 
-        if (file) {
-            reader.readAsDataURL(file);
-            fileNameDisplay.textContent = file.name; // Affiche le nom du fichier
-        } else {
-            preview.src = "";
-            fileNameDisplay.textContent = "";
-        }
-    }
-}
-</script>
+				if (file) {
+					reader.readAsDataURL(file);
+					fileNameDisplay.textContent = file.name; // Affiche le nom du fichier
+				} else {
+					preview.src = "";
+					fileNameDisplay.textContent = "";
+				}
+			}
+		}
+	</script>
 
 </head>
 
@@ -194,18 +194,19 @@ function previewFile() {
 					<!-- Premier conteneur : image et nom/email -->
 					<div class="profile-container">
 						<div class="image-container">
-						<label for="new_profile_image" class="image-upload-label">
-    <?php
-    if (!empty($_SESSION['user_profile'])) {
-        echo "<img id='profile-preview' src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
-    } else {
-        echo "<div id='profile-preview' class='user-icon-default'><i class='bx bxs-user'></i></div>";
-    }
-    ?>
-    <input type="file" id="new_profile_image" name="new_profile_image" accept="image/*" style="display: none;" onchange="previewFile();">
-    <div class="overlay"><i class="fa-solid fa-pen"></i></div>
-</label>
-<p id="file-name"></p> <!-- Ajouté pour afficher le nom du fichier -->
+							<label for="new_profile_image" class="image-upload-label">
+								<?php
+								if (!empty($_SESSION['user_profile'])) {
+									echo "<img id='profile-preview' src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
+								} else {
+									echo "<div id='profile-preview' class='user-icon-default'><i class='bx bxs-user'></i></div>";
+								}
+								?>
+								<input type="file" id="new_profile_image" name="new_profile_image" accept="image/*"
+									style="display: none;" onchange="previewFile();">
+								<div class="overlay"><i class="fa-solid fa-pen"></i></div>
+							</label>
+							<p id="file-name"></p>
 							<input type="submit" name="delete_image" value="Supprimer la photo de profil"
 								class="btn delete-photo-btn">
 						</div>
