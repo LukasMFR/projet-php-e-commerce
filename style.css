@@ -1389,9 +1389,27 @@ textarea {
 		min-height: 0;
 	}
 
-	.main-container .home-section {
+	/* Partie vidéo en suspens */
+	/* .main-container .home-section .video-detail {
 		display: none;
 	}
+
+	.main-container .home-section {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		z-index: -1;
+		object-fit: cover;
+	}
+
+	.main-container .home-section .video-container {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+	} */
 
 	.main-container .form-container {
 		width: 100%;
