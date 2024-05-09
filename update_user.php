@@ -133,56 +133,50 @@ if (isset($_POST['submit'])) {
 		</div>
 		<section>
 			<div class="form-container" id="users_login">
-				<form action="path_to_your_handling_script.php" method="post" enctype="multipart/form-data">
-
-	<div class="profile-update-container">
-    <div class="top-section">
-        <div class="left-section">
-    <?php if (!empty($_SESSION['user_profile'])): ?>
-        <img src="<?= $_SESSION['user_profile'] ?>" class="profile-image" alt="Profile Image" style="cursor: pointer;">
-    <?php else: ?>
-        <div class='user-icon-default' style="cursor: pointer;"><i class='bx bxs-user'></i></div>
-    <?php endif; ?>
-    <input type="file" id="profileImageInput" name="image" accept="image/*" style="display: none;">
-	<input type="file" id="image" name="image" accept="image/jpeg, image/png">
-</div>
-        <div class="right-section">
-            <div class="user-info-section">
-                <div class="input-field">
-                    <label for="name">Nom d'utilisateur <sup>*</sup></label>
-                    <input type="text" id="name" name="name" required value="<?= $_SESSION['user_name'] ?? ''; ?>">
-                </div>
-                <div class="input-field">
-                    <label for="email">Email de l'utilisateur <sup>*</sup></label>
-                    <input type="email" id="email" name="email" required value="<?= $_SESSION['user_email'] ?? ''; ?>">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bottom-section">
-        <div class="password-section">
-            <div class="input-field">
-                <label for="old_pass">Ancien mot de passe <sup>*</sup></label>
-                <input type="password" id="old_pass" name="old_pass">
-            </div>
-            <div class="input-field">
-                <label for="new_pass">Nouveau mot de passe <sup>*</sup></label>
-                <input type="password" id="new_pass" name="new_pass">
-            </div>
-            <div class="input-field">
-                <label for="confirm_pass">Confirmer le mot de passe <sup>*</sup></label>
-                <input type="password" id="confirm_pass" name="confirm_pass">
-            </div>
-        </div>
-		<div class="input-field">
+				<form action="" method="post" enctype="multipart/form-data">
+					<div class="update-profile">
+						<?php
+						// Affichage de l'image de profil ou d'une icône par défaut
+						if (!empty($_SESSION['user_profile'])) {
+							echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
+						} else {
+							echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
+						}
+						?>
+					</div>
+					<h3>Mettre à jour le profil</h3>
+					<div class="input-field">
+						<label for="name">Nom d'utilisateur <sup>*</sup></label>
+						<input type="text" id="name" name="name" maxlength="255"
+							placeholder="Saisissez votre nom d'utilisateur" required
+							value="<?= $_SESSION['user_name'] ?? ''; ?>">
+					</div>
+					<div class="input-field">
+						<label for="email">Email de l'utilisateur <sup>*</sup></label>
+						<input type="email" id="email" name="email" maxlength="255" placeholder="Saisissez votre email"
+							required value="<?= $_SESSION['user_email'] ?? ''; ?>">
+					</div>
+					<div class="input-field">
+						<label for="old_pass">Ancien mot de passe <sup>*</sup></label>
+						<input type="password" id="old_pass" name="old_pass" maxlength="255"
+							placeholder="Saisissez votre mot de passe actuel">
+					</div>
+					<div class="input-field">
+						<label for="new_pass">Nouveau mot de passe <sup>*</sup></label>
+						<input type="password" id="new_pass" name="new_pass" maxlength="255"
+							placeholder="Saisissez votre nouveau mot de passe">
+					</div>
+					<div class="input-field">
+						<label for="confirm_pass">Confirmer le mot de passe <sup>*</sup></label>
+						<input type="password" id="confirm_pass" name="confirm_pass" maxlength="255"
+							placeholder="Confirmez votre nouveau mot de passe">
+					</div>
+					<div class="input-field">
 						<label for="image">Télécharger la photo de profil <sup>*</sup></label>
 						<input type="file" id="image" name="image" accept="image/jpeg, image/png">
 					</div>
-        <div class="submit-section">
-            <input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
-        </div>
-    </div>
-</div>
+					<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
+					<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 				</form>
 			</div>
 		</section>
@@ -191,27 +185,6 @@ if (isset($_POST['submit'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
 	<?php include 'components/alert.php'; ?>
-
-<script>
-    // Ajoutez un écouteur d'événements à l'image de profil et à l'icône par défaut
-    document.addEventListener('DOMContentLoaded', function () {
-        var profileImage = document.querySelector('.profile-image');
-        var defaultIcon = document.querySelector('.user-icon-default');
-        
-        if (profileImage) {
-            profileImage.addEventListener('click', function() {
-                document.getElementById('profileImageInput').click();
-            });
-        }
-        
-        if (defaultIcon) {
-            defaultIcon.addEventListener('click', function() {
-                document.getElementById('profileImageInput').click();
-            });
-        }
-    });
-</script>
-
 </body>
 
 </html>
