@@ -1262,131 +1262,147 @@ input[type="submit"].btn {
 	margin-bottom: 1rem;
 } */
 
+/* Styles généraux pour la section mise à jour du profil */
 .update-profile .form-container {
-	width: 50vw;
-	margin: 0 auto;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 .update-profile .form-container input,
 .update-profile textarea {
-	background-color: transparent;
-	width: 100%;
+    background-color: transparent;
+    width: 100%;
 }
 
 .update-profile textarea {
-	height: 200px;
+    height: 200px;
 }
 
 .update-profile .form-container p {
-	color: #3f3f3f;
+    color: #3f3f3f;
 }
 
 .update-profile .form-container sup {
-	color: red;
-	font-size: 1.2rem;
+    color: red;
+    font-size: 1.2rem;
 }
 
 .update-profile .main-container input[type=submit] {
-	color: #000 !important;
-	cursor: pointer;
+    color: #000 !important;
+    cursor: pointer;
 }
 
 .update-profile input[type="submit"].btn {
-	color: black;
+    color: black;
+    font-size: 0.8rem; /* Réduction de la taille des boutons */
+    padding: 0.4rem 0.8rem; /* Réduction de la taille des boutons */
 }
 
 .update-profile .form-container form {
-	margin: 1rem auto;
-	background-color: rgb(255 255 255 / 80%);
-	box-shadow: var(--box-shadow);
-	padding: 3rem;
-	position: relative;
-	border-radius: 5px;
+    margin: 1rem auto;
+    background-color: rgb(255 255 255 / 80%);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: 8px;
 }
 
 /* Styles spécifiques pour le premier conteneur */
 .update-profile .profile-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
 }
 
 .update-profile .image-container {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .update-profile .image-container .profile-image {
-	border-radius: 50%;
-	width: 150px;
-	height: 150px;
-	object-fit: cover;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .update-profile .image-container .user-icon-default {
-	font-size: 150px;
-	color: #ccc;
+    font-size: 150px;
+    color: #ccc;
+    border-radius: 10px;
 }
 
 .update-profile .info-container {
-	flex: 2;
-	margin-left: 2rem;
+    flex: 2;
+    margin-left: 2rem;
+    padding: 1rem;
+    outline: 2px solid #e0e0e0; /* Outline gris clair autour du conteneur */
+    border-radius: 8px;
 }
 
 .update-profile .info-container h3 {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .update-profile .input-field {
-	margin-bottom: 1rem;
+    margin-bottom: 0rem; /* Espacement réduit à 0 entre les champs */
 }
 
 .update-profile .input-field label {
-	display: block;
-	margin-bottom: 0.5rem;
+    display: block;
+    margin-bottom: 0.3rem;
 }
 
 .update-profile .form-container form input {
-	width: 100%;
-	padding: 0.5rem;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .update-profile .form-container form button {
-	width: 85%;
-	border-radius: 10px;
-	outline: none;
-	margin: 1rem auto;
-	display: block;
+    width: 80%;
+    border-radius: 10px;
+    outline: none;
+    margin: 1rem auto;
+    display: block;
 }
 
 /* Styles pour le deuxième conteneur */
 .update-profile .additional-fields {
-	margin-top: 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    outline: 2px solid #e0e0e0; /* Outline gris clair autour du conteneur */
+    border-radius: 8px;
 }
 
 .update-profile .additional-fields .input-field {
-	margin-bottom: 1rem;
+    margin-bottom: 0rem; /* Espacement réduit à 0 entre les champs */
 }
 
 .update-profile .additional-fields input[type="submit"].btn {
-	width: 100%;
-	padding: 0.75rem;
-	margin-top: 1rem;
-	cursor: pointer;
-	background-color: #333;
-	color: #fff;
-	border: none;
-	border-radius: 5px;
-	transition: background-color 0.3s;
+    width: 45%; /* Réduction de la taille des boutons */
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 0.5rem;
+}
+
+.update-profile .additional-fields input[type="submit"].btn:last-of-type {
+    margin-right: 0; /* Pas d'espace après le dernier bouton */
 }
 
 .update-profile .additional-fields input[type="submit"].btn:hover {
-	background-color: #555;
+    background-color: #555;
 }
 
 
