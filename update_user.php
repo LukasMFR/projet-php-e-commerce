@@ -202,9 +202,10 @@ if (isset($_POST['submit'])) {
 									echo "<div id='profile-preview' class='user-icon-default'><i class='bx bxs-user'></i></div>";
 								}
 								?>
+								<div class="overlay"><i class="fa-solid fa-pen"></i></div>
+								<i class="fa-solid fa-pen edit-icon"></i>
 								<input type="file" id="new_profile_image" name="new_profile_image" accept="image/*"
 									style="display: none;" onchange="previewFile();">
-								<div class="overlay"><i class="fa-solid fa-pen"></i></div>
 							</label>
 							<span id="file-name" class="file-name"></span>
 							<input type="submit" name="delete_image" value="Supprimer la photo de profil"

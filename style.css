@@ -1394,6 +1394,25 @@ input[type="submit"].btn {
 	font-size: 24px;
 }
 
+.update-profile .image-container .edit-icon {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	font-size: 16px;
+	color: #000;
+	background-color: #fff;
+	border-radius: 50%;
+	padding: 6px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	opacity: 0.9;
+	transition: opacity 0.3s ease;
+}
+
+.update-profile .image-container:hover .edit-icon {
+	opacity: 0;
+}
+
 .update-profile .image-container .user-icon-default {
 	font-size: 150px;
 	color: #ccc;
