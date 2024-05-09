@@ -2701,6 +2701,7 @@ footer .bottom-footer {
 	.summary .flex {
 		grid-template-columns: 1fr;
 		align-items: center;
+		box-shadow: none;
 	}
 
 	.summary .flex img {
