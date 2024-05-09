@@ -1421,6 +1421,17 @@ input[type="submit"].btn {
 	color: #000;
 }
 
+.update-profile .image-container .file-name {
+	display: inline-block;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 8px;
+	font-size: 14px;
+	color: #333;
+}
+
 .update-profile .info-container {
 	flex: 2;
 	margin-left: 2rem;

@@ -206,7 +206,7 @@ if (isset($_POST['submit'])) {
 									style="display: none;" onchange="previewFile();">
 								<div class="overlay"><i class="fa-solid fa-pen"></i></div>
 							</label>
-							<p id="file-name"></p>
+							<span id="file-name" class="file-name"></span>
 							<input type="submit" name="delete_image" value="Supprimer la photo de profil"
 								class="btn delete-photo-btn">
 						</div>
