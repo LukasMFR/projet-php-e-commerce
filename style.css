@@ -3268,3 +3268,106 @@ footer .bottom-footer {
 		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	}
 }
+
+/* Code pour about ? */
+.profile-update-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-image-section,
+.user-info-section,
+.password-section {
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+
+.profile-image {
+	cursor: pointer;
+	width: 91%;
+	/* Ajustez selon la taille désirée */
+	height: auto;
+	border-radius: 10px;
+}
+
+.left-section {
+	flex: 1;
+	padding: 20px;
+}
+
+.right-section {
+	flex: 3;
+	padding: 20px;
+}
+
+.top-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.user-info-section,
+.password-section {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.password-section {
+	width: 100%;
+	padding: 20px;
+	margin-top: 20px;
+	margin-left: 0rem;
+}
+
+.input-field {
+	margin-bottom: 15px;
+}
+
+.bottom-section {
+	width: 100%;
+}
+
+.submit-section {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.about-section {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #cecece24;
+	/* Couleur de fond de la section */
+	padding: 20px;
+}
+
+.profile {
+	text-align: center;
+	margin: 20px;
+}
+
+.profile img {
+	width: 200px;
+	/* Ajustez selon la taille souhaitée */
+	height: auto;
+	border-radius: 10px;
+	/* Pour les coins arrondis */
+}
+
+.name {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.role {
+	font-size: 16px;
+	color: #666;
+	margin-top: 5px;
+}
