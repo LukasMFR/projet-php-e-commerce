@@ -1188,8 +1188,8 @@ input[type="submit"].btn {
 	padding: 3rem;
 	position: relative;
 	border-radius: 5px;
-	margin-left: -15rem;
-	margin-right: -15rem;
+	/* margin-left: -15rem; */
+	/* margin-right: -15rem; */
 }
 
 .form-container form .input-field p {
