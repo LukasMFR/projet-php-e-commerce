@@ -82,6 +82,29 @@ if (isset($_POST['submit'])) {
 		}
 	}
 
+	// Gestion de l'image de profil
+	if (!empty($_FILES['new_profile_image']['name'])) {
+		// Récupère les détails du fichier téléchargé
+		$image_name = $_FILES['new_profile_image']['name'];
+		$image_ext = pathinfo($image_name, PATHINFO_EXTENSION);
+		$new_image_name = $user_id . '_' . time() . '.' . $image_ext; // Crée un nom unique pour l'image
+		$image_folder = 'user_profile_images/' . $new_image_name; // Dossier et nom de fichier final
+
+		// Déplace le fichier téléchargé vers le répertoire final
+		if (move_uploaded_file($_FILES['new_profile_image']['tmp_name'], $image_folder)) {
+			// Met à jour la session avec le chemin de l'image
+			$_SESSION['user_profile'] = $image_folder;
+
+			// Met à jour la base de données avec le nouveau chemin de l'image
+			$update_image = $conn->prepare("UPDATE `users` SET profile_pic = ? WHERE id = ?");
+			$update_image->execute([$image_folder, $user_id]);
+
+			$success_msg[] = 'Image mise à jour avec succès.';
+		} else {
+			$error_msg[] = "Erreur lors du téléchargement de l'image.";
+		}
+	}
+
 	// Mise à jour du mot de passe
 	if (!empty($_POST['old_pass']) && !empty($_POST['new_pass']) && !empty($_POST['confirm_pass'])) {
 		if ($_POST['new_pass'] !== $_POST['confirm_pass']) {
