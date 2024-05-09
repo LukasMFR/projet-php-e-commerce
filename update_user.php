@@ -244,10 +244,10 @@ if (isset($_POST['submit'])) {
 							<input type="password" id="confirm_pass" name="confirm_pass" maxlength="255"
 								placeholder="Confirmez votre nouveau mot de passe">
 						</div>
-						<div class="input-field">
+						<!-- <div class="input-field">
 							<label for="image">Télécharger la photo de profil <sup>*</sup></label>
 							<input type="file" id="image" name="image" accept="image/jpeg, image/png">
-						</div>
+						</div> -->
 
 						<div class="button-container">
 							<!-- <input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn"> -->
