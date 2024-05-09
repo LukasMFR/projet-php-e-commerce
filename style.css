@@ -1318,10 +1318,9 @@ input[type="submit"].btn {
 }
 
 .update-profile .image-container {
-	flex: 1;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 }
 
 .update-profile .image-container .profile-image {
@@ -1330,6 +1329,23 @@ input[type="submit"].btn {
 	border-radius: 10px;
 	object-fit: cover;
 	margin-bottom: 1rem;
+}
+
+.update-profile .delete-photo-btn {
+	width: 100%;
+	max-width: 180px;
+	padding: 0.4rem 0.8rem;
+	cursor: pointer;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.update-profile .delete-photo-btn:hover {
+	background-color: #fff;
+	color: #000;
 }
 
 .update-profile .image-container .user-icon-default {
