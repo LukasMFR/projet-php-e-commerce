@@ -183,8 +183,12 @@ if (isset($_POST['submit'])) {
 							<label for="image">Télécharger la photo de profil <sup>*</sup></label>
 							<input type="file" id="image" name="image" accept="image/jpeg, image/png">
 						</div>
-						<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
-						<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
+
+						<!-- Conteneur centré pour les boutons -->
+						<div class="button-container">
+							<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
+							<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
+						</div>
 					</div>
 				</form>
 			</div>
