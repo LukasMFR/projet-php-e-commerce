@@ -71,8 +71,8 @@ if (isset($_POST['logout'])) {
 				<div class="role">CEO</div>
 			</div>
 			<div class="profile">
-				<img src="image/lukas.jpg" alt="Gilbert Maximilien">
-				<div class="name">Luklas Maufert</div>
+				<img src="image/lukas.jpg" alt="Lukas Mauffré">
+				<div class="name">Lukas Mauffré</div>
 				<div class="role">Co-Fondateur</div>
 			</div>
 			<div class="profile">
