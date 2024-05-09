@@ -131,7 +131,7 @@ if (isset($_POST['submit'])) {
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Mettre à jour le profil</span>
 		</div>
-		<section>
+		<section class="update-profile">
 			<div class="form-container" id="users_login">
 				<form action="" method="post" enctype="multipart/form-data">
 					<!-- Premier conteneur : image et nom/email -->
