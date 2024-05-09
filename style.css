@@ -1264,7 +1264,8 @@ input[type="submit"].btn {
 
 /* Styles généraux pour la section mise à jour du profil */
 .update-profile .form-container {
-	width: 50vw;
+	width: 80vw;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 1rem;
 	border-radius: 8px;
