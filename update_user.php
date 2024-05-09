@@ -134,49 +134,58 @@ if (isset($_POST['submit'])) {
 		<section>
 			<div class="form-container" id="users_login">
 				<form action="" method="post" enctype="multipart/form-data">
-					<div class="update-profile">
-						<?php
-						// Affichage de l'image de profil ou d'une icône par défaut
-						if (!empty($_SESSION['user_profile'])) {
-							echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
-						} else {
-							echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
-						}
-						?>
+					<!-- Premier conteneur : image et nom/email -->
+					<div class="profile-container">
+						<div class="image-container">
+							<?php
+							// Affichage de l'image de profil ou d'une icône par défaut
+							if (!empty($_SESSION['user_profile'])) {
+								echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
+							} else {
+								echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
+							}
+							?>
+						</div>
+						<div class="info-container">
+							<h3>Mettre à jour le profil</h3>
+							<div class="input-field">
+								<label for="name">Nom d'utilisateur <sup>*</sup></label>
+								<input type="text" id="name" name="name" maxlength="255"
+									placeholder="Saisissez votre nom d'utilisateur" required
+									value="<?= $_SESSION['user_name'] ?? ''; ?>">
+							</div>
+							<div class="input-field">
+								<label for="email">Email de l'utilisateur <sup>*</sup></label>
+								<input type="email" id="email" name="email" maxlength="255"
+									placeholder="Saisissez votre email" required
+									value="<?= $_SESSION['user_email'] ?? ''; ?>">
+							</div>
+						</div>
 					</div>
-					<h3>Mettre à jour le profil</h3>
-					<div class="input-field">
-						<label for="name">Nom d'utilisateur <sup>*</sup></label>
-						<input type="text" id="name" name="name" maxlength="255"
-							placeholder="Saisissez votre nom d'utilisateur" required
-							value="<?= $_SESSION['user_name'] ?? ''; ?>">
+					<!-- Deuxième conteneur : reste du formulaire -->
+					<div class="additional-fields">
+						<div class="input-field">
+							<label for="old_pass">Ancien mot de passe <sup>*</sup></label>
+							<input type="password" id="old_pass" name="old_pass" maxlength="255"
+								placeholder="Saisissez votre mot de passe actuel">
+						</div>
+						<div class="input-field">
+							<label for="new_pass">Nouveau mot de passe <sup>*</sup></label>
+							<input type="password" id="new_pass" name="new_pass" maxlength="255"
+								placeholder="Saisissez votre nouveau mot de passe">
+						</div>
+						<div class="input-field">
+							<label for="confirm_pass">Confirmer le mot de passe <sup>*</sup></label>
+							<input type="password" id="confirm_pass" name="confirm_pass" maxlength="255"
+								placeholder="Confirmez votre nouveau mot de passe">
+						</div>
+						<div class="input-field">
+							<label for="image">Télécharger la photo de profil <sup>*</sup></label>
+							<input type="file" id="image" name="image" accept="image/jpeg, image/png">
+						</div>
+						<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
+						<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 					</div>
-					<div class="input-field">
-						<label for="email">Email de l'utilisateur <sup>*</sup></label>
-						<input type="email" id="email" name="email" maxlength="255" placeholder="Saisissez votre email"
-							required value="<?= $_SESSION['user_email'] ?? ''; ?>">
-					</div>
-					<div class="input-field">
-						<label for="old_pass">Ancien mot de passe <sup>*</sup></label>
-						<input type="password" id="old_pass" name="old_pass" maxlength="255"
-							placeholder="Saisissez votre mot de passe actuel">
-					</div>
-					<div class="input-field">
-						<label for="new_pass">Nouveau mot de passe <sup>*</sup></label>
-						<input type="password" id="new_pass" name="new_pass" maxlength="255"
-							placeholder="Saisissez votre nouveau mot de passe">
-					</div>
-					<div class="input-field">
-						<label for="confirm_pass">Confirmer le mot de passe <sup>*</sup></label>
-						<input type="password" id="confirm_pass" name="confirm_pass" maxlength="255"
-							placeholder="Confirmez votre nouveau mot de passe">
-					</div>
-					<div class="input-field">
-						<label for="image">Télécharger la photo de profil <sup>*</sup></label>
-						<input type="file" id="image" name="image" accept="image/jpeg, image/png">
-					</div>
-					<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
-					<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 				</form>
 			</div>
 		</section>
