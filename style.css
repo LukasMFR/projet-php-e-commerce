@@ -1518,7 +1518,6 @@ input[type="submit"].btn {
 
 .update-profile .additional-fields input[type="submit"].btn:last-of-type {
 	margin-right: 0;
-	width: 100%;
 }
 
 .update-profile .additional-fields input[type="submit"].btn:hover {
@@ -1559,7 +1558,6 @@ input[type="submit"].btn {
 	.update-profile .additional-fields .input-field,
 	.update-profile .additional-fields .button-container {
 		align-items: center;
-		text-align: center;
 	}
 
 	.update-profile .button-container {
@@ -1578,6 +1576,10 @@ input[type="submit"].btn {
 		width: 100%;
 		max-width: 300px;
 		padding: 10px 20px;
+	}
+
+	.update-profile .additional-fields input[type="submit"].btn:last-of-type {
+		width: 100%;
 	}
 
 	.update-profile .file-name {
