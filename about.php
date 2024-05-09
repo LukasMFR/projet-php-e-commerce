@@ -44,11 +44,15 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="detail">
 					<h1>Notre mission</h1>
-					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de services, 
-						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle. 
-						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de location de 
-						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est de fournir un 
-						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que si le client 
+					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de
+						services,
+						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle.
+						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de
+						location de
+						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est
+						de fournir un
+						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que
+						si le client
 						est satisfait. Louez votre voiture de luxe chez nous pour être sur la bonne voie !</p>
 					<a href="view_products.php" class="btn">Acheter maintenant</a>
 				</div>
@@ -56,61 +60,61 @@ if (isset($_POST['logout'])) {
 		</div>
 
 		<div class="about-section">
-    <div class="profile">
-        <img src="image/anis.jpg" alt="La chose">
-        <div class="name">Anis Fetouab </div>
-        <div class="role">Product Owner</div>
-    </div>
-    <div class="profile">
-        <img src="image/hillel.jpg" alt="Hillel Ohayon">
-        <div class="name">Hillel Ohayon</div>
-        <div class="role">CEO</div>
-    </div>
-    <div class="profile">
-        <img src="image/lukas.jpg" alt="Gilbert Maximilien">
-        <div class="name">Luklas Maufert</div>
-        <div class="role">Co-Fondateur</div>
-    </div>
-    <div class="profile">
-        <img src="path_to_image_chat.jpg" alt="L'alpha chat">
-        <div class="name">L'alpha chat</div>
-        <div class="role">Mascotte</div>
-    </div>
-</div>
+			<div class="profile">
+				<img src="image/anis.jpg" alt="La chose">
+				<div class="name">Anis Fetouab </div>
+				<div class="role">Product Owner</div>
+			</div>
+			<div class="profile">
+				<img src="image/hillel.jpg" alt="Hillel Ohayon">
+				<div class="name">Hillel Ohayon</div>
+				<div class="role">CEO</div>
+			</div>
+			<div class="profile">
+				<img src="image/lukas.jpg" alt="Gilbert Maximilien">
+				<div class="name">Luklas Maufert</div>
+				<div class="role">Co-Fondateur</div>
+			</div>
+			<div class="profile">
+				<img src="path_to_image_chat.jpg" alt="L'alpha chat">
+				<div class="name">L'alpha chat</div>
+				<div class="role">Mascotte</div>
+			</div>
+		</div>
 
 		<section class="thumb">
-					<div class="box-container">
-						<div class="box">
-							<img src="img/logo-lamborghini.png">
-							<h3>Lamborghini</h3>
-							<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
-								l'expérience ultime de conduite sportive.</p>
-							<i class="bx bx-chevron-right"></i>
-						</div>
-						<div class="box">
-							<img src="img/logo-porsche.png">
-							<h3>Porsche</h3>
-							<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
-								sélection pour trouver votre prochaine voiture de sport.</p>
-							<i class="bx bx-chevron-right"></i>
-						</div>
-						<div class="box">
-							<img src="img/logo-ferrari-bw.png">
-							<h3>Ferrari</h3>
-							<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
-								Choisissez la Ferrari qui fait battre votre cœur.</p>
-							<i class="bx bx-chevron-right"></i>
-						</div>
-						<div class="box">
-							<img src="img/logo-alpine.png">
-							<h3>Alpine</h3>
-							<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
-								gamme pour une expérience de conduite exceptionnelle.</p>
-							<i class="bx bx-chevron-right"></i>
-						</div>
-					</div>
-				</section>
-		
+			<div class="box-container">
+				<div class="box">
+					<img src="img/logo-lamborghini.png">
+					<h3>Lamborghini</h3>
+					<p>Découvrez le summum de la performance et du design italien avec nos modèles Lamborghini. Vivez
+						l'expérience ultime de conduite sportive.</p>
+					<i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="box">
+					<img src="img/logo-porsche.png">
+					<h3>Porsche</h3>
+					<p>Élégance, puissance et innovation : les Porsche incarnent l'excellence allemande. Explorez la
+						sélection pour trouver votre prochaine voiture de sport.</p>
+					<i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="box">
+					<img src="img/logo-ferrari-bw.png">
+					<h3>Ferrari</h3>
+					<p>Plongez dans le monde de Ferrari, synonyme de passion, de prestige et de performances pures.
+						Choisissez la Ferrari qui fait battre votre cœur.</p>
+					<i class="bx bx-chevron-right"></i>
+				</div>
+				<div class="box">
+					<img src="img/logo-alpine.png">
+					<h3>Alpine</h3>
+					<p>L'Alpine combine agilité et style français dans une voiture sportive unique. Découvrez notre
+						gamme pour une expérience de conduite exceptionnelle.</p>
+					<i class="bx bx-chevron-right"></i>
+				</div>
+			</div>
+		</section>
+
 
 		<div class="testimonial-container">
 			<div class="title">
