@@ -1251,6 +1251,23 @@ input[type="submit"].btn {
 
 /*----------update profile section-----------------*/
 /* Styles généraux pour la section mise à jour du profil */
+/*------------update profile section----------*/
+.update-profile .profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.update-profile .profile-image {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	/* padding: .5rem; */
+	object-fit: cover;
+	border: 3px solid var(--green);
+	margin-bottom: 1rem;
+}
+
 .update-profile .form-container {
     width: 50vw;
     margin: 0 auto;
@@ -2748,22 +2765,7 @@ footer .bottom-footer {
 	/* Orange pour les commandes en cours */
 }
 
-/*------------update profile section----------*/
-.update-profile .profile {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-.update-profile .profile-image {
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	/* padding: .5rem; */
-	object-fit: cover;
-	border: 3px solid var(--green);
-	margin-bottom: 1rem;
-}
 
 
 /*------------FAQ section----------*/
