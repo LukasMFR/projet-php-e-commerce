@@ -118,6 +118,7 @@ if (isset($_POST['submit'])) {
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<title>Mettre à jour le profil - Road Luxury</title>
 </head>
 
@@ -137,14 +138,19 @@ if (isset($_POST['submit'])) {
 					<!-- Premier conteneur : image et nom/email -->
 					<div class="profile-container">
 						<div class="image-container">
-							<?php
-							// Affichage de l'image de profil ou d'une icône par défaut
-							if (!empty($_SESSION['user_profile'])) {
-								echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
-							} else {
-								echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
-							}
-							?>
+							<label for="new_profile_image" class="image-upload-label">
+								<?php
+								// Affichage de l'image de profil ou d'une icône par défaut
+								if (!empty($_SESSION['user_profile'])) {
+									echo "<img src='" . $_SESSION['user_profile'] . "' class='profile-image' alt='Profile Image' width='100'>";
+								} else {
+									echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
+								}
+								?>
+								<input type="file" id="new_profile_image" name="new_profile_image" accept="image/*"
+									style="display: none;">
+								<div class="overlay"><i class="fa-solid fa-pen"></i></div>
+							</label>
 							<input type="submit" name="delete_image" value="Supprimer la photo de profil"
 								class="btn delete-photo-btn">
 						</div>

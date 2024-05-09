@@ -1348,6 +1348,52 @@ input[type="submit"].btn {
 	color: #000;
 }
 
+.update-profile .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Important pour positionner correctement l'overlay */
+}
+
+.update-profile .image-upload-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 180px; /* Assurez-vous que cette largeur correspond à celle de votre image */
+    height: 180px; /* Assurez-vous que cette hauteur correspond à celle de votre image */
+}
+
+.update-profile .profile-image {
+    width: 100%; /* Utilisez 100% pour que l'image remplisse le label */
+    height: 100%; /* Utilisez 100% pour que l'image remplisse le label */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.update-profile .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.update-profile .image-upload-label:hover .overlay {
+    opacity: 1;
+}
+
+.update-profile .overlay i {
+    font-size: 24px;
+}
+
 .update-profile .image-container .user-icon-default {
 	font-size: 150px;
 	color: #ccc;
