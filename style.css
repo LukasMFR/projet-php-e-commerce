@@ -1556,8 +1556,9 @@ input[type="submit"].btn {
 
 	.update-profile .delete-photo-btn,
 	.update-profile .image-container input[type="submit"].btn {
-		width: auto;
-		/* padding: 10px 20px; */
+		width: 100%;
+		max-width: 300px;
+		padding: 10px 20px;
 	}
 
 	.update-profile .file-name {
