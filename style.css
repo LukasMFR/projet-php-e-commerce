@@ -1499,11 +1499,70 @@ input[type="submit"].btn {
 
 .update-profile .additional-fields input[type="submit"].btn:last-of-type {
 	margin-right: 0;
+	width: 100%;
 }
 
 .update-profile .additional-fields input[type="submit"].btn:hover {
 	background-color: #fff;
 	color: #000;
+}
+
+/* Media query pour les appareils mobiles de la page update-profile */
+@media (max-width: 590px) {
+
+	.update-profile .profile-container,
+	.update-profile .info-container,
+	.update-profile .additional-fields {
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.update-profile .profile-container {
+		margin-bottom: 20px;
+	}
+
+	.update-profile .info-container {
+		padding: 10px;
+		margin-left: 0;
+	}
+
+	.update-profile .image-container {
+		margin-bottom: 20px;
+	}
+
+	.update-profile .image-container,
+	.update-profile .additional-fields {
+		width: 100%;
+	}
+
+	.update-profile .additional-fields .input-field,
+	.update-profile .additional-fields .button-container {
+		align-items: center;
+		text-align: center;
+	}
+
+	.update-profile .button-container {
+		flex-direction: column;
+	}
+
+	.update-profile .image-container .profile-image,
+	.update-profile .image-container .user-icon-default,
+	.update-profile .image-upload-label {
+		width: 150px;
+		height: 150px;
+	}
+
+	.update-profile .delete-photo-btn,
+	.update-profile .image-container input[type="submit"].btn {
+		width: auto;
+		/* padding: 10px 20px; */
+	}
+
+	.update-profile .file-name {
+		max-width: 150px;
+	}
 }
 
 
