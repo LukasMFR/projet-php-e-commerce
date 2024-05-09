@@ -1325,16 +1325,33 @@ input[type="submit"].btn {
 }
 
 .update-profile .image-container .profile-image {
+	width: 180px;
+	height: 180px;
 	border-radius: 10px;
-	width: 150px;
-	height: 150px;
 	object-fit: cover;
+	margin-bottom: 1rem;
 }
 
 .update-profile .image-container .user-icon-default {
 	font-size: 150px;
 	color: #ccc;
 	border-radius: 10px;
+}
+
+.update-profile .image-container input[type="submit"].btn {
+	width: 100%;
+	padding: 0.4rem 0.8rem;
+	cursor: pointer;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.update-profile .image-container input[type="submit"].btn:hover {
+	background-color: #fff;
+	color: #000;
 }
 
 .update-profile .info-container {

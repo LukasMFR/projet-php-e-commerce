@@ -145,6 +145,7 @@ if (isset($_POST['submit'])) {
 								echo "<div class='user-icon-default'><i class='bx bxs-user'></i></div>";
 							}
 							?>
+							<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
 						</div>
 						<div class="info-container">
 							<h3>Mettre à jour le profil</h3>
@@ -185,7 +186,7 @@ if (isset($_POST['submit'])) {
 						</div>
 
 						<div class="button-container">
-							<input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn">
+							<!-- <input type="submit" name="delete_image" value="Supprimer la photo de profil" class="btn"> -->
 							<input type="submit" name="submit" value="Mettre à jour le profil" class="btn">
 						</div>
 					</div>
