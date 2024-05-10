@@ -59,7 +59,7 @@ if (isset($_POST['logout'])) {
 			</div>
 		</div>
 
-		<h2 class="section-title">Employés</h2>
+		<h2 class="section-title">Les employés</h2>
 		<div class="about-section">
 			<div class="profile">
 				<img src="image/anis.jpg" alt="La chose">
