@@ -487,6 +487,54 @@ header.scrolled::before {
 	transform: translateY(-2px);
 }
 
+@media (max-width: 480px) {
+	header {
+		left: 10px;
+		right: 10px;
+		border-radius: 10px;
+		padding: 0.5rem;
+		box-shadow: var(--box-shadow);
+	}
+
+	header.scrolled {
+		top: 5px;
+	}
+
+	header::before {
+		border-radius: 10px;
+	}
+
+	.brand-navbar h1 {
+		font-size: 16px;
+	}
+
+	.brand-navbar .logo {
+		display: none;
+	}
+
+	.header .icons {
+		justify-content: flex-end;
+	}
+
+	#menu-btn {
+		display: block;
+		font-size: 1.5rem;
+	}
+
+	.header .navbar {
+		display: none;
+	}
+
+	.header .navbar.active {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 10px 0;
+	}
+}
+
+
 /*----------home slider section-----------------*/
 .home-section {
 	position: relative;
