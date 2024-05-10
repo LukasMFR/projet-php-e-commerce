@@ -19,4 +19,4 @@
 
 Faire `sudo chmod -R 777 /path/to/projet-php-e-commerce` pour pouvoir écrire dans les dossiers du site web.
 
-Faire ls -l `/path/to/projet-php-e-commerce` pour lire les permissions des fichiers/dossiers du site web.
+Faire `ls -l /path/to/projet-php-e-commerce` pour lire les permissions des fichiers/dossiers du site web.
