@@ -1197,12 +1197,12 @@ video {
 	padding: 20px;
 }
 
-.profile {
+.about-section .profile {
 	text-align: center;
 	margin: 20px;
 }
 
-.profile img {
+.about-section .profile img {
 	width: 200px;
 	height: auto;
 	border-radius: 10px;
