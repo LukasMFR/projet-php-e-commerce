@@ -517,6 +517,7 @@ header.scrolled::before {
 	}
 
 	.header .icons {
+		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 	}
@@ -525,7 +526,6 @@ header.scrolled::before {
 		display: block;
 		font-size: 1.5rem;
 		margin-left: 1rem;
-		vertical-align: middle;
 	}
 
 	.header .navbar {
