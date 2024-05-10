@@ -487,6 +487,7 @@ header.scrolled::before {
 	transform: translateY(-2px);
 }
 
+/* Media pour la version mobile du header */
 @media (max-width: 480px) {
 	header {
 		left: 10px;
