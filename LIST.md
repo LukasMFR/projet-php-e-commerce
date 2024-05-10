@@ -13,3 +13,10 @@
 - [/] Mettre des graphes et des statistiques sur la page admin (sur le Dashboard) (D3.js)
 - [x] Changer l’interface, mes produits sous forme de liste et avec des icônes
 - [x] Mettre une option pour cliquer, n’importe où pour revenir sur le Dashboard sur la page admin
+
+
+### Note pour moi :
+
+Faire `sudo chmod -R 777 /path/to/projet-php-e-commerce` pour pouvoir écrire dans les dossiers du site web.
+
+Faire ls -l `/path/to/projet-php-e-commerce` pour lire les permissions des fichiers/dossiers du site web.
