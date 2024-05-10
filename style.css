@@ -492,6 +492,7 @@ header.scrolled::before {
 	header {
 		left: 10px;
 		right: 10px;
+		/* top: 10px; */
 		padding: 0.5rem;
 		box-shadow: var(--box-shadow);
 	}
@@ -500,25 +501,31 @@ header.scrolled::before {
 		top: 5px;
 	}
 
-	header::before {
-		border-radius: 10px;
+	.brand-navbar {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	.brand-navbar .logo img {
+		width: 32px;
+		height: auto;
 	}
 
 	.brand-navbar h1 {
-		font-size: 16px;
-	}
-
-	.brand-navbar .logo {
-		display: none;
+		font-size: 18px;
 	}
 
 	.header .icons {
 		justify-content: flex-end;
+		align-items: center;
 	}
 
 	#menu-btn {
 		display: block;
 		font-size: 1.5rem;
+		margin-left: 1rem;
+		vertical-align: middle;
 	}
 
 	.header .navbar {
