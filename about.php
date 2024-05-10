@@ -62,8 +62,8 @@ if (isset($_POST['logout'])) {
 		<h2 class="section-title">Les employés</h2>
 		<div class="about-section">
 			<div class="profile">
-				<img src="image/anis.jpg" alt="La chose">
-				<div class="name">Anis Fetouab </div>
+				<img src="image/anis.jpg" alt="Anis Fetouab">
+				<div class="name">Anis Fetouab</div>
 				<div class="role">Product Owner</div>
 			</div>
 			<div class="profile">
