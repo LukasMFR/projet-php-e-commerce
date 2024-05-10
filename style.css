@@ -1190,14 +1190,23 @@ video {
 	left: 3rem;
 }
 
+.section-title {
+	text-align: center;
+	font-size: 24px;
+	color: #333;
+	margin: 20px 0;
+	margin-top: 2rem;
+}
+
 .about-section {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	gap: 20px;
 	padding: 20px;
-	background: #cecece24;
 	align-items: center;
 	justify-content: center;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .about-section .profile {
@@ -1226,7 +1235,7 @@ video {
 	margin-top: 5px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	.about .row {
 		flex-direction: column-reverse;
 	}
