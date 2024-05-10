@@ -492,7 +492,6 @@ header.scrolled::before {
 	header {
 		left: 10px;
 		right: 10px;
-		border-radius: 10px;
 		padding: 0.5rem;
 		box-shadow: var(--box-shadow);
 	}
