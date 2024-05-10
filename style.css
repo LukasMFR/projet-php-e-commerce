@@ -1073,6 +1073,7 @@ video {
 .about .row {
 	display: flex;
 	justify-content: center;
+	/* justify-content: space-between; */
 	align-items: center;
 }
 
@@ -1084,6 +1085,7 @@ video {
 }
 
 .about .row .detail p {
+	margin: 1rem;
 	margin-bottom: 2rem;
 }
 
@@ -1217,6 +1219,56 @@ video {
 	font-size: 16px;
 	color: #666;
 	margin-top: 5px;
+}
+
+/* General Styles for the About Section */
+.about-section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 20px;
+	padding: 20px;
+	background: #cecece24;
+	justify-content: center;
+}
+
+.about-section .profile {
+	text-align: center;
+	margin: 10px;
+}
+
+.about-section .profile img {
+	width: 100%;
+	/* Responsive width */
+	height: auto;
+	border-radius: 10px;
+	max-width: 150px;
+}
+
+.about-section .name {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.about-section .role {
+	font-size: 16px;
+	color: #666;
+	margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+	.about .row {
+		flex-direction: column-reverse;
+	}
+
+	.about .row .detail,
+	.about .row .img-box {
+		width: 100%;
+	}
+
+	.about .row .detail {
+		order: 1;
+	}
 }
 
 
