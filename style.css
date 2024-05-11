@@ -1345,7 +1345,7 @@ input[type="submit"].btn {
 .address {
 	background-image: linear-gradient(to bottom right, #BAC1C9, #FFFFFF);
 	padding: 4rem 0;
-	min-height: 50vh;
+	/* min-height: 50vh; */
 }
 
 .address .box-container {
@@ -1397,6 +1397,7 @@ input[type="submit"].btn {
 	color: #3f3f3f;
 	font-weight: bold;
 	margin-bottom: 5px;
+	line-height: 1.5;
 }
 
 .address .box-container .box div p {
