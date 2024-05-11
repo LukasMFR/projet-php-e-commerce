@@ -1407,6 +1407,23 @@ input[type="submit"].btn {
 	margin-bottom: 5px;
 }
 
+@media (max-width: 768px) {
+	.address .box-container .box i {
+		width: 60px;
+		height: 60px;
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.address .box-container .box i {
+		width: 50px;
+		height: 50px;
+		font-size: 1rem;
+	}
+}
+
+
 /*----------update profile section-----------------*/
 /* Styles généraux pour la section mise à jour du profil */
 /*------------update profile section----------*/
