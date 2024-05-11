@@ -31,9 +31,9 @@ if (isset($_POST['submit-btn'])) {
 	$stmt->bindParam(6, $phone);
 
 	if ($stmt->execute()) {
-		echo '<p>Merci pour votre message. Nous vous contacterons bientôt.</p>';
+		$success_msg[] = 'Merci pour votre message. Nous vous contacterons bientôt.';
 	} else {
-		echo '<p>Erreur lors de l\'envoi de votre message. Veuillez réessayer plus tard.</p>';
+		$error_msg[] = 'Erreur lors de l\'envoi de votre message. Veuillez réessayer plus tard.';
 	}
 }
 ?>
