@@ -1428,6 +1428,10 @@ input[type="submit"].btn {
 		height: 60px;
 		font-size: 1.2rem;
 	}
+
+	.address .box-container .box div h4 {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 480px) {
@@ -1435,6 +1439,10 @@ input[type="submit"].btn {
 		width: 50px;
 		height: 50px;
 		font-size: 1rem;
+	}
+
+	.address .box-container .box div h4 {
+		font-size: 12px;
 	}
 }
 
