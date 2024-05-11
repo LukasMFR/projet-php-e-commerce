@@ -1343,7 +1343,6 @@ input[type="submit"].btn {
 }
 
 .address {
-	/* background-image: url('img/bg.jpg'); */
 	background-image: linear-gradient(to bottom right, #BAC1C9, #FFFFFF);
 	padding: 4rem 0;
 	min-height: 50vh;
@@ -1394,8 +1393,8 @@ input[type="submit"].btn {
 }
 
 .address .box-container .box div p {
-	font-size: clamp(10px, 1.2vw, 16px);
-	line-height: 1.2;
+	font-size: clamp(14px, 1.5vw, 16px);
+	line-height: 1.3;
 	overflow: visible;
 	white-space: normal;
 }
