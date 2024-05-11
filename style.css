@@ -1355,7 +1355,7 @@ input[type="submit"].btn {
 	justify-content: center;
 	align-items: stretch;
 	padding: 20px;
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 
@@ -1400,8 +1400,8 @@ input[type="submit"].btn {
 }
 
 .address .box-container .box div p {
-	font-size: clamp(10px, 1.2vw, 16px);
-	line-height: 1.2;
+	font-size: clamp(12px, 1.5vw, 18px);
+	line-height: 1.4;
 	overflow: visible;
 	white-space: normal;
 }
@@ -1422,10 +1422,18 @@ input[type="submit"].btn {
 	border-bottom: 2px solid #d1a959;
 }
 
+@media (max-width: 1185px) {
+	.address .box-container .box i {
+		width: 50px;
+		height: 50px;
+		font-size: 1.3rem;
+	}
+}
+
 @media (max-width: 768px) {
 	.address .box-container .box i {
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
 		font-size: 1.2rem;
 	}
 
@@ -1436,9 +1444,9 @@ input[type="submit"].btn {
 
 @media (max-width: 480px) {
 	.address .box-container .box i {
-		width: 50px;
-		height: 50px;
-		font-size: 1rem;
+		width: 40px;
+		height: 40px;
+		font-size: 0.8rem;
 	}
 
 	.address .box-container .box div h4 {
