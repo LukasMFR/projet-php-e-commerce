@@ -182,7 +182,7 @@ form p {
 .main-container {
 	background: #fff;
 	width: 85vw;
-	min-width: 80vh;
+	/* min-width: 80vh; */
 	box-shadow: var(--box-shadow);
 	display: flex;
 	justify-content: center;
@@ -270,7 +270,7 @@ form sup {
 section,
 .post-editor {
 	width: 75vw;
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	background: var(--bg-color2);
 	border-radius: 10px;
 	padding: 2em;
