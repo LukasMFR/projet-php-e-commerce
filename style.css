@@ -1394,10 +1394,10 @@ input[type="submit"].btn {
 }
 
 .address .box-container .box div p {
-	font-size: clamp(12px, 1.5vw, 16px);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	font-size: clamp(10px, 1.2vw, 16px);
+	line-height: 1.2;
+	overflow: visible;
+	white-space: normal;
 }
 
 .address .box-container .box div h4 {
