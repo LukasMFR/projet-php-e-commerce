@@ -44,16 +44,13 @@ if (isset($_POST['logout'])) {
 				</div>
 				<div class="detail">
 					<h1>Notre mission</h1>
-					<p>Notre mission est de fournir les meilleures solutions de location de voitures de luxe et de
-						services,
-						en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience professionnelle.
-						Nous combinons nos propres connaissances et expériences avec une large gamme d'options de
-						location de
-						voitures de luxe sur mesure pour offrir la solution idéale a chaque client. Notre objectif est
-						de fournir un
-						service abordable qui répond et dépasse les attentes du client, et nous ne sommes satisfaits que
-						si le client
-						est satisfait. Louez votre voiture de luxe chez nous pour être sur la bonne voie !</p>
+					<p>Notre mission est de fournir les meilleures solutions de vente de voitures de luxe et de
+						services, en mettant l'accent sur l'exclusivité pour vos vacances ou votre expérience
+						professionnelle. Nous combinons nos propres connaissances et expériences avec une vaste
+						sélection de voitures de luxe sur mesure pour offrir la solution idéale à chaque client. Notre
+						objectif est de fournir un service abordable qui répond et dépasse les attentes du client, et
+						nous ne sommes satisfaits que si le client l'est également. Achetez votre voiture de luxe chez
+						nous pour être sûr d'être sur la bonne voie !</p>
 					<a href="view_products.php" class="btn">Acheter maintenant</a>
 				</div>
 			</div>
