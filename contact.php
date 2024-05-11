@@ -103,21 +103,22 @@ if (isset($_POST['submit-btn'])) {
 					<i class="bx bxs-map-pin"></i>
 					<div>
 						<h4>Adresse</h4>
-						<p>10 Rue de Rivoli, 75001 Paris</p>
+						<p><a href="https://www.google.com/maps/place/10+Rue+de+Rivoli,+75001+Paris" target="_blank">10
+								Rue de Rivoli, 75001 Paris</a></p>
 					</div>
 				</div>
 				<div class="box">
 					<i class="bx bxs-phone-call"></i>
 					<div>
 						<h4>Numéro de téléphone</h4>
-						<p>+33 6 12 34 56 78</p>
+						<p><a href="tel:+33112345678">+33 1 12 34 56 78</a></p>
 					</div>
 				</div>
 				<div class="box">
 					<i class="bx bxs-map-pin"></i>
 					<div>
 						<h4>Email</h4>
-						<p>contact@roadluxury.com</p>
+						<p><a href="mailto:contact@roadluxury.com">contact@roadluxury.com</a></p>
 					</div>
 				</div>
 			</div>
