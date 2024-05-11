@@ -877,6 +877,12 @@ video {
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
+@media (max-width: 460px) {
+	.shop .box-container {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	}
+}
+
 .shop .box-container .box {
 	margin: 1rem;
 	box-shadow: var(--box-shadow);
