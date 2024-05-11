@@ -1362,6 +1362,7 @@ input[type="submit"].btn {
 	box-shadow: var(--box-shadow);
 	line-height: 2;
 	padding: 1rem 0;
+	background-color: #f5f5f5;
 }
 
 .address .box-container .box h4 {
