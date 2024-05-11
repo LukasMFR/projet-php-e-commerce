@@ -1407,6 +1407,17 @@ input[type="submit"].btn {
 	margin-bottom: 5px;
 }
 
+.address .box-container .box div p a {
+	color: #3f3f3f;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+.address .box-container .box div p a:hover {
+	color: #d1a959;
+}
+
 @media (max-width: 768px) {
 	.address .box-container .box i {
 		width: 60px;
