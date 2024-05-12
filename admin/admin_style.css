@@ -1096,16 +1096,21 @@ header.scrolled::before {
 
 .accounts .box-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 30rem);
-	align-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	align-items: stretch;
+	grid-auto-rows: 1fr;
 	justify-content: center;
+	gap: 20px;
 }
 
 .accounts .box-container .box {
 	box-shadow: var(--box-shadow);
 	padding: 2rem;
 	border-radius: 10px;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .accounts span {
