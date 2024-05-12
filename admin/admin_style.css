@@ -1033,12 +1033,14 @@ header.scrolled::before {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	gap: 10px;
+	justify-content: center;
 }
 
 .read-post form .image {
-	width: 80%;
+	width: 100%;
+	height: auto;
 	border-radius: .5rem;
-	margin-top: 1.5rem;
+	object-fit: cover;
 }
 
 .read-post form .title {
@@ -1060,10 +1062,13 @@ header.scrolled::before {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .read-post form .flex-btn .btn {
-	flex: 1 1 100%;
+	width: 50%;
+	/* flex: 1 1 auto; */
 	margin: 10px;
 	text-align: center;
 }
@@ -1084,12 +1089,16 @@ header.scrolled::before {
 	}
 
 	.read-post form .flex-btn .btn {
-		width: auto;
+		width: 100%;
 		margin: 10px 0;
 	}
 
 	.read-post form {
 		padding: 1rem;
+	}
+
+	.read-post form .flex-btn {
+		flex-direction: column;
 	}
 }
 
