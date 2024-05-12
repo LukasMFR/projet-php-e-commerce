@@ -1303,4 +1303,9 @@ header.scrolled::before {
 	.show-post .box-container .box .flex-btn {
 		justify-content: center;
 	}
+
+	.post-editor {
+		width: 100%;
+		padding: 1rem;
+	}
 }
