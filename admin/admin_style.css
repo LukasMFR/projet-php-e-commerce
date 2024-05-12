@@ -278,8 +278,15 @@ textarea {
 	align-items: center;
 }
 
+@media (max-width: 730px) {
+	.box-container {
+		grid-template-columns: 1fr;
+	}
 
-
+	.dashboard {
+		padding: 0;
+	}
+}
 
 .box-container .box {
 	margin: 1rem;
