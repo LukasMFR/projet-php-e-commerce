@@ -217,15 +217,14 @@ textarea {
 }
 
 .main-container input[type=submit] {
-	color: #000 !important;
+	color: #3f3f3f !important;
 	width: auto;
 	padding: 10px 20px;
 	margin-top: 20px;
 	cursor: pointer;
-	transition: background-color 0.3s ease, transform 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	border-radius: 5px;
-	background-color: #3f3f3f;
-	color: #fff;
+	background-color: #fff;
 }
 
 
