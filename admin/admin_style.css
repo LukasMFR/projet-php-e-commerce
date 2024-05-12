@@ -1064,6 +1064,10 @@ header.scrolled::before {
 		transform: translateX(10px);
 	}
 
+	.main-container {
+		width: 93vw;
+	}
+
 	.form-container {
 		width: 100%;
 	}
