@@ -218,17 +218,30 @@ textarea {
 
 .main-container input[type=submit] {
 	color: #000 !important;
+	width: auto;
+	padding: 10px 20px;
+	margin-top: 20px;
 	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .form-container form {
 	width: 100%;
 	margin: 1rem auto;
-	background-color: rgb(255 255 255 / 80%);
+	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: var(--box-shadow);
 	padding: 2rem;
 	position: relative;
 	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-container form .input-field {
+	width: 100%;
+	margin-bottom: 1rem;
+	text-align: center;
 }
 
 .form-container form .input-field p {
