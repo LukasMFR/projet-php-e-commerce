@@ -110,7 +110,7 @@ if (isset($_POST['delete_post'])) {
 			if ($select_posts->rowCount() > 0) {
 				$fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC);
 				?>
-				<div class="form-container">
+				<div class="form-container edit-post">
 					<form action="" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="old_image" value="<?= $fetch_posts['image']; ?>">
 						<input type="hidden" name="old_image2" value="<?= $fetch_posts['image2']; ?>">
@@ -195,8 +195,7 @@ if (isset($_POST['delete_post'])) {
 						</div>
 						<div class="flex-btn">
 							<!-- <input type="submit" name="delete_image" class="option-btn" value="Supprimer l'image"> -->
-							<a href="view_posts.php" class="btn"
-								style="width:49%; text-align: center; font-size: 1.2rem; margin: .5rem;">Retour</a>
+							<a href="view_posts.php" class="btn">Retour</a>
 						</div>
 					</form>
 				</div>
