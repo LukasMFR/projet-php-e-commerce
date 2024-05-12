@@ -1046,41 +1046,45 @@ header.scrolled::before {
 .read-post form .content {
 	line-height: 2;
 	font-size: 1.2rem;
-	color: var(--lightgay);
+	color: var(--lightgray);
 	padding: 1rem 0;
 }
 
-.read-post form .icons {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: 1rem 0;
-}
-
-.read-post form .icons div {
-	font-size: 1.5rem;
-	background: var(--orange);
-	padding: .5rem;
-	border-radius: 5px;
-	box-shadow: var(--box-shadow2);
-}
-
-.read-post form .icons span {
-	color: #000;
-}
-
-.read-post form .icons i {
-	margin-right: .5rem
-}
-
 .read-post form .flex-btn {
+	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .read-post form .flex-btn .btn {
-	width: 33%;
-	text-align: center;
+	flex: 1 1 100%;
 	margin: 10px;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.read-container {
+		width: 100%;
+		padding: 0;
+	}
+
+	.read-post form .image {
+		width: 100%;
+	}
+
+	.read-post form .title {
+		font-size: 1.5rem;
+		text-align: left;
+	}
+
+	.read-post form .flex-btn .btn {
+		width: auto;
+		margin: 10px 0;
+	}
+
+	.read-post form {
+		padding: 1rem;
+	}
 }
 
 /*-------accounts-------------*/
