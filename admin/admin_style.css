@@ -1237,6 +1237,19 @@ header.scrolled::before {
 /*------------media screen----------*/
 /* @media (max-width: 991px) { */
 @media (max-width: 1136px) {
+	.header .icons {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		padding: 0 15px;
+	}
+
+	#user-btn,
+	#menu-btn {
+		font-size: 2rem;
+	}
+
 	#menu-btn {
 		display: block;
 	}
@@ -1244,14 +1257,13 @@ header.scrolled::before {
 	.header .flex .navbar {
 		position: absolute;
 		width: 100%;
-		padding: 0 2rem;
+		padding: 0 1rem;
 		top: 130%;
 		left: 0;
 		display: block;
 		right: 0;
 		transition: .3s ease;
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-
 	}
 
 	.header .flex .navbar::before {
