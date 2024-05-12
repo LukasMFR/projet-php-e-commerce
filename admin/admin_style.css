@@ -1060,16 +1060,16 @@ header.scrolled::before {
 
 .read-post form .flex-btn {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: center;
 }
 
 .read-post form .flex-btn .btn {
-	width: 50%;
-	/* flex: 1 1 auto; */
-	margin: 10px;
+	width: auto;
+	flex-grow: 1;
+	max-width: 200px;
+	margin: 5px;
 	text-align: center;
 }
 
@@ -1090,7 +1090,7 @@ header.scrolled::before {
 
 	.read-post form .flex-btn .btn {
 		width: 100%;
-		margin: 10px 0;
+		margin: 5px 0;
 	}
 
 	.read-post form {
