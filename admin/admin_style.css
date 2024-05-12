@@ -232,6 +232,7 @@ textarea {
 	background-color: #fff;
 	color: #3f3f3f;
 	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .form-container form {
@@ -254,7 +255,13 @@ textarea {
 }
 
 .form-container form .input-field p {
+	text-align: left;
 	text-transform: uppercase;
+}
+
+.form-container form .input-field label {
+	text-align: left;
+	display: block;
 }
 
 .form-container form button {
