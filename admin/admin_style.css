@@ -1083,6 +1083,7 @@ header.scrolled::before {
 	margin: 10px;
 }
 
+/*-------accounts-------------*/
 .accounts {
 	/* text-transform: capitalize; */
 	line-height: 1.5;
@@ -1133,6 +1134,35 @@ header.scrolled::before {
 	border-radius: 50%;
 	padding: .5rem;
 	border: 3px solid var(--green);
+}
+
+@media (max-width: 768px) {
+	.accounts .box-container {
+		grid-template-columns: 1fr;
+		padding: 10px;
+	}
+
+	.accounts .box-container .box {
+		padding: 1rem;
+	}
+
+	.accounts h1 {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.accounts .profile {
+		margin-top: -3.5rem;
+	}
+
+	.accounts img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.accounts .flex-btn .btn {
+		padding: 0.5rem;
+	}
 }
 
 /*-----------message container-------*/
