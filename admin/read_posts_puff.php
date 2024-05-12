@@ -88,7 +88,7 @@ if (isset($_POST['delete'])) {
                             <div class="image-box">
                                 <!-- Affichage de l'image associée au puff -->
                                 <?php if ($fetch_posts['image'] != '') { ?>
-                                    <img src="../image/<?= $fetch_posts['image'] ?>" class="image">
+                                    <img src="../image/<?= $fetch_posts['image'] ?>" class="image puff">
                                 <?php } ?>
                             </div>
                             <div class="title"><?= $fetch_posts['name'] ?></div>

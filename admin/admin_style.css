@@ -1043,6 +1043,10 @@ header.scrolled::before {
 	object-fit: cover;
 }
 
+.read-post form .image.puff {
+	max-width: 300px;
+}
+
 .read-post form .title {
 	color: var(--orange);
 	font-size: 2.5rem;
