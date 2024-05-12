@@ -326,6 +326,7 @@ textarea {
 	.edit-post .flex-btn input[type="submit"] {
 		width: 100%;
 		margin-bottom: 10px;
+		padding: 0.5rem 1rem;
 	}
 
 	.edit-post .flex-btn input[type="submit"]:last-child {
