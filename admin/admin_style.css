@@ -278,16 +278,6 @@ textarea {
 	align-items: center;
 }
 
-@media (max-width: 730px) {
-	.box-container {
-		grid-template-columns: 1fr;
-	}
-
-	.dashboard {
-		padding: 0;
-	}
-}
-
 .box-container .box {
 	margin: 1rem;
 }
@@ -698,6 +688,22 @@ header.scrolled::before {
 	margin: 1rem 0;
 	/* text-transform: capitalize; */
 	color: #555;
+}
+
+@media (max-width: 1365px) {
+	.dashboard .box-container {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
+}
+
+@media (max-width: 730px) {
+	.dashboard .box-container {
+		grid-template-columns: 1fr;
+	}
+
+	.dashboard {
+		padding: 0;
+	}
 }
 
 /*-------media screen-------------*/
