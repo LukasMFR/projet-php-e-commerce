@@ -85,10 +85,12 @@ if (isset($_POST['delete'])) {
                                 style="background-color: <?= $fetch_posts['status'] == 'actif' ? 'limegreen' : 'coral'; ?>;">
                                 <?= $fetch_posts['status']; ?>
                             </div>
-                            <!-- Affichage de l'image associée au puff -->
-                            <?php if ($fetch_posts['image'] != '') { ?>
-                                <img src="../image/<?= $fetch_posts['image'] ?>" class="image">
-                            <?php } ?>
+                            <div class="image-box">
+                                <!-- Affichage de l'image associée au puff -->
+                                <?php if ($fetch_posts['image'] != '') { ?>
+                                    <img src="../image/<?= $fetch_posts['image'] ?>" class="image">
+                                <?php } ?>
+                            </div>
                             <div class="title"><?= $fetch_posts['name'] ?></div>
                             <div class="content"><?= $fetch_posts['product_detail'] ?></div>
                             <div>Goût : <?= $fetch_posts['goût'] ?></div>

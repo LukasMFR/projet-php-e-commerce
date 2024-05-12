@@ -1029,6 +1029,12 @@ header.scrolled::before {
 	text-transform: uppercase;
 }
 
+.read-post form .image-box {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 10px;
+}
+
 .read-post form .image {
 	width: 80%;
 	border-radius: .5rem;

@@ -87,16 +87,18 @@ if (isset($_POST['delete'])) {
 								style="background-color: <?= $fetch_posts['status'] == 'actif' ? 'limegreen' : 'coral'; ?>;">
 								<?= $fetch_posts['status']; ?>
 							</div>
-							<!-- Affichage de toutes les images associées au produit -->
-							<?php if ($fetch_posts['image'] != '') { ?>
-								<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
-							<?php } ?>
-							<?php if ($fetch_posts['image2'] != '') { ?>
-								<img src="../image/<?= $fetch_posts['image2'] ?>" class="image">
-							<?php } ?>
-							<?php if ($fetch_posts['image3'] != '') { ?>
-								<img src="../image/<?= $fetch_posts['image3'] ?>" class="image">
-							<?php } ?>
+							<div class="image-box">
+								<!-- Affichage de toutes les images associées au produit -->
+								<?php if ($fetch_posts['image'] != '') { ?>
+									<img src="../image/<?= $fetch_posts['image'] ?>" class="image">
+								<?php } ?>
+								<?php if ($fetch_posts['image2'] != '') { ?>
+									<img src="../image/<?= $fetch_posts['image2'] ?>" class="image">
+								<?php } ?>
+								<?php if ($fetch_posts['image3'] != '') { ?>
+									<img src="../image/<?= $fetch_posts['image3'] ?>" class="image">
+								<?php } ?>
+							</div>
 							<div class="title"><?= $fetch_posts['name'] ?></div>
 							<div class="content"><?= $fetch_posts['product_detail'] ?></div>
 							<div class="flex-btn">
