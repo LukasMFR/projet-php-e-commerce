@@ -1090,7 +1090,7 @@ header.scrolled::before {
 }
 
 .accounts h1 {
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 	color: var(--green);
 }
 
