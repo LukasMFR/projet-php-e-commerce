@@ -134,8 +134,8 @@ if (isset($_POST['delete_image'])) {
 							</div>
 							<div class="input-field">
 								<label>Prix du produit <sup>*</sup></label>
-								<input type="number" name="price" min="0" step="0.01"
-									value="<?= $fetch_posts['price']; ?>" required>
+								<input type="number" name="price" min="0" step="0.01" value="<?= $fetch_posts['price']; ?>"
+									required>
 							</div>
 							<div class="input-field">
 								<label>Détail du produit <sup>*</sup></label>
@@ -145,8 +145,7 @@ if (isset($_POST['delete_image'])) {
 							<div class="input-field">
 								<label>Saveur du produit<sup>*</sup></label>
 								<input type="text" name="goût" maxlength="100" required
-									placeholder="Entrez la saveur du produit"
-									value="<?= $fetch_posts['goût']; ?>">
+									placeholder="Entrez la saveur du produit" value="<?= $fetch_posts['goût']; ?>">
 							</div>
 							<div class="input-field">
 								<label>Taux de nicotine <sup>*</sup></label>
@@ -155,8 +154,7 @@ if (isset($_POST['delete_image'])) {
 							</div>
 							<div class="input-field">
 								<label>Nombre de taffes du produit<sup>*</sup></label>
-								<input type="number" name="taffe" min="0"
-									value="<?= $fetch_posts['taffe']; ?>" required>
+								<input type="number" name="taffe" min="0" value="<?= $fetch_posts['taffe']; ?>" required>
 							</div>
 							<div class="input-field">
 								<label>Image du produit <sup>*</sup></label>
