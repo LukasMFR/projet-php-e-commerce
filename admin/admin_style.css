@@ -1160,13 +1160,15 @@ header.scrolled::before {
 		margin-top: -3.5rem;
 	}
 
-	.accounts img {
-		width: 100px;
-		height: 100px;
+	.accounts .flex-btn {
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.accounts .flex-btn .btn {
+		width: auto;
 		padding: 0.5rem;
+		margin-bottom: 10px;
 	}
 }
 
