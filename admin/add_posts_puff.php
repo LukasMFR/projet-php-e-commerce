@@ -69,7 +69,7 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 		</div>
 
 		<!-- <h1 class="heading">Ajouter un produit</h1> -->
-		<div class="form-container">
+		<div class="form-container add-post">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="input-field">
 					<label>Nom du produit <sup>*</sup></label>

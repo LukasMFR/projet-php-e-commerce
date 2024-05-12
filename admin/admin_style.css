@@ -270,6 +270,34 @@ textarea {
 	outline: none;
 }
 
+/*--------add post------------*/
+.add-post .flex-btn {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.add-post .flex-btn input[type="submit"] {
+	padding: 0.5rem 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+	.add-post .flex-btn {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.add-post .flex-btn input[type="submit"] {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.add-post .flex-btn input[type="submit"]:last-child {
+		margin-bottom: 0;
+	}
+}
+
 /*--------form container--------------*/
 
 .box-container {
