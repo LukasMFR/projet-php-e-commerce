@@ -667,8 +667,17 @@ header.scrolled::before {
 
 /*-------dashboard-------------*/
 
+.dashboard .box-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 20px;
+	align-items: stretch;
+}
 
 .dashboard .box-container .box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	text-align: center;
 	box-shadow: var(--box-shadow);
 	border-radius: .5rem;
