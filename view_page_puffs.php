@@ -88,6 +88,7 @@ if (isset($_POST['add_to_cart'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<title>Détail du produit - Road Luxury</title>
+	<?php include 'components/meta_tags.php'; ?>
 </head>
 
 <body>
