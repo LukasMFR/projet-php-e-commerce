@@ -3,6 +3,7 @@
     "short_name": "RoadLux",
     "description": "E-commerce platform for luxury cars and puffs.",
     "start_url": "/projet-php-e-commerce/index.php",
+    "scope": "/projet-php-e-commerce/",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
