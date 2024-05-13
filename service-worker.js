@@ -55,3 +55,20 @@ self.addEventListener('activate', event => {
         })
     );
 });
+
+// Gestion des liens internes pour rester dans la PWA
+self.addEventListener('fetch', function (event) {
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request).catch(function () {
+                return caches.match('/projet-php-e-commerce/index.php');
+            })
+        );
+    } else {
+        event.respondWith(
+            caches.match(event.request).then(function (response) {
+                return response || fetch(event.request);
+            })
+        );
+    }
+});
