@@ -106,8 +106,7 @@ if (isset($_POST['add_to_cart'])) {
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
-								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
-									class="view-btn">Visualiser</a>
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
@@ -137,8 +136,7 @@ if (isset($_POST['add_to_cart'])) {
 						<form action="" method="post" class="box product-view-form">
 							<div class="image-container">
 								<img src="image/<?= $fetch_products['image']; ?>" class="img">
-								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>"
-									class="view-btn">Visualiser</a>
+								<a href="view_page.php?pid=<?= $fetch_products['id']; ?>" class="view-btn">Visualiser</a>
 								<div class="button special-button">
 									<button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
 								</div>
