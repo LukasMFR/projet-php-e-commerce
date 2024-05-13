@@ -107,8 +107,7 @@ if (isset($_POST['add_to_cart'])) {
                         <form action="" method="post" class="box product-view-form">
                             <div class="image-container">
                                 <img src="image/<?= $fetch_puff['image']; ?>" class="img puff">
-                                <a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>"
-                                    class="view-btn">Visualiser</a>
+                                <a href="view_page_puffs.php?pid=<?= $fetch_puff['id']; ?>" class="view-btn">Visualiser</a>
                                 <div class="button special-button">
                                     <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
                                 </div>
