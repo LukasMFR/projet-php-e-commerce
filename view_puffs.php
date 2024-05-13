@@ -97,6 +97,10 @@ if (isset($_POST['add_to_cart'])) {
         </div>
 
         <section class="products">
+            <div class="search-box">
+                <i class='bx bx-search-alt-2'></i>
+                <input type="text" id="searchInput" placeholder="Chercher une voiture..." autocomplete="off">
+            </div>
             <div class="box-container">
                 <?php
                 $select_puff = $conn->prepare("SELECT * FROM `puff` WHERE `status` = 'actif'");
