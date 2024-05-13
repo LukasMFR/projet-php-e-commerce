@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
-	<title>Page d'enregistrement admin - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body style="padding-left: 0 !important;">

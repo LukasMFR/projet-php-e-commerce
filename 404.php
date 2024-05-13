@@ -34,6 +34,7 @@
             background: #0056b3;
         }
     </style>
+    <?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

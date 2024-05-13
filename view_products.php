@@ -82,6 +82,7 @@ if (isset($_POST['add_to_cart'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<title>Voitures - Road Luxury</title>
+	<?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

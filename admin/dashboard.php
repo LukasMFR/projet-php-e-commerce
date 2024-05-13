@@ -24,7 +24,7 @@ if (!isset($admin_id)) {
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<title>Tableau de bord admin - Road Luxury</title>
 
-
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body>

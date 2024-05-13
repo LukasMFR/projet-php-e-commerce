@@ -175,7 +175,7 @@ if (isset($_POST['submit'])) {
 			}
 		}
 	</script>
-
+	<?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body style="padding-left: 0 !important;">

@@ -84,6 +84,7 @@ if (isset($_POST['place_order'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<title>Page de paiement - Road Luxury</title>
+	<?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

@@ -49,6 +49,7 @@ if (isset($_POST['submit'])) {
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<title>Se connecter - Road Luxury</title>
+	<?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

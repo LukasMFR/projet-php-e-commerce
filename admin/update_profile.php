@@ -87,6 +87,7 @@ if (isset($_POST['submit'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Mettre à jour le profil - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body style="padding-left: 0 !important;">

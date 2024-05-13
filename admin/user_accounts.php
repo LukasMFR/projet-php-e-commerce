@@ -29,6 +29,7 @@ if (isset($_POST['delete'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Comptes utilisateurs - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body>

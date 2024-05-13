@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Page de connexion admin - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body style="padding-left: 0 !important;">

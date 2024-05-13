@@ -42,6 +42,7 @@ if (isset($_POST['cancel'])) {
 	<link rel="icon" type="image/png" href="img/favicon-64.png">
 	<title>Détail de la commande - Road Luxury</title>
 	<?php include 'components/meta_tags.php'; ?>
+	<?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

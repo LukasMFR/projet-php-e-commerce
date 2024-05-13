@@ -65,6 +65,7 @@ $search_term = $_GET['search'] ?? '';  // Default to an empty string if 'search'
             border-radius: 5px;
         }
     </style>
+    <?php include 'components/pwa-setup.php'; ?>
 </head>
 
 <body>

@@ -39,6 +39,7 @@ if (isset($_POST['delete_review'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Messages - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body>

@@ -55,6 +55,7 @@ if (isset($_POST['update_order'])) {
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="../img/favicon-64.png">
 	<title>Commandes - Road Luxury</title>
+	<?php include '../components/pwa-setup.php'; ?>
 </head>
 
 <body>
