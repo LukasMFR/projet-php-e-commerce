@@ -25,22 +25,20 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 	$image_folder = '../image/' . basename($image);
 
 	if ($image_size > 2000000) {
-		$message[] = 'Taille de l\'image trop grande !';
+		$error_msg[] = 'Taille de l\'image trop grande !';
 	} elseif (!move_uploaded_file($image_tmp_name, $image_folder)) {
-		$message[] = 'Erreur lors du téléchargement de l\'image.';
+		$error_msg[] = 'Erreur lors du téléchargement de l\'image.';
 	} else {
 		$select_image = $conn->prepare("SELECT * FROM `puff` WHERE image = ?");
 		$select_image->execute([$image]);
 		if ($select_image->rowCount() > 0) {
-			$message[] = 'Nom de l\'image déjà utilisé !';
+			$error_msg[] = 'Nom de l\'image déjà utilisé !';
 		} else {
 			$insert_post = $conn->prepare("INSERT INTO `puff`(id, name, price, image, product_detail, status, goût, taffe, nicotine) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			$insert_post->execute([$id, $title, $price, $image, $content, $status, $goût, $taffe, $nicotine]);
-			$message[] = 'Produit ' . (isset($_POST['publish']) ? 'publié' : 'enregistré en brouillon') . '.';
+			$success_msg[] = 'Produit ' . (isset($_POST['publish']) ? 'publié' : 'enregistré en brouillon') . '.';
 		}
 	}
-
-	$success_msg[] = 'Puff ajouté avec succès !';
 }
 ?>
 <style>
