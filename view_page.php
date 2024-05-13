@@ -143,7 +143,8 @@ if (isset($_POST['add_to_cart'])) {
 													</li>
 													<li class="skill-list-item">
 														<h1>Kilométrage :</h1>
-														<p class="skill-description"><?php echo $fetch_products['kilométrage']; ?>
+														<p class="skill-description">
+															<?php echo $fetch_products['kilométrage'] . '&nbsp;km'; ?>
 														</p>
 													</li>
 													<li class="skill-list-item">
