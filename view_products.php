@@ -89,10 +89,6 @@ if (isset($_POST['add_to_cart'])) {
 	<div class="main">
 		<div class="banner voiture">
 			<h1></h1>
-			<div class="search-box">
-            <i class='bx bx-search-alt-2'></i>
-            <input type="text" id="searchInput" placeholder="Chercher une voiture..." autocomplete="off">
-        </div>
 		</div>
 		<div class="title2">
 			<a href="home.php">Accueil </a><span>/ Voitures</span>
