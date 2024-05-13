@@ -92,15 +92,17 @@ if (isset($_POST['add_to_cart'])) {
         <div class="banner puff">
             <h1></h1>
         </div>
-        <div class="title2">
-            <a href="home.php">Accueil </a><span>/ Puffs</span>
-        </div>
-
-        <section class="products">
+        <div class="title-search-container">
+            <div class="title2">
+                <a href="home.php">Accueil </a><span>/ Puffs</span>
+            </div>
             <div class="search-box">
                 <i class='bx bx-search-alt-2'></i>
                 <input type="text" id="searchInput" placeholder="Chercher une puff..." autocomplete="off">
             </div>
+        </div>
+
+        <section class="products">
             <div class="box-container">
                 <?php
                 $select_puff = $conn->prepare("SELECT * FROM `puff` WHERE `status` = 'actif'");
