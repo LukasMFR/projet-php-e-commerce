@@ -2282,7 +2282,6 @@ footer .bottom-footer {
 	box-shadow: 0 0 8px rgba(0, 102, 255, 0.2);
 }
 
-/* Media Query for Mobile Devices */
 @media (max-width: 800px) {
 	.search-box {
 		width: 100%;
