@@ -1209,6 +1209,46 @@ header.scrolled::before {
 	color: var(--green);
 }
 
+@media (max-width: 768px) {
+	.message-container {
+		width: 100%;
+		padding: 0;
+	}
+
+	.message-container .box-container {
+		grid-template-columns: 1fr;
+		padding: 0.5rem;
+		gap: 10px;
+	}
+
+	.message-container .box-container .box {
+		padding: 1rem;
+		text-align: left;
+		overflow: hidden;
+	}
+
+	.message-container .box-container .box h3,
+	.message-container .box-container .box h4,
+	.message-container .box-container .box p {
+		font-size: 0.8rem;
+		overflow-wrap: break-word;
+	}
+
+	.message-container .box-container .box .flex-btn {
+		flex-direction: column;
+		margin-top: 0.5rem;
+	}
+
+	.message-container .box-container .box .flex-btn .btn {
+		width: 100%;
+		margin: 5px 0;
+	}
+
+	.message-container .btn {
+		padding: 0.5rem;
+	}
+}
+
 /*-------admin order-------------*/
 .order-container .box-container .box {
 	box-shadow: var(--box-shadow);
