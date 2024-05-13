@@ -102,6 +102,9 @@ if (isset($_POST['add_to_cart'])) {
 
 		<section class="products">
 			<!-- <h1 class="title">Produits dans ma liste de souhaits</h1> -->
+			<a rel="ar" href="pancakes.usdz">
+				<img src="pancakes_2x.png">
+			</a>
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
