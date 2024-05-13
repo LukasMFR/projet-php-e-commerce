@@ -1,11 +1,11 @@
 const CACHE_NAME = 'road-luxury-cache-v1';
 const urlsToCache = [
-    '/projet-php-e-commerce/',
-    '/projet-php-e-commerce/index.php',
-    '/projet-php-e-commerce/style.css',
-    '/projet-php-e-commerce/script.js',
-    '/projet-php-e-commerce/img/icon-192x192.png',
-    '/projet-php-e-commerce/img/icon-512x512.png',
+    '/',
+    '/index.php',
+    '/style.css',
+    '/script.js',
+    '/img/icon-192x192.png',
+    '/img/icon-512x512.png',
     // Ajoutez ici toutes les autres ressources que vous souhaitez mettre en cache
 ];
 
