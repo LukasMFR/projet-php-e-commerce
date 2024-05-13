@@ -6,7 +6,7 @@ const urlsToCache = [
     '/script.js',
     '/img/icon-192x192.png',
     '/img/icon-512x512.png',
-    // Ajoutez ici toutes les autres ressources que vous souhaitez mettre en cache
+    // Autres ressources à mettre en cache
 ];
 
 self.addEventListener('install', event => {
@@ -19,26 +19,31 @@ self.addEventListener('install', event => {
     );
 });
 
-self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request)
-            .then(function (response) {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request).then(function (response) {
-                    // Ne cache que les réponses "basic" (même origine)
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
+self.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request).catch(() => caches.match('/index.php'))
+        );
+    } else {
+        event.respondWith(
+            caches.match(event.request)
+                .then(response => {
+                    if (response) {
                         return response;
                     }
-                    var responseToCache = response.clone();
-                    caches.open(CACHE_NAME).then(function (cache) {
-                        cache.put(event.request, responseToCache);
+                    return fetch(event.request).then(response => {
+                        if (!response || response.status !== 200 || response.type !== 'basic') {
+                            return response;
+                        }
+                        const responseToCache = response.clone();
+                        caches.open(CACHE_NAME).then(cache => {
+                            cache.put(event.request, responseToCache);
+                        });
+                        return response;
                     });
-                    return response;
-                });
-            })
-    );
+                })
+        );
+    }
 });
 
 self.addEventListener('activate', event => {
@@ -54,21 +59,4 @@ self.addEventListener('activate', event => {
             );
         })
     );
-});
-
-// Gestion des liens internes pour rester dans la PWA
-self.addEventListener('fetch', function (event) {
-    if (event.request.mode === 'navigate') {
-        event.respondWith(
-            fetch(event.request).catch(function () {
-                return caches.match('/projet-php-e-commerce/index.php');
-            })
-        );
-    } else {
-        event.respondWith(
-            caches.match(event.request).then(function (response) {
-                return response || fetch(event.request);
-            })
-        );
-    }
 });
