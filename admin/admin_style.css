@@ -1290,6 +1290,52 @@ header.scrolled::before {
 	/* text-transform: capitalize; */
 }
 
+@media (max-width: 768px) {
+	.order-container {
+		width: 100%;
+		padding: 0;
+	}
+
+	.order-container .box-container {
+		grid-template-columns: 1fr;
+	}
+
+	.order-container .box-container .box {
+		padding: 1rem;
+		margin-bottom: 1rem;
+		margin: 1rem 0;
+	}
+
+	.order-container .status {
+		position: relative;
+		left: 0;
+		width: auto;
+		margin-bottom: 0.5rem;
+		font-size: 0.8rem;
+		padding: 0.5rem;
+		text-align: center;
+	}
+
+	.order-container .detail {
+		margin-top: 1.5rem;
+	}
+
+	.order-container .flex-btn {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.order-container .flex-btn .btn {
+		width: 100%;
+		margin: 0.5rem 0;
+	}
+
+	.order-container select {
+		width: 100%;
+		margin-bottom: 0.5rem;
+	}
+}
+
 /* ---------canvas--------- */
 .canvas {
 	display: block;
