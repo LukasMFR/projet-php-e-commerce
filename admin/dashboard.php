@@ -44,7 +44,7 @@ if (!isset($admin_id)) {
 			</div>
 			<div class="box">
 				<h3>Statistiques des ventes de Vapes</h3>
-				<canvas id="vapesChart"></canvas>carsChart
+				<canvas id="vapesChart"></canvas>
 			</div>
 			<div class="box">
 				<h3>Statistiques des ventes de voitures</h3>
@@ -52,7 +52,7 @@ if (!isset($admin_id)) {
 			</div>
 			<div class="box">
 				<h3>Statistiques des ventes de Vapes</h3>
-				<canvas id="vapesChartCam"></canvas>
+				<canvas id="puffsChartCam"></canvas>
 			</div>
 		</section>
 
@@ -178,6 +178,15 @@ if (!isset($admin_id)) {
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			var productColors = {
+        "McLaren 720s": "red", 
+        "Alpine A110 R": "blue", 
+        "Lamborghini Urus": "green", 
+        "Mercedes AMG GT2": "#87CEEB",
+		"Lamborghini Revuelto": "orange",
+		"Bugatti La Voiture Noire": "#4d4d4d",
+		"Ferrari SP51": "#8B0000" 
+    	};
 			var ctxCars = document.getElementById('carsChart').getContext('2d');
 			var carsChart = new Chart(ctxCars, {
 				type: 'bar',
@@ -206,7 +215,7 @@ if (!isset($admin_id)) {
 					.then(data => {
 						carsChart.data.labels = data.map(item => item.product_name);
 						carsChart.data.datasets[0].data = data.map(item => item.total_quantity);
-						carsChart.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Couleur aléatoire pour chaque barre
+						carsChart.data.datasets[0].backgroundColor = data.map(item => productColors[item.product_name] || "#999999");
 						carsChart.update();
 					})
 					.catch(error => console.error('Error:', error));
@@ -220,6 +229,14 @@ if (!isset($admin_id)) {
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			var productColors = {
+        "Puff Superéthanol E85": "red", 
+        "Puff Sans Plomb 95": "blue", 
+        "Puff Gazole": "green", 
+        "Puff électrique": "#87CEEB",
+		"Puff Supercarburants SP95": "orange",
+		"Puff naturel": "#90EE90" 
+    	};
 			var ctxVapes = document.getElementById('vapesChart').getContext('2d');
 			var vapesChart = new Chart(ctxVapes, {
 				type: 'bar',
@@ -248,7 +265,7 @@ if (!isset($admin_id)) {
 					.then(data => {
 						vapesChart.data.labels = data.map(item => item.product_name);
 						vapesChart.data.datasets[0].data = data.map(item => item.total_quantity);
-						vapesChart.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Couleur aléatoire pour chaque barre
+						vapesChart.data.datasets[0].backgroundColor = data.map(item => productColors[item.product_name] || "#999999");
 						vapesChart.update();
 					})
 					.catch(error => console.error('Error:', error));
@@ -263,41 +280,101 @@ if (!isset($admin_id)) {
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			var ctx = document.getElementById('carsChartcam').getContext('2d');
-			var carsChartcam = new Chart(ctx, {
-				type: "pie",
-				data: {
-					labels: [], // Les labels seront chargés dynamiquement
-					datasets: [{
-						backgroundColor: [], // Les couleurs seront définies dynamiquement
-						data: [] // Les données seront chargées dynamiquement
-					}]
-				},
-				options: {
-					title: {
-						display: true,
-						text: "Ventes de voitures par région" // Titre modifié pour correspondre à vos données
-					},
-					responsive: true,
-					maintainAspectRatio: false
-				}
-			});
+			var productColors = {
+        "McLaren 720s": "red", 
+        "Alpine A110 R": "blue", 
+        "Lamborghini Urus": "green", 
+        "Mercedes AMG GT2": "#87CEEB",
+		"Lamborghini Revuelto": "orange",
+		"Bugatti La Voiture Noire": "#4d4d4d",
+		"Ferrari SP51": "#8B0000" 
+    	};
+    var ctxPie = document.getElementById('carsChartcam').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: [], // Les labels seront chargés dynamiquement
+            datasets: [{
+                backgroundColor: [], // Les couleurs seront définies dynamiquement
+                data: [] // Les données seront chargées dynamiquement
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Statistiques des ventes de voitures'
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
 
-			function updateRegionChart() {
-				fetch('get_sales_data2.php') // Assurez-vous que le chemin est correct.
-					.then(response => response.json())
-					.then(data => {
-						carsChartcam.data.labels = data.map(item => item.region);
-						carsChartcam.data.datasets[0].data = data.map(item => item.total_sales);
-						carsChartcam.data.datasets[0].backgroundColor = data.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)); // Génère des couleurs aléatoires pour chaque région
-						carsChartcam.update();
-					})
-					.catch(error => console.error('Error:', error));
-			}
+    function updatePieChart() {
+        fetch('get_sales_data.php')  // Assurez-vous que le chemin est correct.
+            .then(response => response.json())
+            .then(data => {
+                pieChart.data.labels = data.map(item => item.product_name);
+                pieChart.data.datasets[0].data = data.map(item => item.total_quantity);
+				pieChart.data.datasets[0].backgroundColor = data.map(item => productColors[item.product_name] || "#999999");
+                pieChart.update();
+            })
+            .catch(error => console.error('Error:', error));
+    }
 
-			updateRegionChart(); // Appel initial pour charger les données
-		});
+    updatePieChart(); // Appel initial pour charger les données
+});
 	</script>
+		
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+    // Tableau des couleurs assignées à chaque produit
+    var productColors = {
+        "Puff Superéthanol E85": "red", 
+        "Puff Sans Plomb 95": "blue", 
+        "Puff Gazole": "green", 
+        "Puff électrique": "#87CEEB",
+		"Puff Supercarburants SP95": "orange",
+		"Puff naturel": "#90EE90" 
+    };
+
+    // Votre code existant pour la configuration du graphique commence ici...
+    var ctxPuffs = document.getElementById('puffsChartCam').getContext('2d');
+    var puffsChartCam = new Chart(ctxPuffs, {
+        type: 'pie',
+        data: {
+            labels: [], 
+            datasets: [{
+                backgroundColor: [], 
+                data: [] 
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Statistiques des ventes de Puffs'
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Fonction pour mettre à jour le graphique avec les données récupérées
+    function updatePuffsChart() {
+        fetch('get_sales_data_puff2.php')
+            .then(response => response.json())
+            .then(data => {
+                puffsChartCam.data.labels = data.map(item => item.product_name);
+                puffsChartCam.data.datasets[0].data = data.map(item => item.total_quantity);
+                puffsChartCam.data.datasets[0].backgroundColor = data.map(item => productColors[item.product_name] || "#999999"); // Utilisation des couleurs prédéfinies
+                puffsChartCam.update();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    updatePuffsChart(); // Appel initial pour charger les données
+});
+	</script>
+
 </body>
 
 </html>
