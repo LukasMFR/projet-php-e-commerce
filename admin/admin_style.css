@@ -1259,14 +1259,16 @@ header.scrolled::before {
 
 .order-container .flex-btn {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .order-container .flex-btn .btn {
-	width: 45%;
+	width: auto;
+	min-width: 150px;
+	padding: 10px 20px;
 	text-align: center;
 	border-radius: 20px;
-
+	margin: 5px;
 }
 
 .order-container .status {
