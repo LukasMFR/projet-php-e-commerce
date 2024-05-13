@@ -40,7 +40,7 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 	$insert_stmt = $conn->prepare($insert_query);
 	$insert_stmt->execute([$id, $name, $price, $image, $image2, $image3, $detail, $status, $model, $year, $engine, $mileage, $equipment, $condition, $highlights]);
 
-	$message[] = 'Produit publié';
+	$success_msg[] = 'Voiture ajouté avec succès !';
 }
 ?>
 <style>
@@ -135,7 +135,9 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 		</section>
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<?php include '../components/alert.php'; ?>
 </body>
 
 </html>

@@ -39,6 +39,8 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 			$message[] = 'Produit ' . (isset($_POST['publish']) ? 'publié' : 'enregistré en brouillon') . '.';
 		}
 	}
+
+	$success_msg[] = 'Puff ajouté avec succès !';
 }
 ?>
 <style>
@@ -111,7 +113,9 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 		</section>
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<?php include '../components/alert.php'; ?>
 </body>
 
 </html>
