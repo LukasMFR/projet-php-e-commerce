@@ -136,7 +136,9 @@ if (isset($_POST['add_to_cart'])) {
 													</li>
 													<li class="skill-list-item">
 														<h1>Taux de nicotine :</h1>
-														<p class="skill-description"><?php echo $fetch_puff['nicotine']; ?></p>
+														<p class="skill-description">
+															<?php echo $fetch_puff['nicotine'] . '&nbsp;%'; ?>
+														</p>
 													</li>
 												</ul>
 											</div>
