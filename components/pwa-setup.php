@@ -19,18 +19,5 @@ echo '  }).catch(function(error) {';
 echo '    console.log("Service Worker registration failed:", error);';
 echo '  });';
 echo '}';
-echo 'if(("standalone" in window.navigator) && window.navigator.standalone){';
-echo '  var noddy, remotes = false;';
-echo '  document.addEventListener("click", function(event) {';
-echo '    noddy = event.target;';
-echo '    while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {';
-echo '      noddy = noddy.parentNode;';
-echo '    }';
-echo '    if("href" in noddy && noddy.href.indexOf("http") !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {';
-echo '      event.preventDefault();';
-echo '      document.location.href = noddy.href;';
-echo '    }';
-echo '  }, false);';
-echo '}';
 echo '</script>';
 ?>
