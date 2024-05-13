@@ -2291,7 +2291,7 @@ footer .bottom-footer {
 }
 
 .search-box input[type="text"]:focus {
-	border-color: #0066ff;
+	border-color: var(--navy-dark);
 	box-shadow: 0 0 8px rgba(0, 102, 255, 0.2);
 }
 
