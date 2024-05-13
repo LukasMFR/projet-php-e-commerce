@@ -10,6 +10,8 @@ echo '<link rel="apple-touch-icon" sizes="72x72" href="/img/hd_hi.ico">';
 echo '<link rel="apple-touch-icon" sizes="96x96" href="/img/hd_hi.ico">';
 echo '<link rel="apple-touch-icon" sizes="128x128" href="/img/hd_hi.ico">';
 echo '<link rel="apple-touch-icon" sizes="256x256" href="/img/hd_hi.ico">';
+echo '<link rel="apple-touch-icon" href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Ftouchicon-180.png?v=1566411949736">
+</head>';
 echo '<script>';
 echo 'if ("serviceWorker" in navigator) {';
 echo '  navigator.serviceWorker.register("/service-worker.js").then(function(registration) {';
