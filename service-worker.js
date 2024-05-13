@@ -19,14 +19,24 @@ self.addEventListener('install', event => {
     );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
-            .then(response => {
+            .then(function (response) {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request);
+                return fetch(event.request).then(function (response) {
+                    // Ne cache que les réponses "basic" (même origine)
+                    if (!response || response.status !== 200 || response.type !== 'basic') {
+                        return response;
+                    }
+                    var responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then(function (cache) {
+                        cache.put(event.request, responseToCache);
+                    });
+                    return response;
+                });
             })
     );
 });
@@ -42,33 +52,6 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
-    );
-});
-
-self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request).then(function (response) {
-            // Retourne la réponse du cache si disponible
-            if (response) {
-                return response;
-            }
-            // Sinon, utilise le réseau pour récupérer la ressource
-            return fetch(event.request).then(function (response) {
-                // IMPORTANT: Vérifie si la réponse est valide
-                if (!response || response.status !== 200 || response.type !== 'basic') {
-                    return response;
-                }
-
-                // Clone la réponse reçue pour l'ajouter au cache
-                var responseToCache = response.clone();
-
-                caches.open(CACHE_NAME).then(function (cache) {
-                    cache.put(event.request, responseToCache);
-                });
-
-                return response;
-            });
         })
     );
 });
