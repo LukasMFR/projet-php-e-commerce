@@ -750,6 +750,29 @@ header.scrolled::before {
 	margin: 0 1rem;
 }
 
+/* Media query pour la version mobile du profile detail */
+@media (max-width: 600px) {
+	.profile-detail {
+		width: 90%;
+		right: 5%;
+		left: 5%;
+		/* top: 100%; */
+		border-radius: .5rem;
+		padding: 1.5rem 1rem;
+	}
+
+	.profile-detail .flex-btn {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.profile-detail .flex-btn .btn {
+		width: 90%;
+		max-width: 300px;
+		margin: 10px auto;
+	}
+}
+
 /*-----------banner----------*/
 .banner {
 	background-image: url('../img/banner.jpg');
