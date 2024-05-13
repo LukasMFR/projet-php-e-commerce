@@ -2299,6 +2299,8 @@ footer .bottom-footer {
 	.title-search-container {
 		flex-direction: column;
 		align-items: stretch;
+		background-color: transparent;
+		box-shadow: none;
 	}
 
 	.search-box {
