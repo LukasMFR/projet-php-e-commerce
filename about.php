@@ -74,9 +74,9 @@ if (isset($_POST['logout'])) {
 				<div class="role">Co-Fondateur</div>
 			</div>
 			<div class="profile">
-				<img src="img/chat-chad.jpg" alt="L'alpha chat">
-				<div class="name">L'alpha chat</div>
-				<div class="role">Mascotte</div>
+				<img src="img/" alt="L'alpha chat">
+				<div class="name"></div>
+				<div class="role">Maximilien Gilbert</div>
 			</div>
 		</div>
 
