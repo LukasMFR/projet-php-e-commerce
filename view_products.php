@@ -96,6 +96,10 @@ if (isset($_POST['add_to_cart'])) {
 
 		<section class="products">
 			<!-- <h1 class="title">Produits dans ma liste de souhaits</h1> -->
+			<div class="search-box">
+				<i class='bx bx-search-alt-2'></i>
+				<input type="text" id="searchInput" placeholder="Chercher une voiture..." autocomplete="off">
+			</div>
 			<div class="box-container">
 				<?php
 				$select_products = $conn->prepare("SELECT * FROM `products` WHERE `status` = 'actif'");
@@ -158,6 +162,24 @@ if (isset($_POST['add_to_cart'])) {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 	<script src="script.js"></script>
 	<?php include 'components/alert.php'; ?>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const searchInput = document.getElementById('searchInput');
+			const forms = document.querySelectorAll('.product-view-form');
+
+			searchInput.addEventListener('keyup', function () {
+				const searchValue = searchInput.value.toLowerCase();
+				forms.forEach(form => {
+					const name = form.querySelector('h1').textContent.toLowerCase();
+					if (name.includes(searchValue)) {
+						form.style.display = '';
+					} else {
+						form.style.display = 'none';
+					}
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>
