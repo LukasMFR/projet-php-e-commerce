@@ -908,6 +908,13 @@ video {
 	object-fit: cover;
 }
 
+.shop .box-container model-viewer {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
 .shop .btn {
 	position: absolute;
 	left: 50%;
