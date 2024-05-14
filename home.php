@@ -214,13 +214,14 @@ if (isset($_POST['logout'])) {
 			const android = /Android/.test(navigator.userAgent);
 
 			if (android) {
-				const arButton = document.createElement('button');
-				arButton.id = 'arButton';
-				arButton.innerHTML = '<i class="bx bx-area"></i>';
+				const arButton = document.createElement('span');
+				arButton.className = 'akar-icons--augmented-reality';
+				arButton.style.position = 'absolute';
+				arButton.style.top = '20px';
+				arButton.style.right = '20px';
 				container.appendChild(arButton); // Ajouter le bouton AR
 
 				arButton.onclick = function () {
-					// Créer et insérer model-viewer après le clic sur le bouton AR
 					const modelViewer = document.createElement('model-viewer');
 					modelViewer.src = "model/HU_EVO_RWD_06.glb";
 					modelViewer.setAttribute("ar", "");
