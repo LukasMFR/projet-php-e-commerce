@@ -214,13 +214,20 @@ if (isset($_POST['logout'])) {
 			const android = /Android/.test(navigator.userAgent);
 
 			if (android) {
-				const arButton = document.createElement('button');
-				arButton.id = 'arButton';
-				arButton.innerHTML = '<i class="bx bx-area"></i>';
-				container.appendChild(arButton); // Ajouter le bouton AR
+				// Créer le conteneur du cercle
+				const arCircle = document.createElement('div');
+				arCircle.className = 'ar-icon-container';
 
-				arButton.onclick = function () {
-					// Créer et insérer model-viewer après le clic sur le bouton AR
+				// Créer l'icône AR et l'ajouter au cercle
+				const arIcon = document.createElement('span');
+				arIcon.className = 'akar-icons--augmented-reality';
+				arCircle.appendChild(arIcon);
+
+				// Ajouter le cercle à la boîte
+				container.appendChild(arCircle);
+
+				arCircle.onclick = function () {
+					// Créer et insérer model-viewer après le clic sur le cercle
 					const modelViewer = document.createElement('model-viewer');
 					modelViewer.src = "model/HU_EVO_RWD_06.glb";
 					modelViewer.setAttribute("ar", "");
@@ -234,7 +241,7 @@ if (isset($_POST['logout'])) {
 					modelViewer.alt = "Lamborghini Revuelto in AR";
 
 					container.replaceChild(modelViewer, arTrigger);
-					arButton.remove(); // Retirer le bouton après usage
+					arCircle.remove(); // Retirer le cercle après usage
 				};
 			} else {
 				// Configurer le comportement par défaut pour iOS et autres OS
