@@ -216,7 +216,7 @@ if (isset($_POST['logout'])) {
 			if (android) {
 				const arButton = document.createElement('button');
 				arButton.id = 'arButton';
-				arButton.innerHTML = '<i class="bx bx-vr"></i>'; // Utilisez l'icône bx-vr de Boxicons
+				arButton.innerHTML = '<i class="bx bx-area"></i>';
 				container.appendChild(arButton); // Ajouter le bouton AR
 
 				arButton.onclick = function () {
