@@ -107,7 +107,8 @@ if (isset($_POST['logout'])) {
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box" id="modelContainer">
-					<!-- Le contenu ici sera remplacé par JavaScript -->
+					<img src="image/lambo4.jpg" alt="Lamborghini Revuelto" id="arPoster"
+						style="width: 100%; cursor: pointer;">
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
@@ -206,32 +207,41 @@ if (isset($_POST['logout'])) {
 	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			const container = document.getElementById('modelContainer');
+			const arPoster = document.getElementById('arPoster');
+			const modelContainer = document.getElementById('modelContainer');
 
-			// Détecter Android
+			// Détecter les systèmes d'exploitation
 			const android = /Android/.test(navigator.userAgent);
+			const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-			if (android) {
-				// Code spécifique pour Android utilisant Model Viewer
-				container.innerHTML = `
-			<model-viewer 
-				src="model/HU_EVO_RWD_06.glb"
-				ar
-				ar-modes="webxr scene-viewer"
-				environment-image="neutral"
-				auto-rotate camera-controls
-				poster="image/lambo4.jpg"
-				alt="Lamborghini Revuelto">
-			</model-viewer>
-			` + container.innerHTML; // Garde les autres éléments existants
-			} else {
-				// Vue par défaut pour iOS, macOS, Windows, Linux, etc.
-				container.innerHTML = `
-			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
-				<img src="image/lambo4.jpg" alt="Voir en AR">
-			</a>
-			` + container.innerHTML; // Garde les autres éléments existants
-			}
+			arPoster.onclick = function () {
+				if (android) {
+					// Code spécifique pour Android
+					const modelViewer = document.createElement('model-viewer');
+					modelViewer.src = "model/HU_EVO_RWD_06.glb";
+					modelViewer.setAttribute("ar", "");
+					modelViewer.setAttribute("ar-modes", "webxr scene-viewer");
+					modelViewer.setAttribute("environment-image", "neutral");
+					modelViewer.setAttribute("auto-rotate", "");
+					modelViewer.setAttribute("camera-controls", "");
+					modelViewer.setAttribute("poster", "image/lambo4.jpg");
+					modelViewer.style.width = '100%';
+					modelViewer.style.height = 'auto';
+					modelViewer.alt = "Lamborghini Revuelto in AR";
+
+					modelContainer.insertBefore(modelViewer, arPoster);
+					arPoster.remove();
+				} else if (iOS) {
+					// Code spécifique pour iOS
+					const aTag = document.createElement('a');
+					aTag.href = "model/HU_EVO_RWD_06.usdz";
+					aTag.rel = "ar";
+					aTag.appendChild(arPoster.cloneNode(true)); // Cloner l'image existante dans le lien
+
+					modelContainer.insertBefore(aTag, arPoster);
+					arPoster.remove();
+				}
+			};
 		});
 	</script>
 </body>
