@@ -215,7 +215,7 @@ if (isset($_POST['logout'])) {
 				// Code spécifique pour Android utilisant Model Viewer
 				container.innerHTML = `
 			<model-viewer 
-				src="path/to/HU_EVO_RWD_06.glb"
+				src="model/HU_EVO_RWD_06.glb"
 				ar
 				ar-modes="webxr scene-viewer"
 				environment-image="neutral"
