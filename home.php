@@ -107,7 +107,11 @@ if (isset($_POST['logout'])) {
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box">
-					<img src="image/lambo4.jpg">
+					<!-- Lien pour AR -->
+					<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
+						<img src="image/lambo4.jpg" alt="Voir en AR">
+					</a>
+					<!-- Bouton d'achat -->
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
