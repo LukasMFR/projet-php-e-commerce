@@ -107,7 +107,8 @@ if (isset($_POST['logout'])) {
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
 				<div class="box" id="modelContainer">
-					<!-- Le contenu ici sera remplacé par JavaScript -->
+					<img src="image/lambo4.jpg" alt="Lamborghini Revuelto" id="arTrigger"
+						style="width: 100%; cursor: pointer;">
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
@@ -207,30 +208,38 @@ if (isset($_POST['logout'])) {
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const container = document.getElementById('modelContainer');
+			const arTrigger = document.getElementById('arTrigger');
 
 			// Détecter Android
 			const android = /Android/.test(navigator.userAgent);
 
 			if (android) {
-				// Code spécifique pour Android utilisant Model Viewer
-				container.innerHTML = `
-			<model-viewer 
-				src="model/HU_EVO_RWD_06.glb"
-				ar
-				ar-modes="webxr scene-viewer"
-				environment-image="neutral"
-				auto-rotate camera-controls
-				poster="image/lambo4.jpg"
-				alt="Lamborghini Revuelto">
-			</model-viewer>
-			` + container.innerHTML; // Garde les autres éléments existants
+				// Ajouter événement de clic pour Android
+				arTrigger.addEventListener('click', function () {
+					// Créer et insérer model-viewer uniquement après clic
+					const modelViewer = document.createElement('model-viewer');
+					modelViewer.src = "model/HU_EVO_RWD_06.glb";
+					modelViewer.setAttribute("ar", "");
+					modelViewer.setAttribute("ar-modes", "webxr scene-viewer");
+					modelViewer.setAttribute("environment-image", "neutral");
+					modelViewer.setAttribute("auto-rotate", "");
+					modelViewer.setAttribute("camera-controls", "");
+					modelViewer.setAttribute("poster", "image/lambo4.jpg");
+					modelViewer.style.width = '100%';
+					modelViewer.style.height = 'auto';
+					modelViewer.alt = "Lamborghini Revuelto in AR";
+
+					// Insérer model-viewer dans le DOM
+					container.insertBefore(modelViewer, arTrigger.nextSibling);
+					arTrigger.style.display = 'none'; // Cache l'image déclencheur
+				});
 			} else {
-				// Vue par défaut pour iOS, macOS, Windows, Linux, etc.
-				container.innerHTML = `
+				// Configuration pour iOS et autres OS
+				arTrigger.outerHTML = `
 			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
 				<img src="image/lambo4.jpg" alt="Voir en AR">
 			</a>
-			` + container.innerHTML; // Garde les autres éléments existants
+		`;
 			}
 		});
 	</script>
