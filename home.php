@@ -214,9 +214,16 @@ if (isset($_POST['logout'])) {
 			const android = /Android/.test(navigator.userAgent);
 
 			if (android) {
-				// Ajouter événement de clic pour Android
-				arTrigger.addEventListener('click', function () {
-					// Créer et insérer model-viewer uniquement après clic
+				// Ajouter un bouton AR spécifiquement pour Android
+				const arButton = document.createElement('button');
+				arButton.textContent = 'Voir en AR';
+				arButton.style.position = 'absolute';
+				arButton.style.top = '10px';
+				arButton.style.right = '10px';
+				container.appendChild(arButton); // Ajouter le bouton AR
+
+				arButton.onclick = function () {
+					// Créer et insérer model-viewer après le clic sur le bouton AR
 					const modelViewer = document.createElement('model-viewer');
 					modelViewer.src = "model/HU_EVO_RWD_06.glb";
 					modelViewer.setAttribute("ar", "");
@@ -229,12 +236,11 @@ if (isset($_POST['logout'])) {
 					modelViewer.style.height = 'auto';
 					modelViewer.alt = "Lamborghini Revuelto in AR";
 
-					// Insérer model-viewer dans le DOM
-					container.insertBefore(modelViewer, arTrigger.nextSibling);
-					arTrigger.style.display = 'none'; // Cache l'image déclencheur
-				});
+					container.replaceChild(modelViewer, arTrigger);
+					arButton.remove(); // Retirer le bouton après usage
+				};
 			} else {
-				// Configuration pour iOS et autres OS
+				// Configurer le comportement par défaut pour iOS et autres OS
 				arTrigger.outerHTML = `
 			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
 				<img src="image/lambo4.jpg" alt="Voir en AR">
