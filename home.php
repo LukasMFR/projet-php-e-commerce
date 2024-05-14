@@ -106,12 +106,8 @@ if (isset($_POST['logout'])) {
 					<a href="view_page.php?pid=jo35YMmBWpvbCMB65UdA" class="btn">Acheter</a>
 					<h1>Bugatti La voiture Noire</h1>
 				</div>
-				<div class="box">
-					<!-- Lien pour AR -->
-					<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
-						<img src="image/lambo4.jpg" alt="Voir en AR">
-					</a>
-					<!-- Bouton d'achat -->
+				<div class="box" id="modelContainer">
+					<!-- Le contenu ici sera remplacé par JavaScript -->
 					<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
 					<h1>Lamborghini Revuelto</h1>
 				</div>
@@ -207,6 +203,37 @@ if (isset($_POST['logout'])) {
 	<?php include 'components/alert.php'; ?>
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const container = document.getElementById('modelContainer');
+
+			// Détecter Android
+			const android = /Android/.test(navigator.userAgent);
+
+			if (android) {
+				// Code spécifique pour Android utilisant Model Viewer
+				container.innerHTML = `
+			<model-viewer 
+				src="path/to/HU_EVO_RWD_06.glb"
+				ar
+				ar-modes="webxr scene-viewer"
+				environment-image="neutral"
+				auto-rotate camera-controls
+				poster="image/lambo4.jpg"
+				alt="Lamborghini Revuelto">
+			</model-viewer>
+			` + container.innerHTML; // Garde les autres éléments existants
+			} else {
+				// Vue par défaut pour iOS, macOS, Windows, Linux, etc.
+				container.innerHTML = `
+			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
+				<img src="image/lambo4.jpg" alt="Voir en AR">
+			</a>
+			` + container.innerHTML; // Garde les autres éléments existants
+			}
+		});
+	</script>
 </body>
 
 </html>
