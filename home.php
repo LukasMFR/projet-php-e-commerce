@@ -209,6 +209,7 @@ if (isset($_POST['logout'])) {
 		document.addEventListener('DOMContentLoaded', function () {
 			const container = document.getElementById('modelContainer');
 			const arTrigger = document.getElementById('arTrigger');
+			const originalImageSrc = arTrigger.src;  // Sauvegarde de la source de l'image originale
 
 			// Détecter le système d'exploitation
 			const userAgent = navigator.userAgent;
@@ -216,9 +217,7 @@ if (isset($_POST['logout'])) {
 			const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
 			if (isAndroid) {
-				// Code spécifique pour Android
-				// Désactiver les interactions avec l'image pour éviter les clics non désirés
-				arTrigger.style.pointerEvents = 'none';
+				arTrigger.style.pointerEvents = 'none'; // Désactive les interactions avec l'image
 
 				const arCircle = document.createElement('div');
 				arCircle.className = 'ar-icon-container';
@@ -240,10 +239,16 @@ if (isset($_POST['logout'])) {
 					modelViewer.style.height = 'auto';
 					modelViewer.alt = "Lamborghini Revuelto in AR";
 					container.replaceChild(modelViewer, arTrigger);
-					arCircle.remove(); // Retirer le cercle après usage
+
+					// Gérer la fermeture du model-viewer
+					modelViewer.addEventListener('exit', function () {
+						// Remettre l'image originale une fois l'expérience AR terminée
+						arTrigger.src = originalImageSrc;
+						container.replaceChild(arTrigger, modelViewer);
+						container.appendChild(arCircle); // Remettre le bouton AR
+					});
 				};
 			} else if (isIOS) {
-				// Code spécifique pour iOS
 				arTrigger.outerHTML = `
 			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
 				<img src="image/lambo4.jpg" alt="Voir en AR">
