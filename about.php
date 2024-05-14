@@ -123,27 +123,38 @@ if (isset($_POST['logout'])) {
 			<div class="container">
 				<div class="testimonial-item active">
 					<img src="img/01.jpg">
-					<h1>Emma Leroux</h1>
-					<p>Achat d'une Peugeot 308 - une expérience sans faute du début à la fin. Conseils experts et
-						service clientèle au top.</p>
+					<h1>Emma Leroux - Lamborghini Urus & Puff Sans Plomb 95</h1>
+					<p>★★★★★ 5/5 - "J'ai récemment fait l'acquisition d'une Lamborghini Urus et d'un Puff Sans Plomb 95.
+						L'expérience a été exceptionnelle du début à la fin. L'Urus allie luxe et performance de manière
+						spectaculaire, offrant un confort sans pareil et une conduite excitante. Quant au Puff Sans
+						Plomb 95, il offre une expérience de vapotage douce et agréable, ce qui en fait le compagnon
+						parfait pour les longs trajets. Je suis extrêmement satisfait de ces achats et du service client
+						de Road Luxury."</p>
 				</div>
 				<div class="testimonial-item">
 					<img src="img/02.jpg">
-					<h1>Thomas Girard</h1>
-					<p>J'ai acheté une Renault Clio récemment, et je suis plus que satisfaite. La voiture est parfaite
-						et le processus d'achat a été fluide et agréable.</p>
+					<h1>Thomas Girard - Alpine A110 R & Puff Gazole</h1>
+					<p>★★★★☆ 4/5 - "Acheter une Alpine A110 R et un Puff Gazole a été une aventure fascinante. L'Alpine
+						est agile et dynamique, parfaite pour s'évader sur les routes de campagne. Le Puff Gazole, bien
+						que très particulier avec son arôme robuste, rappelle l'odeur des garages et des longues
+						journées de conduite. C'est une combinaison idéale pour ceux qui cherchent à mélanger tradition
+						et modernité dans leurs loisirs."</p>
 				</div>
 				<div class="testimonial-item">
 					<img src="img/03.jpg">
-					<h1>Chloé Petit</h1>
-					<p>J'ai opté pour un pack voiture + puffs pour ma nouvelle Citroën C3. Non seulement la voiture est
-						incroyable, mais les puffs ajoutent une touche unique à mon intérieur.</p>
+					<h1>Chloé Petit - Bugatti La Voiture Noire</h1>
+					<p>★★★★★ 5/5 - "La Bugatti La Voiture Noire est un rêve devenu réalité. Chaque détail est
+						impeccablement conçu, offrant une expérience de luxe ultime. La performance est inégalée, et
+						conduire cette merveille est comme piloter un avion de chasse sur la route. C'est bien plus
+						qu'une voiture; c'est une déclaration de prestige et de sophistication."</p>
 				</div>
 				<div class="testimonial-item">
 					<img src="img/04.png">
-					<h1>Marie Dubois</h1>
-					<p>Incroyable expérience chez vous ! La Tesla Model 3 est un rêve devenu réalité, et les puffs
-						personnalisés la rendent encore plus spéciale. Merci pour tout !</p>
+					<h1>Marie Dubois - Puff Superéthanol E85</h1>
+					<p>★★★★☆ 4/5 - "Le Puff Superéthanol E85 est une véritable surprise. Avec son arôme énergique et un
+						peu audacieux, il offre une expérience unique qui est à la fois revigorante et amusante. C'est
+						un excellent choix pour ceux qui cherchent à sortir de l'ordinaire et à expérimenter quelque
+						chose de nouveau et d'excitant dans leur routine de vapotage."</p>
 				</div>
 				<div class="left-arrow" onclick="nextSlide()"><i class="bx bxs-left-arrow-alt"></i></div>
 				<div class="right-arrow" onclick="prevSlide()"><i class="bx bxs-right-arrow-alt"></i></div>
