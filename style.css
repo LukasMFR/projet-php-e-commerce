@@ -3573,8 +3573,8 @@ footer .bottom-footer {
 
 .akar-icons--augmented-reality {
 	display: inline-block;
-	width: 1rem;
-	height: 1rem;
+	width: 1.2rem;
+	height: 1.2rem;
 	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linejoin='round' stroke-width='2'%3E%3Cpath stroke-linecap='round' d='M10.971 6.617a2 2 0 0 1 2.058 0l3.486 2.092a1 1 0 0 1 .485.857v4.302a2 2 0 0 1-.971 1.715l-3 1.8a2 2 0 0 1-2.058 0l-3-1.8A2 2 0 0 1 7 13.868V9.566a1 1 0 0 1 .486-.857z'/%3E%3Cpath d='m7 9l5 2.759m0 0L17 9m-5 2.759V17'/%3E%3Cpath stroke-linecap='round' d='M6 2H4a2 2 0 0 0-2 2v2m16 16h2a2 2 0 0 0 2-2v-2m0-12V4a2 2 0 0 0-2-2h-2M2 18v2a2 2 0 0 0 2 2h2'/%3E%3C/g%3E%3C/svg%3E");
 	background-color: currentColor;
 	-webkit-mask-image: var(--svg);
@@ -3596,7 +3596,7 @@ footer .bottom-footer {
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
 	backdrop-filter: blur(10px) brightness(1.1);
 	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
+	top: 30px;
+	right: 30px;
 	cursor: pointer;
 }
