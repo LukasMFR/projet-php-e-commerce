@@ -216,14 +216,6 @@ if (isset($_POST['logout'])) {
 			const isAndroid = /Android/.test(userAgent);
 			const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
-			function restoreOriginalView() {
-				if (localStorage.getItem('arViewActive') === 'true') {
-					arTrigger.src = originalImageSrc;
-					arTrigger.style.pointerEvents = 'auto'; // Réactive les interactions avec l'image
-					localStorage.setItem('arViewActive', 'false'); // Réinitialise le statut AR
-				}
-			}
-
 			if (isAndroid) {
 				arTrigger.style.pointerEvents = 'none'; // Désactive les interactions avec l'image
 
@@ -247,7 +239,14 @@ if (isset($_POST['logout'])) {
 					modelViewer.style.height = 'auto';
 					modelViewer.alt = "Lamborghini Revuelto in AR";
 					container.replaceChild(modelViewer, arTrigger);
-					localStorage.setItem('arViewActive', 'true'); // Enregistre l'état AR actif
+
+					// Gérer la fermeture du model-viewer
+					modelViewer.addEventListener('exit', function () {
+						// Remettre l'image originale une fois l'expérience AR terminée
+						arTrigger.src = originalImageSrc;
+						container.replaceChild(arTrigger, modelViewer);
+						container.appendChild(arCircle); // Remettre le bouton AR
+					});
 				};
 			} else if (isIOS) {
 				arTrigger.outerHTML = `
@@ -263,8 +262,6 @@ if (isset($_POST['logout'])) {
 			<h1>Lamborghini Revuelto</h1>
 		`;
 			}
-
-			restoreOriginalView(); // Appel pour vérifier si l'état AR doit être restauré
 		});
 	</script>
 </body>
