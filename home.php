@@ -214,12 +214,9 @@ if (isset($_POST['logout'])) {
 			const android = /Android/.test(navigator.userAgent);
 
 			if (android) {
-				// Ajouter un bouton AR spécifiquement pour Android
 				const arButton = document.createElement('button');
-				arButton.textContent = 'Voir en AR';
-				arButton.style.position = 'absolute';
-				arButton.style.top = '10px';
-				arButton.style.right = '10px';
+				arButton.id = 'arButton';
+				arButton.innerHTML = '<i class="bx bx-vr"></i>'; // Utilisez l'icône bx-vr de Boxicons
 				container.appendChild(arButton); // Ajouter le bouton AR
 
 				arButton.onclick = function () {
