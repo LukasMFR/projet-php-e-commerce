@@ -217,6 +217,9 @@ if (isset($_POST['logout'])) {
 
 			if (isAndroid) {
 				// Code spécifique pour Android
+				// Désactiver les interactions avec l'image pour éviter les clics non désirés
+				arTrigger.style.pointerEvents = 'none';
+
 				const arCircle = document.createElement('div');
 				arCircle.className = 'ar-icon-container';
 				const arIcon = document.createElement('span');
@@ -242,17 +245,17 @@ if (isset($_POST['logout'])) {
 			} else if (isIOS) {
 				// Code spécifique pour iOS
 				arTrigger.outerHTML = `
-				<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
-					<img src="image/lambo4.jpg" alt="Voir en AR">
-				</a>
-			`;
+			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
+				<img src="image/lambo4.jpg" alt="Voir en AR">
+			</a>
+		`;
 			} else {
 				// Comportement par défaut pour les autres OS
 				container.innerHTML = `
-				<img src="image/lambo4.jpg" alt="Lamborghini Revuelto">
-				<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
-				<h1>Lamborghini Revuelto</h1>
-			`;
+			<img src="image/lambo4.jpg" alt="Lamborghini Revuelto">
+			<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
+			<h1>Lamborghini Revuelto</h1>
+		`;
 			}
 		});
 	</script>
