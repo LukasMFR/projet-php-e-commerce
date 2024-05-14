@@ -778,6 +778,10 @@ video {
 	border-radius: 20px;
 }
 
+.shop .box model-viewer {
+	border-radius: 20px;
+}
+
 .thumb .box-container .box i {
 	color: var(--royal-blue-dark);
 	font-size: 40px;
