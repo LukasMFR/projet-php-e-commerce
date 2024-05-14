@@ -211,22 +211,11 @@ if (isset($_POST['logout'])) {
 			const arTrigger = document.getElementById('arTrigger');
 			const originalImageSrc = arTrigger.src;  // Sauvegarde de la source de l'image originale
 
-			// Détecter le système d'exploitation
 			const userAgent = navigator.userAgent;
 			const isAndroid = /Android/.test(userAgent);
 			const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
-			function restoreOriginalView() {
-				if (localStorage.getItem('arViewActive') === 'true') {
-					arTrigger.src = originalImageSrc;
-					arTrigger.style.pointerEvents = 'auto'; // Réactive les interactions avec l'image
-					localStorage.setItem('arViewActive', 'false'); // Réinitialise le statut AR
-				}
-			}
-
 			if (isAndroid) {
-				arTrigger.style.pointerEvents = 'none'; // Désactive les interactions avec l'image
-
 				const arCircle = document.createElement('div');
 				arCircle.className = 'ar-icon-container';
 				const arIcon = document.createElement('span');
@@ -235,6 +224,7 @@ if (isset($_POST['logout'])) {
 				container.appendChild(arCircle);
 
 				arCircle.onclick = function () {
+					arTrigger.style.display = 'none'; // Cache l'image originale
 					const modelViewer = document.createElement('model-viewer');
 					modelViewer.src = "model/HU_EVO_RWD_06.glb";
 					modelViewer.setAttribute("ar", "");
@@ -246,8 +236,21 @@ if (isset($_POST['logout'])) {
 					modelViewer.style.width = '100%';
 					modelViewer.style.height = 'auto';
 					modelViewer.alt = "Lamborghini Revuelto in AR";
-					container.replaceChild(modelViewer, arTrigger);
-					localStorage.setItem('arViewActive', 'true'); // Enregistre l'état AR actif
+					container.appendChild(modelViewer);
+
+					// Créer un bouton de fermeture pour le model-viewer
+					const closeButton = document.createElement('button');
+					closeButton.textContent = "Close AR";
+					closeButton.style.position = 'absolute';
+					closeButton.style.top = '10px';
+					closeButton.style.right = '10px';
+					modelViewer.appendChild(closeButton);
+
+					closeButton.onclick = function () {
+						container.removeChild(modelViewer);
+						arTrigger.style.display = ''; // Réaffiche l'image originale
+						container.appendChild(arCircle); // Réaffiche le bouton AR
+					};
 				};
 			} else if (isIOS) {
 				arTrigger.outerHTML = `
@@ -263,8 +266,6 @@ if (isset($_POST['logout'])) {
 			<h1>Lamborghini Revuelto</h1>
 		`;
 			}
-
-			restoreOriginalView(); // Appel pour vérifier si l'état AR doit être restauré
 		});
 	</script>
 </body>
