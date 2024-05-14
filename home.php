@@ -210,24 +210,21 @@ if (isset($_POST['logout'])) {
 			const container = document.getElementById('modelContainer');
 			const arTrigger = document.getElementById('arTrigger');
 
-			// Détecter Android
-			const android = /Android/.test(navigator.userAgent);
+			// Détecter le système d'exploitation
+			const userAgent = navigator.userAgent;
+			const isAndroid = /Android/.test(userAgent);
+			const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
 
-			if (android) {
-				// Créer le conteneur du cercle
+			if (isAndroid) {
+				// Code spécifique pour Android
 				const arCircle = document.createElement('div');
 				arCircle.className = 'ar-icon-container';
-
-				// Créer l'icône AR et l'ajouter au cercle
 				const arIcon = document.createElement('span');
 				arIcon.className = 'akar-icons--augmented-reality';
 				arCircle.appendChild(arIcon);
-
-				// Ajouter le cercle à la boîte
 				container.appendChild(arCircle);
 
 				arCircle.onclick = function () {
-					// Créer et insérer model-viewer après le clic sur le cercle
 					const modelViewer = document.createElement('model-viewer');
 					modelViewer.src = "model/HU_EVO_RWD_06.glb";
 					modelViewer.setAttribute("ar", "");
@@ -239,17 +236,23 @@ if (isset($_POST['logout'])) {
 					modelViewer.style.width = '100%';
 					modelViewer.style.height = 'auto';
 					modelViewer.alt = "Lamborghini Revuelto in AR";
-
 					container.replaceChild(modelViewer, arTrigger);
 					arCircle.remove(); // Retirer le cercle après usage
 				};
-			} else {
-				// Configurer le comportement par défaut pour iOS et autres OS
+			} else if (isIOS) {
+				// Code spécifique pour iOS
 				arTrigger.outerHTML = `
-			<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
-				<img src="image/lambo4.jpg" alt="Voir en AR">
-			</a>
-		`;
+				<a rel="ar" href="model/HU_EVO_RWD_06.usdz">
+					<img src="image/lambo4.jpg" alt="Voir en AR">
+				</a>
+			`;
+			} else {
+				// Comportement par défaut pour les autres OS
+				container.innerHTML = `
+				<img src="image/lambo4.jpg" alt="Lamborghini Revuelto">
+				<a href="view_page.php?pid=aSBHDzG26iXurm6cfoNv" class="btn">Acheter</a>
+				<h1>Lamborghini Revuelto</h1>
+			`;
 			}
 		});
 	</script>
