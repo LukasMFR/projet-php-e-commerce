@@ -3596,7 +3596,7 @@ footer .bottom-footer {
 	-webkit-backdrop-filter: blur(10px) brightness(1.1);
 	backdrop-filter: blur(10px) brightness(1.1);
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 25px;
+	right: 25px;
 	cursor: pointer;
 }
