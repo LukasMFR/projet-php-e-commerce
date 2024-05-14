@@ -124,7 +124,7 @@ if (isset($_POST['logout'])) {
 				<div class="testimonial-item active">
 					<img src="img/01.jpg">
 					<h1>Emma Leroux - Lamborghini Urus & Puff Sans Plomb 95</h1>
-					<h1>★★★★★ 5/5</h1>
+					<h1 class="rating">★★★★★ 5/5</h1>
 					<p>"J'ai récemment fait l'acquisition d'une Lamborghini Urus et d'un Puff Sans Plomb 95.
 						L'expérience a été exceptionnelle du début à la fin. L'Urus allie luxe et performance de manière
 						spectaculaire, offrant un confort sans pareil et une conduite excitante. Quant au Puff Sans
@@ -135,7 +135,7 @@ if (isset($_POST['logout'])) {
 				<div class="testimonial-item">
 					<img src="img/02.jpg">
 					<h1>Thomas Girard - Alpine A110 R & Puff Gazole</h1>
-					<h1>★★★★☆ 4/5</h1>
+					<h1 class="rating">★★★★☆ 4/5</h1>
 					<p>"Acheter une Alpine A110 R et un Puff Gazole a été une aventure fascinante. L'Alpine
 						est agile et dynamique, parfaite pour s'évader sur les routes de campagne. Le Puff Gazole, bien
 						que très particulier avec son arôme robuste, rappelle l'odeur des garages et des longues
@@ -145,7 +145,7 @@ if (isset($_POST['logout'])) {
 				<div class="testimonial-item">
 					<img src="img/03.jpg">
 					<h1>Chloé Petit - Bugatti La Voiture Noire</h1>
-					<h1>★★★★★ 5/5</h1>
+					<h1 class="rating">★★★★★ 5/5</h1>
 					<p>"La Bugatti La Voiture Noire est un rêve devenu réalité. Chaque détail est
 						impeccablement conçu, offrant une expérience de luxe ultime. La performance est inégalée, et
 						conduire cette merveille est comme piloter un avion de chasse sur la route. C'est bien plus
@@ -154,7 +154,7 @@ if (isset($_POST['logout'])) {
 				<div class="testimonial-item">
 					<img src="img/04.png">
 					<h1>Marie Dubois - Puff Superéthanol E85</h1>
-					<h1>★★★★☆ 4/5</h1>
+					<h1 class="rating">★★★★☆ 4/5</h1>
 					<p>"Le Puff Superéthanol E85 est une véritable surprise. Avec son arôme énergique et un
 						peu audacieux, il offre une expérience unique qui est à la fois revigorante et amusante. C'est
 						un excellent choix pour ceux qui cherchent à sortir de l'ordinaire et à expérimenter quelque

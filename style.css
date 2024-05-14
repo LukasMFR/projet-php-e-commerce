@@ -3600,3 +3600,9 @@ footer .bottom-footer {
 	right: 25px;
 	cursor: pointer;
 }
+
+.rating {
+	color: #ffc400 !important;
+	font-size: 24px !important;
+	margin-bottom: 10px;
+}
