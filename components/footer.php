@@ -57,7 +57,7 @@
 			</div>
 		</div>
 		<div class="bottom-footer">
-			<p>Copyright © 2024 nomdusite. All Rights Reserved.</p>
+			<p>Copyright © 2024 Road Luxury. All Rights Reserved.</p>
 		</div>
 	</div>
 </footer>
