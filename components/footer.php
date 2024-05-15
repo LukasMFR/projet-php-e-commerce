@@ -57,7 +57,7 @@
 			</div>
 		</div>
 		<div class="bottom-footer">
-			<p>Tous droits réservés - 2024</p>
+			<p>Copyright © 2024 nomdusite. All Rights Reserved.</p>
 		</div>
 	</div>
 </footer>

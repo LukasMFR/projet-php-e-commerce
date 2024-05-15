@@ -88,7 +88,10 @@ if (isset($_POST['submit'])) {
 				<input type="submit" name="submit" value="Se connecter" class="btn">
 				<p class="account-invitation">Vous n'avez pas de compte ? <a href="register.php">Inscrivez-vous maintenant</a></p>
 
+				<p class="account-invitation">Vous n'avez pas de compte ? <a href="admin/admin_login.php">Connection Admin</a></p>
+
 				<a href="home.php" class="btn">Retour à l'accueil</a>
+
 			</form>
 		</section>
 	</div>
